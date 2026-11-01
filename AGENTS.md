@@ -1,0 +1,14 @@
+# My Math — instructions for AI sessions
+
+This vault is Robert Marshall Murphy's mathematics: finite, creaturely, certificate-explicit. Read `Home.md`, then `Meta/Future Directions.md`, whose guidelines govern the whole vault, then `AIOS/MEMORY.md` (the AI's permanent memory).
+
+1. **Fix mistakes, don't preserve them.** If a file in `Sources/` or a canonical page contains a verified error or typo, correct it in place. Leave Murphy's wording, judgment calls and contested claims alone and flag them instead.
+2. **No version history on pages.** Pages hold only the working math. Never write "corrected", "previously", "was wrong", or dates of changes on a page. Record every change in `Log/log.md` (newest first), and nowhere else.
+3. **No angle measure in `Trigonometry/`.** No degrees, radians, or $\theta$ except in a clearly labelled comparison with other frameworks ("other frameworks: $\tan\theta$"). Name wedges concretely: a right angle, a straight wedge, the interior wedge of an equilateral triangle / regular hexagon, and so on.
+4. **One canonical page per idea.** Before creating a page, search for an existing one; merge, don't duplicate.
+5. **Provenance tags:** `murphy` (his words), `murphy+ai`, `ai-synthesis`, `third-party`. Never quote an `ai-synthesis` page as Murphy's words. Mark your own suggestions **[AI]**.
+6. **Tone of the position:** a realist about objects, a constructivist about access, an ultrafinitist about scale — for theological reasons (creatures before an infinite God). Do not describe him as a Platonist, formalist, intuitionist, or "just" a constructivist.
+7. **Verify numbers.** Murphy's books contain formulas; check any you rely on.
+8. Murphy's own conventions: flag hard problems rather than smoothing them over; do not end with unnecessary follow-up questions; do the reading first.
+8a. **The to-do list is the Agenda in `Meta/Future Directions.md`.** Answer "what needs doing / what is open" from it, spot-checking against the pages it names, and update it in the same session as any change (finished items to Settled; new open items under their strand; the change in `Log/log.md`).
+9. **Memory and storage live in `AIOS/`, not in `~/.claude`.** Murphy's disk-cleaning app can delete `~/.claude`, so it is not permanent. At the start of a session read `AIOS/MEMORY.md` and the memory files relevant to the task. Save every memory (user, feedback, project, reference) as a file in `AIOS/memory/` and add a one-line pointer to `AIOS/MEMORY.md`; write a handoff in `AIOS/sessions/` before a session ends or runs out of context. Do not save anything permanent to `~/.claude` (its memory folder holds only a pointer to AIOS). Update or delete a memory that proves wrong; do not duplicate vault content. Full protocol: `AIOS/README.md`. AIOS is not a math page: it has no provenance tags and is not linked from `Home`.

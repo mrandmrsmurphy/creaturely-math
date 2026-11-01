@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1040" width="900" height="1040" font-family="Helvetica, Arial, sans-serif">
+<title>Slope protractor</title>
+<desc>A square of side 1 divided into 60 marks on each of the right and top edges. A line laid along a ray from the lower-left corner reads its slope m on the right edge as j/60 when m is at most 1, or on the top edge as 60/d when m is at least 1.</desc>
+<rect width="900" height="1040" fill="#ffffff"/>
+<text x="450.0" y="42" text-anchor="middle" font-size="28" font-weight="bold" fill="#1b1b1b">Slope protractor</text>
+<text x="450.0" y="70" text-anchor="middle" font-size="15" fill="#8a8a8a">lay the object along a ray from the corner O; read the slope where the ray leaves the square</text>
+<rect x="90" y="190" width="720" height="720" fill="#fafafa" stroke="#1b1b1b" stroke-width="2"/>
+<line x1="90" y1="910" x2="810.00" y2="838.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="766.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="730.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="670.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="622.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="550.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="478.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="430.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="370.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="334.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810.00" y2="262.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="690.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="666.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="630.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="570.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="450.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="330.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="270.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="234.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="210.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="162.00" y2="190.00" stroke="#cfd6de" stroke-width="0.8"/>
+<line x1="90" y1="910" x2="810" y2="190" stroke="#8a8a8a" stroke-width="1" stroke-dasharray="6 5"/>
+<text x="464.40000000000003" y="529.5999999999999" font-size="13" fill="#8a8a8a" transform="rotate(-45 464.40000000000003 529.5999999999999)">slope 1</text>
+<circle cx="90" cy="910" r="4" fill="#1b1b1b"/>
+<text x="80" y="932" font-size="16" font-weight="bold" fill="#1b1b1b" text-anchor="end">O</text>
+<line x1="810" y1="910.00" x2="832" y2="910.00" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="838" y="915.00" font-size="14" fill="#1f5fa8">0</text>
+<line x1="810" y1="898.00" x2="818" y2="898.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="886.00" x2="818" y2="886.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="874.00" x2="818" y2="874.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="862.00" x2="818" y2="862.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="850.00" x2="818" y2="850.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="838.00" x2="825" y2="838.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="843.00" font-size="14" fill="#1f5fa8">0.1</text>
+<line x1="810" y1="826.00" x2="818" y2="826.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="814.00" x2="818" y2="814.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="802.00" x2="818" y2="802.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="790.00" x2="818" y2="790.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="778.00" x2="818" y2="778.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="766.00" x2="825" y2="766.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="771.00" font-size="14" fill="#1f5fa8">0.2</text>
+<line x1="810" y1="754.00" x2="818" y2="754.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="742.00" x2="818" y2="742.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="730.00" x2="818" y2="730.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="718.00" x2="818" y2="718.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="706.00" x2="818" y2="706.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="694.00" x2="825" y2="694.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="699.00" font-size="14" fill="#1f5fa8">0.3</text>
+<line x1="810" y1="682.00" x2="818" y2="682.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="670.00" x2="818" y2="670.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="658.00" x2="818" y2="658.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="646.00" x2="818" y2="646.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="634.00" x2="818" y2="634.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="622.00" x2="825" y2="622.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="627.00" font-size="14" fill="#1f5fa8">0.4</text>
+<line x1="810" y1="610.00" x2="818" y2="610.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="598.00" x2="818" y2="598.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="586.00" x2="818" y2="586.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="574.00" x2="818" y2="574.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="562.00" x2="818" y2="562.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="550.00" x2="832" y2="550.00" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="838" y="555.00" font-size="14" fill="#1f5fa8">0.5</text>
+<line x1="810" y1="538.00" x2="818" y2="538.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="526.00" x2="818" y2="526.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="514.00" x2="818" y2="514.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="502.00" x2="818" y2="502.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="490.00" x2="818" y2="490.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="478.00" x2="825" y2="478.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="483.00" font-size="14" fill="#1f5fa8">0.6</text>
+<line x1="810" y1="466.00" x2="818" y2="466.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="454.00" x2="818" y2="454.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="442.00" x2="818" y2="442.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="430.00" x2="818" y2="430.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="418.00" x2="818" y2="418.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="406.00" x2="825" y2="406.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="411.00" font-size="14" fill="#1f5fa8">0.7</text>
+<line x1="810" y1="394.00" x2="818" y2="394.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="382.00" x2="818" y2="382.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="370.00" x2="818" y2="370.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="358.00" x2="818" y2="358.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="346.00" x2="818" y2="346.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="334.00" x2="825" y2="334.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="339.00" font-size="14" fill="#1f5fa8">0.8</text>
+<line x1="810" y1="322.00" x2="818" y2="322.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="310.00" x2="818" y2="310.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="298.00" x2="818" y2="298.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="286.00" x2="818" y2="286.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="274.00" x2="818" y2="274.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="262.00" x2="825" y2="262.00" stroke="#1f5fa8" stroke-width="1.3"/>
+<text x="831" y="267.00" font-size="14" fill="#1f5fa8">0.9</text>
+<line x1="810" y1="250.00" x2="818" y2="250.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="238.00" x2="818" y2="238.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="226.00" x2="818" y2="226.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="214.00" x2="818" y2="214.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="202.00" x2="818" y2="202.00" stroke="#1f5fa8" stroke-width="0.8"/>
+<line x1="810" y1="190.00" x2="832" y2="190.00" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="838" y="195.00" font-size="14" fill="#1f5fa8">1</text>
+<line x1="90.00" y1="190" x2="90.00" y2="168" stroke="#b4472b" stroke-width="1.8"/>
+<text x="90.00" y="162" font-size="12" fill="#b4472b" transform="rotate(-90 90.00 162)">∞</text>
+<line x1="102.00" y1="190" x2="102.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="102.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 102.00 169)">60</text>
+<line x1="114.00" y1="190" x2="114.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="114.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 114.00 169)">30</text>
+<line x1="126.00" y1="190" x2="126.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="126.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 126.00 169)">20</text>
+<line x1="138.00" y1="190" x2="138.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="138.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 138.00 169)">15</text>
+<line x1="150.00" y1="190" x2="150.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="150.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 150.00 169)">12</text>
+<line x1="162.00" y1="190" x2="162.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="162.00" y="169" font-size="12" fill="#b4472b" transform="rotate(-90 162.00 169)">10</text>
+<line x1="174.00" y1="190" x2="174.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="186.00" y1="190" x2="186.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="198.00" y1="190" x2="198.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="210.00" y1="190" x2="210.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="210.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 210.00 169)">6</text>
+<line x1="222.00" y1="190" x2="222.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="234.00" y1="190" x2="234.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="234.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 234.00 169)">5</text>
+<line x1="246.00" y1="190" x2="246.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="258.00" y1="190" x2="258.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="270.00" y1="190" x2="270.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="270.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 270.00 169)">4</text>
+<line x1="282.00" y1="190" x2="282.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="294.00" y1="190" x2="294.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="306.00" y1="190" x2="306.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="318.00" y1="190" x2="318.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="330.00" y1="190" x2="330.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="330.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 330.00 169)">3</text>
+<line x1="342.00" y1="190" x2="342.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="354.00" y1="190" x2="354.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="366.00" y1="190" x2="366.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="378.00" y1="190" x2="378.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="390.00" y1="190" x2="390.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="402.00" y1="190" x2="402.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="414.00" y1="190" x2="414.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="426.00" y1="190" x2="426.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="438.00" y1="190" x2="438.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="450.00" y1="190" x2="450.00" y2="168" stroke="#b4472b" stroke-width="1.8"/>
+<text x="450.00" y="162" font-size="13" fill="#b4472b" transform="rotate(-90 450.00 162)">2</text>
+<line x1="462.00" y1="190" x2="462.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="474.00" y1="190" x2="474.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="486.00" y1="190" x2="486.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="498.00" y1="190" x2="498.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="510.00" y1="190" x2="510.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="522.00" y1="190" x2="522.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="534.00" y1="190" x2="534.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="546.00" y1="190" x2="546.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="558.00" y1="190" x2="558.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="570.00" y1="190" x2="570.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="570.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 570.00 169)">3/2</text>
+<line x1="582.00" y1="190" x2="582.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="594.00" y1="190" x2="594.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="606.00" y1="190" x2="606.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="618.00" y1="190" x2="618.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="630.00" y1="190" x2="630.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="630.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 630.00 169)">4/3</text>
+<line x1="642.00" y1="190" x2="642.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="654.00" y1="190" x2="654.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="666.00" y1="190" x2="666.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="666.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 666.00 169)">5/4</text>
+<line x1="678.00" y1="190" x2="678.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="690.00" y1="190" x2="690.00" y2="175" stroke="#b4472b" stroke-width="1.3"/>
+<text x="690.00" y="169" font-size="13" fill="#b4472b" transform="rotate(-90 690.00 169)">6/5</text>
+<line x1="702.00" y1="190" x2="702.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="714.00" y1="190" x2="714.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="726.00" y1="190" x2="726.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="738.00" y1="190" x2="738.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="750.00" y1="190" x2="750.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="762.00" y1="190" x2="762.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="774.00" y1="190" x2="774.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="786.00" y1="190" x2="786.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="798.00" y1="190" x2="798.00" y2="182" stroke="#b4472b" stroke-width="0.8"/>
+<line x1="810.00" y1="190" x2="810.00" y2="168" stroke="#b4472b" stroke-width="1.8"/>
+<text x="810.00" y="162" font-size="13" fill="#b4472b" transform="rotate(-90 810.00 162)">1</text>
+<text x="878" y="550.0" font-size="15" fill="#1f5fa8" text-anchor="middle" transform="rotate(90 878 550.0)">right edge: slope m = j/60  (each mark +1/60)</text>
+<text x="450.0" y="90" font-size="15" fill="#b4472b" text-anchor="middle">top edge: slope m = 60/d  (d = marks from the left corner)</text>
+<text x="90" y="962" font-size="15" fill="#1b1b1b"><tspan font-weight="bold">Reading.</tspan> If the line leaves through the right edge, m = j/60 (every 6 marks is 0.1).</text>
+<text x="90" y="984" font-size="15" fill="#1b1b1b">If it leaves through the top edge, m = 60/d: the marks are even in 1/m, so the slopes are not.</text>
+<text x="90" y="1006" font-size="15" fill="#1b1b1b">The left corner of the top edge (d = 0) is the vertical, slope ∞. Each reading is an exact rational.</text>
+</svg>

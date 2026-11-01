@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <rect width="400" height="300" fill="#ffffff"/>
+  <!-- old rectangle f x g : f=5 wide, g=3 tall (40 px per unit) -->
+  <rect x="40" y="100" width="200" height="120" fill="#cfe3f7" stroke="#1f4e79" stroke-width="2"/>
+  <!-- right strip: Delta f = 2 wide, height g -->
+  <rect x="240" y="100" width="80" height="120" fill="#f9d9c4" stroke="#8a3b12" stroke-width="2"/>
+  <!-- top strip: width f, Delta g = 1 tall -->
+  <rect x="40" y="60" width="200" height="40" fill="#d5ecd0" stroke="#2d6a1f" stroke-width="2"/>
+  <!-- corner -->
+  <rect x="240" y="60" width="80" height="40" fill="#f4c6c6" stroke="#9b1c1c" stroke-width="2"/>
+  <g fill="#222" text-anchor="middle">
+    <text x="140" y="165">fg = 15</text>
+    <text x="280" y="165">g·Δf = 6</text>
+    <text x="140" y="85">f·Δg = 5</text>
+    <text x="280" y="85">Δf·Δg = 2</text>
+    <!-- side labels -->
+    <text x="140" y="242">f = 5</text>
+    <text x="280" y="242">Δf = 2</text>
+  </g>
+  <g fill="#222" text-anchor="end">
+    <text x="32" y="165">g = 3</text>
+    <text x="32" y="85">Δg = 1</text>
+  </g>
+  <text x="200" y="272" text-anchor="middle" fill="#222">(f+Δf)(g+Δg) − fg = 28 − 15 = 5 + 6 + 2</text>
+</svg>

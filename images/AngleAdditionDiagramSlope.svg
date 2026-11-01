@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="334.667px" height="403.334px" viewBox="0 0 334.667 403.334" enable-background="new 0 0 334.667 403.334" xml:space="preserve">
+<polygon style="fill:#cad8e5" points="299.5,221.279 299.5,370.499 39.5,370.499" />
+<polygon style="fill:#e8cdcd" points="194.72,38.499 299.5,221.279 39.5,370.499" />
+<polygon style="fill:none;stroke:#000000;stroke-miterlimit:10" points="299.5,221.279 299.5,370.499 39.5,370.499 39.5,38.499 194.72,38.499 299.5,38.499" stroke-miterlimit="10" />
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10" y2="221.27901" x2="299.5" y1="370.49899" x1="39.5" stroke-miterlimit="10" />
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10" y2="38.499001" x2="194.72" y1="221.27901" x1="299.5" stroke-miterlimit="10" />
+<line style="fill:none;stroke:#000000;stroke-width:1.00000002;stroke-miterlimit:10;stroke-dasharray:none" y2="370.49899" x2="39.5" y1="38.499001" x1="194.72" stroke-miterlimit="10" />
+<rect style="fill:none;stroke:#000000;stroke-miterlimit:10" height="24" width="24" y="38.499001" x="39.5" />
+<rect style="fill:none;stroke:#000000;stroke-miterlimit:10" height="24" width="24" y="38.499001" x="275.5" />
+<rect style="fill:none;stroke:#000000;stroke-miterlimit:10" height="24" width="24" y="346.49899" x="275.5" />
+<path style="fill:none;stroke:#000000;stroke-miterlimit:10" d="m 58.9,329.002 c 15.401,7.251 26.061,22.912 26.061,41.063" />
+<rect style="fill:none;stroke:#000000;stroke-width:0.9999913;stroke-miterlimit:10" height="23.999792" width="23.999792" transform="matrix(0.87160758,-0.49020426,0.49020426,0.87160758,0,0)" y="315.88629" x="128.45534" />
+<path style="fill:none;stroke:#000000;stroke-miterlimit:10" d="M 175.473,79.677 C 160.174,72.387 149.6,56.78 149.6,38.702" />
+<text style="font-size:88.78659821px;font-family:Arial-BoldMT" x="164.50885" y="400.63776">1</text>
+<text style="font-size:18px;font-family:ArialMT" x="45.838898" y="30.331499">1 - <tspan>m<tspan dy="5" font-size="14">α</tspan><tspan dy="-5"> </tspan></tspan><tspan>m<tspan dy="5" font-size="14">β</tspan></tspan></text>
+<text style="font-size:18px;font-family:ArialMT" transform="matrix(0,-1,1,0,0,0)" x="-249.8027" y="28.833"><tspan>m<tspan dy="5" font-size="14">α</tspan><tspan dy="-5"> </tspan></tspan> + <tspan>m<tspan dy="5" font-size="14">β</tspan></tspan></text>
+<text style="font-size:18px;font-family:ArialMT" x="207.5508" y="30.331499"><tspan>m<tspan dy="5" font-size="14">α</tspan><tspan dy="-5"> </tspan></tspan><tspan>m<tspan dy="5" font-size="14">β</tspan></tspan></text>
+<text style="font-size:18px;font-family:ArialMT" transform="matrix(0,1,-1,0,0,0)" x="82.881798" y="-309.33401">m<tspan dy="5" font-size="14">β</tspan></text>
+<text style="font-size:18px;font-family:ArialMT" transform="matrix(0,1,-1,0,0,0)" x="271.21582" y="-309.33401">m<tspan dy="5" font-size="14">α</tspan></text>
+<text style="font-size:18px;font-family:ArialMT" x="104.7266" y="79.676804">α + β</text>
+<text style="font-size:18px;font-family:ArialMT" x="97.9272" y="357.33109">α</text>
+<text style="font-size:18px;font-family:ArialMT" x="80.6465" y="325.70209">β</text>
+<text style="font-size:17.99975014px;font-family:ArialMT" transform="matrix(0.86991207,-0.49320684,0.49320684,0.86991207,0,0)" x="-0.4281911" y="333.66202">ℓ<tspan dy="5" font-size="14">α</tspan></text>
+<text style="font-size:18.00100327px;font-family:ArialMT" transform="matrix(0.48637291,0.87375133,-0.87375133,0.48637291,0,0)" x="180.07285" y="-133.63622"><tspan>m<tspan dy="5" font-size="14">β</tspan><tspan dy="-5"> </tspan></tspan>ℓ<tspan dy="5" font-size="14">α</tspan></text>
+<path style="fill:none;stroke:#000000;stroke-miterlimit:10" d="m 275.469,179.36 c 6.96,-4.346 15.184,-6.857 23.993,-6.857" />
+<text style="font-size:18px;font-family:ArialMT" x="280.58591" y="165.3633">α</text>
+<path style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 39.5,370.49901 260,0" />
+<path style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 39.5,38.499 260.00001,0" />
+</svg>

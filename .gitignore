@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Obsidian: per-device state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Google Drive conflict copies
+*(1).*
+*conflicted copy*
+.obsidian/plugins/
