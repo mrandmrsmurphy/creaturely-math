@@ -18,5 +18,5 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Label parts, don't name functions](memory/feedback-label-parts-not-names.md) — split answers into exact and approximatable parts by level
 - [Rational Rotation](memory/project-rational-rotation.md) — tick sine/cosine page from a pasted LLM conversation; verified, open items
 - [Where things live](memory/reference-locations.md) — paths, mounts, the vulnerable ~/.claude
-- [Git and GitHub](memory/reference-git-github.md) — private repo creaturely-math; git dir outside Drive; Obsidian auto-pushes
-- Session handoffs: `AIOS/sessions/` (latest: `2026-10-23 Rational rotation, parts, inverses.md`)
+- [Git and GitHub](memory/reference-git-github.md) — public repo creaturely-math; git dir outside Drive; Obsidian auto-pushes
+- Session handoffs: `AIOS/sessions/` (latest: `2026-11-01 Vault on GitHub.md`)
