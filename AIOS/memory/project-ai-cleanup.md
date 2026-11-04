@@ -24,4 +24,7 @@ Murphy wants all `[AI]` sections gone from the vault. Census (2026-11-04): ~290 
 - [x] Theology of Number — 1 inline, adopted (the two flagged difficulties)
 - [x] Diagonal Argument — 3 inline, all adopted; the Infinity and Cantor definability cell rewritten to procedural form, closing Agenda A.3 (A items renumbered)
 - [x] Exhibiting a Real — 3 inline, all adopted (interval form of the carry problem; section 3 with self-correction; Skolem caution, flag stays)
-- [ ] Foundations remaining: Schools Compared (0), Infinity and Cantor (0 inline), First Principles of Thought (0), Four Kinds of Truth (5), Christians and the Reals (6), Quadriga and the Position (7), Theological Grounds (10, all entries are proposals)
+- [x] Four Kinds of Truth — 2 inline + status line, both adopted (observation corollary; the mapping section; hard problems stay open)
+- [x] Christians and the Reals — 6 inline, all adopted, including the divine-idea tension *with* its proposal (the Reals live among the divine ideas); Agenda *The Reals* line updated
+- [x] Quadriga and the Position — 4 sections + status line, all adopted (two tensions kept as open flags)
+- [ ] Foundations remaining: Schools Compared (0), Infinity and Cantor (0 inline), First Principles of Thought (0), Theological Grounds (10, all entries are proposals)

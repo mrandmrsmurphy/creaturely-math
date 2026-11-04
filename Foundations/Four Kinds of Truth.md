@@ -1,8 +1,8 @@
 ---
 title: Four Kinds of Truth
 type: concept
-status: "canonical (the four kinds are Murphy's; the placement of mathematical claims is proposed and marked [AI])"
-provenance: "murphy (the four kinds: Sources/Quadriga Scientiae - Complete, Part I; the clarification that natural observations are data for verisimilitudes) + ai-synthesis (where mathematical claims fall; marked [AI])"
+status: canonical
+provenance: "murphy (the four kinds: Sources/Quadriga Scientiae - Complete, Part I; the clarification that natural observations are data for verisimilitudes; where mathematical claims fall, adopted 2026-11-04) + ai-synthesis (the table's composition)"
 sources: "[[Quadriga for Mathematics]], [[Theological Grounds]], [[Certificates]], [[Quadriga Scientiae - Complete]]"
 updated: 2026-10-10
 ---
@@ -16,15 +16,15 @@ updated: 2026-10-10
 3. **Logical**: "All bachelors are unmarried men."
 4. **Verisimilitudes**: true as far as we know, subject to later revision.
 
-**Natural observations are data for verisimilitudes** (Murphy). *[AI]* So observation is not a fifth kind of truth; it is the evidence from which the fourth kind is built.
+**Natural observations are data for verisimilitudes** (Murphy). So observation is not a fifth kind of truth; it is the evidence from which the fourth kind is built.
 
 ## Why the fourth kind is the least reliable, and why that is an honour
 
 The wiki that reports the source reads the list as running from the most to the least certain and revisable, and says the placing of empirical science in the fourth category "is not a demotion but a description": scientific truth is real but provisional, the most self-correcting, which is precisely why it works. The theological reason is the **Hamartological** one: total depravity means no mind or generation can overcome the noetic effects of sin, so inquiry must be multi-generational and checkable by others ("I am not trustworthy alone"). Provisionality is the institutional acknowledgment of that limit, not a defect.
 
-## What this does for mathematics [AI]
+## What this does for mathematics
 
-The source applies the four kinds to science. The vault's mathematics can use the same list, and doing so sorts several things that are now loose. These are proposals for Murphy to accept, move or reject; none is a claim of his.
+The source applies the four kinds to science. The vault's mathematics uses the same list, and doing so sorts several things that would otherwise be loose.
 
 | Kind | In the vault | Example |
 |---|---|---|

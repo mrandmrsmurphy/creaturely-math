@@ -59,7 +59,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **core** Threshold as a function (item 2): prove cost bounds and check the feasible-number literature. The same work appears as [[Function Hierarchy]] hard problem 1, [[Fundamental Theorem of Arithmetic]] 1, [[Exact Until Output]] 1, [[Fundamental Theorem of Algebra]] 1, [[Certificates]] Open.
 - **next** Induction as a schema with its cost (item 6): rewrite [[Proof Types]] #8 and the infinite-primes remark; work a bounded induction with its cost. Reads into [[Apodeixis]] hard problem 1.
 - **next** *Proof in K3* (item 7): validity as truth-preservation (K3 has no tautologies); how proof by contradiction, bounded quantification and induction read in it. Then: which of SIA's theorems read in K3 ([[Infinitesimals]] hard problem 3).
-- **medium** *The Reals* (a page defining "the Reals": axioms, constructions, the four meanings), so the thesis has a target. Also premise 2 argued out and the divine-idea / created-quantity tension ([[Christians and the Reals]], gaps 1, 2, 5).
+- **medium** *The Reals* (a page defining "the Reals": axioms, constructions, the four meanings), so the thesis has a target. Also premise 2 argued out; the divine-idea / created-quantity tension is answered on [[Christians and the Reals]] (all three exist; "number" in the human sense is created quantities and constructions). (gaps 1, 2, 5.)
 - **medium** [[Exhibiting a Real]]: a feasible notion of algorithm (Ko–Friedman), the scope of Feferman's result (verify), which authors hold "every number is an algorithm".
 - **medium** [[Four Kinds of Truth]]: where theorems sit; name the kind of each premise of the position.
 - **small** [[Diagonal Argument]]: its four hard problems.
