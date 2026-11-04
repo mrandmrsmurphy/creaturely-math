@@ -2,6 +2,12 @@
 
 Changes to the vault, newest first. History lives here and nowhere else — math pages hold only the working math.
 
+## 2026-11-04
+
+- **The front door written (Murphy adopted the reviewer's first Legibility item):** new page `Meta/What this project is.md` — the whole position in one reading, for a visitor not yet inside it: the theological ground front and center (Wisdom 11:20; creatures before an infinite God), the three parts (creaturely realism, certificate-explicit constructivism, creational ultrafinitism), the word "number" split, what the vault has done, and "What is not being claimed" (classical mathematics stands as a game with its rules; the position is not a known school — Murphy chose these two of the four candidate refusals). `README.md` now opens with it (the GitHub convention: the README is the repo's front door); `Home.md` links to it first and in the map. Agenda: the first two Legibility lines moved to Settled; section C reordered, with the strand-hub banner added as job 6.
+
+- **Outside review folded into the Agenda (Murphy pasted an AI reviewer's recommendations):** new strand *Legibility* in `Meta/Future Directions` part B: a short canonical "What this project is" page, "what is not being claimed", the three-part position as a banner on each strand hub, claims sorted by kind (mathematical, theological ground, pedagogical proposal, unresolved), settled versus contested made sharper on pages, a short list of top open problems on the Agenda, and the public essay. New Murphy-decides item A9 (the essay, which sits against guideline 3), and the "What this project is" page placed first in section C. All entries are **[AI]**, the reviewer's suggestions, not Murphy's decisions. No page was written or changed other than the Agenda.
+
 ## 2026-11-01
 
 - **Vault put under git for a private GitHub repo, `mrandmrsmurphy/creaturely-math` (Murphy):** git directory kept outside Google Drive (`~/.gitdirs/creaturely-math`, linked by the `.git` pointer file) because Drive corrupts repos it syncs. Added `.gitignore` (`.DS_Store`, Obsidian per-device workspace files, Drive conflict copies), `README.md` and `LICENSE` (CC BY 4.0 for Murphy's text; `third-party` material stays under its authors' terms). Pushed to `origin/main`; the quirks of `gh` and the push buffer are in `AIOS/memory/reference-git-github`.

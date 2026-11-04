@@ -13,11 +13,11 @@ updated: 2026-10-11
 >
 > The word *number* today is like the word *star* two thousand years ago. The vault sorts the planets from the stars from the galaxies — Numbers, Lengths, Pixels ([[Number Hierarchy]], [[Numbers, Lengths and Pixels]]).
 
-This vault gathers what is written about that position, removes the redundancy, flags what is wrong or unresolved, and lists what to do next. **Start with [[Future Directions]].**
+This vault gathers what is written about that position, removes the redundancy, flags what is wrong or unresolved, and lists what to do next. **Start with [[What this project is]]** (the position in one reading, for a visitor not yet inside it), then [[Future Directions]].
 
 ## Map
 
-**Meta** — [[Future Directions]] · [[Reading List]] · [[Timeline of the Position]] · [[Glossary]] · [[Structure Hierarchies]]
+**Meta** — [[What this project is]] · [[Future Directions]] · [[Reading List]] · [[Timeline of the Position]] · [[Glossary]] · [[Structure Hierarchies]]
 
 **Foundations** — [[Creaturely Realism]] · [[Certificates]] · [[Creational Ultrafinitism]] · [[Infinity and Cantor]] · [[Diagonal Argument]] · [[Exhibiting a Real]] · [[Schools Compared]] · [[Three Tiers]] · [[First Principles of Thought]] · [[Theology of Number]] · [[Theological Grounds]] · [[Christians and the Reals]] · [[Four Kinds of Truth]] · [[Quadriga and the Position]]
 
