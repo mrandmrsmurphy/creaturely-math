@@ -2,7 +2,7 @@
 title: Theology of Number
 type: concept
 status: canonical (draft)
-provenance: murphy (2020 essay) + ai-synthesis (merge with 2026 material)
+provenance: murphy (2020 essay; the antimatter consideration and the two flagged difficulties) + ai-synthesis (merge with 2026 material)
 sources: "[[SRC Christian Mathematics (c2020)]], [[SRC What is Mathematics (2020 draft)]], [[SRC CCE Primer (2026-06)]]"
 updated: 2026-10-07
 ---
@@ -48,7 +48,7 @@ The balanced digits $+1,0,-1$ ([[Balanced Ternary]]) and the values of [[Three-V
 - **Humility and prudence:** the middle value gives formal structure to prudence, the virtue that governs assertion and denial. "Humility does not deny truth; it honors it by waiting."
 - **Number and logic as one order:** "To think truly is to count rightly"; logic is the formal cause of reasoning and arithmetic its quantitative matter.
 
-*[AI]* Two difficulties, flagged and not smoothed over. (1) **Privation as $-1$, and the equality of $+$ and $-$.** On the Thomistic account a privation is the absence of a due good, not a negative being; reading it as the opposite of actuality on a number line risks treating evil as a counter-substance. Murphy adds a second consideration from physics. Wildberger makes a great deal of negative numbers being just as important as positive ones, grounding it in the physicists' antiparticles. But matter vastly outnumbers antimatter in the universe, and science has no answer yet as to why. So treating the two signs as exact equals is also theologically suspect: the creation is not symmetric in the way the number line is. Balanced ternary's symmetry is a fact about the digits, and should not be read as a fact about the world ([[Balanced Ternary]]). (2) **The two roles of $0$.** In logic $0$ means *unknown*, which is about the knower; in the metaphysical reading $0$ means *potential*, which is about the thing. These are different, and the booklet's table puts them together.
+Two difficulties, flagged and not smoothed over. (1) **Privation as $-1$, and the equality of $+$ and $-$.** On the Thomistic account a privation is the absence of a due good, not a negative being; reading it as the opposite of actuality on a number line risks treating evil as a counter-substance. Murphy adds a second consideration from physics. Wildberger makes a great deal of negative numbers being just as important as positive ones, grounding it in the physicists' antiparticles. But matter vastly outnumbers antimatter in the universe, and science has no answer yet as to why. So treating the two signs as exact equals is also theologically suspect: the creation is not symmetric in the way the number line is. Balanced ternary's symmetry is a fact about the digits, and should not be read as a fact about the world ([[Balanced Ternary]]). (2) **The two roles of $0$.** In logic $0$ means *unknown*, which is about the knower; in the metaphysical reading $0$ means *potential*, which is about the thing. These are different, and the booklet's table puts them together.
 
 ## Babel and doxology
 

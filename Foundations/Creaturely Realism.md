@@ -2,7 +2,7 @@
 title: Creaturely Realism
 type: concept
 status: canonical
-provenance: "murphy (position; the twoness point and the pi_n preference, 2026-10-11) + ai-synthesis (survey of rivals; the certificate-of-access sharpening)"
+provenance: "murphy (position; the twoness point, the pi_n preference and the certificate-of-access sharpening) + ai-synthesis (survey of rivals)"
 sources: "[[SRC CCE Primer (2026-06)]], [[SRC me.md Math Section]], [[SRC Christian Mathematics (c2020)]]"
 updated: 2026-10-11
 ---
@@ -40,7 +40,7 @@ $2^3=8$, $\sqrt[3]{8}=2$, $\log_2 8=3$ are **one truth in three notations** (the
 
 The vault's challenge to the Reals is *show me* ([[Exhibiting a Real]]). The demand is a blunt tool and not always what it says: **no one has ever seen twoness**. Twoness is not the word "two", not the symbol $2$, not anything else that can be set in front of you. Everyone has seen two people, two fingers; no one has seen twoness. Word and symbol *point at* the number; to confuse the pointer with the pointed-at is the confusion of map and land, and that confusion is very alive in our time. (That twoness is real although never seen is the realist side of the Platonism debate above; the vault keeps it, on creational grounds.)
 
-So *show me* cannot mean *put the object itself in my hands* — no mathematical object is ever shown that way. What it honestly means is: **show me your certificate of access** — and access comes in degrees [AI: this sharpening]:
+So *show me* cannot mean *put the object itself in my hands* — no mathematical object is ever shown that way. What it honestly means is: **show me your certificate of access** — and access comes in degrees:
 
 - **Complete exhibition.** Two fingers exhibit twoness *completely*: nothing about the number is left over, and the count is the certificate.
 - **Partial exhibition.** Every exhibit of $\pi$ is partial: a symbol, which points, or digits, which stop. Murphy's convention makes the partiality explicit — write $\pi_2$ or $\pi_7$ for $3.14$ and $3.1415926$, and say plainly that $\pi_\infty$ is not accessible to us ([[Exact Until Output]]). God has $\pi_\infty$, by the third move above; we approach it.

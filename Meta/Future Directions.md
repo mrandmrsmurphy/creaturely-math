@@ -27,7 +27,7 @@ updated: 2026-11-04
 | A certificate is a procedure; the four clauses of pixel equality | [[Certificates]] (item 3) |
 | The trust gradient across the levels | [[Number Hierarchy#Trust across the levels]] |
 | The number hierarchy applied to functions, with the two axes | [[Function Hierarchy]] |
-| What the diagonal argument proves: a procedural negative about lists | [[Diagonal Argument]] (item 4) |
+| What the diagonal argument proves: a procedural negative about lists; [[Infinity and Cantor]] states the definability point procedurally | [[Diagonal Argument]] (item 4) |
 | Induction: a rule that permits one further step does not justify an arbitrarily long iteration of it | item 6 below |
 | Home logic: three-valued (Kleene K3); "$\varepsilon=0$" is unknown | [[Three-Valued Logic]] (item 7) |
 | Calculus on $\varepsilon^2=0$: definition, product, power, reciprocal, quotient and chain rules, the integral's local half | [[Calculus]], [[Infinitesimals]] |
@@ -44,13 +44,12 @@ updated: 2026-11-04
 
 1. **Zeta:** he said "same derivative" for the extension; the page uses complex-differentiable on a connected domain. Confirm. ([[Function Hierarchy]])
 2. **Babylon under Rebellion?** ([[Theology of Number]] table; left unchanged.)
-3. **The sentence in [[Infinity and Cantor]]** ("almost all reals are provably beyond any finite description"): rewrite to the procedural form? ([[Diagonal Argument]], last section.)
-4. **Level 12:** its existence is conditional on the levels before it; how far to inhabit that system. ([[Number Hierarchy]], Open (a).)
-5. **Catechism/Confession** (item 11).
-6. **Quadriga:** review the ecumenical draft (the Protestant text is canonical here). ([[Quadriga for Mathematics]], Open 3.)
-7. **Names for the tick functions** ($\operatorname{dsin}_N,\operatorname{dcos}_N$ are the pasted conversation's). ([[Rational Rotation]], hard problem 6.)
-8. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
-9. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
+3. **Level 12:** its existence is conditional on the levels before it; how far to inhabit that system. ([[Number Hierarchy]], Open (a).)
+4. **Catechism/Confession** (item 11).
+5. **Quadriga:** review the ecumenical draft (the Protestant text is canonical here). ([[Quadriga for Mathematics]], Open 3.)
+6. **Names for the tick functions** ($\operatorname{dsin}_N,\operatorname{dcos}_N$ are the pasted conversation's). ([[Rational Rotation]], hard problem 6.)
+7. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
+8. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
 
 ### B. Open work, by strand
 
@@ -71,7 +70,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **medium** Sort claims by kind: *mathematical* (a result with a proof or a check), *theological ground*, *pedagogical proposal*, *unresolved*. Possibly a `claim:` line in each canonical page's frontmatter, kept apart from `provenance:`. Builds on [[Four Kinds of Truth]], [[Theological Grounds]] and the provenance tags. Decide the vocabulary with Murphy before applying it to pages.
 - **medium** Settled versus contested made sharper on the pages: a reader of any page should see at its head which parts are settled by Murphy, which are the vault's working reading, and which are open, as the Agenda's Settled table does for the whole vault. Several pages state the position as more decided than it is (the reviewer's worry); audit them against the Settled table.
 - **small** A short list of the most important open problems, five or six lines at the top of the Agenda, so a reader need not read the whole document set (section C below is the start).
-- **medium** The public essay of item A9, if Murphy adopts it; otherwise fold its aim into *What this project is*.
+- **medium** The public essay of item A8, if Murphy adopts it; otherwise fold its aim into *What this project is*.
 
 **Number**
 - **next** *Primes* (one page): why $\mathbb Z/p$ is special; a positive certificate (Pratt) beside Fermat's witness; Wilson as characterisation. Four pages wait on it: [[Modular Arithmetic]], [[Wilson's Theorem]], [[Fermat's Little Theorem]], [[Fundamental Theorem of Arithmetic]].
@@ -182,7 +181,7 @@ The biggest number is $10^{200}$, and the skepticism is a gradient, not a line (
 Each kind's "=" is the procedure its level affords; see [[Certificates]] for the definition, the four clauses of pixel equality and the Borwein lesson. The remaining work is the cost accounting and the literature check. The representation-relative refinement below survives, now as a description of the procedure's inputs and outputs. **[AI] Proposal:** a certificate is a triple *(representation, procedure, error bound/cost)*; "=" is claimed *relative to a representation* ((√2, length) exact; (√2, ℚ) asymptotic; (√2, decimal) algorithmic). This (i) resolves [[Equal Signs]], (ii) explains why the "same number" can sit at different levels, (iii) gives levels 13–14 a definite shape (the certificate is the *summation method*), and (iv) connects to **computational complexity**: a "certificate" in NP is something checkable cheaply even if hard to find — "creaturely mathematics = what can be *verified* within a bounded budget." That's an unusually natural bridge to the theory of computation; and Zeilberger-style experimental mathematics sits nearby.
 
 ### 4. A constructive Cantor  — **answered in [[Diagonal Argument]]**
-The page states the procedural theorem with proof, a worked table, the finite version and the "sequences are certificates, not numbers" reading. Remaining: its four hard problems (which listings; computable listings; cost; whether to keep any cardinality language), and Murphy's call on one sentence of [[Infinity and Cantor]] ("almost all reals are provably beyond any finite description"). [[Infinity and Cantor]].
+The page states the procedural theorem with proof, a worked table, the finite version and the "sequences are certificates, not numbers" reading; the definability cell of [[Infinity and Cantor]] is stated in the procedural form. Remaining: its four hard problems (which listings; computable listings; cost; whether to keep any cardinality language). [[Infinity and Cantor]].
 
 ### 5. Calculus with infinitesimals as unmanageable reciprocals — **the big constructive project**
 An infinitesimal is the reciprocal of a number past the threshold ([[Infinitesimals]]). Calculus is then first-order: dual numbers or discrete calculus with an explicit error term, and no excluded middle among the infinitesimals. **Written:** the first-order calculus ([[Calculus]]) and the five theorems of the Change ladder. **Not written:** see the Agenda, strand *Change*. **[AI]** Test case still open: $\int_1^e dx/x=1$ (the Level-9 definition of $e$; a bracket for $e$ exists on [[Number Hierarchy]]). This is the content *Infinity and Uncertainty* needs. See also [[Discrete Calculus]] (γ as "the cost of discretization").

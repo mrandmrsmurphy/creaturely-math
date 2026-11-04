@@ -2,7 +2,7 @@
 title: Infinity and Cantor
 type: concept
 status: canonical
-provenance: murphy (position) + ai-synthesis (table, framing)
+provenance: murphy (position; the definability cell stated procedurally) + ai-synthesis (table, framing)
 sources: "[[SRC CCE Primer (2026-06)]], [[SRC Christian Mathematics (c2020)]], [[Diagonal Argument]]"
 updated: 2026-10-07
 ---
@@ -31,11 +31,11 @@ The diagonal is a **procedure** and its conclusion is a **negative about lists**
 | Collection | Size | Certificate per member |
 |---|---|---|
 | ℕ, ℤ, ℚ | ℵ₀ (listable) | **Finite certificate for every member**: the count, the integer, the reduced pair. Each is creaturely-accessible one by one. |
-| ℝ (non-terminating decimals) | 𝔠 (not listable) | **Most members have none.** Definable numbers (nameable by a finite description in any language) are countable; ℝ is not; so almost all reals are *provably* beyond any finite description. |
+| ℝ (non-terminating decimals) | 𝔠 (not listable) | **Most members have none.** No listing procedure of finitely describable sequences is complete ([[Diagonal Argument]]) — a statement about procedures, not a count of a completed totality. ("Definable" is not itself definable without paradox: the Berry/Richard worry.) |
 
 Granting the reals, the diagonal argument **confirms** the position: you cannot even certify the reals *sequentially*, let alone completely. This is the "Babel shape": reaching for a totality no creature can hold. See [[Number Hierarchy]], levels 7–12, and [[Equal Signs]].
 
-*Without* the grant, the second row is not available as written: "ℝ is not countable, so most reals are undefinable" presupposes a completed ℝ larger than the definable numbers. What remains is the procedural statement above, which needs no such totality.
+*Without* the grant, the second row's reading "ℝ is not countable, so most reals are undefinable" would presuppose a completed ℝ larger than the definable numbers. The procedural statement in the table needs no such totality.
 
 ## The Continuum Hypothesis: independent of the standard axioms
 

@@ -2,7 +2,7 @@
 title: Diagonal Argument
 type: theorem
 status: "canonical (accepted as a statement about procedures; the ontological reading refused)"
-provenance: "murphy (the position, accept the matching and the diagonal as processes, a negative result like the irrationality of the square root of 2) + ai-synthesis (the procedural statement, the finite diagonal, the checks, the flagged points)"
+provenance: "murphy (the position, accept the matching and the diagonal as processes, a negative result like the irrationality of the square root of 2; the two comments on the matching, the two consequences, the procedural form on Infinity and Cantor) + ai-synthesis (the procedural statement, the finite diagonal, the checks)"
 sources: "[[Infinity and Cantor]], [[Creational Ultrafinitism]], [[Certificates]], [[Number Hierarchy]]"
 updated: 2026-10-09
 ---
@@ -15,7 +15,7 @@ Companion to [[Infinity and Cantor]], which states the position; this page works
 
 The whole numbers and the evens both go on as far as we can see. The rule $n\mapsto2n$ and its inverse $m\mapsto m/2$ are two procedures, each defined at every number reached, undoing each other. With matching taken as more fundamental than counting, they have "the same size."
 
-Two comments [AI]:
+Two comments:
 
 - **Say what is claimed.** What is established is a *pair of mutually inverse procedures*, not a comparison of two completed sets. Galileo's old worry (the part matches the whole, against Euclid's "the whole is greater than the part") is then not a paradox: a part can be matched with the whole by a rule, while at every finite stage the part is smaller. Evens up to $2N$ are matched with $1,\dots,N$; the matching doubles the cost of reaching a given number.
 - **The doubling matters at the threshold.** If $T$ is the largest number held ([[Creational Ultrafinitism]]), then $n\mapsto2n$ is defined only for $n\le T/2$. The rule is potentially unbounded, but each *application* has a cost, and the matching is total only as a rule.
@@ -62,14 +62,14 @@ Both are *potentially* infinite. The whole numbers can be generated in order; th
 
 ## Sequences are certificates, not numbers
 
-The diagonal acts on **digit sequences**, which in the vault are the *certificates* of numbers at levels 7 to 11 ([[Number Hierarchy]]), not numbers. Two consequences [AI]:
+The diagonal acts on **digit sequences**, which in the vault are the *certificates* of numbers at levels 7 to 11 ([[Number Hierarchy]]), not numbers. Two consequences:
 
 - **A sequence is not yet a different number.** In binary $0.0111\ldots$ and $0.1000\ldots$ are the same number. To make the diagonal differ as a *number*, avoid tails of all $0$s or all $1$s (for instance, in base ten, use only the digits $4$ and $5$, flipping $4\leftrightarrow5$: against rows $1/3,1/7,1/9,1/11,1/13,1/17$ the diagonal digits are $4,5,4,4,4,4$, checked).
 - **The diagonal gives no number.** The sequence $D$ is another certificate-procedure. That it is not on the list says nothing about a number "at the end," which is the point Murphy makes about irrationals.
 
-## One sentence on [[Infinity and Cantor]] to reconsider [AI]
+## The definability claim on [[Infinity and Cantor]]
 
-That page says that "definable numbers are countable; ℝ is not; so almost all reals are provably beyond any finite description." The second half treats the reals as a completed totality larger than the definable ones. In the vault's reading the sound statement is the procedural one: **no listing procedure of describable sequences is complete**, with no count of the reals. (Also, "definable" is not itself definable without paradox, the Berry/Richard worry.) Whether to rewrite that sentence is Murphy's call; I have left the page alone.
+[[Infinity and Cantor]]'s table states the point procedurally: **no listing procedure of describable sequences is complete**, with no count of the reals. A count would treat the reals as a completed totality larger than the definable ones; and "definable" is not itself definable without paradox (the Berry/Richard worry).
 
 ## Hard problems
 
