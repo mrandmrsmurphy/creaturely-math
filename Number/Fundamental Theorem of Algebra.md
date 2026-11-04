@@ -1,8 +1,8 @@
 ---
 title: Fundamental Theorem of Algebra
 type: theorem
-status: canonical (the standard statement rejected as stated; the exact parts kept; a budget form proposed)
-provenance: "murphy (the position, reject as stated, solutions displayed to a rounding given a budget of time and space) + ai-synthesis (what is exact, the worked example, the flagged problems) + third-party (Wildberger and Rubine, 2025, restated)"
+status: canonical (the standard statement rejected as stated; the exact parts kept; a budget form stated)
+provenance: "murphy (the position, reject as stated, solutions displayed to a rounding given a budget of time and space; what is exact, the budget form's checkable statement, the space point, the hyper-Catalan level and the stopping-test pair, adopted 2026-11-04) + ai-synthesis (the worked example, the flagged problems) + third-party (Wildberger and Rubine, 2025, restated)"
 sources: "[[Certificates]], [[Number Hierarchy]], [[Creational Ultrafinitism]]"
 updated: 2026-10-09
 ---
@@ -19,7 +19,7 @@ As stated it is rejected, for three reasons.
 2. **There is no closed form.** The roots of the general polynomial of degree 5 or more cannot be written with radicals (Abel–Ruffini; [[Glossary]], "Galois boundary"). "The roots" are then names, not numbers one holds.
 3. **Scale.** See "Space" below: even when each root is held, *all the roots at once* can be past the threshold.
 
-## What is exact and stays [AI]
+## What is exact and stays
 
 Several parts of the theorem survive intact. Each is finite, rational and certified.
 
@@ -31,7 +31,7 @@ Several parts of the theorem survive intact. Each is finite, rational and certif
 
 **Counting is exact.** Equal roots are separated by rational arithmetic ($\gcd(p,p')$ gives the repeated part). Sturm's theorem counts the real roots in an interval, and the Routh–Hurwitz criterion counts those in a half-plane, using only the coefficients. *(Unverified recollection to check: both are standard, and are the certificates meant here.)*
 
-## The budget form [AI]
+## The budget form
 
 The honest replacement, in Murphy's words, is that polynomials can have their solutions *displayed up to a given rounding, within a budget of time and space*. Stated so it can be checked:
 
@@ -75,13 +75,13 @@ The paper's own example is Wallis's cubic, and it shows both the use and the cau
 
 (I recomputed the first two values with exact rationals: $-999.08203125$ and $0.0945345708$.)
 
-**In the vault's terms** [AI]: the series is a *formal* solution; to *hold a root* it needs a **convergence certificate** for the values plugged in, and the paper itself lists "the conditions for convergence" as an open question. A root given by such a series sits at Level 10, *Series: the summation process is the certificate* ([[Number Hierarchy]]), until a radius of convergence is proved for the case at hand. The sign-change certificate above is the independent check on the answer.
+**In the vault's terms**: the series is a *formal* solution; to *hold a root* it needs a **convergence certificate** for the values plugged in, and the paper itself lists "the conditions for convergence" as an open question. A root given by such a series sits at Level 10, *Series: the summation process is the certificate* ([[Number Hierarchy]]), until a radius of convergence is proved for the case at hand. The sign-change certificate above is the independent check on the answer.
 
 ## Conditioning: the budget includes the coefficients
 
 The budget form asks for $p$ *exactly*. If the coefficients are themselves known only to a precision, the roots may not be fixed to anything like that precision. A checkable instance: $(x-1)^{10}=10^{-10}$ has the ten roots $1+0.1\,\zeta$, with $\zeta^{10}=1$. A change of $10^{-10}$ in one coefficient moves a root by $0.1$: **nine of ten digits are lost.** *(Unverified recollection to check: Wilkinson's polynomial $\prod_{j=1}^{20}(x-j)$ is the classical, far more dramatic example, where a tiny change of one coefficient turns real roots complex.)* So "to precision $10^{-k}$" must say whether it refers to exact coefficients or to measured ones.
 
-## Space [AI]
+## Space
 
 Each root is held in a field of degree $n$ over $\mathbb Q$. All roots *together* live in the **splitting field**, whose degree is $n!$ when the Galois group is the full $S_n$ (the generic case). Then:
 
@@ -93,7 +93,7 @@ So for a generic polynomial of degree $121$ the splitting field is already of di
 
 [[Number Hierarchy]] level 8 (Algebraic, $\mathbb A$) is a Pixel: Newton's method on $p$, run until the desired resolution is reached. **That run is the certificate** (Murphy).
 
-**[AI]** A run certifies a digit only if it ends with a stopping test that proves the error bound, so the certificate is the pair ($p$, isolating interval or disc), refined by bisection (one guaranteed binary digit per step) with Newton as the speed-up used inside the interval; bare Newton with no such test reports a pixel without proof.
+A run certifies a digit only if it ends with a stopping test that proves the error bound, so the certificate is the pair ($p$, isolating interval or disc), refined by bisection (one guaranteed binary digit per step) with Newton as the speed-up used inside the interval; bare Newton with no such test reports a pixel without proof.
 
 What is exact is the **name**, a finite piece of data. The number's digits are never exhibited; they are given on demand, at a cost. Two consequences:
 

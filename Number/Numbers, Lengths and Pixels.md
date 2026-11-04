@@ -4,9 +4,9 @@ aliases:
   - Ratios, Surds and Approximations
 type: concept
 status: "canonical (the names, the sort and the pixel-equality clauses are Murphy's, 2026-10-10)"
-provenance: "murphy (the sort; the names Numbers, Lengths, Pixels; the pixel idea and its motivating question; the four clauses of pixel equality; Posits as a temptation; the rational as the first matrix; discrete versus continuous as the heart of the philosophy) + ai-synthesis (the matrix facts, the music figures, the mapping to the hierarchy, the rest of the pixel-doctrine skeleton, the flagged points)"
+provenance: "murphy (the sort; the names Numbers, Lengths, Pixels; the pixel idea and its motivating question; the four clauses of pixel equality; Posits as a temptation; the rational as the first matrix; discrete versus continuous as the heart of the philosophy; the pixel-doctrine skeleton, the matrix facts, the object-names rationale, the Posit–fiat distinction and the continuum stance, adopted 2026-11-04) + ai-synthesis (the music figures, the mapping to the hierarchy)"
 sources: "[[Number Hierarchy]], [[Equal Signs]], [[Babylonian Mathematics]], [[Constructible Numbers]], [[Exact Until Output]], [[Infinity and Cantor]]"
-updated: 2026-10-11
+updated: 2026-11-04
 ---
 
 # Numbers, Lengths and Pixels
@@ -24,13 +24,13 @@ The verbs run downhill — *exhibit, construct, compute, posit* — each a weake
 
 The line between "number" and the rest was drawn historically far more conservatively than modern mathematics suggests (the Greek *arithmos* was a multitude of units; magnitudes were another genus), and the real number system hides the sorting.
 
-## Why object-names [AI]
+## Why object-names
 
-The page was earlier named for *notation-words*: ratio, surd, approximation. Those name expressions; the new names name the **objects**, which is what creaturely realism wants. The old page's distinction stands and sharpens: for Numbers and Lengths, an approximation is a way of *writing* an object held exactly another way — the output stage ([[Exact Until Output]]). For the Pixels the algorithm **is** the object, and the pixel is its exhibited form: not a picture of the number but the number-as-held. Levels 12–14 are past holding altogether.
+Ratio, surd, approximation are *notation-words*: they name expressions. The names here name the **objects**, which is what creaturely realism wants. The old distinction stands and sharpens: for Numbers and Lengths, an approximation is a way of *writing* an object held exactly another way — the output stage ([[Exact Until Output]]). For the Pixels the algorithm **is** the object, and the pixel is its exhibited form: not a picture of the number but the number-as-held. Levels 12–14 are past holding altogether.
 
-## The doctrine of the pixel (a skeleton) [AI]
+## The doctrine of the pixel
 
-Murphy's motivating question: **why are we so confident looking at the graph of $y^3-x^2y+4x=0$?** His answer: because the picture is owed only to a stated resolution (an $\varepsilon$ of $10^{-6}$, say). It is **analytic geometry with smearing** — and like the engineer's $\pi=e=3$, it works practically. The doctrine to be developed:
+Murphy's motivating question: **why are we so confident looking at the graph of $y^3-x^2y+4x=0$?** His answer: because the picture is owed only to a stated resolution (an $\varepsilon$ of $10^{-6}$, say). It is **analytic geometry with smearing** — and like the engineer's $\pi=e=3$, it works practically. The doctrine:
 
 1. **A pixel is a value with a stated error bound, never a bare value.** The resolution is part of the object.
 2. **Among pixels there is no bare equality.** The four clauses are Murphy's, on [[Certificates]]: apartness by computation; agreement at a stated resolution is all "=" means between pixels; exact equality is proved about the generating rules; the classical undecidability of equality is accepted as a procedural negative. No one has ever generated infinite digits to compare; the cost accumulates, but it is never impossible. (The Borwein lesson: agreement through the tenth digit, betrayal at the eleventh.)
@@ -40,11 +40,11 @@ Murphy's motivating question: **why are we so confident looking at the graph of 
 
 ## Posits
 
-Murphy names levels 12–14 **Posits**. The fit: a Cesàro value or a zeta assignment is *laid down* by convention (Latin *positum*, a thing placed), and an uncomputable such as Chaitin's Ω is existence asserted with no exhibition. The name itself carries the verdict: *you posited this*. **[AI]** Keep the distinction from [[Fiat Numbers]]: a fiat ($i$, $\varepsilon$, $j$) is declared *and* exhibitable — you compute with it exactly; a Posit is declared and *not* exhibitable on the main axis.
+Murphy names levels 12–14 **Posits**. The fit: a Cesàro value or a zeta assignment is *laid down* by convention (Latin *positum*, a thing placed), and an uncomputable such as Chaitin's Ω is existence asserted with no exhibition. The name itself carries the verdict: *you posited this*. The distinction from [[Fiat Numbers]]: a fiat ($i$, $\varepsilon$, $j$) is declared *and* exhibitable — you compute with it exactly; a Posit is declared and *not* exhibitable on the main axis.
 
 ## The rational as the first matrix (Murphy)
 
-A rational number **is a pair of whole numbers**, which Pythagoreans could accept. That pair is a column vector $\binom ab$, and several facts make it the first matrix object [AI, all checked]:
+A rational number **is a pair of whole numbers**, which Pythagoreans could accept. That pair is a column vector $\binom ab$, and several facts make it the first matrix object (all checked):
 
 - **Equality is a determinant.** $\tfrac ab=\tfrac cd$ exactly when $\det\begin{pmatrix}a&c\\b&d\end{pmatrix}=ad-bc=0$: two pairs name the same ratio when they are *parallel*. A ratio is a **direction** (a point of the projective line), which is why the slope of [[Slope]] is a ratio and $\infty$ ($b=0$) is a legitimate point ([[Extended Constructible Numbers]]).
 - **Matrices act on ratios.** The matrix $\begin{pmatrix}a&b\\c&d\end{pmatrix}$ sends $x$ to $\dfrac{ax+b}{cx+d}$.
@@ -81,7 +81,7 @@ A Length is **constructed**. $\sqrt n$ is the altitude of a right triangle whose
 
 The standard **real number system sweeps the question under the carpet**: it names one object, ℝ, for ratio, surd, transcendental and unconstructible alike, and declares the continuum to be a set of discrete points (a Dedekind cut is a *set of rationals*). It resolves the question by fiat, and that is why the sorting above is invisible to a student ([[Certificates]], the "bamboozlement").
 
-**Where the vault sits** [AI]: the continuum is *potentially* divisible and never a completed set of points (Aristotle, *Physics*; [[Future Directions]] item 8); an infinitesimal is the reciprocal of a number past the threshold ([[Infinitesimals]]); and the discrete and continuous are bridged by the difference calculus ([[Discrete Calculus]]), where one rule governs both.
+**Where the vault sits**: the continuum is *potentially* divisible and never a completed set of points (Aristotle, *Physics*; [[Future Directions]] item 8); an infinitesimal is the reciprocal of a number past the threshold ([[Infinitesimals]]); and the discrete and continuous are bridged by the difference calculus ([[Discrete Calculus]]), where one rule governs both.
 
 ### In education: what students meet
 
@@ -93,7 +93,6 @@ The Greek stance let the **One** triumph over the many (the Pythagoreans' "all i
 
 ## Hard problems
 
-1. **The wall inside the Pixels** [AI]. Level 7's digits (Jiǔ Zhāng) appear right and are never revised, which is what makes level 7 more explicit than level 8; level 8's may be rewritten, and to be sure of the last digit one must do more work than the digit itself needs (Newton's method can correct earlier digits; it is run until the stated resolution is reached, and that run is the certificate); levels 9–11 are named by their process, not a toolkit. One name covers five levels the hierarchy distinguishes: either the doctrine absorbs this (a pixel is the output of any of them), or *Pixel* is a genus with species. The species are ordered by trust and remoteness from verification (Murphy: [[Number Hierarchy#Trust across the levels]]).
+1. **The wall inside the Pixels.** Level 7's digits (Jiǔ Zhāng) appear right and are never revised, which is what makes level 7 more explicit than level 8; level 8's may be rewritten, and to be sure of the last digit one must do more work than the digit itself needs (Newton's method can correct earlier digits; it is run until the stated resolution is reached, and that run is the certificate); levels 9–11 are named by their process, not a toolkit. One name covers five levels the hierarchy distinguishes: either the doctrine absorbs this (a pixel is the output of any of them), or *Pixel* is a genus with species. The species are ordered by trust and remoteness from verification (Murphy: [[Number Hierarchy#Trust across the levels]]).
 2. **Where $\sqrt[n]{x}$ with $n\ge3$ sits.** $\sqrt[3]2$ is origami — a Length. $\sqrt[5]2$ is level 7: the *expression* is a surd, but the object is held as a Pixel, by a determinate digit algorithm.
 3. **The ear.** The cent figures above are computed, but the psychoacoustics (that the ear hears ratios) is the Pythagorean and later view, not examined.
-4. **Posits** [AI]. Confirm the name, or leave levels 12–14 unnamed. Naming the twilight dignifies it; the hesitation may be the right instinct.

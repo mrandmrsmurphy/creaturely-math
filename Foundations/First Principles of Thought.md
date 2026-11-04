@@ -2,7 +2,7 @@
 title: First Principles of Thought
 type: concept
 status: canonical (draft)
-provenance: murphy (logic booklet, ch. 1)
+provenance: murphy (logic booklet, ch. 1; the K3 note on identity adopted 2026-11-04)
 sources: "Murphy's logic booklet, *From Traditional Logic to Ternary Thought*"
 updated: 2026-10-08
 ---
@@ -33,4 +33,4 @@ They are called **axioms** because they cannot be proved by anything more basic:
 | LEM: $P\vee\neg P=1$ | holds | fails when $P$ is unknown |
 | PNC: $P\wedge\neg P=0$ | holds | weakened to "never both true" |
 
-*[AI]* Note: in K3 even $P\to P$ is unknown when $P$ is, so "identity" survives as the statement that $P$ is $P$, not as a theorem of the system. Where this leaves the schools of [[Schools Compared]] needs care and is left open.
+*Note:* in K3 even $P\to P$ is unknown when $P$ is, so "identity" survives as the statement that $P$ is $P$, not as a theorem of the system. Where this leaves the schools of [[Schools Compared]] needs care and is left open.
