@@ -1,10 +1,10 @@
 ---
 title: Discrete Calculus
 type: theory
-status: canonical (the two drafts merged; bridge thesis and step-size dial developed; sections marked [AI] are proposals)
-provenance: murphy (the DC draft) + murphy+ai (the Algebra II / Precalculus supplement) + ai-synthesis (sections marked [AI])
+status: canonical (the two drafts merged; bridge thesis and step-size dial developed)
+provenance: murphy (the DC draft; the step-h scaling, the midpoint fact, the threshold rule, the role of E_h, the one-rule section and the arctan question, adopted 2026-11-04) + murphy+ai (the Algebra II / Precalculus supplement) + ai-synthesis (the merge)
 sources: "[[SRC Discrete Calculus - From the Line to the Circle (DC draft, 2026-09).tex]], [[SRC Discrete Calculus Draft (Algebra II-Precalc)]]"
-updated: 2026-10-09
+updated: 2026-11-04
 ---
 
 # Discrete Calculus
@@ -113,7 +113,7 @@ The third difference is constant, so $f$ is a cubic, and the first entry of each
 
 ## The step-size dial: from $\Delta$ to the derivative
 
-With step $h$ on the lattice $x,\,x+h,\,x+2h,\dots$ write $\Delta_hf$ for the growth of $f$ over one step of size $h$, and the **difference quotient** $D_hf=\Delta_hf/h$. [AI] Everything above scales: the falling power with step $h$, $x^{\underline k}_h=x(x-h)(x-2h)\cdots(x-(k-1)h)$, satisfies $\Delta_hx^{\underline k}_h=kh\,x^{\underline{k-1}}_h$ exactly (checked), so $D_hx^{\underline k}_h=k\,x^{\underline{k-1}}_h$.
+With step $h$ on the lattice $x,\,x+h,\,x+2h,\dots$ write $\Delta_hf$ for the growth of $f$ over one step of size $h$, and the **difference quotient** $D_hf=\Delta_hf/h$. Everything above scales: the falling power with step $h$, $x^{\underline k}_h=x(x-h)(x-2h)\cdots(x-(k-1)h)$, satisfies $\Delta_hx^{\underline k}_h=kh\,x^{\underline{k-1}}_h$ exactly (checked), so $D_hx^{\underline k}_h=k\,x^{\underline{k-1}}_h$.
 
 **Worked example: the cubic at $x=5$.** $D_h x^3=\dfrac{(x+h)^3-x^3}{h}=3x^2+3xh+h^2$ exactly. At $x=5$:
 
@@ -123,7 +123,7 @@ With step $h$ on the lattice $x,\,x+h,\,x+2h,\dots$ write $\Delta_hf$ for the gr
 
 The slope is the $h$-free part, $3x^2=75$, and the error is exactly $3xh+h^2$. For a polynomial the difference quotient is a polynomial in $h$ and the derivative is its constant term. For $1/x$: $D_h(1/x)=-1/\bigl(x(x+h)\bigr)$, constant term $-1/x^2$. Nothing is estimated.
 
-*Midpoint fact* [AI]: for $x^2$, $D_hx^2=2x+h=2\bigl(x+\tfrac h2\bigr)$, so the secant slope is exactly the tangent slope at the midpoint (Archimedes' observation).
+*Midpoint fact*: for $x^2$, $D_hx^2=2x+h=2\bigl(x+\tfrac h2\bigr)$, so the secant slope is exactly the tangent slope at the midpoint (Archimedes' observation).
 
 **Worked example: the integral as a sum with its error.** Left sum of $x^2$ on $[0,1]$ with $n$ steps of $h=1/n$, by the falling-power sum:
 
@@ -131,12 +131,12 @@ $$\sum_{k=0}^{n-1}\Bigl(\tfrac kn\Bigr)^2\tfrac1n=\frac13-\frac1{2n}+\frac1{6n^2
 
 $n=2$: $\tfrac18$; $n=4$: $\tfrac7{32}$; $n=10$: $\tfrac{57}{200}$ (all checked). "$\int_0^1x^2\,dx=\tfrac13$" is the $n$-free part, and the certificate is the explicit error $-\tfrac1{2n}+\tfrac1{6n^2}$.
 
-**The rule at the threshold** [AI]: if $h$ is an infinitesimal in the sense of [[Infinitesimals]] (the reciprocal of a number past the threshold), then $f(x+h)=f(x)+h\,f'(x)$ exactly when $h^2=0$, and $D_hf=f'(x)$ is the first-order statement. Discrete calculus adds what the dual numbers lack: the exact error for $h\ne0$.
+**The rule at the threshold**: if $h$ is an infinitesimal in the sense of [[Infinitesimals]] (the reciprocal of a number past the threshold), then $f(x+h)=f(x)+h\,f'(x)$ exactly when $h^2=0$, and $D_hf=f'(x)$ is the first-order statement. Discrete calculus adds what the dual numbers lack: the exact error for $h\ne0$.
 
 ## Exponentials, logarithms, $e$
 
 - **Exponential:** $\Delta b^n=(b-1)b^n$ (eigenfunction, eigenvalue $b-1$). Base 2 is $\Delta2^n=2^n$.
-- **Step $h$:** on the lattice $h\mathbb Z$ the function $E_h(x)=(1+h)^{x/h}$ has $D_hE_h=E_h$ exactly. [AI] It plays the role of $e^x$ with a certificate attached. $e$ is approached by $E_{1/N}(1)=(1+\tfrac1N)^N$: $2,\ \tfrac94,\ \tfrac{625}{256},\ \tfrac{25937424601}{10^{10}}$ for $N=1,2,4,10$. Each is a rational number; $e$ is the family with its error bound.
+- **Step $h$:** on the lattice $h\mathbb Z$ the function $E_h(x)=(1+h)^{x/h}$ has $D_hE_h=E_h$ exactly. It plays the role of $e^x$ with a certificate attached. $e$ is approached by $E_{1/N}(1)=(1+\tfrac1N)^N$: $2,\ \tfrac94,\ \tfrac{625}{256},\ \tfrac{25937424601}{10^{10}}$ for $N=1,2,4,10$. Each is a rational number; $e$ is the family with its error bound.
 - **Logarithm:** $H_n=\sum_{k=1}^n\frac1k$ has $\Delta H_n=\frac1{n+1}$ exactly. It is the antidifference of $1/n$, which falling powers cannot supply, as $\ln$ is the missing antiderivative of $x^{-1}$. The Euler–Mascheroni constant $\gamma=\lim(H_n-\ln n)\approx0.5772$ is the gap between the discrete and continuous logarithms: *the cost of discretization*. $H_n$ is unbounded: $H_{2^k}\ge1+\tfrac k2$ (group the terms in blocks of $2,4,8,\dots$, each block $>\tfrac12$).
 - The antidifference of $\dfrac1{n(n+1)}$ is $-\dfrac1n$, since $\Delta\frac1n=-\dfrac1{n(n+1)}$.
 
@@ -170,7 +170,7 @@ $\Delta_{\oplus,u}C=(C(u)-1)C-S(u)S$, $\ \Delta_{\oplus,u}S=S(u)C+(C(u)-1)S$, an
 
 Pythagorean triples $3\text{-}4\text{-}5$, $7\text{-}24\text{-}25$, $44\text{-}117\text{-}125$, $336\text{-}527\text{-}625$: a rotating sequence of rational points that never repeats. With $u=1$ the same construction gives period 4, the sequence $\cos_4,\sin_4$ above. The family $u=\tfrac1N$, the size of its fractions and the reason it never closes are on [[Rational Rotation]].
 
-### One rule for the line and the circle [AI]
+### One rule for the line and the circle
 
 Put $z(t)=C(t)+iS(t)$. The addition formulas say $z(t\oplus u)=z(t)\,z(u)$. For *any* function $\varphi$ that turns the step into a product, $\varphi(s\ast u)=\varphi(s)\varphi(u)$,
 
@@ -182,7 +182,7 @@ $$\Delta_u\varphi=\bigl(\varphi(u)-1\bigr)\varphi\qquad(\text{proof: }\varphi(s\
 
 So the exponential rule and the circular derivatives are the same theorem. The discrete sine and cosine are the exponentials of the circle group.
 
-**The arctan question** [AI]. The draft calls $\tfrac1{1+t^2}=\tfrac{1+C(t)}2$ "the discrete analogue of $\int\frac{dt}{1+t^2}=\arctan t$". But $\Delta_{\oplus,u}t=\dfrac{u(1+t^2)}{1-tu}$, so $\dfrac{\Delta t}{1+t^2}=\dfrac u{1-tu}$, and the draft writes down no antidifference for it. Where an antiderivative would be, the circle gives the **step count**: if $t_n=n\otimes u$, the antidifference of "one step" is $n$. That is what an angle measure would be here, and it is a natural number or nothing.
+**The arctan question**. The draft calls $\tfrac1{1+t^2}=\tfrac{1+C(t)}2$ "the discrete analogue of $\int\frac{dt}{1+t^2}=\arctan t$". But $\Delta_{\oplus,u}t=\dfrac{u(1+t^2)}{1-tu}$, so $\dfrac{\Delta t}{1+t^2}=\dfrac u{1-tu}$, and the draft writes down no antidifference for it. Where an antiderivative would be, the circle gives the **step count**: if $t_n=n\otimes u$, the antidifference of "one step" is $n$. That is what an angle measure would be here, and it is a natural number or nothing.
 
 ## The grand principle
 

@@ -17,12 +17,12 @@ The exact statement is rejected, in two parts. It claims a **supremum** $M=\sup 
 
 The standard proof builds both from completed limits: $M$ exists by completeness; pick $x_n$ with $f(x_n)\to M$; the **Bolzano–Weierstrass** theorem gives a convergent subsequence with limit $c$; continuity gives $f(c)=M$. Each step asserts that an infinite process has finished. Nothing in it hands you $M$ or $c$.
 
-Murphy's point, in his words: *give me an $\varepsilon$ and I can find a supremum to within $\varepsilon$, but that is not the same as asserting that a number exists that is the supremum.* The page makes it precise, and finds that **two different claims were run together** [AI]:
+Murphy's point, in his words: *give me an $\varepsilon$ and I can find a supremum to within $\varepsilon$, but that is not the same as asserting that a number exists that is the supremum.* The page makes it precise, and finds that **two different claims were run together**:
 
 - **The value of the maximum is findable** to any stated precision (below). It is also **stable**: if two functions differ by at most $\eta$ everywhere, their maxima differ by at most $\eta$.
 - **The location of the maximum is not.** It can jump with a tiny change of $f$, so no procedure outputs it.
 
-### The location is unstable: a constructed failure [AI]
+### The location is unstable: a constructed failure
 
 Let $f_r$ be two tents on $[0,1]$: one centred at $\tfrac14$ with height $1+r$ and slope $4(1+r)$, one centred at $\tfrac34$ with height $1-r$ and slope $4(1-r)$, and $0$ elsewhere. The maximum **value** is $1+|r|$, near $1$ for small $r$. The maximum **point** is $\tfrac14$ if $r>0$, $\tfrac34$ if $r<0$, and either if $r=0$ (checked on a grid for $r=\pm\tfrac1{1000},0$). Let $r$ be a number given by an unsolved search ($r=0$ while the search fails, $\pm2^{-m}$ when it succeeds at step $m$). To output the point $c$ exactly would decide the sign of $r$, that is, solve the search. The same device as in [[Intermediate Value Theorem]]. *(Unverified recollection to check: in the constructive literature the exact statement is not provable without an omniscience principle, while the version asserting only the supremum, not a point where it is attained, is provable for functions with a modulus of continuity.)*
 
@@ -38,7 +38,7 @@ The least value is the same with the signs reversed. For a Lipschitz $f$ ($|f'|\
 
 **Worked example.** $f(x)=x(2-3x)$ on $[0,1]$, $\varepsilon=\tfrac1{10}$. Here $|f'|=|2-6x|\le4$, so $\delta(\varepsilon/2)=\tfrac1{80}$ and $N=80$: $81$ evaluations. The best grid point is $x=\tfrac{27}{80}$, with $f(x)=0.33328125$. The true maximum (named below) is $\tfrac13$, so the gap is $5.2\times10^{-5}$, far inside $\varepsilon$ (the guarantee is only that it is at most $\tfrac1{10}$; it is usually much better).
 
-## The cost: exponential in the digits [AI]
+## The cost: exponential in the digits
 
 Compare with the IVT. Bisection needs a number of steps **linear** in the digits of precision ([[Intermediate Value Theorem]]). The grid needs $N\approx2L(b-a)/\varepsilon$ evaluations, which is **proportional to $1/\varepsilon$, exponential in the digits**: $d$ digits cost about $8\cdot10^d$ evaluations when $L=4$ and $b-a=1$.
 
@@ -54,7 +54,7 @@ More known structure makes the maximum cheap and often exact.
 - **Convex or unimodal functions.** Ternary search needs steps linear in the digits.
 - **A finite list.** Any finite list of numbers has a largest, found by comparing, and for a lattice of rational points the discrete EVT is exact and finite ([[Discrete Calculus]]): at an interior lattice maximum the difference $\Delta f$ changes from non-negative to non-positive, which is an IVT statement about $\Delta f$ (Fermat's theorem in discrete form).
 
-## Compactness, Bolzano–Weierstrass, Heine–Borel [AI]
+## Compactness, Bolzano–Weierstrass, Heine–Borel
 
 These are the engines of the standard proof. Their **finite forms** survive:
 

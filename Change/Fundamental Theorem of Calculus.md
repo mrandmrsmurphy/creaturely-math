@@ -58,7 +58,7 @@ This is the sum-of-differences half, and it needs two further things:
 
 **Worked example.** $F=\tfrac13x^3$, $F'=x^2$, so $\int_0^1x^2=F(1)-F(0)=\tfrac13$. The finite form at step $\tfrac1n$ gives $\tfrac13-\tfrac1{2n}+\tfrac1{6n^2}$ ($\tfrac18,\ \tfrac7{32},\ \tfrac{57}{200}$ for $n=2,4,10$). The integral is the part free of $n$, and the finite form carries its own error.
 
-## Neither is prior: the integral first [AI]
+## Neither is prior: the integral first
 
 The derivative looks primary on this page only because [[Calculus]] begins from the definition $f(x+\varepsilon)=f(x)+f'(x)\varepsilon$. The integral can be taken as the primitive instead, and the same theorem results. Historically it came first (Archimedes, Cavalieri, before Fermat and Newton); Wildberger's *Algebraic Calculus* is said to teach integration before differentiation and to avoid limits ([course page](https://njwildberger.com/2021/07/01/welcome-to-algebraic-calculus-one-2021/); his exact construction is not confirmed here, and the derivation below is mine, not his).
 
@@ -96,7 +96,7 @@ The theorem does **not** need them. It says "*if* $F'=f$ then…", so any $F$ yo
 - In the vault the demand is the Level-9 definition: $e$ is the $x$ with unit area under $y=1/x$ from $1$ ([[Number Hierarchy]]), geometric first, computed second.
 - The finite form never makes the demand. $H_n$ is the antidifference of $1/(n+1)$, a rational number, and $\gamma=\lim(H_n-\ln n)$ is the price of identifying it with the continuous logarithm ([[Discrete Calculus]]). On the circle the same pattern holds: the discrete "arctan" is the step count, a natural number.
 
-## Which form is the theorem [AI]
+## Which form is the theorem
 
 The finite form is the theorem: proved exactly, for every step size, in a bounded count of steps. The infinitesimal form is its first-order idealization. Its local half costs nothing. Its global half is the finite theorem for a step below the resolution of the certificate: it sums a number of strips past the threshold (the unmanageable $N$ of [[Infinitesimals]]), with the error certificate of [[Discrete Calculus]] standing in for the limit. Everything the classical theorem is used for in this vault (areas, accumulation, $\int_1^e dx/x=1$) can be stated in the finite form with an explicit error.
 

@@ -26,7 +26,7 @@ Each step claims something:
 
 The fourth is the decisive one, and the vault's own terms show it: a subsequence that "converges" without a modulus is not a certificate of anything.
 
-## The failure is not only philosophical [AI]
+## The failure is not only philosophical
 
 Bolzano–Weierstrass **implies the monotone convergence theorem**: if $(x_n)$ is non-decreasing and bounded, a convergent subsequence has limit $L$, and monotonicity forces the whole sequence to converge to $L$. So any computable Bolzano–Weierstrass would give a computable limit (with a rate) to every computable bounded monotone sequence of rationals.
 
@@ -48,7 +48,7 @@ It is **exact**, finite, and elementary, and it states a *cluster in a finite sa
 
 **Cost.** A cluster of $k$ terms at precision $\varepsilon$ needs about $k\ell/\varepsilon$ terms of the sequence, **proportional to $1/\varepsilon$, exponential in the digits**, the same price as the grid of the EVT, and for the same reason: nothing is known about where the terms fall. Nesting does not help: after $j$ rounds with $M$ boxes each, $N\ge M^j$ terms are needed to keep one, which is again $\ell/\text{(final width)}$.
 
-### Metastable form (monotone sequences) [AI]
+### Metastable form (monotone sequences)
 
 For a monotone bounded sequence the question "does it converge" has no uniform answer (Specker), but a **finite** statement is true and has an explicit bound:
 
