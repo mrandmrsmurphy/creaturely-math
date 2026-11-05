@@ -13,7 +13,7 @@ The field with five elements: the integers mod $5$ ([[Modular Arithmetic]]) with
 
 **Balanced residues.** The five elements are written $\bar2,\ \bar1,\ 0,\ 1,\ 2$, where $\bar2=-2\equiv3$ and $\bar1=-1\equiv4$. This is the balanced digit set of base $5$, as in [[Balanced Ternary]] for base $3$: a negative is written with a bar and negation swaps the bar and the unbarred digit. Throughout, $\bar1=4$, $\bar2=3$.
 
-*[AI]* Every table and every count on this page was computed and verified exactly.
+*Note:* Every table and every count on this page was computed and verified exactly.
 
 ## Addition
 

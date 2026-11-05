@@ -2,7 +2,7 @@
 title: Wilson's Theorem
 type: theorem
 status: "canonical (adopted whole; it is exact, and useless as a test at scale)"
-provenance: "murphy (the position, adopt what is finite and exact) + ai-synthesis (proof, examples, the cost remark)"
+provenance: "murphy (the position, adopt what is finite and exact; the cost remark, adopted 2026-11-04) + ai-synthesis (proof, examples)"
 sources: "[[Fermat's Little Theorem]], [[Modular Arithmetic]], [[Fundamental Theorem of Arithmetic]], [[Certificates]]"
 updated: 2026-10-09
 ---
@@ -29,7 +29,7 @@ updated: 2026-10-09
 
 The product of all units mod $n$ is $-1$ when $n=4,\ p^k,\ 2p^k$ ($p$ an odd prime) and $+1$ otherwise. Checked: it is $-1$ for $n=9,10$ and $+1$ for $n=8,12,15$.
 
-## Cost: exact and useless as a test [AI]
+## Cost: exact and useless as a test
 
 Wilson's theorem is a perfect *characterisation* of primes and a poor *procedure*. Computing $(n-1)!\bmod n$ takes about $n$ multiplications, which is **exponential in the digits** of $n$. By contrast the Fermat witness takes $\sim\lceil\log_2\rceil(n)$ steps ([[Fermat's Little Theorem]]) and trial division about $\sqrt n$. For $n\approx10^{200}$ the Wilson product is past any budget.
 

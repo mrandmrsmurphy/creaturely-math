@@ -2,7 +2,7 @@
 title: Modular Arithmetic
 type: concept
 status: canonical (draft)
-provenance: "murphy+ai (Murphy's brief: mods as fundamental as the big four of arithmetic; divisibility tests as the child's version; mod 2 as parity; prime mods as groups under addition and, without zero, under multiplication; the cyclic unit group for prime squares. The worked material was computed and checked exactly)"
+provenance: "murphy+ai (Murphy's brief: mods as fundamental as the big four of arithmetic; divisibility tests as the child's version; mod 2 as parity; prime mods as groups under addition and, without zero, under multiplication; the cyclic unit group for prime squares; the two refinements and the argument's material, adopted 2026-11-04. The worked material was computed and checked exactly)"
 sources: "[[SRC Confession of Mathematics (2023-24)]]"
 updated: 2026-10-08
 ---
@@ -13,7 +13,7 @@ Arithmetic in which numbers are only distinguished by their **remainder on divis
 
 **Murphy's thesis (to be argued):** mods are as fundamental as the big four of arithmetic (addition, subtraction, multiplication, division). This page lays out the material the argument will use.
 
-*[AI]* Numbers, tables and orders were computed and verified exactly.
+*Note:* Numbers, tables and orders were computed and verified exactly.
 
 ## Definition
 
@@ -66,11 +66,11 @@ even + even = even, odd + odd = even, even + odd = odd; odd × odd = odd, anythi
 
   Every row is a rearrangement of $1,\dots,6$: that is the inverse property.
 - **The multiplicative group of a prime modulus is cyclic.** Mod $7$, the powers of $3$ are $3,2,6,4,5,1$: all six residues, so $3$ is a **primitive root**. Powers of $2$ give only $2,4,1$, so $2$ is not.
-- **Prime squares.** The invertible residues mod $p^2$ (those not divisible by $p$) number $p(p-1)$, and for odd $p$ they again form a **cyclic** group. Mod $9$: the units are $1,2,4,5,7,8$ and the powers of $2$ are $2,4,8,7,5,1$, all six. Mod $25$ there are $20$ units and $2$ has order $20$ (since $2^{10}\equiv-1$). Mod $49$ there are $42$ units and $3$ has order $42$. *[AI]* Two refinements for Murphy to decide on. (a) The cyclic property is not special to squares: for odd $p$ it holds for every power $p^k$. Squares are the smallest case where the modulus is not prime (so $p\cdot p\equiv0$ and the multiples of $p$ have no inverse) yet the units are still cyclic. (b) For $p=2$ it holds at $4$ (units $1,3$) but fails from $8$ on: mod $8$ the units $1,3,5,7$ each square to $1$, so no single element generates them.
+- **Prime squares.** The invertible residues mod $p^2$ (those not divisible by $p$) number $p(p-1)$, and for odd $p$ they again form a **cyclic** group. Mod $9$: the units are $1,2,4,5,7,8$ and the powers of $2$ are $2,4,8,7,5,1$, all six. Mod $25$ there are $20$ units and $2$ has order $20$ (since $2^{10}\equiv-1$). Mod $49$ there are $42$ units and $3$ has order $42$. Two refinements. (a) The cyclic property is not special to squares: for odd $p$ it holds for every power $p^k$. Squares are the smallest case where the modulus is not prime (so $p\cdot p\equiv0$ and the multiples of $p$ have no inverse) yet the units are still cyclic. (b) For $p=2$ it holds at $4$ (units $1,3$) but fails from $8$ on: mod $8$ the units $1,3,5,7$ each square to $1$, so no single element generates them.
 
 ## Why mods are as fundamental as the big four
 
-*[AI]* Candidate points, offered as material for Murphy's argument, not as established claims:
+The material for the argument:
 
 1. **Everything a creature computes is computed mod something.** A clock, a calendar, a counter that wraps. A 32-bit word is arithmetic mod $2^{32}=4{,}294{,}967{,}296$, a 64-bit word is mod $2^{64}=18{,}446{,}744{,}073{,}709{,}551{,}616$. A finite machine cannot do anything else. This is [[Creational Ultrafinitism]] expressed in arithmetic.
 2. **Division works without new numbers.** In ℕ, subtraction and division fail and force zero, negatives and ℚ ([[Counting and Bases]]). In $\mathbb Z/p$ all four operations close on the finite set. The needed inverse is already there, found by a finite search.

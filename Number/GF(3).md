@@ -13,7 +13,7 @@ The field with three elements: the integers mod $3$ ([[Modular Arithmetic]]) wit
 
 **Balanced residues.** The three elements are written $\bar1,\ 0,\ 1$, with $\bar1=-1\equiv2$. These are exactly the digits of [[Balanced Ternary]]. So the digit-by-digit arithmetic of that page, with the carries dropped, *is* arithmetic in $\mathrm{GF}(3)$.
 
-*[AI]* Every table and every count on this page was computed and verified exactly.
+*Note:* Every table and every count on this page was computed and verified exactly.
 
 ## Addition
 

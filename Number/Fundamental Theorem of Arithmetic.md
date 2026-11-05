@@ -2,7 +2,7 @@
 title: Fundamental Theorem of Arithmetic
 type: theorem
 status: canonical (kept; the qualification is about what "number" means)
-provenance: "murphy (the position, keep the theorem, every number, the 10^200+23 challenge) + ai-synthesis (proofs, costs, the factored example, flagged problems)"
+provenance: "murphy (the position, keep the theorem, every number, the 10^200+23 challenge; the four-claims table, the fairer challenge and the Pratt/AKS paragraph, adopted 2026-11-04) + ai-synthesis (proofs, costs, the factored example, flagged problems)"
 sources: "[[Creational Ultrafinitism]], [[Certificates]], [[Number Hierarchy]]"
 updated: 2026-10-09
 ---
@@ -35,7 +35,7 @@ Worked example: $p=7$, $a=6$, $b=14$, $ab=84$. Here $6\cdot(-1)+7\cdot1=1$, and 
 
 The Euclidean algorithm takes about as many steps as the number has digits, so **uniqueness is feasible at any size**: it never *finds* a factor, it only compares two factorizations you already hold.
 
-## Four claims that are often run together [AI]
+## Four claims that are often run together
 
 | Claim | What it asks for | Cost | In this vault |
 |---|---|---|---|
@@ -60,11 +60,11 @@ with $C$ a **198-digit** number. The first two factors fall out of a divisibilit
 
 So the question has a **partial answer in hand** ($3$, $47$, and a *certificate that $C$ is not prime*) and **no further answer**. This is the clean case of a [[Certificates]] point: the vault accepts proof by contradiction for a **negative** ("$C$ is not prime") and refuses to treat it as the **existence** claim ("here are $a,b>1$ with $ab=C$"). "$C$ has a prime factorization" is true, and "the prime factorization of $C$" is a name for something not possessed.
 
-**A fairer challenge** [AI]: the example is partly factorable, so as stated it is a weaker rebuttal than it looks. It works best with a number that survives a first pass, such as $C$ itself, or a product of two primes of a hundred digits each (which one can build and *know* the factorization of, while the critic cannot find it). The point is not that factoring is impossible but that **possessing the factorization is a matter of resources**: the *factoring horizon* depends on the budget (a person with a computer, a worldwide effort, a physical bound) and lies **far below the naming horizon**, since $10^{200}$ is a number one can *count* to in principle but one cannot *factor* in practice. *Unverified recollection to check:* general 200-digit numbers (RSA-200, 2005) and 250-digit numbers (RSA-250, 2020) have been factored with enormous computation, so $C$ itself is at the edge of what an organized world effort has done; the right statement is resource-relative ([[Future Directions]] item 2c), not a single cutoff.
+**A fairer challenge**: the example is partly factorable, so as stated it is a weaker rebuttal than it looks. It works best with a number that survives a first pass, such as $C$ itself, or a product of two primes of a hundred digits each (which one can build and *know* the factorization of, while the critic cannot find it). The point is not that factoring is impossible but that **possessing the factorization is a matter of resources**: the *factoring horizon* depends on the budget (a person with a computer, a worldwide effort, a physical bound) and lies **far below the naming horizon**, since $10^{200}$ is a number one can *count* to in principle but one cannot *factor* in practice. *Unverified recollection to check:* general 200-digit numbers (RSA-200, 2005) and 250-digit numbers (RSA-250, 2020) have been factored with enormous computation, so $C$ itself is at the edge of what an organized world effort has done; the right statement is resource-relative ([[Future Directions]] item 2c), not a single cutoff.
 
 ## Primes and certificates
 
-Certifying a *factorization* is cheap. [AI] *Unverified recollections to check:* Pratt (1975) showed every prime has a short certificate (primes are in NP: a witness that $p-1$ factors as claimed and a generator, recursively), and Agrawal–Kayal–Saxena (2002) gave a deterministic polynomial-time primality test. If right, "$p$ is prime" is checkable far more cheaply than "find the factors of $n$", which is why the first claim of a factorization can be certified even when the second cannot be found.
+Certifying a *factorization* is cheap. *Unverified recollections to check:* Pratt (1975) showed every prime has a short certificate (primes are in NP: a witness that $p-1$ factors as claimed and a generator, recursively), and Agrawal–Kayal–Saxena (2002) gave a deterministic polynomial-time primality test. If right, "$p$ is prime" is checkable far more cheaply than "find the factors of $n$", which is why the first claim of a factorization can be certified even when the second cannot be found.
 
 ## What the theorem is for
 

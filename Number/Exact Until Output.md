@@ -2,7 +2,7 @@
 title: Exact Until Output
 type: principle
 status: "canonical (the rule and its machinery; independence questions flagged)"
-provenance: "murphy (the principle, keep constructible values exact and approximate only at an output stage, never as the stored value; keep transcendentals separate, answering circle questions in terms of pi; slope, not spread; the pi_n convention, 2026-10-11) + ai-synthesis (the representation, the demonstrations, the decidability facts, the flagged problems) + third-party (Wildberger's rational trigonometry, restated)"
+provenance: "murphy (the principle, keep constructible values exact and approximate only at an output stage, never as the stored value; keep transcendentals separate, answering circle questions in terms of pi; slope, not spread; the pi_n convention, 2026-10-11; the page-wide epsilon banner and the two cautions, adopted 2026-11-04) + ai-synthesis (the representation, the demonstrations, the decidability facts, the flagged problems) + third-party (Wildberger's rational trigonometry, restated)"
 sources: "[[Constructible Numbers]], [[Number Hierarchy]], [[Constructible Trigonometry]], [[Certificates]], [[Equal Signs]]"
 updated: 2026-10-11
 ---
@@ -51,11 +51,10 @@ When digits are shown at all, say how many: **$\pi_n$ is $\pi$ truncated to $n$ 
 
 1. **$\pi_n$ is a Number** — a rational, $\pi_7=\tfrac{31415926}{10^7}$ — so $\pi_7=3.1415926$ is an *exact* equality of tier 1, no algorithmic "≈" needed. The subscript moves the decimal out of the twilight and into the exhibited.
 2. **The truncation carries its own certificate:** $\pi_n\le\pi<\pi_n+10^{-n}$ (checked at $n=7$: the digits run $3.14159265\ldots$, so $3.1415926\le\pi<3.1415927$). The relation between $\pi$ and each of its exhibits is a finitely checkable *inequality* — the pixel equality of [[Certificates]], with the cost stated.
-3. **The family $\{\pi_n\}$ is the classical construction in honest dress** [AI]. A Cauchy sequence of rationals is, potentially, exactly this list: each term exhibited, the list never completed. Nothing is lost but the pretense of arrival.
 
-For a page full of digits, declare the resolution once — *all decimals herein are pixels at $\varepsilon=10^{-6}$* — and write $\pi=3.141593$ under that banner [AI]. The banner, not the bare "=", is what makes the page honest; it is the page-wide form of the pixel doctrine ([[Numbers, Lengths and Pixels]]). Bare $\pi$ remains welcome as a tier-3 *named symbol*; the convention governs digits, not symbols.
+For a page full of digits, declare the resolution once — *all decimals herein are pixels at $\varepsilon=10^{-6}$* — and write $\pi=3.141593$ under that banner. The banner, not the bare "=", is what makes the page honest; it is the page-wide form of the pixel doctrine ([[Numbers, Lengths and Pixels]]). Bare $\pi$ remains welcome as a tier-3 *named symbol*; the convention governs digits, not symbols.
 
-## Two cautions [AI]
+## Two cautions
 
 1. **More than one transcendental.** Treating each of $\pi,\ e,\ \ln2,\dots$ as an independent indeterminate is a *convention that gives sufficient equality*, not a theorem. It is known that $\pi$ and $e$ are each transcendental; whether $\pi$ and $e$ are **algebraically independent over $\mathbb Q$ is an open problem**, as are the relations among many other constants (a conjecture of Schanuel would settle many; to check). So an expression mixing several symbols is equal when it is *formally* equal; if two expressions are formally different it is not decided, by this method alone, that they differ. For $\pi$ alone the method is exact.
 2. **Extraction at the output stage.** Rounding for a reader should state the precision and the rounding direction. A value of tier 2 or 3 is bracketed by rationals with a stated width; the output is a member of that bracket.

@@ -13,7 +13,7 @@ The field with seven elements: the integers mod $7$ ([[Modular Arithmetic]]) wit
 
 **Balanced residues.** The seven elements are written $\bar3,\ \bar2,\ \bar1,\ 0,\ 1,\ 2,\ 3$, where $\bar3=-3\equiv4$, $\bar2=-2\equiv5$ and $\bar1=-1\equiv6$. Negation swaps the bar and the unbarred digit.
 
-*[AI]* Every table and every count on this page was computed and verified exactly.
+*Note:* Every table and every count on this page was computed and verified exactly.
 
 ## Addition
 

@@ -2,7 +2,7 @@
 title: Euler's Theorem
 type: theorem
 status: "canonical (adopted whole; one cost remark about computing the totient)"
-provenance: "murphy (the position, adopt what is finite and exact) + ai-synthesis (proof, examples, the totient remark)"
+provenance: "murphy (the position, adopt what is finite and exact; the totient remark, adopted 2026-11-04) + ai-synthesis (proof, examples)"
 sources: "[[Fermat's Little Theorem]], [[Chinese Remainder Theorem]], [[Modular Arithmetic]], [[Fundamental Theorem of Arithmetic]]"
 updated: 2026-10-09
 ---
@@ -34,7 +34,7 @@ Mod $12$: the units are $1,5,7,11$ ($\varphi=4$), and multiplying by $5$ gives $
 
 The least exponent that works for every unit, the **exponent of the group**, can be smaller than $\varphi(n)$. Mod $15$ every unit has fourth power $1$ though $\varphi=8$; mod $12$ every unit squares to $1$ though $\varphi=4$ (checked from the orders). Euler's theorem is true with $\varphi(n)$, and often with less.
 
-## The one cost remark [AI]
+## The one cost remark
 
 The theorem is unobjectionable; **using it with $\varphi(n)$** requires knowing $\varphi(n)$, and for a general $n$ that is equivalent in difficulty to knowing its factorization ([[Fundamental Theorem of Arithmetic]]; the equivalence is a recollection to check). So for a large $n$ whose factors you do not hold, "$a^{\varphi(n)}\equiv1$" is true and unusable.
 

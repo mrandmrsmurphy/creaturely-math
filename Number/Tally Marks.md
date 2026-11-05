@@ -2,7 +2,7 @@
 title: Tally Marks
 type: concept
 status: "canonical (draft; the history is from recollection and to be checked)"
-provenance: "murphy (the direction, before positional numbers there were tally marks; addition is concatenation, subtraction is removal, multiplication is area or repeated addition; teach them early) + ai-synthesis (the examples, the connections, the flagged problems)"
+provenance: "murphy (the direction, before positional numbers there were tally marks; addition is concatenation, subtraction is removal, multiplication is area or repeated addition; teach them early; the vault-position section and the teaching section, adopted 2026-11-04) + ai-synthesis (the examples, the connections, the flagged problems)"
 sources: "[[Counting and Bases]], [[Historical Order]], [[Binary]], [[Creational Ultrafinitism]], [[Groups]]"
 updated: 2026-10-10
 ---
@@ -41,7 +41,7 @@ Positional numbers are already taught; the point is to **acknowledge the phase b
 
 Putting strings together is **associative** (the grouping does not matter) and, as counts, **commutative**. The empty string is the identity. Tally marks under concatenation are the simplest example of the structures of [[Groups]]: the counting numbers are exactly the strings on one symbol, a monoid. A child sees associativity by gluing three strips of marks before the word exists.
 
-## Tally marks and the vault's position [AI]
+## Tally marks and the vault's position
 
 A tally is a **certificate in its simplest form**: one mark per thing, the count *exhibited*, equality checked by matching ([[Certificates]]). And it makes the **notation-versus-number** point concrete ([[Creational Ultrafinitism]]):
 
@@ -53,7 +53,7 @@ A tally is a **certificate in its simplest form**: one mark per thing, the count
 
 The positional numeral is a **logarithmic compression** of the tally. A tally of $10^{200}$ marks cannot be made (no universe holds it), yet the numeral takes $201$ digits. What the numeral lets one *write* is not what one can *hold*; the tally is the form in which the number would be held. That is the difference between a notation and a number, taught at the bottom of the curriculum.
 
-## For teaching [AI]
+## For teaching
 
 1. **Keep tallies in the first year**, with groups of five (the "gate"), and let students add by joining and subtract by crossing off.
 2. **Introduce the bundle** (a mark for five, then ten) *before* place value, so the carry is a bundle and the borrow an unbundle.

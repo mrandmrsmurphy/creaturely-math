@@ -13,7 +13,7 @@ updated: 2026-10-07
 
 The Babylonian number system: a **positional system in base 60**. It descends from the Sumerians and was in full use in Mesopotamia by the Old Babylonian period (about 2000–1600 BC). It is among the earliest known place-value systems, and the one in which Babylonian arithmetic and astronomy were done. Its remnants are the 60 minutes of an hour and the 60 seconds of a minute.
 
-*[AI]* The historical statements below are standard but have not been checked against sources here. The tables were computed and verified exactly.
+*Note:* The historical statements below are standard but have not been checked against sources here. The tables were computed and verified exactly.
 
 ## Writing numbers
 

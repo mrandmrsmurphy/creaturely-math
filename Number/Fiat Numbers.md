@@ -2,7 +2,7 @@
 title: Fiat Numbers
 type: concept
 status: canonical
-provenance: murphy (the two-direction picture, "fiat numbers", "inbred"); ai-synthesis (standard algebra; examples computed and checked exactly)
+provenance: murphy (the two-direction picture, "fiat numbers", "inbred"; the certificate-is-representation answer, adopted 2026-11-04); ai-synthesis (standard algebra; examples computed and checked exactly)
 sources: "[[SRC Mathematics (raw, 2026-05)]]"
 updated: 2026-10-07
 ---
@@ -67,4 +67,4 @@ The entire number hierarchy is a gradient of losing the meaning of the word *num
 
 ## Hard problem
 
-What is the certificate for a declared number? The relation ($i^2=-1$) says what it does, and the representation (a rotation, a matrix) exhibits it. In the vocabulary of [[Future Directions]] item 3, **[AI]** the certificate of a fiat number is its *representation*. Whether usefulness, including physical usefulness, is part of the certificate is open.
+What is the certificate for a declared number? The relation ($i^2=-1$) says what it does, and the representation (a rotation, a matrix) exhibits it. In the vocabulary of [[Future Directions]] item 3, the certificate of a fiat number is its *representation*. Whether usefulness, including physical usefulness, is part of the certificate is open.

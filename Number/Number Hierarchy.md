@@ -2,7 +2,7 @@
 title: Number Hierarchy
 type: hierarchy
 status: canonical
-provenance: murphy
+provenance: "murphy (the hierarchy; the level-9 cost analysis for e, adopted 2026-11-04) + ai-synthesis (the level-9 worked brackets)"
 sources: [[SRC Mathematics (raw, 2026-05)]]
 updated: 2026-10-11
 ---
@@ -78,7 +78,7 @@ $e$ is the $b$ with $\int_1^b dx/x=1$. For a decreasing curve the area lies betw
 | $\tfrac{27}{10}$ | $0.99271\ldots$ | $0.99378\ldots$ | below $1$ (the upper bound is under $1$) |
 | $\tfrac{28}{10}$ | $1.02904\ldots$ | $1.03019\ldots$ | above $1$ (the lower bound is over $1$) |
 
-So the area reaches $1$ somewhere in $(2.7,\,2.8)$, an isolating interval for $e$ (the area grows with $b$), and bisection on $b$ halves it at each step. **[AI]** The width of each bracket is the strip width times $1-\tfrac1b$, so to certify $k$ digits one needs about $10^k$ strips: the geometric definition certifies by trusting the shape, and it is slow. The analytic definition is fast: ten terms of $\sum 1/k!$ give $2.7182818011\ldots$ with the tail under $\tfrac1{10!\cdot10}<2.8\times10^{-8}$ (computed; the tail bound is the standard one, to check against a source). That the two definitions name the same number is a theorem, and trust in that theorem is the extra thing level 9 asks for.
+So the area reaches $1$ somewhere in $(2.7,\,2.8)$, an isolating interval for $e$ (the area grows with $b$), and bisection on $b$ halves it at each step. The width of each bracket is the strip width times $1-\tfrac1b$, so to certify $k$ digits one needs about $10^k$ strips: the geometric definition certifies by trusting the shape, and it is slow. The analytic definition is fast: ten terms of $\sum 1/k!$ give $2.7182818011\ldots$ with the tail under $\tfrac1{10!\cdot10}<2.8\times10^{-8}$ (computed; the tail bound is the standard one, to check against a source). That the two definitions name the same number is a theorem, and trust in that theorem is the extra thing level 9 asks for.
 
 ## Why it matters pedagogically
 

@@ -2,7 +2,7 @@
 title: Chinese Remainder Theorem
 type: theorem
 status: "canonical (adopted whole; one scale remark)"
-provenance: "murphy (the position, adopt it wholesale) + ai-synthesis (proof, worked examples, the scale remark)"
+provenance: "murphy (the position, adopt it wholesale; the scale remark, adopted 2026-11-04) + ai-synthesis (proof, worked examples)"
 sources: "[[Modular Arithmetic]], [[Fundamental Theorem of Arithmetic]], [[Certificates]]"
 updated: 2026-10-09
 ---
@@ -31,7 +31,7 @@ works: modulo $m_j$ every term but the $j$th contains the factor $m_j$ and vanis
 
 The system is solvable iff the congruences agree modulo each $\gcd(m_i,m_j)$, and then the solution is unique mod the lcm. $x\equiv1\ (4)$, $x\equiv3\ (6)$ gives $9\bmod12$; $x\equiv1\ (4)$, $x\equiv2\ (6)$ has no solution (both checked).
 
-## The one remark: scale [AI]
+## The one remark: scale
 
 Coprimality is checked by gcd, which is cheap; **no factoring is needed**. The theorem does not endanger the vault's position on "number" ([[Fundamental Theorem of Arithmetic]]), but it does hold a lesson. The reconstruction lives in $[0,M)$, and $M$ can pass the threshold even when every $m_i$ is small: the first $93$ primes (largest $487$) have a product past $10^{200}$ ([[Creational Ultrafinitism]]). Then:
 

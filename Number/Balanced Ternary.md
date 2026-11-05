@@ -2,7 +2,7 @@
 title: Balanced Ternary
 type: concept
 status: canonical (draft)
-provenance: "murphy+ai (Murphy's brief: his favorite base; the $\\bar1$ notation; the balance-beam weights; base 3 as the most efficient; balanced as modern because negatives are as valid as positives; the Setun computer. Worked material computed and checked exactly)"
+provenance: "murphy+ai (Murphy's brief: his favorite base; the $\\bar1$ notation; the balance-beam weights; base 3 as the most efficient; balanced as modern because negatives are as valid as positives; the Setun computer; the engineering-not-law comment, adopted 2026-11-04. Worked material computed and checked exactly)"
 sources: "[[SRC Confession of Mathematics (2023-24)]]"
 updated: 2026-10-08
 ---
@@ -11,7 +11,7 @@ updated: 2026-10-08
 
 **Base 3 with digits $\bar1,\,0,\,1$**, where $\bar1$ ("one-bar") is the digit for $-1$. Each place is worth three times the one to its right, as in [[Binary]], but the digits are symmetric about zero instead of running from $0$ to $2$. Murphy's favorite base.
 
-*[AI]* Historical remarks are standard recollections and have not been checked against sources here. Numbers and tables were computed and verified exactly.
+*Note:* Historical remarks are standard recollections and have not been checked against sources here. Numbers and tables were computed and verified exactly.
 
 ## Writing numbers
 
@@ -62,7 +62,7 @@ At balance, $x+(\text{left weights})=(\text{right weights})$, so $x=(\text{right
 
 **How far do $k$ weights reach?** With $1,3,\dots,3^{k-1}$ every whole number from $-\tfrac{3^k-1}2$ to $\tfrac{3^k-1}2$ is reachable (checked by computing all combinations for $k=4$). Four weights $1,3,9,27$ weigh every whole number up to $40$; five weights up to $121$.
 
-**Compare the weights if they may go only on one pan:** those need the binary set $1,2,4,8,\dots$, and four of them reach only $15$. Letting a weight go on the object's own pan buys more than a doubling: it is the use of a negative digit. The puzzle is old (often credited to Bachet, early 17th century; *[AI]* from memory).
+**Compare the weights if they may go only on one pan:** those need the binary set $1,2,4,8,\dots$, and four of them reach only $15$. Letting a weight go on the object's own pan buys more than a doubling: it is the use of a negative digit. The puzzle is old (often credited to Bachet, early 17th century; from memory).
 
 ## Why it is efficient
 
@@ -109,9 +109,9 @@ Places to the right of the point are $\tfrac13,\tfrac19,\tfrac1{27},\dots$ The t
 
 ## The Setun computer
 
-The **Setun** was a ternary computer built at Moscow State University in the late 1950s (first running 1958) under Nikolay Brusentsov. It stored numbers in **balanced ternary**, with three-state elements (**trits**) instead of two-state bits. Its ternary logic used miniature ferrite magnetic cores and semiconductor diodes, not special "three-level transistors". The machine also contained some ordinary transistors and vacuum tubes in its supporting circuitry, so "no transistors anywhere" would be too strong. A modest number were built and used in the early 1960s, and a successor, Setun-70, followed around 1970. *[AI]* from memory: dates and numbers to be checked.
+The **Setun** was a ternary computer built at Moscow State University in the late 1950s (first running 1958) under Nikolay Brusentsov. It stored numbers in **balanced ternary**, with three-state elements (**trits**) instead of two-state bits. Its ternary logic used miniature ferrite magnetic cores and semiconductor diodes, not special "three-level transistors". The machine also contained some ordinary transistors and vacuum tubes in its supporting circuitry, so "no transistors anywhere" would be too strong. A modest number were built and used in the early 1960s, and a successor, Setun-70, followed around 1970. From memory: dates and numbers to be checked.
 
-*[AI]* It is a working demonstration that the choice of base for machines is a matter of engineering, not a law of nature: on counting digits alone, $3$ wins by a hair.
+It is a working demonstration that the choice of base for machines is a matter of engineering, not a law of nature: on counting digits alone, $3$ wins by a hair.
 
 ## Other places it appears
 

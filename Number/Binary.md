@@ -11,7 +11,7 @@ updated: 2026-10-08
 
 **Base 2.** Two digits, $0$ and $1$, called **bits**. Each place is worth twice the one to its right. [[Counting and Bases]] lists two as the first base to learn after ten, and it is the base of nearly every computer.
 
-*[AI]* Historical remarks are standard recollections and have not been checked against sources here. Numbers and tables were computed and verified exactly.
+*Note:* Historical remarks are standard recollections and have not been checked against sources here. Numbers and tables were computed and verified exactly.
 
 ## Writing numbers
 
@@ -70,7 +70,7 @@ Base 64 is the natural counterpart of [[Sexagesimal]]: a large base, with a real
 
 ## The Tower of Hanoi
 
-Three pegs. $n$ disks of different sizes are stacked on the first peg, largest at the bottom. Move the whole stack to another peg, one disk at a time, never placing a larger disk on a smaller one. (Invented by Édouard Lucas in 1883, with a legend of a temple tower of 64 disks. *[AI]* from memory.)
+Three pegs. $n$ disks of different sizes are stacked on the first peg, largest at the bottom. Move the whole stack to another peg, one disk at a time, never placing a larger disk on a smaller one. (Invented by Édouard Lucas in 1883, with a legend of a temple tower of 64 disks; from memory.)
 
 **Minimum number of moves: $2^n-1$.** To move $n$ disks, move the top $n-1$ aside, move the largest, then move the $n-1$ back on top. So $M_n=2M_{n-1}+1$ with $M_1=1$, giving $1,3,7,15,31,\dots$, one less than a power of 2 — the number whose binary form is all ones.
 
@@ -95,4 +95,4 @@ The smallest disk moves every other turn, always in the same cyclic direction ar
 - **Computers:** all stored data is bits; characters (ASCII, Unicode), images, sound.
 - **Boolean algebra:** $1$ and $0$ as true and false, with AND, OR, NOT, where $1+1=1$: [[Boolean Algebra]].
 - **Error detection:** a parity bit makes the count of 1s even, so a single flipped bit is noticed.
-- **Leibniz** wrote on binary arithmetic around 1703 and read in it the creation of everything from one and nothing. *[AI]* from memory; check before relying on it. It sits near [[Theology of Number]].
+- **Leibniz** wrote on binary arithmetic around 1703 and read in it the creation of everything from one and nothing. From memory; check before relying on it. It sits near [[Theology of Number]].
