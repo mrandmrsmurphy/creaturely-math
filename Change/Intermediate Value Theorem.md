@@ -2,7 +2,7 @@
 title: Intermediate Value Theorem
 type: theorem
 status: "canonical (the exact statement rejected; the approximate form with a modulus kept)"
-provenance: "murphy (the position, reject as is, results found to a specified precision and not infinitely so) + ai-synthesis (the algorithm, the cost, the example, the flagged problems)"
+provenance: "murphy (the position, reject as is, results found to a specified precision and not infinitely so; the three further reasons, adopted 2026-11-04) + ai-synthesis (the algorithm, the cost, the example, the flagged problems)"
 sources: "[[Calculus]], [[Certificates]], [[Number Hierarchy]], [[Creational Ultrafinitism]]"
 updated: 2026-10-09
 ---
@@ -15,7 +15,7 @@ updated: 2026-10-09
 
 The exact statement is rejected, because the $c$ it promises is a **real number** in the completed sense, and the vault does not hold such objects ([[Certificates]], [[Number Hierarchy]]). The standard proof takes $c=\sup\{x: f(x)<0\}$, the least upper bound of an infinite set: a completeness argument that hands you no number. The only honest content is *how close you can get, for how much work*.
 
-Three further reasons [AI]:
+Three further reasons:
 
 1. **There is no procedure behind it.** For a general continuous $f$ no method can output the exact zero. Here is a construction (mine) of the failure. Let $r$ be a number given by an unsolved search, with $r=0$ if the search never succeeds and $r=\pm2^{-m}$ if it first succeeds at step $m$ (sign by the parity of $m$). Let $g$ be $x-\tfrac13$ for $x\le\tfrac13$, $0$ on $[\tfrac13,\tfrac23]$, and $x-\tfrac23$ for $x\ge\tfrac23$, and put $f=g+r$, so $f(0)<0<f(1)$ whatever $r$ is. The zero lies at $\tfrac13-r$ (left of $\tfrac13$) if $r>0$, anywhere in $[\tfrac13,\tfrac23]$ if $r=0$, and at $\tfrac23+|r|$ (right of $\tfrac23$) if $r<0$ (checked on a grid for $r=\pm\tfrac1{10},0$). Computing the zero *exactly* would decide the sign of $r$, that is, solve the search. *(Unverified recollection to check: in the constructive literature the exact statement is known to be equivalent to a weak omniscience principle, LLPO, and so is not provable without excluded middle.)*
 2. **The cost is hidden.** "There exists $c$" says nothing about how many steps get you within $10^{-6}$.

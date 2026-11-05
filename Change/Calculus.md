@@ -2,7 +2,7 @@
 title: Calculus
 type: theory
 status: canonical (first-order calculus; functions beyond the algebraic ones are open)
-provenance: murphy (the definition $f(x+\varepsilon)=f(x)+f'(x)\varepsilon$ and the direction) + ai-synthesis (rules, examples, flagged problems)
+provenance: murphy (the definition $f(x+\varepsilon)=f(x)+f'(x)\varepsilon$ and the direction; the exact-versus-honest route, adopted 2026-11-04) + ai-synthesis (rules, examples, flagged problems)
 sources: "[[Infinitesimals]], [[Discrete Calculus]]"
 updated: 2026-10-09
 ---
@@ -67,7 +67,7 @@ Example with $\varepsilon^3=0$: $(x+\varepsilon)^3=x^3+3x^2\varepsilon+3x\vareps
 - **Taken:** the intuition. The derivative is the slope between a point and one infinitesimally near it, and an integral is a sum of infinitely thin strips (Keisler's *Elementary Calculus*).
 - **Not taken:** the hyperreal field. Robinson's ${}^*\mathbb R$ is an ordered field in classical logic where $0<\varepsilon<1/n$ for every $n$, and from it the derivative is recovered by the **standard part**, $f'(x)=\operatorname{st}\bigl((f(x+h)-f(x))/h\bigr)$ for an invertible infinitesimal $h$. Here there is no standard part and no order on infinitesimals: $f'(x)$ is a coefficient. See [[Infinitesimals#Robinson]].
 
-## Exact versus honest [AI]
+## Exact versus honest
 
 Every statement above is checkable by algebra on the dual numbers $a+b\varepsilon$, so for polynomials, and by the same cancellation for rational functions, the definition *is* a certificate. For other functions (the exponential, the logarithm, sine and cosine) the definition cannot be checked on the dual numbers alone: it needs the function itself. The honest route is the one of [[Discrete Calculus]]: the exponential is $E_h$ with $D_hE_h=E_h$ and its error bound, the logarithm is $H_n$ with $\gamma$, sine and cosine are the circle of $\oplus$. Calculus then says: *take the function as defined by its discrete ancestor and apply the definition above.* Written for the vault, that is the shape of *Infinity and Uncertainty*.
 

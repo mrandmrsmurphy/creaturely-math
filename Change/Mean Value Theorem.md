@@ -2,7 +2,7 @@
 title: Mean Value Theorem
 type: theorem
 status: "canonical (the exact statement rejected as EVT is; the inequality form and an approximate point form kept)"
-provenance: "murphy (the position, MVT is about the same argument as EVT since it depends on it) + ai-synthesis (the dependence, the constructed failure, the proof from telescoping, the cost, the flagged problems)"
+provenance: "murphy (the position, MVT is about the same argument as EVT since it depends on it; the constructed failure, adopted 2026-11-04) + ai-synthesis (the dependence, the proof from telescoping, the cost, the flagged problems)"
 sources: "[[Extreme Value Theorem]], [[Intermediate Value Theorem]], [[Fundamental Theorem of Calculus]], [[Calculus]], [[Certificates]]"
 updated: 2026-10-09
 ---
@@ -26,7 +26,7 @@ So the point $c$ is **the location of an extremum of $g$**. Everything rejected 
 
 The statement is rejected as is, for the same argument, and the vault keeps what survives.
 
-### A constructed failure of the statement [AI]
+### A constructed failure of the statement
 
 The failure is of the *statement*, not only of the proof's choice of $c$. Let $f'-m=w_r$ be the piecewise linear function that starts at $w(0)=1$, descends to $r$ at $x=\tfrac14$, stays at $r$ on $[\tfrac14,\tfrac34]$, then descends to $-(1+6r)$ at $x=1$. Its integral is $0$ for every small $r$, so $f(1)-f(0)=m$ (checked). Then:
 

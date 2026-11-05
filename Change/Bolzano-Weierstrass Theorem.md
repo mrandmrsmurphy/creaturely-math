@@ -2,7 +2,7 @@
 title: Bolzano–Weierstrass Theorem
 type: theorem
 status: "canonical (the exact statement rejected; a finite pigeonhole form and a metastable form kept)"
-provenance: "murphy (the position, Bolzano–Weierstrass has to change or be rejected) + ai-synthesis (the missing modulus, the computability failure, the finite forms, the worked examples, the flagged problems)"
+provenance: "murphy (the position, Bolzano–Weierstrass has to change or be rejected; the computability failure and the metastable form, adopted 2026-11-04) + ai-synthesis (the missing modulus, the finite forms, the worked examples, the flagged problems)"
 sources: "[[Extreme Value Theorem]], [[Certificates]], [[Creational Ultrafinitism]], [[Number Hierarchy]]"
 updated: 2026-10-09
 ---

@@ -2,7 +2,7 @@
 title: Extreme Value Theorem
 type: theorem
 status: "canonical (the exact statement rejected; the approximate form kept; compactness read as a finite grid)"
-provenance: "murphy (the position, an approximation save, give me an epsilon and a supremum can be found to within it, but that is not asserting that a number exists that is the supremum) + ai-synthesis (the algorithm, the cost, the constructed failure, the flagged problems)"
+provenance: "murphy (the position, an approximation save, give me an epsilon and a supremum can be found to within it, but that is not asserting that a number exists that is the supremum; the two-claims distinction, the constructed failure, the cost and the finite forms of compactness, adopted 2026-11-04) + ai-synthesis (the algorithm, the flagged problems)"
 sources: "[[Intermediate Value Theorem]], [[Calculus]], [[Certificates]], [[Creational Ultrafinitism]]"
 updated: 2026-10-09
 ---

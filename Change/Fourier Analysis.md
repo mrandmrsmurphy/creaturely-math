@@ -2,7 +2,7 @@
 title: Fourier Analysis
 type: concept
 status: "canonical (draft; Wildberger's results are third-party, restated and checked; the worked example was recomputed)"
-provenance: "murphy (the claim: Fourier analysis should be rational; spread polynomials are important) + ai-synthesis (the page, the two-ends argument, the checks) + third-party (Limanta–Wildberger 2021; Goh–Wildberger 2009; restated carefully and checked, not claimed)"
+provenance: "murphy (the claim: Fourier analysis should be rational; spread polynomials are important; the rational-avatar remark and the slope-language restatement, adopted 2026-11-04) + ai-synthesis (the page, the two-ends argument, the checks) + third-party (Limanta–Wildberger 2021; Goh–Wildberger 2009; restated carefully and checked, not claimed)"
 sources: "[[Christians and the Reals]], [[Numbers, Lengths and Pixels]], [[Constructible Trigonometry]]"
 updated: 2026-10-11
 ---
@@ -27,9 +27,9 @@ The rational avatar of the Fourier *basis*. Chebyshev's observation: $\cos n\the
 
 $$S_0=0,\qquad S_1=s,\qquad S_{n+1}=2(1-2s)S_n-S_{n-1}+2s.$$
 
-The first few: $S_2=4s(1-s)$, $S_3=s(3-4s)^2$ (both checked two ways: from the recurrence, and directly from $\sin^2 2\theta=4s(1-s)$ and $\sin^2 3\theta=s(3-4s)^2$). Every identity here is rational arithmetic in $s$ — no angle named, no $\pi$. A series in spread polynomials is the rational avatar of a Fourier series [AI].
+The first few: $S_2=4s(1-s)$, $S_3=s(3-4s)^2$ (both checked two ways: from the recurrence, and directly from $\sin^2 2\theta=4s(1-s)$ and $\sin^2 3\theta=s(3-4s)^2$). Every identity here is rational arithmetic in $s$ — no angle named, no $\pi$. A series in spread polynomials is the rational avatar of a Fourier series.
 
-In the vault's slope language [AI]: the spread of a wedge of slope $m$ is $s=m^2/\ell^2=m^2/(1+m^2)$, so $S_n$ is a polynomial in $m^2/(1+m^2)$ — the comparison of Wildberger's quadrance/spread with the vault's slope/length is [[Future Directions]] item 9. References: Wildberger, *Divine Proportions* (2005); Goh & Wildberger, "Spread polynomials, rotations and the butterfly effect," [arXiv:0911.1025](https://arxiv.org/abs/0911.1025) (2009); the WildTrig lectures on the *Insights into Mathematics* channel.
+In the vault's slope language: the spread of a wedge of slope $m$ is $s=m^2/\ell^2=m^2/(1+m^2)$, so $S_n$ is a polynomial in $m^2/(1+m^2)$ — the comparison of Wildberger's quadrance/spread with the vault's slope/length is [[Future Directions]] item 9. References: Wildberger, *Divine Proportions* (2005); Goh & Wildberger, "Spread polynomials, rotations and the butterfly effect," [arXiv:0911.1025](https://arxiv.org/abs/0911.1025) (2009); the WildTrig lectures on the *Insights into Mathematics* channel.
 
 ## Fourier summation over finite fields (third-party: Limanta & Wildberger)
 

@@ -2,7 +2,7 @@
 title: Fundamental Theorem of Calculus
 type: theorem
 status: canonical (finite form proved; infinitesimal form's global half flagged)
-provenance: murphy (direction; definition of the derivative) + ai-synthesis (statements, examples, analysis of what each form needs)
+provenance: murphy (direction; definition of the derivative; the integral-first reading and the finite form as the theorem, adopted 2026-11-04) + ai-synthesis (statements, examples)
 sources: "[[Discrete Calculus]], [[Calculus]]"
 updated: 2026-10-09
 ---
