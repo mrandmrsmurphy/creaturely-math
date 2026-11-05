@@ -13,7 +13,7 @@ updated: 2026-10-09
 
 **Question (Murphy):** can statistics be built with, as primary objects, finite datasets, exact moments, quadrances, slopes, exact combinatorial probabilities and explicit finite bounds, while continuous distributions and transcendental functions are optional extensions and not foundations?
 
-**Answer [AI]: yes for the working core, and most of its pieces already exist.** What does not yet exist is the assembly, the quadrance-first teaching, and a clear account of what is given up. "Constructive" means *certificate-explicit* ([[Certificates]]): every statement is a finite computation or a stated bound with an exact certificate.
+**Answer: yes for the working core, and most of its pieces already exist.** What does not yet exist is the assembly, the quadrance-first teaching, and a clear account of what is given up. "Constructive" means *certificate-explicit* ([[Certificates]]): every statement is a finite computation or a stated bound with an exact certificate.
 
 ## Why "constructible" and not "rational"
 
@@ -54,7 +54,7 @@ What remains kept apart is the transcendental ($\pi$, $e$, the Gaussian density)
 
 For $x=1,2,3,4,5$ and $y=2,1,4,3,5$: means $3,3$; variances $2,2$; covariance $\tfrac85$; slope $\tfrac45$, intercept $\tfrac35$. The correlation is the cosine between the centred vectors, so $r^2=\tfrac{16}{25}$ and the spread is $\tfrac9{25}$ (sum $1$). Total quadrance splits **Pythagorean-style**: $10=\tfrac{32}5+\tfrac{18}5$ (explained plus residual), and $\mathrm{SSR}/\mathrm{SST}=r^2$.
 
-**The slope form [AI].** In the vault's primitive the same quantity is a slope: $m^2=\dfrac{\mathrm{SSE}}{\mathrm{SSR}}=\dfrac{1-r^2}{r^2}$. Here $m^2=\tfrac{18/5}{32/5}=\tfrac9{16}$, so $m=\tfrac34$ and $\ell=\tfrac54=1/r$ (the 3-4-5 triangle; the spread is $\tfrac{m^2}{1+m^2}=\tfrac9{25}$, checked). For $r^2=\tfrac13$ one gets $m^2=2$ and $m=\sqrt2$, held exactly. This $m$ is the slope of the wedge between the two data vectors in $n$-space, *not* the slope of the fitted line (here $\tfrac45$). The sign of $r$ is the sign of $\ell$ and of $m$.
+**The slope form.** In the vault's primitive the same quantity is a slope: $m^2=\dfrac{\mathrm{SSE}}{\mathrm{SSR}}=\dfrac{1-r^2}{r^2}$. Here $m^2=\tfrac{18/5}{32/5}=\tfrac9{16}$, so $m=\tfrac34$ and $\ell=\tfrac54=1/r$ (the 3-4-5 triangle; the spread is $\tfrac{m^2}{1+m^2}=\tfrac9{25}$, checked). For $r^2=\tfrac13$ one gets $m^2=2$ and $m=\sqrt2$, held exactly. This $m$ is the slope of the wedge between the two data vectors in $n$-space, *not* the slope of the fitted line (here $\tfrac45$). The sign of $r$ is the sign of $\ell$ and of $m$.
 
 ### 2. $z$-scores and comparisons without roots
 
@@ -108,7 +108,7 @@ A **named approximation to a binomial table, with an error**, kept as an optiona
 2. *Justifying least squares* (Gauss's route used the normal law): the Pythagorean geometry of result 1, and the Gauss–Markov theorem, a statement about variances and covariances only (to check).
 3. *Tables for the hand:* obsolete.
 
-## What is given up, or hard [AI]
+## What is given up, or hard
 
 1. **Robustness.** Squares overweight outliers: for $10,11,9,10,12,10,11,500$ the mean is $71.625$, the median is $10.5$, and the variance is about $26{,}216$. Median and absolute-deviation methods are also finite and exact, though they lack the Pythagorean decomposition.
 2. **Cost of exactness.** Enumerating all permutations is exponential in general. Polynomial dynamic programmes exist for some rank tests (to check), and otherwise one samples permutations, with a rational error bound of its own.
@@ -119,7 +119,7 @@ A **named approximation to a binomial table, with an error**, kept as an optiona
 7. **Population.** Classical inference imagines an infinite hypothetical population. Here it is a finite list (survey sampling) or the randomization itself.
 8. **Nested radicals grow.** For many-variable statistics the $\mathbb K$ expressions can become large; a size budget is not stated ([[Exact Until Output]], hard problem 1).
 
-Two features favour the position [AI]: a finite dataset **always has a finite variance** (the infinite-variance pathologies of the Cauchy law arise only in infinite models), and every statement is decidable, so classical logic is safe throughout ([[Future Directions]] item 7).
+Two features favour the position: a finite dataset **always has a finite variance** (the infinite-variance pathologies of the Cauchy law arise only in infinite models), and every statement is decidable, so classical logic is safe throughout ([[Future Directions]] item 7).
 
 ## Related work (all from recollection, to check; no claim of novelty)
 

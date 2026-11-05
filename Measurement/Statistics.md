@@ -11,7 +11,7 @@ updated: 2026-10-09
 
 For most students, the last mathematics of mandatory schooling: how to say what a body of numbers shows, and **how sure one is.** *Statistics for Everyone* and *Infinity and Uncertainty* are unwritten ([[Curriculum Plan]]); this page records the stance so the course has something to stand on ([[Future Directions]] item 13).
 
-## Why it suits the position [AI]
+## Why it suits the position
 
 Statistics is the place where the vault's two rules are tested daily:
 
@@ -35,7 +35,7 @@ Keeping the halves apart is half the course. The mean of a list is a computed nu
 
 A population is a finite list, and samples of it are finite, so the **sampling distribution can be written out** in small cases. Take the population $2,3,5,7,11,13,17,19,23,29$ (mean $12.9$). There are $\binom{10}{3}=120$ samples of size $3$. Their means range from $\tfrac{10}3$ to $\tfrac{71}3$; the mean of all the sample means is exactly $12.9$; and $59$ of the $120$ samples (about $49\%$) have a mean within $3$ of the population mean (all computed). So a sample of three tells little, and the table says how little, with no approximation. Larger cases use the same logic with more arithmetic.
 
-## Tools, in order of what they assume [AI]
+## Tools, in order of what they assume
 
 1. **Counting and the binomial distribution:** exact. ($\tfrac{63}{256}$ for exactly 5 heads in 10; [[Historical Order]].)
 2. **Chebyshev's inequality:** valid for any distribution with a given spread. For $n$ fair flips the fraction of heads is off by $\varepsilon$ or more with probability at most $\dfrac1{4n\varepsilon^2}$.

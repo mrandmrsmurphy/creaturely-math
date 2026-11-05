@@ -34,7 +34,7 @@ God has put humans in a universe both bigger and smaller than they are, and slow
 
 Mathematics, with instruments, does make the invisible visible: it lets a creature reach the very large, the very small, the very slow and the very fast. But the extension is *by means* (a lens, a clock, a ruler, a calculation, each with a cost and a tolerance), and it is not a passport out of creaturehood. Reach is not omniscience: the further from the native band, the more assumption-laden the result (the table's own notes on the cosmological and chemical bands), and the symbol that spans every scale is not thereby a window onto every scale. This is the same thing as the arithmetic of [[Creational Ultrafinitism]]: the tools extend us, and the budget remains. (Murphy.)
 
-Three consequences for the vault's mathematics [AI]:
+Three consequences for the vault's mathematics:
 
 - **A measured quantity is a number with a tolerance** from a tool that has a range ([[Number in Natural Philosophy]]); an exact rational for a length is a model, not an observation ([[Four Kinds of Truth]]: observations are data for verisimilitudes).
 - **Every scale has its own numerals.** The digits that mean something at $10^{-3}$ m mean nothing at $10^{-17}$ m, and the ratio between scales is itself a finite, nameable number, not a licence to carry the same notation across the gap ([[Exact Until Output]]).

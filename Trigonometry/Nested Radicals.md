@@ -29,7 +29,7 @@ $$k_{x/2}=\sqrt{2+k_x},\qquad m_{x/2}=\sqrt{\frac{2-k_x}{2+k_x}}=\sqrt{\frac{\el
 
 The last form uses the signed $\ell_x$: for an obtuse $x$, $\ell_x<0$ and $\dfrac{\ell_x-1}{\ell_x+1}=\dfrac{|\ell_x|+1}{|\ell_x|-1}>0$, so the same formula gives a half-wedge steeper than a slope of $1$, as it must. This is what the $\mp/\pm$ of the article's half-slope formula was recording, and signed $\ell$ makes it automatic. The root is always the positive one.
 
-*[AI]* The doubling rule is the Chebyshev recursion: $k_{nx}=2T_n(k_x/2)$.
+The doubling rule is the Chebyshev recursion: $k_{nx}=2T_n(k_x/2)$.
 
 ## Halving from the basic wedges
 
@@ -77,7 +77,7 @@ the minimal polynomial of $\Xi$ (degree $4=\varphi(30)/2$). So the quartet is no
 
 The seeds $\{1,\sqrt2,\sqrt3\}$, the golden pair, and the quartet, with repeated halving, give $k$ and so the slope of **every wedge that is a multiple of a $\tfrac1{120}$ of a turn** (in other frameworks every multiple of $3^\circ$) and every repeated half of one. These are the wedges of the regular polygons whose odd part of $n$ divides $15$: $n=2^a\cdot\{1,3,5,15\}$.
 
-The **seventeen-gon**, constructible by Gauss, has $k=2\cos(\text{a seventeenth of a turn})$ of degree $8$ over $\mathbb Q$, and $257$ and $65537$ are the other known Fermat primes. Their polygons need further seeds beyond the quartet. *[AI]* from memory.
+The **seventeen-gon**, constructible by Gauss, has $k=2\cos(\text{a seventeenth of a turn})$ of degree $8$ over $\mathbb Q$, and $257$ and $65537$ are the other known Fermat primes. Their polygons need further seeds beyond the quartet (from memory, to check).
 
 ## Exactness
 

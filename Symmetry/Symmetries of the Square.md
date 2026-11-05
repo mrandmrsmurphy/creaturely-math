@@ -55,7 +55,7 @@ The product is $[\lambda,\mu]\,[\lambda',\mu']=[\lambda\lambda',\ \lambda\mu'+\m
 
 This is the **affine group of the ring** $\mathbb Z/4$: the units of $\mathbb Z/4$ are $\{1,\bar1\}$ (the sign), and $x\mapsto\lambda x+\mu$ is every invertible affine map. In general the symmetries of the regular $n$-gon are $\{x\mapsto\pm x+\mu\}$ on $\mathbb Z/n$.
 
-## On a card: eight letters for eight symmetries [AI]
+## On a card: eight letters for eight symmetries
 
 *Reconstruction of Murphy's classroom activity; the naming is mine and may differ from his.* Take a cardboard square. Label the front corners $A,B,C,D$ counterclockwise, and the back corners $E,F,G,H$ with $E$ behind $A$, $F$ behind $B$, and so on. Every one of the eight symmetries can be **named by the corner that ends up in the place where $A$ began**, with the face that is then showing:
 

@@ -7,5 +7,6 @@
 
 ## Next
 - **Tier 2 COMPLETE** (same session): Number/ has no [AI] markers. All adopted except one deletion (the "{π_n} honest dress" point on Exact Until Output; Murphy kept the ε banner). Details in the log's Tier 2 entry and the checklist in `AIOS/memory/project-ai-cleanup.md`.
+- **Tier 3 COMPLETE** (same session): Change, Trigonometry, Measurement, Logic, Geometry, Symmetry clean. All adopted, no deletions. Rational Rotation names settled (dsin_N/dcos_N; Agenda A.6 closed, A items now 1–7).
 - Tier 3, working math (~64 markers): `Rational Rotation` (10) and `Discrete Calculus` (9) are the heavy ones, then `Extreme Value Theorem` (5), `Constructible Statistics` (5), and the smaller Change/Measurement/Logic/Trig/Geometry/Symmetry pages. Many are checked computations and cost analyses — expect mostly adoptions; watch for items tied to open Agenda lines (e.g. Rational Rotation's hard problems, A.6 naming).
 - Continuing protocol: grep the page's [AI] items, present them in batches of ≤4, interview, edit, update provenance + log + the memory checklist.

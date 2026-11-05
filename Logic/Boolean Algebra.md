@@ -15,7 +15,7 @@ $$\boxed{1+1=1}$$
 
 Here $+$ means **or**, $\times$ means **and**, and $\bar x$ (or $x'$) means **not**. This is the arithmetic of [[Binary]] with a different addition. In ordinary arithmetic $1+1=2$; in [[Modular Arithmetic]] mod 2, $1+1=0$; in Boolean algebra $1+1=1$.
 
-*[AI]* Historical remarks are from memory. Every identity listed was verified by checking all cases.
+*Note:* Historical remarks are from memory. Every identity listed was verified by checking all cases.
 
 ## The tables
 
@@ -60,7 +60,7 @@ One structure, three costumes:
 | **Sets** (inside a universe $U$) | $\varnothing$ | $U$ | union | intersection | complement |
 | **Switches** | open (off) | closed (on) | two switches in parallel | two in series | the opposite switch |
 
-*Switches:* current flows through a parallel pair if either is closed, which is $x+y$; through a series pair only if both are closed, which is $xy$. This is why Boolean algebra describes circuits. Shannon showed in the late 1930s that switching circuits obey it, and Boole's original work was in the 1840s–50s *[AI]* from memory.
+*Switches:* current flows through a parallel pair if either is closed, which is $x+y$; through a series pair only if both are closed, which is $xy$. This is why Boolean algebra describes circuits. Shannon showed in the late 1930s that switching circuits obey it, and Boole's original work was in the 1840s–50s (from memory).
 
 ## Aristotle in Boole
 
@@ -95,7 +95,7 @@ A finite Boolean algebra always has $2^k$ elements: it is the subsets of a $k$-e
 
 ## Certificates
 
-*[AI]* Every identity above is decided by a finite truth table, which is the model case of a [[Certificates]]-style proof: the check is mechanical and short for few variables. The law of the excluded middle, $x+x'=1$, is the identity that the intuitionist school doubts when the statement $x$ ranges over an infinite domain ([[Schools Compared]]). For a statement decided by a finite check, the identity holds because the check can be carried out.
+Every identity above is decided by a finite truth table, which is the model case of a [[Certificates]]-style proof: the check is mechanical and short for few variables. The law of the excluded middle, $x+x'=1$, is the identity that the intuitionist school doubts when the statement $x$ ranges over an infinite domain ([[Schools Compared]]). For a statement decided by a finite check, the identity holds because the check can be carried out.
 
 ## Beyond two values
 

@@ -15,7 +15,7 @@ Murphy's observation: *AND is times, OR is plus*, with factorial, permutation, c
 
 On a finite set $\Omega$ of equally likely outcomes, $P(A)=|A|/|\Omega|$ (Laplace). Everything below is arithmetic on whole numbers and fractions.
 
-## The dictionary, with its conditions [AI]
+## The dictionary, with its conditions
 
 | Say | Do | Holds when |
 |---|---|---|
@@ -64,14 +64,14 @@ The mnemonic is right, and the conditions are the lesson. **Heart or face card:*
 
 **The St. Petersburg paradox, finitely.** A coin is tossed until it first lands heads on toss $k$, and the player is paid $2^k$ (probability $2^{-k}$, so each term of the expectation is $1$ and the series diverges). With a *finite bank* that pays at most $2^m$, the expectation is exactly $m+1$ (computed for $m=1,\dots,20$): about $21$ for a bank near $10^6$, and about $665$ for a bank of $10^{200}$ (using $\log_2 10^{200}\approx664.4$). So the "infinite value" of the game is the growth of a logarithm in the size of the bank, and the paradox disappears once the stake is a number one can hold.
 
-## What probability means (interpretation) [AI]
+## What probability means (interpretation)
 
 Classical (counting equally likely cases), frequentist, Bayesian and propensity readings differ about what a probability *is*. The finite core works under all of them. Two points for the vault:
 
 - **"Equally likely" must come from somewhere.** The design-based approach gets it from a *randomizing act* (a shuffle, lots, dice), whose fairness is a physical fact with a certificate of its own ([[Constructible Statistics]], result 7).
 - **Providence.** Chance is not an independent power. Proverbs 16:33 (the lot is cast, its every decision is from the LORD; to check) is the pastoral reading; it is a link, and not a premise of the mathematics.
 
-## Teaching placement [AI]
+## Teaching placement
 
 Counting (arrangements, choose, Pascal's triangle) can sit with the number-theory stretch, since it is exact and symbol-light; probability proper follows the first symbols, near analytic geometry ([[Historical Order]]); statistics, for the majority, follows ([[Statistics]]).
 

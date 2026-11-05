@@ -11,7 +11,7 @@ updated: 2026-10-08
 
 If the slope is the basic quantity of [[Constructible Trigonometry]], a physical object needs a way to have its **slope** measured, as a protractor measures an angle. Slopes are "square" rather than rotational, so the device is a **square**, which can double as a carpenter's square if made of metal.
 
-*[AI]* This page reconstructs the device from the article's description. The article's figure of the marked square is not in the vault, so the details below follow from the text and have not been compared with it.
+*Note:* This page reconstructs the device from the article's description. The article's figure of the marked square is not in the vault, so the details below follow from the text and have not been compared with it.
 
 ## The device
 
@@ -63,7 +63,7 @@ A reading is a **rational** with denominator $60$ (right edge) or numerator $60$
 
 ## Resolution
 
-*[AI]* Computed from the geometry. In degrees, for comparison with an ordinary protractor:
+Computed from the geometry. In degrees, for comparison with an ordinary protractor:
 
 - Near a slope of $0$ (the bottom of the right edge) one mark is a step of $\arctan\tfrac1{60}\approx0.955^\circ$.
 - At the diagonal (slope $1$) one mark is a step of about $0.48^\circ$.

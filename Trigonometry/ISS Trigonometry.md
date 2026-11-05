@@ -95,7 +95,7 @@ Compared with the exact maximum from the cubic:
 | $1,5$ | $0.45229$ | $0.35267$ | $-22.0\%$ |
 | $1,20$ | $0.48765$ | undefined (negative radicand) | |
 
-*[AI]* It is good to a percent or two when $a$ and $b$ are within a factor of about $2.5$, and fails for lopsided triangles: the exact maximum tends to $a/2$ as $b/a$ grows ($0.4876$ at $b=20a$, $0.4975$ at $100a$, $0.4998$ at $1000a$), and the approximation does not.
+It is good to a percent or two when $a$ and $b$ are within a factor of about $2.5$, and fails for lopsided triangles: the exact maximum tends to $a/2$ as $b/a$ grows ($0.4876$ at $b=20a$, $0.4975$ at $100a$, $0.4998$ at $1000a$), and the approximation does not.
 
 ## Why a cubic: three real roots and an equilateral triangle
 
@@ -105,7 +105,7 @@ Check: the cubic with roots $-3,1,2$ is $x^3-7x+6$, so $P=-7$, $Q=6$, critical p
 
 ## When the cubic is reducible
 
-The cubic for $c$ is irreducible over $\mathbb Q$ unless it has a rational root. For $a=13$, $b=14$, $r=4$ it is $(c-15)(c^2-12c-117)$, with the rational root $15$ (a triangle whose third side is in $\mathbb Q$). *[AI]* Among $a,b\le8$ and $r\le5$, $8$ of $180$ cubics have an integer root. When there is a rational root the other two are in $\mathbb K$, from a quadratic.
+The cubic for $c$ is irreducible over $\mathbb Q$ unless it has a rational root. For $a=13$, $b=14$, $r=4$ it is $(c-15)(c^2-12c-117)$, with the rational root $15$ (a triangle whose third side is in $\mathbb Q$). Among $a,b\le8$ and $r\le5$, $8$ of $180$ cubics have an integer root. When there is a rational root the other two are in $\mathbb K$, from a quadratic.
 
 ## Exactness
 

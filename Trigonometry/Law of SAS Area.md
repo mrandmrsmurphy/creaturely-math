@@ -35,4 +35,4 @@ By symmetry, $Q=\tfrac12\,bc\,\dfrac{m_A}{\ell_A}=\tfrac12\,ca\,\dfrac{m_B}{\ell
 - **Right angle.** $m_C/\ell_C=\infty\div\infty=1$ in $\mathbb K^+$ ([[Extended Constructible Numbers]]), so $Q=\tfrac12ab$, the familiar half of a rectangle.
 - **Exactness.** If $a,b,m_C,\ell_C$ are in $\mathbb K$, so is $Q$: there is no approximation.
 - **Checks.** Sides $13,14,15$ with $C$ opposite $15$: $m_C/\ell_C=\dfrac{12/5}{13/5}=\dfrac{12}{13}$, so $Q=\tfrac12\cdot13\cdot14\cdot\tfrac{12}{13}=84$ ✔. Sides $1,1$ with $C$ the interior wedge of a regular hexagon: $m_C/\ell_C=\dfrac{-\sqrt3}{-2}$, so $Q=\dfrac{\sqrt3}4$ ✔. Sides $3,4$ with a right angle: $Q=6$ ✔.
-- **[AI]** With the [[Law of the Circumdiameter]], $c\,\ell_C/m_C=2R$ gives $m_C/\ell_C=c/(2R)$, so $Q=\dfrac{abc}{4R}$.
+- With the [[Law of the Circumdiameter]], $c\,\ell_C/m_C=2R$ gives $m_C/\ell_C=c/(2R)$, so $Q=\dfrac{abc}{4R}$.

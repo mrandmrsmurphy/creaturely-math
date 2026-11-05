@@ -58,4 +58,4 @@ Here $\sqrt3$ is the slope of the wedge of an equilateral triangle, and $\infty$
 
 The one place $\infty$ is divided is $\infty\div\infty=1$: for a right angle, $\ell/m=\infty\div\infty=1$ (for a right angle, $m/\ell$ is $1$), so the [[Law of SAS Area]] gives $Q=\tfrac12ab$ when $C$ is a right angle.
 
-**[AI]** The cases agree with writing slopes as ratios $[p:q]$ ($\infty=[1:0]$) and adding by $[p_1q_2+p_2q_1:\,q_1q_2-p_1p_2]$, which is never $[0:0]$ over a real field. That is a check, not the definition.
+The cases agree with writing slopes as ratios $[p:q]$ ($\infty=[1:0]$) and adding by $[p_1q_2+p_2q_1:\,q_1q_2-p_1p_2]$, which is never $[0:0]$ over a real field. That is a check, not the definition.

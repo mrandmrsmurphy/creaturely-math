@@ -23,7 +23,7 @@ The slopes follow once the area is known (below):
 
 $$m_C=\frac{4Q}{a^2+b^2-c^2},\qquad m_A=\frac{4Q}{b^2+c^2-a^2},\qquad m_B=\frac{4Q}{a^2+c^2-b^2}.$$
 
-**[AI]** Derivation: the [[Law of SAS Area]], $Q=\tfrac12ab\,m_C/\ell_C$, gives $m_C=\ell_C\cdot\dfrac{2Q}{ab}$, and substituting $\ell_C$ gives the form above. It has the right sign for free, and a right angle gives $4Q/0=\infty$. (The other route, $m_C=\pm\sqrt{\ell_C^2-1}$ with the sign of $\ell_C$, needs a second root.)
+Derivation: the [[Law of SAS Area]], $Q=\tfrac12ab\,m_C/\ell_C$, gives $m_C=\ell_C\cdot\dfrac{2Q}{ab}$, and substituting $\ell_C$ gives the form above. It has the right sign for free, and a right angle gives $4Q/0=\infty$. (The other route, $m_C=\pm\sqrt{\ell_C^2-1}$ with the sign of $\ell_C$, needs a second root.)
 
 ## The missing area
 

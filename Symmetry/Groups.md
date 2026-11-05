@@ -18,7 +18,7 @@ A **group** is a set with one operation such that:
 
 The number of elements is the **order** of the group. A group is **abelian** when $ab=ba$ always, and **cyclic** when one element generates it.
 
-*[AI]* Every table on this page was checked against all four axioms by trying every case. The counts of small groups are standard recollection and are not checked here.
+*Note:* Every table on this page was checked against all four axioms by trying every case. The counts of small groups are standard recollection and are not checked here.
 
 ## The Cayley table is the certificate
 
@@ -77,4 +77,4 @@ The multiplicative group of $\mathrm{GF}(5)$, with balanced digits, is the first
 
 ## How many groups
 
-*[AI]* From memory: the numbers of groups of order $1,2,3,4,5,6,7,8$ are $1,1,1,2,1,2,1,5$. Every group of prime order is cyclic. The first order with a group that is not abelian is $6$, and the first with several nonabelian ones is $8$. The symmetries of the equilateral triangle (order $6$, [[Symmetries of the Equilateral Triangle]]) and of the square (order $8$, [[Symmetries of the Square]]) are the smallest examples.
+From memory, to check: the numbers of groups of order $1,2,3,4,5,6,7,8$ are $1,1,1,2,1,2,1,5$. Every group of prime order is cyclic. The first order with a group that is not abelian is $6$, and the first with several nonabelian ones is $8$. The symmetries of the equilateral triangle (order $6$, [[Symmetries of the Equilateral Triangle]]) and of the square (order $8$, [[Symmetries of the Square]]) are the smallest examples.
