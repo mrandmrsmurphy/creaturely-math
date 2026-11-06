@@ -10,13 +10,13 @@ updated: 2026-11-04
 
 *Mathematics as a finite creature does it, before an infinite God.*
 
-This vault works out one conviction: **we are creatures, and God alone is infinite.** God ordered all things "in measure, number, and weight" (Wisdom 11:20), so the order mathematics studies is real — discovered, not invented. That order is also *created*, not self-existent. And the minds that study it are finite. The whole project is what mathematics looks like when those three things are held together and taken seriously at every step.
+This vault works out one conviction: **we are creatures, and God alone is infinite.** God ordered all things "in measure, number, and weight" (Wisdom 11:20), so that order of mathematics is real — discovered, not invented. Our order is *created*, not self-existent, because we don't think God's thought as He does. And the minds that study it are finite. The whole project is what mathematics looks like when those three things are held together and taken seriously at every step.
 
 ## The position in three parts
 
 **What numbers are — [[Creaturely Realism]].** Mathematical objects have natures we *discover* (against the view that they are labels or fictions); they belong to the creation, not to a self-existent Platonic realm; and finite minds know them by construction and approach, never by direct apprehension of an infinite whole. God knows $\pi$ completely, every digit, without convergence; we approach it by an algorithm that never arrives. That partiality is not a defect — it is what creaturely knowledge of a created object looks like.
 
-**How we know them — certificate-explicit constructivism ([[Certificates]]).** Every "=" is a *claim*, and every claim needs a stated warrant — a certificate, which is a procedure. Before any equals sign, the question is: *what is your certificate?* You can exhibit the thing (a count), construct it (compass and straightedge), converge to it (an algorithm with a stated error bound), or assign it by a named convention — and each of those is a different kind of "=".
+**How we know them — certificate-explicit constructivism ([[Certificates]]).** Every "=" is a *claim*, and every claim needs an exhibited warrant — a certificate, which is a procedure. Before any equals sign, the question is: *what is your manner of proof?* You can exhibit the thing (a count), construct it (compass and straightedge), converge to it (an algorithm with a stated error bound), or assign it by a naming convention — and each of those is a different kind of "=".
 
 **How big mathematics is — [[Creational Ultrafinitism]].** Potential infinity, yes: every $n$ has an $n+1$. Completed infinity, no: the Axiom of Infinity is a theological claim disguised as a mathematical axiom. And past a threshold you are holding *notation, not a number* — the skepticism is graduated, a rising cost rather than a cliff, and the bound is the creation's own (about $10^{140}$ physical events in the observable universe).
 
