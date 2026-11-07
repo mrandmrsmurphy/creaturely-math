@@ -4,9 +4,9 @@ aliases:
   - Tempered Ultrafinitism
 type: concept
 status: canonical
-provenance: murphy (position; the physical-bound arithmetic and the bound's scope) + ai-synthesis (rival critique)
+provenance: murphy (position; the physical-bound arithmetic and the bound's scope; absolute and relative feasibility) + ai-synthesis (rival critique)
 sources: "[[SRC CCE Primer (2026-06)]], [[SRC Confession of Mathematics (2023-24)]], [[SRC me.md Math Section]]"
-updated: 2026-10-07
+updated: 2026-11-07
 ---
 
 # Creational Ultrafinitism
@@ -44,6 +44,8 @@ Murphy picks **$10^{200}$ as the biggest number**. It is not a line in the sand.
 **Esenin-Volpin's answer to "why not one more?"** Alexander Esenin-Volpin was the hard ultrafinitist. Harvey Friedman tells of asking him, in a lecture: *Do you believe in 1? Do you believe in 2? In $2^2$? $2^3$?* and so on up to $2^{100}$. Esenin-Volpin answered **yes** every time, but took longer each time: by Friedman's account, about $2^{100}$ times as long to answer for $2^{100}$ as for $2^1$ (a retelling by Scott Aaronson has the delay doubling at each step). So the answers do not flip at a line. The *cost* of the "yes" grows until it exceeds any possible resources.
 
 That is the gradient. $2^{100}\approx1.27\times10^{30}$ is far below $10^{200}$ and already costs more than anyone could pay to hold digit by digit. The sorites objection ("where is the line?") loses its force when the answer is a cost that rises smoothly with size, not a boundary.
+
+**Absolute and relative feasibility (Murphy).** The threshold question splits in two. *Absolute* feasibility is the philosophical horizon: there is a boundary beyond which a number or operation is not mathematically available to created minds, whatever the computer or technology — the physical bounds above are the working estimate of its upper edge. *Relative* feasibility is the working apparatus: what can be constructed and certified for a particular task, against a stated budget of resources ([[Computational Admissibility]]). The vault needs both, with the relationship defined; the distinction keeps the horizon from depending on any particular machine, and keeps finite notation from being mistaken for an available object.
 
 ## Against the alternatives
 

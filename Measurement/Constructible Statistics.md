@@ -47,6 +47,19 @@ Two further concerns get explicit treatment:
 - **Measurement.** A real-world measurement has finite precision: record it as an exact recorded value or as a rational interval when the precision is uncertain; never pretend a physical measurement produces an infinitely precise real number. This is the significant-digit discipline of [[Number in Natural Philosophy]].
 - **Computational complexity.** Finite is not the same as feasible ([[Creational Ultrafinitism]]): a finite procedure may not be practically executable, and the distinction matters most in combinatorial inference (enumerating all permutations is exponential; see What is given up, item 2).
 
+## The foundational architecture (Murphy)
+
+The branch table above gives the subject matter; this layering gives what stands on what:
+
+I. **Finite observations** — explicit datasets, finite populations, rational measurements with recorded precision.
+II. **Rational arithmetic** — exact fractions, integer operations, quadrance, finite sums and products.
+III. **Finite probability** — $P(A)=|A|/|\Omega|$ on explicit sample spaces; combinatorics; finite distributions.
+IV. **Statistical construction** — descriptive statistics, regression, the Pascal distributions, rational modeling.
+V. **Constructive inference** — finite Bayesian models, design-based inference, prediction, decision theory.
+VI. **Certification and complexity** — resource bounds, numerical resolution, finite certificates, feasible computation ([[Computational Admissibility]]).
+
+Layer VI is not merely an advanced topic: its principles govern all the preceding branches. Example, the Pascal distribution $p_{n,k}=\binom nk/2^n$: a complete treatment establishes (1) how to construct the $n$-th row; (2) how much arithmetic the construction requires; (3) how large the numerators and denominators grow; (4) how to verify that the probabilities sum to one; (5) at what $n$ the complete distribution ceases to be feasible under a specified resource budget. The family is not merely a family of finite distributions; its members have individually assessable computational costs.
+
 ## First definitions and theorems (Murphy)
 
 Definitions: (1) finite statistical population; (2) finite dataset; (3) rational frequency distribution; (4) statistical center; (5) quadrance and statistical dispersion; (6) rational probability distribution.
