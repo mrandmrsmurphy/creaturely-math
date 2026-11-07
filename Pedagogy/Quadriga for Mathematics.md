@@ -135,5 +135,5 @@ None of the following has been taught as a year of school. It is listed so that 
 
 1. The name's two forms (*Religiosa* and *Religionis*) both appear for the Scripture quadriga.
 2. The Latin pairs are listed by position against the English offices and rules; where the match is loose it is flagged on each art's page.
-3. The ecumenical draft written for Catholic readers has not yet been reviewed by Murphy; the Protestant text is the canonical one here.
+3. Audience variants are legitimate (Murphy): the Quadriga may be presented in versions — to Catholics (the ecumenical draft, Part II of the source, is the first), to the Orthodox, to humanists — while the Protestant text stays canonical in this vault. Open: the Catholic variant has not been reviewed against Part I.
 4. The relation of the Quadriga to the sciences, and the bands of the Scale framework, are outside this vault except for the one principle above.

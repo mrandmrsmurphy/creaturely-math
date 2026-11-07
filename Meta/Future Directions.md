@@ -44,12 +44,12 @@ updated: 2026-11-06
 | Babylon stays in the Rebellion row, charitably: a far side of the pagan spectrum, not a driving over the cliff; legitimate as practice, rebellious as classification | [[Theology of Number]], [[Babylonian Mathematics]] |
 | Level 12 and the Posits: not numbers in the normal sense, their systems not warranted; recorded dialectically — uncomputables are asserted without exhibition, to press the believer in the completed reals | [[Number Hierarchy]], [[Numbers, Lengths and Pixels]] |
 | The Catechism and the Confession are early drafts from before the hierarchy and may be wrong; not to be finished or unified; delete after an absorption check | [[SRC Catechism of Mathematics (2023)]], [[SRC Confession of Mathematics (2023-24)]] (item 11) |
+| The Quadriga may be presented in audience variants (Catholic, Orthodox, humanist); the Protestant text stays canonical; the ecumenical draft is the Catholic variant | [[Quadriga for Mathematics]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
-1. **Quadriga:** review the ecumenical draft (the Protestant text is canonical here). ([[Quadriga for Mathematics]], Open 3.)
-2. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
-3. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
+1. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
+2. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
 
 ### B. Open work, by strand
 
@@ -70,7 +70,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **medium** Sort claims by kind: *mathematical* (a result with a proof or a check), *theological ground*, *pedagogical proposal*, *unresolved*. Possibly a `claim:` line in each canonical page's frontmatter, kept apart from `provenance:`. Builds on [[Four Kinds of Truth]], [[Theological Grounds]] and the provenance tags. Decide the vocabulary with Murphy before applying it to pages.
 - **medium** Settled versus contested made sharper on the pages: a reader of any page should see at its head which parts are settled by Murphy, which are the vault's working reading, and which are open, as the Agenda's Settled table does for the whole vault. Several pages state the position as more decided than it is (the reviewer's worry); audit them against the Settled table.
 - **small** A short list of the most important open problems, five or six lines at the top of the Agenda, so a reader need not read the whole document set (section C below is the start).
-- **medium** The public essay of item A3, if Murphy adopts it; otherwise fold its aim into *What this project is*.
+- **medium** The public essay of item A2, if Murphy adopts it; otherwise fold its aim into *What this project is*.
 
 **Number**
 - **next** *Primes* (one page): why $\mathbb Z/p$ is special; a positive certificate (Pratt) beside Fermat's witness; Wilson as characterisation. Four pages wait on it: [[Modular Arithmetic]], [[Wilson's Theorem]], [[Fermat's Little Theorem]], [[Fundamental Theorem of Arithmetic]].
@@ -105,6 +105,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 **Pedagogy** — all future pedagogical work, none taught as a year yet
 - Proof types by grade; a classroom set per Exercise; rubrics; a curriculum placement chart; a unit template; teacher-equipping sequence: the list is on [[Quadriga for Mathematics]] ("Future pedagogical work"). Open questions on [[Historical Order]], [[Quaestio]], [[Praxis]], [[Noesis]].
 - **small** Absorption check on the two superseded snapshots (item 11): confirm that everything worth keeping in [[SRC Catechism of Mathematics (2023)]] and [[SRC Confession of Mathematics (2023-24)]] is on canonical pages — much already is ($\varepsilon^2=0$ on [[Infinitesimals]]; the equal-sign line on [[Equal Signs]]; successor-on-faith on [[Infinity and Cantor]]; the Q&A format on [[Classroom Questions]]) — then delete both snapshots and clean the links ([[Home]], the `sources:` lines, [[Three Tiers]], [[Geometry Hierarchy]], [[Creaturely Realism]], [[Timeline of the Position]]).
+- **small** Review the Catholic variant of the Quadriga (Part II of [[Quadriga Scientiae - Complete]]) against Part I; possible Orthodox and humanist variants (variants are legitimate, Murphy — [[Quadriga for Mathematics]], Open 3).
 
 **History and verification** (**background**)
 - Quotations, attributions and dates are recollections on [[Mathematics 1730 to 1900]], [[Greek Mathematics]], [[Babylonian Mathematics]], [[The Road to Calculus]], [[Mathematics 500 to 1500]], [[Mathematics 1900 to Today]]; each page's hard problems list what to check. [[Five Acts]]: the typology is interpretive.
