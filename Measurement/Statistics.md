@@ -2,7 +2,7 @@
 title: Statistics
 type: concept
 status: "stub (the stance and a few checked examples; the course is unwritten)"
-provenance: "murphy (the direction, statistics is what most students get at the end of mandatory schooling) + ai-synthesis (the stance, the examples, the flagged problems)"
+provenance: "murphy (the direction, statistics is what most students get at the end of mandatory schooling; the $p$-value teaching decision) + ai-synthesis (the stance, the examples, the flagged problems)"
 sources: "[[Historical Order]], [[Curriculum Plan]], [[Future Directions]], [[Certificates]], [[Theological Grounds]]"
 updated: 2026-10-09
 ---
@@ -56,10 +56,11 @@ For $n=1000$, $\varepsilon=0.05$ the three bounds on the chance of a miss are $\
 
 A development that takes finite data, rational moments, quadrance and exact counting as primary, with the Gaussian as an optional approximation, is on [[Constructible Statistics]].
 
+**$p$-values, as taught (Murphy).** Significance tests enter the course only in their exact, combinatorial form — the permutation test and Fisher's exact test, where $p$ is a ratio of counts and the probability comes from the randomization the experimenter performed ([[Constructible Statistics]]). The main instruments are the intervals and bounds above. The $0.05$ ritual is named as a custom to be read with suspicion, not practised: students will meet $p$-value claims in journalism and medicine, and they should be able to audit one — to ask for its certificate. A $p$-value sold as "the probability the null is true" is a false balance.
+
 ## Hard problems
 
 1. **Continuous distributions.** The normal density and the integral under it are idealisations. Under the position they are approximations to finite sums with named error ([[Calculus]], [[Fundamental Theorem of Calculus]]).
-2. **Significance testing as ritual.** Whether to teach $p$-values at all, or the intervals and the bounds behind them, is open; the false-balance risk is high.
-3. **Bayesian and frequentist.** Both are finite calculations; which the course should lead with is not settled here.
-4. **Infinite populations and limits.** Statements "as $n\to\infty$" need to be replaced by the finite bound above.
-5. **Randomness.** What a sequence must be to count as random is deferred.
+2. **Bayesian and frequentist.** Both are finite calculations; which the course should lead with is not settled here.
+3. **Infinite populations and limits.** Statements "as $n\to\infty$" need to be replaced by the finite bound above.
+4. **Randomness.** What a sequence must be to count as random is deferred.

@@ -2,7 +2,7 @@
 title: Praxis
 type: framework
 status: "canonical (the art as Murphy states it; the mathematical illustrations are marked [AI])"
-provenance: "murphy (the art, the five regulae, the Latin pairs, the theology: Sources/Quadriga Scientiae - Complete, Part I and Appendix A) + ai-synthesis (the illustrations and the observations marked [AI])"
+provenance: "murphy (the art, the five regulae, the Latin pairs, the theology: Sources/Quadriga Scientiae - Complete, Part I and Appendix A; the arithmetic/mathematics distinction for assessment) + ai-synthesis (the illustrations and the observations marked [AI])"
 sources: "[[Quadriga for Mathematics]], [[Three Tiers]], [[Quadriga Scientiae - Complete]]"
 updated: 2026-10-10
 ---
@@ -51,8 +51,8 @@ The regulae are also "maxims for the Christian life": the young inquirer's fire 
 - **Praxis without Noesis:** can integrate by parts but cannot see why the technique applies (the student was never taught to *see*).
 - **Noesis without Praxis:** good intuitions and constant arithmetic errors; execution needs separate practice.
 - **Assessment:** Praxis is assessed by execution on *known* problem types under conditions that reward carefulness over speed (source). Noesis, by contrast, needs novel problems.
+- **Arithmetic versus mathematics (Murphy).** Arithmetic is a skill, a technical performance: it can be drilled, and timed fluency checks belong there (the K–5 fluency goal of [[Historical Order]]). Mathematics proper is an art and a science: it cannot be drilled or timed. The timed test is not the enemy of the Quadriga; it is simply the arithmetic room, not the mathematics room.
 
 ## Hard problems
 
-1. **Where Praxis is rewarded.** The source's teaching notes assess it "under conditions that reward carefulness over speed", while the ordinary timed test rewards the reverse. Whether the vault's pedagogy wants untimed fluency checks is not yet decided ([[Curriculum Plan]]).
-2. **Praxis at the edge of the budget.** Faithful execution has a cost, and the vault's ultrafinitism puts a ceiling on it ([[Creational Ultrafinitism]]). "Execution begins and reveals that the problem is computationally intractable" is one of the source's own routes from Praxis back to Noesis ([[Quadriga for Mathematics]], the twelve edges).
+1. **Praxis at the edge of the budget.** Faithful execution has a cost, and the vault's ultrafinitism puts a ceiling on it ([[Creational Ultrafinitism]]). "Execution begins and reveals that the problem is computationally intractable" is one of the source's own routes from Praxis back to Noesis ([[Quadriga for Mathematics]], the twelve edges).

@@ -45,10 +45,12 @@ updated: 2026-11-06
 | Level 12 and the Posits: not numbers in the normal sense, their systems not warranted; recorded dialectically — uncomputables are asserted without exhibition, to press the believer in the completed reals | [[Number Hierarchy]], [[Numbers, Lengths and Pixels]] |
 | The Catechism and the Confession are early drafts from before the hierarchy and may be wrong; not to be finished or unified; delete after an absorption check | [[SRC Catechism of Mathematics (2023)]], [[SRC Confession of Mathematics (2023-24)]] (item 11) |
 | The Quadriga may be presented in audience variants (Catholic, Orthodox, humanist); the Protestant text stays canonical; the ecumenical draft is the Catholic variant | [[Quadriga for Mathematics]] |
+| Arithmetic is a skill and can be drilled and timed; mathematics proper is an art and science and cannot — timed fluency checks belong to arithmetic | [[Praxis]], [[Historical Order]] |
+| $p$-values are taught only in their exact, combinatorial form (permutation, Fisher): a ratio of counts, the probability from the randomization performed; intervals and bounds are the main instruments; the $0.05$ ritual is named and read with suspicion | [[Statistics]], [[Constructible Statistics]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
-1. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
+1. **Pedagogy choices:** Bayesian or frequentist first ([[Statistics]]).
 2. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
 
 ### B. Open work, by strand
