@@ -4,7 +4,7 @@ aliases:
   - Rational Statistics
 type: theory
 status: "framework (the objects, seven checked results, the costs, the gaps; not a finished theory)"
-provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; and the retooling from rational to constructible) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
+provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; the retooling from rational to constructible; the rule — finitely specified, explicitly constructible, finitely certified; regression as the pillar; the Pascal distributions as the central shape, excluding the Gaussian) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
 sources: "[[Statistics]], [[Exact Until Output]], [[Constructible Trigonometry]], [[Constructible Numbers]], [[Certificates]], [[Creational Ultrafinitism]], [[Fundamental Theorem of Algebra]]"
 updated: 2026-10-09
 ---
@@ -14,6 +14,8 @@ updated: 2026-10-09
 **Question (Murphy):** can statistics be built with, as primary objects, finite datasets, exact moments, quadrances, slopes, exact combinatorial probabilities and explicit finite bounds, while continuous distributions and transcendental functions are optional extensions and not foundations?
 
 **Answer: yes for the working core, and most of its pieces already exist.** What does not yet exist is the assembly, the quadrance-first teaching, and a clear account of what is given up. "Constructive" means *certificate-explicit* ([[Certificates]]): every statement is a finite computation or a stated bound with an exact certificate.
+
+**The rule (Murphy):** every statistical object must be finitely specified; every numerical result must be constructible by an explicit procedure; and every claim must be supported by a finite certificate.
 
 ## Why "constructible" and not "rational"
 
@@ -52,7 +54,7 @@ What remains kept apart is the transcendental ($\pi$, $e$, the Gaussian density)
 
 ### 1. Description is quadrance geometry
 
-For $x=1,2,3,4,5$ and $y=2,1,4,3,5$: means $3,3$; variances $2,2$; covariance $\tfrac85$; slope $\tfrac45$, intercept $\tfrac35$. The correlation is the cosine between the centred vectors, so $r^2=\tfrac{16}{25}$ and the spread is $\tfrac9{25}$ (sum $1$). Total quadrance splits **Pythagorean-style**: $10=\tfrac{32}5+\tfrac{18}5$ (explained plus residual), and $\mathrm{SSR}/\mathrm{SST}=r^2$.
+**Regression is the pillar (Murphy).** For $x=1,2,3,4,5$ and $y=2,1,4,3,5$: means $3,3$; variances $2,2$; covariance $\tfrac85$; slope $\tfrac45$, intercept $\tfrac35$. The correlation is the cosine between the centred vectors, so $r^2=\tfrac{16}{25}$ and the spread is $\tfrac9{25}$ (sum $1$). Total quadrance splits **Pythagorean-style**: $10=\tfrac{32}5+\tfrac{18}5$ (explained plus residual), and $\mathrm{SSR}/\mathrm{SST}=r^2$.
 
 **The slope form.** In the vault's primitive the same quantity is a slope: $m^2=\dfrac{\mathrm{SSE}}{\mathrm{SSR}}=\dfrac{1-r^2}{r^2}$. Here $m^2=\tfrac{18/5}{32/5}=\tfrac9{16}$, so $m=\tfrac34$ and $\ell=\tfrac54=1/r$ (the 3-4-5 triangle; the spread is $\tfrac{m^2}{1+m^2}=\tfrac9{25}$, checked). For $r^2=\tfrac13$ one gets $m^2=2$ and $m=\sqrt2$, held exactly. This $m$ is the slope of the wedge between the two data vectors in $n$-space, *not* the slope of the fitted line (here $\tfrac45$). The sign of $r$ is the sign of $\ell$ and of $m$.
 
@@ -102,7 +104,7 @@ So the trade is visible: the constructible interval (result 5) is closed-form an
 
 ## What the Gaussian becomes
 
-A **named approximation to a binomial table, with an error**, kept as an optional extension. Its three classical jobs have constructible replacements:
+The central shape is the family $\binom nk/2^n$: the **Pascal distributions** (Murphy's name), tabulated exactly, to the exclusion of the so-called Gaussian. The Gaussian survives only as a **named approximation to a Pascal table, with an error**, an optional extension. Its three classical jobs have constructible replacements:
 
 1. *Approximating sums of many small effects:* exact convolution (the binomial table) where it can be computed; the moment ladder where not.
 2. *Justifying least squares* (Gauss's route used the normal law): the Pythagorean geometry of result 1, and the Gauss–Markov theorem, a statement about variances and covariances only (to check).
@@ -132,3 +134,4 @@ Fisher's randomization and exact tests and Pitman's permutation tests (1930s); N
 3. A closed form for the best rung of the ladder.
 4. The quadrance-first course: squared $z$-scores, Chebyshev in quadrance form ([[Statistics]]).
 5. Intervals for measured data.
+6. The descriptive vocabulary in one place: count, frequency, relative frequency, mean and weighted mean, median, mode, range, variance, standard deviation, quartiles, interquartile range. Several are implicit or absent: frequency and relative frequency live unnamed in the tables; the median appears only under robustness; weighted mean, mode, range, quartiles and the interquartile range are absent.
