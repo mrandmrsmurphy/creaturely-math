@@ -207,7 +207,7 @@ The same calculus with the step below the resolution of the certificate is [[Cal
 
 ## Hard problems
 
-1. **The threshold and the dial.** "Drop the terms that $h$ multiplies" is exact for polynomials and rational functions (cancel, then set $h=0$). For $E_h$, $H_n$ and the circle, what is the certificate that licenses the passage? The error terms are explicit in the examples above, but no general statement is given for non-polynomial $f$.
+1. **The threshold and the dial.** "Drop the terms that $h$ multiplies" is exact for polynomials and rational functions (cancel, then set $h=0$). For $E_h$, $H_n$ and the circle, what is the certificate that licenses the passage? The error terms are explicit in the examples above, but no general statement is given for non-polynomial $f$. The named ancestors now have their certificates on [[Derivatives with Certificates]]; the general statement is the bridge theorem of the Agenda.
 2. **$\gamma$.** $\gamma=\lim(H_n-\ln n)$ is a Level-11 object defined through $\ln$ (the logarithm that $e$, Level 9, is defined by), so "cost of discretization" is a gap between two objects of different standing ([[Number Hierarchy]]).
 3. **Higher order.** Second differences are constant for quadratics and give $\Delta^2$ rules; Taylor remainders at the threshold need $h^3=0,\ h^4=0,\dots$ (see [[Infinitesimals]], hard problem 4).
 4. **Part II is thin:** five short sections. Open: a second circular difference (the oscillator $\Delta^2 z=(z(u)-1)^2z$), summation of $\sum S(t_n)$, and the hyperbolic case.

@@ -70,5 +70,5 @@ Output $x=\tfrac{181}{128}$ with $|f(x)|=0.00043\le2\varepsilon$ (exact rational
 
 1. **The modulus is an input.** The theorem is only as good as the certificate $\delta(\varepsilon)$. Where does it come from for a function *given by a process* (a limit, a series, a solution of an equation)? Another face of the certificate problem ([[Future Directions]] item 3).
 2. **Evaluating $f$ to precision $\varepsilon/2$** has its own cost, which grows with the precision and with the function. The step count above counts *evaluations*, not the total work.
-3. **No excluded middle.** The algorithm avoids the question "$f(m)=0$?" in favour of two overlapping tests. In SIA ([[Infinitesimals]]) case analysis is also unavailable, and how much of the IVT survives there is not settled here; see [[Calculus]], hard problem 2.
+3. **No excluded middle.** The algorithm avoids the question "$f(m)=0$?" in favour of two overlapping tests. In SIA ([[Infinitesimals]]) case analysis is also unavailable, and how much of the IVT survives there is not settled here; see [[Calculus]], hard problem 1.
 4. **The extreme value theorem, Heine–Borel, Bolzano–Weierstrass** are the same sort of completeness claims; see [[Extreme Value Theorem]]. Finding a maximum costs exponentially more in the digits than finding a zero.

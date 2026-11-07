@@ -27,7 +27,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 **Trigonometry** — [[Extended Constructible Numbers]] · [[Slope]] · [[Characteristic Length]] · [[Nested Radicals]] · [[Exact Slopes]] · [[Slope Approximations]] · [[Slope Protractor]] · [[Sum of Slopes]] · [[Rational Rotation]] · [[Law of Slopes]] · [[Triangle Identities]] · [[Law of Lengths]] · [[Law of SAS Area]] · [[Heron's Formula]] · [[SSS Trigonometry]] · [[SAS Trigonometry]] · [[AAS Trigonometry]] · [[ASA Trigonometry]] · [[SSA Trigonometry]] · [[QSS Trigonometry]] · [[QAA Trigonometry]] · [[QAS Trigonometry]] · [[SQA Trigonometry]] · [[ISS Trigonometry]] · [[IAA Trigonometry]] · [[IAS Trigonometry]] · [[CSS Trigonometry]] · [[CAA Trigonometry]] · [[CAS Trigonometry]] · [[QCS Trigonometry]] · [[Law of the Circumdiameter]] · [[Constructible Trigonometry]]
 
-**Change** — [[Infinitesimals]] · [[Discrete Calculus]] · [[Calculus]] · [[Fundamental Theorem of Calculus]] · [[Intermediate Value Theorem]] · [[Extreme Value Theorem]] · [[Mean Value Theorem]] · [[Bolzano-Weierstrass Theorem]] · [[Fourier Analysis]]
+**Change** — [[Infinitesimals]] · [[Discrete Calculus]] · [[Calculus]] · [[Derivatives with Certificates]] · [[Fundamental Theorem of Calculus]] · [[Intermediate Value Theorem]] · [[Extreme Value Theorem]] · [[Mean Value Theorem]] · [[Bolzano-Weierstrass Theorem]] · [[Fourier Analysis]]
 
 **Logic** — [[Boolean Algebra]] · [[Three-Valued Logic]]
 

@@ -51,6 +51,7 @@ updated: 2026-11-07
 | Design-based probability is the foundation (grounded in actual finite randomization); Bayesian inference is the primary inferential framework, in its finite form (six restrictions; every prior carries a justification); three meanings of probability — combinatorial, empirical, epistemic — with the combinatorial foundational | [[Constructible Statistics]], [[Statistics]] |
 | The public essay: adopted and written as a mini-PhD in four parts — assumptions; state of research; directions; future growth | [[Measure, Number, and Weight]] (the Legibility essay line) |
 | Feasibility is twofold: absolute (the creaturely horizon, independent of any machine) and relative (admissibility $T_C(x,\varepsilon)\le B$ against a stated budget); expression ≠ constructed object ≠ certified result; construction and certification costs are bounded separately | [[Computational Admissibility]], [[Creational Ultrafinitism]] (item 2's framing) |
+| Derivatives of $\exp$, $\ln$, $\sin$, $\cos$ with certificates: quadratic-remainder bounds ($C=e^{|x|}$, $2/x^2$, $\tfrac23$); the $E_h$ and $H_n$ comparisons; the rational rotation against the classical circle to $O(k/N^3)$ | [[Derivatives with Certificates]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
@@ -86,11 +87,10 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **small** [[Chinese Remainder Theorem]] cost bound; [[Euler's Theorem]], [[Fiat Numbers]], [[Tally Marks]] hard problems.
 
 **Change (calculus)** — item 5; all of these are stated as open on the pages named
-- **core** *Derivatives of $\exp,\log,\sin,\cos$ with certificates*, taken from their discrete ancestors ($E_h$, $H_n$, the circle) with explicit error: [[Calculus]] "Exact versus honest" and hard problem 1; [[Mean Value Theorem]] 1; [[Discrete Calculus]] 1. This unlocks the rest. The circle's discrete ancestor now has a page ([[Rational Rotation]]) and the reading of answers by level is set ([[Function Hierarchy#Reading an answer by parts]]); the error bounds against the classical graphs are not written.
-- **next** *The bridge theorem*: for a general $f$, an explicit bound licensing "drop the terms $h$ multiplies" in terms of $f''$ (exact for polynomials). [[Calculus]] 3; [[Fundamental Theorem of Calculus]] 1; [[Discrete Calculus]] 1.
-- **next** Second derivative and Taylor remainder with a stated error; how many powers of $\varepsilon$ the threshold allows. [[Infinitesimals]] 4; [[Calculus]] 4; [[Mean Value Theorem]] 3.
+- **next** *The bridge theorem*: for a general $f$, an explicit bound licensing "drop the terms $h$ multiplies" in terms of $f''$ (exact for polynomials; written for $\exp$, $\ln$, $\sin$, $\cos$ on [[Derivatives with Certificates]]). [[Calculus]] 2; [[Fundamental Theorem of Calculus]] 1; [[Discrete Calculus]] 1.
+- **next** Second derivative and Taylor remainder with a stated error; how many powers of $\varepsilon$ the threshold allows. [[Infinitesimals]] 4; [[Calculus]] 3; [[Mean Value Theorem]] 2.
 - **medium** Infinite intervals and series as bounded sums with a tail bound ([[Fundamental Theorem of Calculus]] 3); antiderivatives beyond the algebraic functions (4); constancy: adopt the SIA axiom or require a modulus (2).
-- **medium** Several variables ([[Extreme Value Theorem]] 3, [[Bolzano-Weierstrass Theorem]] 4, [[Mean Value Theorem]] 4); near-maximizers ([[Extreme Value Theorem]] 1); metastability for general bounded sequences ([[Bolzano-Weierstrass Theorem]] 1); Fermat's interior-maximum argument in the $\varepsilon$-calculus ([[Extreme Value Theorem]] 4).
+- **medium** Several variables ([[Extreme Value Theorem]] 3, [[Bolzano-Weierstrass Theorem]] 4, [[Mean Value Theorem]] 3); near-maximizers ([[Extreme Value Theorem]] 1); metastability for general bounded sequences ([[Bolzano-Weierstrass Theorem]] 1); Fermat's interior-maximum argument in the $\varepsilon$-calculus ([[Extreme Value Theorem]] 4).
 - **medium** [[Discrete Calculus]] Part II is thin: second circular difference, $\sum S(t_n)$, the hyperbolic case; $\gamma$ as a gap between levels.
 - **medium** Differential equations: a systematic budget-form account ([[Function Hierarchy]], ODE section; [[Christians and the Reals]] gap 4).
 
@@ -117,10 +117,9 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 ### C. Suggested next jobs **[AI]**
 1. *Primes* page: small, and four pages wait on it.
 2. CPA and IQA: ready, formulas checked.
-3. *Derivatives of exp, log, sin, cos with certificates*: the largest unlock in Change.
-4. Induction (item 6) and proof in K3 (item 7): Murphy has just decided both principles; the pages are what is left.
-5. The Finite Certification Theorems, one per certificate kind (item 2): the core problem, and the hardest — the framework is now [[Computational Admissibility]].
-6. The three-part banner on each strand hub: the page it leans on ([[What this project is]]) is written.
+3. Induction (item 6) and proof in K3 (item 7): Murphy has just decided both principles; the pages are what is left.
+4. The Finite Certification Theorems, one per certificate kind (item 2): the core problem, and the hardest — the framework is now [[Computational Admissibility]].
+5. The three-part banner on each strand hub: the page it leans on ([[What this project is]]) is written.
 
 ### D. Deferred on purpose
 The book plans of Part I.

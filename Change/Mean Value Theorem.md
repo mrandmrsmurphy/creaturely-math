@@ -87,7 +87,6 @@ Taylor's remainder (Lagrange form) and L'Hôpital rest on the MVT and on the Cau
 
 ## Hard problems
 
-1. **Where $\delta_d$ comes from** for $\exp$, $\ln$, $\sin$, $\cos$. Their discrete ancestors have explicit errors ($E_h$ has $D_hE_h=E_h$ exactly; the circle has exact addition formulas, [[Discrete Calculus]]), and a statement of the modulus for the *functions* is still to be written.
-2. **The order of dependence.** The proof of the inequality form uses only the finite fundamental theorem and a modulus; the EVT is not used. Does the **point form** need only the IVT, as here, or something more for $f'$ merely a derivative (not continuous)? The classical Darboux property (a derivative has the intermediate value property) is not examined.
-3. **Higher order.** Taylor's theorem with remainder needs $\varepsilon^{n+1}=0$-type moduli ([[Infinitesimals]], hard problem 4).
-4. **Several variables.** The grid costs $(1/\varepsilon)^n$ ([[Extreme Value Theorem]], hard problem 3); the inequality form is dimension-free but the point form is not.
+1. **The order of dependence.** The proof of the inequality form uses only the finite fundamental theorem and a modulus; the EVT is not used. Does the **point form** need only the IVT, as here, or something more for $f'$ merely a derivative (not continuous)? The classical Darboux property (a derivative has the intermediate value property) is not examined.
+2. **Higher order.** Taylor's theorem with remainder needs $\varepsilon^{n+1}=0$-type moduli ([[Infinitesimals]], hard problem 4).
+3. **Several variables.** The grid costs $(1/\varepsilon)^n$ ([[Extreme Value Theorem]], hard problem 3); the inequality form is dimension-free but the point form is not.
