@@ -47,7 +47,7 @@ updated: 2026-11-06
 | The Quadriga may be presented in audience variants (Catholic, Orthodox, humanist); the Protestant text stays canonical; the ecumenical draft is the Catholic variant | [[Quadriga for Mathematics]] |
 | Arithmetic is a skill and can be drilled and timed; mathematics proper is an art and science and cannot — timed fluency checks belong to arithmetic | [[Praxis]], [[Historical Order]] |
 | $p$-values are taught only in their exact, combinatorial form (permutation, Fisher): a ratio of counts, the probability from the randomization performed; intervals and bounds are the main instruments; the $0.05$ ritual is named and read with suspicion | [[Statistics]], [[Constructible Statistics]] |
-| Constructible statistics: the rule (every object finitely specified, every result constructible by an explicit procedure, every claim with a finite certificate); regression is the pillar; the central shape is the Pascal distributions $\binom nk/2^n$, excluding the Gaussian | [[Constructible Statistics]] |
+| Constructible statistics: the rule (every object finitely specified, every result constructible by an explicit procedure, every claim with a finite certificate); regression is the pillar; the central shape is the Pascal distributions $\binom nk/2^n$, excluding the Gaussian; the constitution (five commitments) and the six branches are set; development order: branches I–III rigorous first, then inference | [[Constructible Statistics]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
@@ -101,7 +101,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **medium** A geometry without continuity axioms (item 8): engage Hilbert's continuity axioms ([[Geometry Hierarchy]], Open).
 
 **Measurement**
-- **next** [[Constructible Statistics]] next steps: the minimal theorems with proofs; the descriptive vocabulary defined in one place (weighted mean, mode, range, quartiles and interquartile range are absent; frequency, relative frequency and the median are only implicit); the Gaussian as a named approximation of the Pascal distributions with explicit error; intervals for measured data.
+- **next** [[Constructible Statistics]]: the constitution and the six branches are set (Murphy); his order — branches I–III (descriptive, quadrance, combinatorial probability) made completely rigorous first, then inference, with the Pascal distributions as the bridge to modeling. Then: the minimal theorems with proofs; the descriptive vocabulary defined in one place (weighted mean, mode, range, quartiles and interquartile range are absent; frequency, relative frequency and the median are only implicit); the Gaussian as a named approximation of the Pascal distributions with explicit error; intervals for measured data.
 - **medium** [[Probability]]: conditional probability and independence on huge spaces; a density as an approximation to a finite table, with error. [[Statistics]]: continuous distributions; "as $n\to\infty$" replaced by finite bounds.
 - **background** Randomness (deferred on both pages).
 

@@ -4,9 +4,9 @@ aliases:
   - Rational Statistics
 type: theory
 status: "framework (the objects, seven checked results, the costs, the gaps; not a finished theory)"
-provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; the retooling from rational to constructible; the rule — finitely specified, explicitly constructible, finitely certified; regression as the pillar; the Pascal distributions as the central shape, excluding the Gaussian) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
+provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; the retooling from rational to constructible; the rule — finitely specified, explicitly constructible, finitely certified; regression as the pillar; the Pascal distributions as the central shape, excluding the Gaussian; the constitution — five commitments, six branches, the first definitions and theorems, the sorted conventional curriculum, the development order) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
 sources: "[[Statistics]], [[Exact Until Output]], [[Constructible Trigonometry]], [[Constructible Numbers]], [[Certificates]], [[Creational Ultrafinitism]], [[Fundamental Theorem of Algebra]]"
-updated: 2026-10-09
+updated: 2026-11-06
 ---
 
 # Constructible Statistics
@@ -16,6 +16,48 @@ updated: 2026-10-09
 **Answer: yes for the working core, and most of its pieces already exist.** What does not yet exist is the assembly, the quadrance-first teaching, and a clear account of what is given up. "Constructive" means *certificate-explicit* ([[Certificates]]): every statement is a finite computation or a stated bound with an exact certificate.
 
 **The rule (Murphy):** every statistical object must be finitely specified; every numerical result must be constructible by an explicit procedure; and every claim must be supported by a finite certificate.
+
+## The constitution (Murphy)
+
+Five foundational commitments:
+
+1. **Finite specification:** every dataset, distribution, and model must have a finite description.
+2. **Constructibility:** every numerical result must be obtainable through an explicitly specified finite procedure.
+3. **Exactness:** rational quantities are retained exactly, not approximated by decimals (rounding only at output, [[Exact Until Output]]).
+4. **Combinatorial probability:** probability begins with finite counting ([[Probability]]).
+5. **No obligatory limits:** no statistical theorem may depend on an actually completed infinite process.
+
+**The philosophical shift (Murphy).** Conventional statistics treats the finite dataset as an approximation to an idealized infinite population or distribution. Here the finite dataset is the **primary object of knowledge**: we observe, count, compare, measure, and calculate; models describe what was observed and make bounded predictions about what might be observed next. The model does not need to become an infinite mathematical object to be useful. That is a significant philosophical shift, not merely a change of notation.
+
+**Inference, reconstructed (Murphy).** Inference is not discarded but rebuilt around finite models: exact finite combinatorial inference. A finite population of $100$ objects, $40$ with a characteristic, sampled $10$ without replacement: $P(X=4)=\dfrac{\binom{40}{4}\binom{60}{6}}{\binom{100}{10}}$, an exact rational, and "at least 4" or "at most 4" are finite additions. No normal approximation is necessary. The question is never "significant under an asymptotic distribution?" but "how many outcomes of the explicitly defined finite model are at least as extreme as the observed one?" — computationally more demanding in some cases, conceptually cleaner (result 7 is the worked form).
+
+## The six branches (Murphy)
+
+| Branch | Subject matter | Foundation |
+|---|---|---|
+| I. Descriptive statistics | center, spread, quartiles, frequencies | rational arithmetic |
+| II. Quadrance statistics | variance, regression, residuals | quadrance and exact algebra |
+| III. Combinatorial probability | events, distributions, conditional probability | finite combinatorics |
+| IV. Rational distributions | Pascal, hypergeometric, discrete distributions | finite sequences |
+| V. Constructible inference | testing, estimation, finite sampling | exact rational computation |
+| VI. Statistical modeling | regression, prediction, classification | finite algebraic procedures |
+
+Two further concerns get explicit treatment:
+
+- **Measurement.** A real-world measurement has finite precision: record it as an exact recorded value or as a rational interval when the precision is uncertain; never pretend a physical measurement produces an infinitely precise real number. This is the significant-digit discipline of [[Number in Natural Philosophy]].
+- **Computational complexity.** Finite is not the same as feasible ([[Creational Ultrafinitism]]): a finite procedure may not be practically executable, and the distinction matters most in combinatorial inference (enumerating all permutations is exponential; see What is given up, item 2).
+
+## First definitions and theorems (Murphy)
+
+Definitions: (1) finite statistical population; (2) finite dataset; (3) rational frequency distribution; (4) statistical center; (5) quadrance and statistical dispersion; (6) rational probability distribution.
+
+Theorems — straightforward, as he says, and they establish the discipline's character (the identities behind Theorem 5 checked):
+
+1. The arithmetic mean of a rational dataset is rational.
+2. The variance of a rational dataset is rational.
+3. Least-squares regression coefficients are rational when the normal equations are nonsingular (a nonsingular rational matrix has a rational inverse).
+4. Finite equiprobable event probabilities are rational ($|A|/|S|$).
+5. The Pascal distributions have rational ordinates, mean $n/2$ and variance $n/4$ (from $\sum_k k\binom nk=n\,2^{n-1}$ and $\sum_k k(k-1)\binom nk=n(n-1)\,2^{n-2}$).
 
 ## Why "constructible" and not "rational"
 
@@ -110,6 +152,27 @@ The central shape is the family $\binom nk/2^n$: the **Pascal distributions** (M
 2. *Justifying least squares* (Gauss's route used the normal law): the Pythagorean geometry of result 1, and the Gauss–Markov theorem, a statement about variances and covariances only (to check).
 3. *Tables for the hand:* obsolete.
 
+## The conventional curriculum, sorted (Murphy)
+
+| Conventional concept | Treatment |
+|---|---|
+| Arithmetic and geometric means | retain |
+| Variance | retain |
+| Standard deviation | secondary constructible quantity |
+| Least squares | retain, as quadrance minimization |
+| Correlation | retain; the squared correlation is the primary rational quantity |
+| Normal distribution | replace with finite Pascal distributions (settled, above) |
+| Student's $t$-distribution | reconstruct finite alternatives where possible |
+| Chi-square distribution | investigate exact finite combinatorial formulations |
+| Law of large numbers | replace with finite bounds and explicitly stated conditions |
+| Central limit theorem | treat as an asymptotic theorem, not a foundational object |
+| $p$-values | retain only in exact finite models (settled on [[Statistics]]) |
+| Confidence intervals | construct finite coverage procedures (results 5–6 are the start) |
+| Bayesian statistics | retain with rational priors and finite likelihoods: a rational prior and rational likelihoods give a rational posterior whenever the normalizing constant is a nonzero rational — one can do quite a lot without leaving the rationals (result 7's optional Bayes) |
+| Linear regression | retain |
+| Logistic regression | investigate exact and rational alternatives |
+| Nonparametric statistics | strong candidate for inclusion |
+
 ## What is given up, or hard
 
 1. **Robustness.** Squares overweight outliers: for $10,11,9,10,12,10,11,500$ the mean is $71.625$, the median is $10.5$, and the variance is about $26{,}216$. Median and absolute-deviation methods are also finite and exact, though they lack the Pythagorean decomposition.
@@ -129,7 +192,9 @@ Fisher's randomization and exact tests and Pitman's permutation tests (1930s); N
 
 ## Next steps
 
-1. A short list of the minimal theorems with proofs (results 1–7 are candidates).
+Murphy's order: branches I–III (descriptive statistics, quadrance, finite combinatorial probability) made completely rigorous **before** inference; the Pascal distributions are then the bridge between combinatorics and statistical modeling. Resist writing a textbook immediately: the constitution comes first.
+
+1. A short list of the minimal theorems with proofs (results 1–7 are candidates; the five first theorems above are the opening).
 2. A derivation of the Gaussian as a named approximation of the binomial, with an explicit error.
 3. A closed form for the best rung of the ladder.
 4. The quadrance-first course: squared $z$-scores, Chebyshev in quadrance form ([[Statistics]]).
