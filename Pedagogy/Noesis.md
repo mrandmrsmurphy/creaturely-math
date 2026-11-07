@@ -2,8 +2,8 @@
 title: Noesis
 type: framework
 status: "canonical (the art as Murphy states it; the mathematical illustrations are marked [AI])"
-provenance: "murphy (the art and its theology: Sources/Quadriga Scientiae - Complete, Part I) + ai-synthesis (the observations marked [AI])"
-sources: "[[Quadriga for Mathematics]], [[Twelve Exercises]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the art and its theology: [[Quadriga Scientiae (Protestant)]]) + ai-synthesis (the observations marked [AI])"
+sources: "[[Quadriga for Mathematics]], [[Twelve Exercises]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

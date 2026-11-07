@@ -3,7 +3,7 @@ title: Boolean Algebra
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: $1+1=1$ is very special; list some identities, not all. Worked material checked by exhaustive truth table)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-08
 ---
 

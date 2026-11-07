@@ -3,7 +3,7 @@ title: Theology of Number
 type: concept
 status: canonical (draft)
 provenance: murphy (2020 essay; the antimatter consideration and the two flagged difficulties) + ai-synthesis (merge with 2026 material)
-sources: "[[SRC Christian Mathematics (c2020)]], [[SRC What is Mathematics (2020 draft)]], [[SRC CCE Primer (2026-06)]]"
+sources: "[[SRC Christian Mathematics (c2020)]], [[SRC What is Mathematics (2020 draft)]]"
 updated: 2026-10-07
 ---
 

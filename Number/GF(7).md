@@ -3,7 +3,7 @@ title: GF(7)
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: the same treatment as GF(5) and GF(3), with balanced digits; worked material computed and checked exactly)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-08
 ---
 

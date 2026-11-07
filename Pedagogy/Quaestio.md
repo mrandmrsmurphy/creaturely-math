@@ -2,8 +2,8 @@
 title: Quaestio
 type: framework
 status: "canonical (the art as Murphy states it; the mathematical illustrations are marked [AI])"
-provenance: "murphy (the art, the five offices, the Latin pairs: Sources/Quadriga Scientiae - Complete, Part I and Appendix A) + ai-synthesis (the illustrations and the observations marked [AI])"
-sources: "[[Quadriga for Mathematics]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the art, the five offices, the Latin pairs: [[Quadriga Scientiae (Protestant)]], with Appendix A) + ai-synthesis (the illustrations and the observations marked [AI])"
+sources: "[[Quadriga for Mathematics]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

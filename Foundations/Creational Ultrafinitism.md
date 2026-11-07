@@ -5,7 +5,7 @@ aliases:
 type: concept
 status: canonical
 provenance: murphy (position; the physical-bound arithmetic and the bound's scope; absolute and relative feasibility) + ai-synthesis (rival critique)
-sources: "[[SRC CCE Primer (2026-06)]], [[SRC Confession of Mathematics (2023-24)]], [[SRC me.md Math Section]]"
+sources: "[[SRC me.md Math Section]]"
 updated: 2026-11-07
 ---
 

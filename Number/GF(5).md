@@ -3,7 +3,7 @@ title: GF(5)
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: balanced digits, an addition table, a multiplication table, an exponent table, and all polynomials up to isomorphism; worked material computed and checked exactly)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-08
 ---
 

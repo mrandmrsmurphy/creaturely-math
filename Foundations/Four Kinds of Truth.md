@@ -2,8 +2,8 @@
 title: Four Kinds of Truth
 type: concept
 status: canonical
-provenance: "murphy (the four kinds: Sources/Quadriga Scientiae - Complete, Part I; the clarification that natural observations are data for verisimilitudes; where mathematical claims fall, adopted 2026-11-04) + ai-synthesis (the table's composition)"
-sources: "[[Quadriga for Mathematics]], [[Theological Grounds]], [[Certificates]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the four kinds: [[Quadriga Scientiae (Protestant)]]; the clarification that natural observations are data for verisimilitudes; where mathematical claims fall, adopted 2026-11-04) + ai-synthesis (the table's composition)"
+sources: "[[Quadriga for Mathematics]], [[Theological Grounds]], [[Certificates]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

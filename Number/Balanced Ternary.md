@@ -3,7 +3,6 @@ title: Balanced Ternary
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: his favorite base; the $\\bar1$ notation; the balance-beam weights; base 3 as the most efficient; balanced as modern because negatives are as valid as positives; the Setun computer; the engineering-not-law comment, adopted 2026-11-04. Worked material computed and checked exactly)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
 updated: 2026-10-08
 ---
 

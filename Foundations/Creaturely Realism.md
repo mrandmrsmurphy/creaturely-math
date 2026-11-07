@@ -3,7 +3,7 @@ title: Creaturely Realism
 type: concept
 status: canonical
 provenance: "murphy (position; the twoness point, the pi_n preference and the certificate-of-access sharpening) + ai-synthesis (survey of rivals)"
-sources: "[[SRC CCE Primer (2026-06)]], [[SRC me.md Math Section]], [[SRC Christian Mathematics (c2020)]]"
+sources: "[[SRC me.md Math Section]], [[SRC Christian Mathematics (c2020)]]"
 updated: 2026-10-11
 ---
 

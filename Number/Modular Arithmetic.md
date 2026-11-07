@@ -3,7 +3,7 @@ title: Modular Arithmetic
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: mods as fundamental as the big four of arithmetic; divisibility tests as the child's version; mod 2 as parity; prime mods as groups under addition and, without zero, under multiplication; the cyclic unit group for prime squares; the two refinements and the argument's material, adopted 2026-11-04. The worked material was computed and checked exactly)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-08
 ---
 

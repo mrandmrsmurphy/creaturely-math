@@ -3,7 +3,7 @@ title: Classroom Questions
 type: pedagogy
 status: canonical
 provenance: ai-synthesis (primer) + murphy (Catechism of Mathematics)
-sources: "[[SRC CCE Primer (2026-06)]], [[SRC Catechism of Mathematics (2023)]]"
+sources: "[[SRC Catechism of Mathematics (2023)]]"
 updated: 2026-10-07
 ---
 
@@ -21,10 +21,10 @@ updated: 2026-10-07
 
 ## Catechism (Q&A format, 2023)
 
-[[SRC Catechism of Mathematics (2023)]] is a **call-and-response** in the tradition of the Westminster catechisms: *What is multiplication? — Repeated addition; at the same time, area. … Can a given angle be trisected? — No, not without access to a higher dimension. … Is zero a number? — We distinguish one-less-than-one (zero) from non-number answers ("undefined").* Notable lines to keep:
+Murphy's catechism of mathematics (2023) is a **call-and-response** in the tradition of the Westminster catechisms: *What is multiplication? — Repeated addition; at the same time, area. … Can a given angle be trisected? — No, not without access to a higher dimension. … Is zero a number? — We distinguish one-less-than-one (zero) from non-number answers ("undefined").* Notable lines to keep:
 
 - "*Can we always square-root a given number?* — Approximated to within a specified accuracy, but it cannot always be **exhibited**." → "*So not all numbers belong to the same genus?* — Correct. Some correspond to whole quantities, some to ratios, and some require infinite processes." (A one-paragraph version of the [[Number Hierarchy]].)
 - "*What is the beginning of π?* — 3.14159… reasonably approximated as 355/113."
 - "*What does modern mathematics declare a line to be?* — All the points in one dimension… including every irrational distance." (The setup for a challenge to the number line.)
 
-The catechism stops after additive inverses; the Confession ([[SRC Confession of Mathematics (2023-24)]]) picks the same arc up as numbered statements. Natural next step: unify them into one **catechism for students** (Q&A) and one **confession for teachers** (statements). [[Future Directions]] item 11.
+The catechism stops after additive inverses; Murphy's Confession (2023–24) picks the same arc up as numbered statements. Both are early drafts from before the [[Number Hierarchy]] and are retired (item 11 of [[Future Directions]]); the Q&A format remains reusable here.

@@ -3,7 +3,7 @@ title: Binary
 type: concept
 status: canonical (draft)
 provenance: "murphy+ai (Murphy's brief: binary matters because of computers, has real applications such as the Tower of Hanoi, and is tied to octal, hexadecimal and base 64; the worked material was computed and checked exactly)"
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-08
 ---
 

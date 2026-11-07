@@ -2,8 +2,8 @@
 title: Apodeixis
 type: framework
 status: "canonical (the art as Murphy states it; the mathematical illustrations are marked [AI])"
-provenance: "murphy (the art, the four virtutes, the Latin pairs, the theology: Sources/Quadriga Scientiae - Complete, Part I, Appendix A, and the Friday talk notes in Part IV) + ai-synthesis (the illustrations and the observations marked [AI])"
-sources: "[[Quadriga for Mathematics]], [[Certificates]], [[Proof Types]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the art, the four virtutes, the Latin pairs, the theology: [[Quadriga Scientiae (Protestant)]], with Appendix A, and the 2026 talk notes) + ai-synthesis (the illustrations and the observations marked [AI])"
+sources: "[[Quadriga for Mathematics]], [[Certificates]], [[Proof Types]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

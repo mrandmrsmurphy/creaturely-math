@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-The Quadriga Scientiae (Quaestio, Noesis, Praxis, Apodeixis) is Murphy's separate project, a Protestant extension of Pólya for teaching symbolic work. Documented 2026-10-10 from `Sources/Quadriga Scientiae - Complete.md`, a compilation of his manuscripts (the canonical originals stay outside the vault: `raw/murphy/Quadriga Scientiae.md`, `raw/Drafts/Quadriga Proposal.md`, `wiki/pedagogy/quadriga-scientiae.md`). The first export was cut off partway through Part IV and was re-uploaded complete.
+The Quadriga Scientiae (Quaestio, Noesis, Praxis, Apodeixis) is Murphy's separate project, a Protestant extension of Pólya for teaching symbolic work. The compilation `Sources/Quadriga Scientiae - Complete.md` is deleted (2026-11-07): its three content parts are now canonical pages — `Pedagogy/Quadriga Scientiae (Protestant)` (the manuscript, canonical form), `(Catholic)` (the ecumenical adaptation, draft, unreviewed against the Protestant text), `(wiki elaborations)` (the wiki page). Parts IV–V (coverage index, development chronicle) were not carried over; git history retains them. A secular variant is possible future work (variants are legitimate, Murphy).
 
 Vault pages: `Pedagogy/{Quadriga for Mathematics, Quaestio, Noesis, Praxis, Apodeixis, Twelve Exercises}`, `Foundations/{Four Kinds of Truth, Quadriga and the Position}`, `Pedagogy/Proof Types` (Quadriga column), `Measurement/Scale and Bands` ("The creature in the middle").
 

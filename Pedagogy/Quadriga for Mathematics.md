@@ -5,8 +5,8 @@ aliases:
   - Quadriga
 type: framework
 status: "canonical (Murphy's framework, documented from his manuscripts; the application to this vault's mathematics is marked [AI])"
-provenance: "murphy (the framework: Sources/Quadriga Scientiae - Complete, Parts I to III) + third-party (Polya, Hugh of St Victor, Aristotle, as cited) + ai-synthesis (the mathematical illustrations, the tie to the position, and the observations, marked [AI])"
-sources: "[[Quadriga Scientiae - Complete]], [[Quadriga and the Position]]"
+provenance: "murphy (the framework: his Quadriga Scientiae manuscripts — [[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)]], [[Quadriga Scientiae (wiki elaborations)]]) + third-party (Polya, Hugh of St Victor, Aristotle, as cited) + ai-synthesis (the mathematical illustrations, the tie to the position, and the observations, marked [AI])"
+sources: "[[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)]], [[Quadriga Scientiae (wiki elaborations)]], [[Quadriga and the Position]]"
 updated: 2026-10-10
 ---
 
@@ -131,9 +131,13 @@ None of the following has been taught as a year of school. It is listed so that 
 6. **The book.** *What is Mathematics*, Part III, "Walking in Math", is organised by the four arts and is still empty ([[Curriculum Plan]], [[Future Directions]]).
 7. **A teaching sequence aimed at teachers.** A three-day equipping sequence exists in the source (Day 1: Word and Symbol, the marks, the four arts, the sliders; Day 3: a lesson template and the failure-mode taxonomy). It is written for science and mathematics together.
 
+## The texts
+
+The framework exists as three pages in Murphy's own words: the **Protestant text** ([[Quadriga Scientiae (Protestant)]], the canonical form), the **Catholic adaptation** ([[Quadriga Scientiae (Catholic)]], the framework unchanged, the scaffolding rebuilt on ground the whole Church shares), and the **wiki elaborations** ([[Quadriga Scientiae (wiki elaborations)]]). A secular variant is possible future work. This page remains the vault's working application to mathematics.
+
 ## Open
 
 1. The name's two forms (*Religiosa* and *Religionis*) both appear for the Scripture quadriga.
 2. The Latin pairs are listed by position against the English offices and rules; where the match is loose it is flagged on each art's page.
-3. Audience variants are legitimate (Murphy): the Quadriga may be presented in versions — to Catholics (the ecumenical draft, Part II of the source, is the first), to the Orthodox, to humanists — while the Protestant text stays canonical in this vault. Open: the Catholic variant has not been reviewed against Part I.
+3. Audience variants are legitimate (Murphy): the Quadriga may be presented in versions — to Catholics ([[Quadriga Scientiae (Catholic)]] is the first), to the Orthodox, to humanists — while the Protestant text ([[Quadriga Scientiae (Protestant)]]) stays canonical in this vault. Open: the Catholic variant has not been reviewed against the Protestant text.
 4. The relation of the Quadriga to the sciences, and the bands of the Scale framework, are outside this vault except for the one principle above.

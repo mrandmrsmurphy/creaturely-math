@@ -2,8 +2,8 @@
 title: Quadriga and the Position
 type: concept
 status: "working (a first attempt to join two projects)"
-provenance: "murphy (the Quadriga's own links to the number hierarchy and to the Tower of Babel, from the 2026 talk notes in Sources/Quadriga Scientiae - Complete; the eight-marks mapping, the vice mapping, what each project gives the other, and the two tensions, adopted 2026-11-04) + ai-synthesis (the composition)"
-sources: "[[Quadriga for Mathematics]], [[Certificates]], [[Creational Ultrafinitism]], [[Creaturely Realism]], [[Four Kinds of Truth]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the Quadriga's own links to the number hierarchy and to the Tower of Babel, from the 2026 talk notes; the eight-marks mapping, the vice mapping, what each project gives the other, and the two tensions, adopted 2026-11-04) + ai-synthesis (the composition)"
+sources: "[[Quadriga for Mathematics]], [[Certificates]], [[Creational Ultrafinitism]], [[Creaturely Realism]], [[Four Kinds of Truth]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

@@ -39,7 +39,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 **Pedagogy** — [[Quadriga for Mathematics]] ([[Quaestio]] · [[Noesis]] · [[Twelve Exercises]] · [[Praxis]] · [[Apodeixis]]) · [[Historical Order]] · [[Proof Types]] · [[Curriculum Plan]] · [[Classroom Questions]] · [[CCE Teacher Primer]]
 
-**Sources/** — source documents (errors fixed in place, logged in [[log]]): [[Quadriga Scientiae - Complete]] · [[SRC Mathematics (raw, 2026-05)]] · [[SRC Christian Mathematics (c2020)]] · [[SRC What is Mathematics (2020 draft)]] · [[SRC Catechism of Mathematics (2023)]] · [[SRC Confession of Mathematics (2023-24)]] · [[SRC CCE Primer (2026-06)]] · [[SRC me.md Math Section]] · [[SRC Constructible Trigonometry Textbook (md)]] · [[SRC Discrete Calculus - From the Line to the Circle (DC draft, 2026-09).tex]] · [[SRC Discrete Calculus Draft (Algebra II-Precalc)]]
+**Sources/** — source documents (errors fixed in place, logged in [[log]]): [[SRC Mathematics (raw, 2026-05)]] · [[SRC Christian Mathematics (c2020)]] · [[SRC What is Mathematics (2020 draft)]] · [[SRC me.md Math Section]] · [[SRC Constructible Trigonometry Textbook (md)]] · [[SRC Discrete Calculus - From the Line to the Circle (DC draft, 2026-09).tex]] · [[SRC Discrete Calculus Draft (Algebra II-Precalc)]]
 
 ## State of the work
 

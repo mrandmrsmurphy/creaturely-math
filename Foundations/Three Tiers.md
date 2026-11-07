@@ -3,7 +3,7 @@ title: Three Tiers
 type: concept
 status: canonical
 provenance: murphy (2026 definitions) + murphy (earlier 2020/2023 definitions, merged)
-sources: "[[SRC Mathematics (raw, 2026-05)]], [[SRC Christian Mathematics (c2020)]], [[SRC Confession of Mathematics (2023-24)]]"
+sources: "[[SRC Mathematics (raw, 2026-05)]], [[SRC Christian Mathematics (c2020)]]"
 updated: 2026-10-07
 ---
 

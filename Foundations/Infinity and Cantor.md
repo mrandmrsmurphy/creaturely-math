@@ -3,7 +3,7 @@ title: Infinity and Cantor
 type: concept
 status: canonical
 provenance: murphy (position; the definability cell stated procedurally) + ai-synthesis (table, framing)
-sources: "[[SRC CCE Primer (2026-06)]], [[SRC Christian Mathematics (c2020)]], [[Diagonal Argument]]"
+sources: "[[SRC Christian Mathematics (c2020)]], [[Diagonal Argument]]"
 updated: 2026-10-07
 ---
 

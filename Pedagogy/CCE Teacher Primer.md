@@ -1,15 +1,14 @@
 ---
 title: CCE Teacher Primer
 type: talk
-status: canonical (talk outline; slides live in the SRC file)
+status: canonical (talk outline)
 provenance: ai-synthesis of Murphy's positions, drafted June 2026
-sources: [[SRC CCE Primer (2026-06)]]
 updated: 2026-10-07
 ---
 
 # CCE Teacher Primer — "What Is Mathematics?"
 
-A session for beginning classical Christian teachers. **The full slide script is preserved verbatim in [[SRC CCE Primer (2026-06)]]**; the *content* has been absorbed into the canonical pages so there is one place to edit each idea. Use this outline to rebuild the deck.
+A session for beginning classical Christian teachers. The *content* has been absorbed into the canonical pages so there is one place to edit each idea. Use this outline to rebuild the deck.
 
 **Opening:** "We never ask: *What IS a number?* But your students will." Classical education claims truth is **discovered, not invented**; modern math education treats math as a formal game — so we need a philosophy that is *theologically honest and pedagogically coherent.*
 

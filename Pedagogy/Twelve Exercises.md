@@ -5,8 +5,8 @@ aliases:
   - Noesis Exercises
 type: framework
 status: "canonical (names, Latin pairs and glosses are Murphy's; each worked example is marked [AI])"
-provenance: "murphy (the twelve, their Latin pairs, the glosses: Sources/Quadriga Scientiae - Complete, Part I and Appendix A) + third-party (the Polya heuristics each expands) + ai-synthesis (the worked examples and the observations marked [AI])"
-sources: "[[Noesis]], [[Quadriga for Mathematics]], [[Quadriga Scientiae - Complete]]"
+provenance: "murphy (the twelve, their Latin pairs, the glosses: [[Quadriga Scientiae (Protestant)]], with Appendix A) + third-party (the Polya heuristics each expands) + ai-synthesis (the worked examples and the observations marked [AI])"
+sources: "[[Noesis]], [[Quadriga for Mathematics]], [[Quadriga Scientiae (Protestant)]]"
 updated: 2026-10-10
 ---
 

@@ -3,7 +3,7 @@ title: Counting and Bases
 type: concept
 status: canonical (draft)
 provenance: murphy (Confession 2023, WIM, Constructible Trigonometry, Precalculus for Everyone)
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-07
 ---
 

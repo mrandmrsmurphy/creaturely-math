@@ -3,7 +3,7 @@ title: Sexagesimal
 type: concept
 status: canonical
 provenance: ai-synthesis (standard history of Babylonian mathematics; tables computed and checked exactly) + murphy (the point about $\tfrac17$)
-sources: "[[SRC Confession of Mathematics (2023-24)]]"
+sources: "Murphy's 2023–24 Confession of Mathematics"
 updated: 2026-10-07
 ---
 
