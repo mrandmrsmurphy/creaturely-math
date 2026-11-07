@@ -41,4 +41,4 @@ Which claims are settled and which are open is not a matter of tone: the Settled
 
 ## Reading on
 
-[[Home]] is the map of the vault; [[Future Directions]] is its to-do list, with the guidelines that govern every page. If you are reading this on GitHub: the vault is written for [Obsidian](https://obsidian.md), where links like `[[Home]]` resolve; the files also read as plain Markdown.
+[[Home]] is the map of the vault; [[Future Directions]] is its to-do list, with the guidelines that govern every page. [[Measure, Number, and Weight]] is the position argued as one continuous essay — the long form of this page. If you are reading this on GitHub: the vault is written for [Obsidian](https://obsidian.md), where links like `[[Home]]` resolve; the files also read as plain Markdown.
