@@ -47,4 +47,4 @@ The $\pi_n$ convention ([[Exact Until Output]]) shifts a border between the sign
 
 ## Earlier root
 
-The Confession (2023) already says: *"'Equal' in mathematics is not like 'equal' in normal speech."* and Constructible Trigonometry's vignette on $0.999\ldots$ trains the student to "tremble." The Babylonian habit — "they knew which divisions their system could perform exactly and which it could only approach. We have lost this honesty" — is the historical exemplar. See [[Counting and Bases]].
+The Confession (2023) already says: *"'Equal' in mathematics is not like 'equal' in normal speech."* and the $0.999\ldots$ vignette ([[Certificates]], [[Classroom Questions]]) trains the student to "tremble." The Babylonian habit — "they knew which divisions their system could perform exactly and which it could only approach. We have lost this honesty" — is the historical exemplar. See [[Counting and Bases]].
