@@ -2,9 +2,9 @@
 title: Statistics
 type: concept
 status: "stub (the stance and a few checked examples; the course is unwritten)"
-provenance: "murphy (the direction, statistics is what most students get at the end of mandatory schooling; the $p$-value teaching decision) + ai-synthesis (the stance, the examples, the flagged problems)"
+provenance: "murphy (the direction, statistics is what most students get at the end of mandatory schooling; the $p$-value teaching decision; the foundation/framework distinction — design-based foundational, finite Bayesian primary) + ai-synthesis (the stance, the examples, the flagged problems)"
 sources: "[[Historical Order]], [[Curriculum Plan]], [[Future Directions]], [[Certificates]], [[Theological Grounds]]"
-updated: 2026-10-09
+updated: 2026-11-07
 ---
 
 # Statistics
@@ -58,9 +58,10 @@ A development that takes finite data, rational moments, quadrance and exact coun
 
 **$p$-values, as taught (Murphy).** Significance tests enter the course only in their exact, combinatorial form — the permutation test and Fisher's exact test, where $p$ is a ratio of counts and the probability comes from the randomization the experimenter performed ([[Constructible Statistics]]). The main instruments are the intervals and bounds above. The $0.05$ ritual is named as a custom to be read with suspicion, not practised: students will meet $p$-value claims in journalism and medicine, and they should be able to audit one — to ask for its certificate. A $p$-value sold as "the probability the null is true" is a false balance.
 
+**Foundation and framework (Murphy).** Design-based probability is the foundation: its probabilities are grounded in an actual finite randomization that can be enumerated and counted. Bayesian inference is the primary inferential framework, in its finite form — enumerated hypotheses, rational priors and likelihoods, exact arithmetic, every prior carrying a justification ([[Constructible Statistics]], "Design-based and Bayesian"). The two answer different questions over the same finite space, and students must not slide between their two meanings of probability.
+
 ## Hard problems
 
 1. **Continuous distributions.** The normal density and the integral under it are idealisations. Under the position they are approximations to finite sums with named error ([[Calculus]], [[Fundamental Theorem of Calculus]]).
-2. **Bayesian and frequentist.** Both are finite calculations; which the course should lead with is not settled here.
-3. **Infinite populations and limits.** Statements "as $n\to\infty$" need to be replaced by the finite bound above.
-4. **Randomness.** What a sequence must be to count as random is deferred.
+2. **Infinite populations and limits.** Statements "as $n\to\infty$" need to be replaced by the finite bound above.
+3. **Randomness.** What a sequence must be to count as random is deferred.

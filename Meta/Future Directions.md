@@ -2,7 +2,7 @@
 title: Future Directions
 type: meta
 status: living — the vault's to-do list and its guidelines
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 # Future Directions
@@ -48,11 +48,11 @@ updated: 2026-11-06
 | Arithmetic is a skill and can be drilled and timed; mathematics proper is an art and science and cannot — timed fluency checks belong to arithmetic | [[Praxis]], [[Historical Order]] |
 | $p$-values are taught only in their exact, combinatorial form (permutation, Fisher): a ratio of counts, the probability from the randomization performed; intervals and bounds are the main instruments; the $0.05$ ritual is named and read with suspicion | [[Statistics]], [[Constructible Statistics]] |
 | Constructible statistics: the rule (every object finitely specified, every result constructible by an explicit procedure, every claim with a finite certificate); regression is the pillar; the central shape is the Pascal distributions $\binom nk/2^n$, excluding the Gaussian; the constitution (five commitments) and the six branches are set; development order: branches I–III rigorous first, then inference | [[Constructible Statistics]] |
+| Design-based probability is the foundation (grounded in actual finite randomization); Bayesian inference is the primary inferential framework, in its finite form (six restrictions; every prior carries a justification); three meanings of probability — combinatorial, empirical, epistemic — with the combinatorial foundational | [[Constructible Statistics]], [[Statistics]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
-1. **Pedagogy choices:** Bayesian or frequentist first ([[Statistics]]).
-2. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
+1. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
 
 ### B. Open work, by strand
 
@@ -73,7 +73,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **medium** Sort claims by kind: *mathematical* (a result with a proof or a check), *theological ground*, *pedagogical proposal*, *unresolved*. Possibly a `claim:` line in each canonical page's frontmatter, kept apart from `provenance:`. Builds on [[Four Kinds of Truth]], [[Theological Grounds]] and the provenance tags. Decide the vocabulary with Murphy before applying it to pages.
 - **medium** Settled versus contested made sharper on the pages: a reader of any page should see at its head which parts are settled by Murphy, which are the vault's working reading, and which are open, as the Agenda's Settled table does for the whole vault. Several pages state the position as more decided than it is (the reviewer's worry); audit them against the Settled table.
 - **small** A short list of the most important open problems, five or six lines at the top of the Agenda, so a reader need not read the whole document set (section C below is the start).
-- **medium** The public essay of item A2, if Murphy adopts it; otherwise fold its aim into *What this project is*.
+- **medium** The public essay of item A1, if Murphy adopts it; otherwise fold its aim into *What this project is*.
 
 **Number**
 - **next** *Primes* (one page): why $\mathbb Z/p$ is special; a positive certificate (Pratt) beside Fermat's witness; Wilson as characterisation. Four pages wait on it: [[Modular Arithmetic]], [[Wilson's Theorem]], [[Fermat's Little Theorem]], [[Fundamental Theorem of Arithmetic]].

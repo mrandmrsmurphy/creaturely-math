@@ -4,9 +4,9 @@ aliases:
   - Rational Statistics
 type: theory
 status: "framework (the objects, seven checked results, the costs, the gaps; not a finished theory)"
-provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; the retooling from rational to constructible; the rule — finitely specified, explicitly constructible, finitely certified; regression as the pillar; the Pascal distributions as the central shape, excluding the Gaussian; the constitution — five commitments, six branches, the first definitions and theorems, the sorted conventional curriculum, the development order) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
+provenance: "murphy (the question, can statistics be built on finite datasets, exact moments and counts, quadrances, slopes and explicit finite bounds, with the Gaussian and transcendental functions optional; the retooling from rational to constructible; the rule — finitely specified, explicitly constructible, finitely certified; regression as the pillar; the Pascal distributions as the central shape, excluding the Gaussian; the constitution — five commitments, six branches, the first definitions and theorems, the sorted conventional curriculum, the development order; the design-based/Bayesian architecture — foundation versus framework, Finite Bayesian Inference, the three meanings of probability, the curriculum sequence) + ai-synthesis (the framework, results and examples, all computed in exact arithmetic) + third-party (Wildberger's quadrance and spread, restated)"
 sources: "[[Statistics]], [[Exact Until Output]], [[Constructible Trigonometry]], [[Constructible Numbers]], [[Certificates]], [[Creational Ultrafinitism]], [[Fundamental Theorem of Algebra]]"
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 # Constructible Statistics
@@ -58,6 +58,33 @@ Theorems — straightforward, as he says, and they establish the discipline's ch
 3. Least-squares regression coefficients are rational when the normal equations are nonsingular (a nonsingular rational matrix has a rational inverse).
 4. Finite equiprobable event probabilities are rational ($|A|/|S|$).
 5. The Pascal distributions have rational ordinates, mean $n/2$ and variance $n/4$ (from $\sum_k k\binom nk=n\,2^{n-1}$ and $\sum_k k(k-1)\binom nk=n(n-1)\,2^{n-2}$).
+
+## Design-based and Bayesian: the architecture of inference (Murphy)
+
+The most consequential decision in the architecture. Two questions are distinguished: (1) which approach provides the most natural **foundation** for statistical inference; (2) which provides the most useful **framework** for reasoning from observed data. Bayesian statistics may win the second without winning the first.
+
+The distinction is not primarily computational — both approaches can operate entirely within finite rational probability spaces. It is about **what is considered random**:
+
+- **Design-based.** The population is fixed; the data (or relevant potential outcomes) are fixed; randomness enters through the sampling or assignment procedure. The sample space is, for example, $\Omega=\{S\subseteq U:|S|=10\}$ with $|\Omega|=\binom{100}{10}$, and $P(A)=|A|/|\Omega|$ — the foundational probability principle. The population itself need not be probabilistic; the sampling procedure supplies the probability. The question: *what would happen if we repeated this specified sampling procedure?*
+- **Bayesian.** Uncertainty is represented by a probability distribution over possible hypotheses or models; with rational priors and likelihoods the posterior is rational (given a nonzero denominator). The question: *given what we have observed, how should we redistribute our probabilities over possible explanations?*
+
+Both are legitimate questions.
+
+**Worked urn (checked).** $H_1$: 2 red, 3 blue; $H_2$: 4 red, 1 blue; equal priors $\tfrac12$. Drawing red: $P(R\mid H_1)=\tfrac25$, $P(R\mid H_2)=\tfrac45$, so
+
+$$P(H_2\mid R)=\frac{\tfrac45\cdot\tfrac12}{\tfrac25\cdot\tfrac12+\tfrac45\cdot\tfrac12}=\frac23.$$
+
+Everything is rational; no approximation, no limiting distribution, no infinite population. But the 50/50 prior was a *choice*, not established by counting the contents of the urn — and **a rational prior is not necessarily a reasonable prior**: repartitioning the hypotheses can change what an equal prior means. Rational arithmetic does not solve that.
+
+**The three considerations.** (A) *Epistemological:* design-based probabilities are grounded in an explicitly specified physical procedure — the possible selections can be enumerated and counted; a Bayesian prior needs a justification. (B) *Predictive:* Bayesian updating is exceptionally attractive when the purpose is prediction from accumulated evidence (the 21st outcome from 20 observed); design-based inference concerns the behavior of a specified procedure, not uncertainty about an underlying model. (C) *Pedagogical:* the Bayesian narrative — competing explanations, priors, evidence, likelihoods, update, predict — is a remarkably coherent introduction to statistical reasoning and connects naturally to finite probability, combinatorics and rational arithmetic; but it risks teaching students that assigning probabilities to hypotheses is automatically objective. That is to be resisted.
+
+**Finite Bayesian Inference** — the centerpiece of the investigation: a specifically finite Bayesian statistics with six restrictions. (1) The hypothesis space is finite and explicitly enumerated. (2) Priors are rational. (3) Likelihoods are rational-valued. (4) The evidence is finitely specified. (5) Posteriors are computed in exact rational arithmetic. (6) Predictions concern explicitly specified finite outcomes. Excluded, at least foundationally: continuous parameter spaces, improper priors, densities over the reals, infinite-dimensional parameter spaces, appeals to asymptotic posterior normality. The restriction is not trivial: it forces Bayesian statistics to become computationally explicit. Priors may be symmetry-based, derived from finite combinatorial models, empirically calibrated, explicitly elicited, or hierarchical-finite — no universal prescription, but **every prior must carry a justification**.
+
+**The synthesis.** The two approaches are not competitors. One randomized experiment — $10$ subjects, $5$ assigned to treatment, so $|\Omega|=\binom{10}{5}=252$ possible assignments — supports both an exact randomization distribution for the treatment effect (design-based) and rational updating over several models of effectiveness (Bayesian): the same experiment, the same data, the same combinatorial probability space, different questions. The organizing principle: finite probability $P(A)=|A|/|\Omega|$ is the common foundation; design-based and Bayesian are its two uses; finite prediction and decision are the fruit.
+
+**What a probability represents — the question at the center of the project, to be settled before the inference chapters are written.** Three answers within the framework, all recognized, the first foundational: (1) **combinatorial** — the ratio of favorable outcomes to possible outcomes in a specified finite equiprobable space; (2) **empirical** — a rational frequency calculated from observed events; (3) **epistemic** — a rationally assigned measure of uncertainty over a finite set of hypotheses. Students must never slide casually between the design-based and Bayesian meanings of probability.
+
+**Not a finitist adaptation (Murphy).** This has the potential to be a genuinely different philosophy of statistical knowledge: finite populations, finite observations, finite hypotheses, exact rational probabilities, explicit computational procedures.
 
 ## Why "constructible" and not "rational"
 
@@ -192,7 +219,18 @@ Fisher's randomization and exact tests and Pitman's permutation tests (1930s); N
 
 ## Next steps
 
-Murphy's order: branches I–III (descriptive statistics, quadrance, finite combinatorial probability) made completely rigorous **before** inference; the Pascal distributions are then the bridge between combinatorics and statistical modeling. Resist writing a textbook immediately: the constitution comes first.
+Murphy's order: branches I–III (descriptive statistics, quadrance, finite combinatorial probability) made completely rigorous **before** inference; the Pascal distributions are then the bridge between combinatorics and statistical modeling. Resist writing a textbook immediately: the constitution comes first. The curriculum sequence (Murphy):
+
+| Stage | Subject |
+|---|---|
+| I | Descriptive statistics |
+| II | Quadrance and regression |
+| III | Finite combinatorial probability |
+| IV | Sampling and randomization inference |
+| V | Finite Bayesian inference |
+| VI | Predictive statistics and decision theory |
+
+Design-based inference comes before Bayesian (the epistemological strength first), but Bayesian inference gets the larger role in the subsequent treatment of statistical reasoning (the predictive power).
 
 1. A short list of the minimal theorems with proofs (results 1–7 are candidates; the five first theorems above are the opening).
 2. A derivation of the Gaussian as a named approximation of the binomial, with an explicit error.
