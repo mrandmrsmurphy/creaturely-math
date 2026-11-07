@@ -40,7 +40,7 @@ Murphy's motivating question: **why are we so confident looking at the graph of 
 
 ## Posits
 
-Murphy names levels 12–14 **Posits**. The fit: a Cesàro value or a zeta assignment is *laid down* by convention (Latin *positum*, a thing placed), and an uncomputable such as Chaitin's Ω is existence asserted with no exhibition. The name itself carries the verdict: *you posited this*. The distinction from [[Fiat Numbers]]: a fiat ($i$, $\varepsilon$, $j$) is declared *and* exhibitable — you compute with it exactly; a Posit is declared and *not* exhibitable on the main axis.
+Murphy names levels 12–14 **Posits**. The fit: a Cesàro value or a zeta assignment is *laid down* by convention (Latin *positum*, a thing placed), and an uncomputable such as Chaitin's Ω is existence asserted with no exhibition. The name itself carries the verdict: *you posited this*. They are kept on the ladder dialectically (Murphy): not numbers in the normal sense, and their systems not warranted, but recorded so that the believer in the completed reals must wrestle with what his acceptance asserts without exhibition ([[Number Hierarchy]]). The distinction from [[Fiat Numbers]]: a fiat ($i$, $\varepsilon$, $j$) is declared *and* exhibitable — you compute with it exactly; a Posit is declared and *not* exhibitable on the main axis.
 
 ## The rational as the first matrix (Murphy)
 

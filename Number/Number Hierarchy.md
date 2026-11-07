@@ -2,7 +2,7 @@
 title: Number Hierarchy
 type: hierarchy
 status: canonical
-provenance: "murphy (the hierarchy; the level-9 cost analysis for e, adopted 2026-11-04) + ai-synthesis (the level-9 worked brackets)"
+provenance: "murphy (the hierarchy; the level-9 cost analysis for e, adopted 2026-11-04; the Posits recorded dialectically, adopted 2026-11-06) + ai-synthesis (the level-9 worked brackets; the negative-half details of level 12)"
 sources: [[SRC Mathematics (raw, 2026-05)]]
 updated: 2026-10-11
 ---
@@ -57,6 +57,10 @@ The Galois-theoretic picture matches the toolkits:
 
 Group A is the **Numbers**, group B the **Lengths**, group C the **Pixels**, group D the **Posits**: Murphy's names for the sort, on [[Numbers, Lengths and Pixels]].
 
+## Why the Posits are on the ladder (Murphy)
+
+The Posits are not numbers in the normal sense, and the systems of belief behind them are not warranted. Level 12, the least involved of them, is recorded here to force people who believe in the reals to wrestle with the implications of that acceptance: **uncomputable numbers are asserted without any exhibition.** The vault owns the negative half as theorems and declines the positive existence. [AI] The negatives: no algorithm prints the digits of Chaitin's $\Omega$ (from the first $n$ bits one could decide the halting of every program of length $\le n$); the defining sum is bounded (the machines are prefix-free, so Kraft's inequality gives $\sum2^{-|p|}\le1$); and its stage-by-stage approximants are computable rationals with no modulus of convergence — the Specker phenomenon of [[Bolzano-Weierstrass Theorem]].
+
 ## Trust across the levels
 
 Every level is a step into more trust of the methods; the levels grow more and more remote from verification.
@@ -88,4 +92,4 @@ So the area reaches $1$ somewhere in $(2.7,\,2.8)$, an isolating interval for $e
 
 ## Open
 
-(a) Level 12's existence is conditional: the existence of an uncomputable number requires having accepted all or most of the levels before it (including the limits of level 11). It is a theorem inside a system built from them, not an exhibited object, so how far to inhabit that system is open given [[Creational Ultrafinitism]]. (b) Is the ordering total or a lattice? (c) Complex numbers do not sit on this axis: they are adjoined by fiat, in the orthogonal direction ([[Fiat Numbers]]). (d) Levels 13–14 are admitted "if the convention is named" — what exactly is the convention-certificate? See [[Future Directions]] items 3, 5.
+(a) Is the ordering total or a lattice? (b) Complex numbers do not sit on this axis: they are adjoined by fiat, in the orthogonal direction ([[Fiat Numbers]]). (c) Levels 13–14 are admitted "if the convention is named" — what exactly is the convention-certificate? See [[Future Directions]] items 3, 5.

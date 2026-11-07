@@ -7,6 +7,7 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Who Murphy is](memory/user-murphy.md) — role, working style, what he values
 - [Record his positions faithfully](memory/feedback-faithful-recording.md) — corrections he has made; do not smooth or overclaim
 - [Sources citations are an AI artifact](memory/feedback-sources-citations.md) — saying he wrote it is enough; no file in Sources/ required
+- [Sources are weights, not authorities](memory/feedback-sources-as-weights.md) — early drafts can be wrong; Catechism and Confession to be deleted after an absorption check
 - [Vault scope](memory/feedback-vault-scope.md) — not a science vault; tie new material to the position
 - [Label unmade pedagogy as future work](memory/feedback-future-work-labels.md) — plans are not curricula
 - [Quadriga project](memory/project-quadriga.md) — source, status, flagged items

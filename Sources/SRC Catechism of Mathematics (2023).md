@@ -8,7 +8,7 @@ snapshot: 2026-10-07
 ---
 
 > [!info] Source snapshot
-> Murphy-authored Q&A catechism (text recovered from the Pages file; formatting lost). Unfinished — stops after additive inverses. Q&A format reusable for classroom use; see [[Classroom Questions]].
+> Murphy-authored Q&A catechism (text recovered from the Pages file; formatting lost). Unfinished — stops after additive inverses. Q&A format reusable for classroom use; see [[Classroom Questions]]. Superseded: an early draft from before the [[Number Hierarchy]], and may be wrong where it differs from the canonical pages; slated for deletion after an absorption check (Murphy, [[Future Directions]] item 11).
 
 "A Catechism of Mathematics
 

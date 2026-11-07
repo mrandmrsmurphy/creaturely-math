@@ -42,14 +42,14 @@ updated: 2026-11-06
 | The front door: the whole position in one reading, with what is not being claimed; README and Home point to it | [[What this project is]] (Legibility lines 1–2, adopted by Murphy 2026-11-04) |
 | The zeta continuation is the *one* extension that stays differentiable (in the complex sense) on the connected plane, apart from the pole at $s=1$; uniqueness is the claim | [[Function Hierarchy]] (level 14) |
 | Babylon stays in the Rebellion row, charitably: a far side of the pagan spectrum, not a driving over the cliff; legitimate as practice, rebellious as classification | [[Theology of Number]], [[Babylonian Mathematics]] |
+| Level 12 and the Posits: not numbers in the normal sense, their systems not warranted; recorded dialectically — uncomputables are asserted without exhibition, to press the believer in the completed reals | [[Number Hierarchy]], [[Numbers, Lengths and Pixels]] |
+| The Catechism and the Confession are early drafts from before the hierarchy and may be wrong; not to be finished or unified; delete after an absorption check | [[SRC Catechism of Mathematics (2023)]], [[SRC Confession of Mathematics (2023-24)]] (item 11) |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
-1. **Level 12:** its existence is conditional on the levels before it; how far to inhabit that system. ([[Number Hierarchy]], Open (a).)
-2. **Catechism/Confession** (item 11).
-3. **Quadriga:** review the ecumenical draft (the Protestant text is canonical here). ([[Quadriga for Mathematics]], Open 3.)
-4. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
-5. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
+1. **Quadriga:** review the ecumenical draft (the Protestant text is canonical here). ([[Quadriga for Mathematics]], Open 3.)
+2. **Pedagogy choices:** untimed fluency checks ([[Praxis]]); whether to teach $p$-values ([[Statistics]]); Bayesian or frequentist first.
+3. **A public-facing essay or manifesto** (an outside reader's suggestion): the whole position as one continuous argument, kept inside the vault. It sits against guideline 3 below (documentation first, no book prose), so it is Murphy's call whether it counts as documentation (a longer *What this project is*) or as deferred writing. See strand *Legibility*.
 
 ### B. Open work, by strand
 
@@ -70,7 +70,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **medium** Sort claims by kind: *mathematical* (a result with a proof or a check), *theological ground*, *pedagogical proposal*, *unresolved*. Possibly a `claim:` line in each canonical page's frontmatter, kept apart from `provenance:`. Builds on [[Four Kinds of Truth]], [[Theological Grounds]] and the provenance tags. Decide the vocabulary with Murphy before applying it to pages.
 - **medium** Settled versus contested made sharper on the pages: a reader of any page should see at its head which parts are settled by Murphy, which are the vault's working reading, and which are open, as the Agenda's Settled table does for the whole vault. Several pages state the position as more decided than it is (the reviewer's worry); audit them against the Settled table.
 - **small** A short list of the most important open problems, five or six lines at the top of the Agenda, so a reader need not read the whole document set (section C below is the start).
-- **medium** The public essay of item A5, if Murphy adopts it; otherwise fold its aim into *What this project is*.
+- **medium** The public essay of item A3, if Murphy adopts it; otherwise fold its aim into *What this project is*.
 
 **Number**
 - **next** *Primes* (one page): why $\mathbb Z/p$ is special; a positive certificate (Pratt) beside Fermat's witness; Wilson as characterisation. Four pages wait on it: [[Modular Arithmetic]], [[Wilson's Theorem]], [[Fermat's Little Theorem]], [[Fundamental Theorem of Arithmetic]].
@@ -104,6 +104,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 
 **Pedagogy** — all future pedagogical work, none taught as a year yet
 - Proof types by grade; a classroom set per Exercise; rubrics; a curriculum placement chart; a unit template; teacher-equipping sequence: the list is on [[Quadriga for Mathematics]] ("Future pedagogical work"). Open questions on [[Historical Order]], [[Quaestio]], [[Praxis]], [[Noesis]].
+- **small** Absorption check on the two superseded snapshots (item 11): confirm that everything worth keeping in [[SRC Catechism of Mathematics (2023)]] and [[SRC Confession of Mathematics (2023-24)]] is on canonical pages — much already is ($\varepsilon^2=0$ on [[Infinitesimals]]; the equal-sign line on [[Equal Signs]]; successor-on-faith on [[Infinity and Cantor]]; the Q&A format on [[Classroom Questions]]) — then delete both snapshots and clean the links ([[Home]], the `sources:` lines, [[Three Tiers]], [[Geometry Hierarchy]], [[Creaturely Realism]], [[Timeline of the Position]]).
 
 **History and verification** (**background**)
 - Quotations, attributions and dates are recollections on [[Mathematics 1730 to 1900]], [[Greek Mathematics]], [[Babylonian Mathematics]], [[The Road to Calculus]], [[Mathematics 500 to 1500]], [[Mathematics 1900 to Today]]; each page's hard problems list what to check. [[Five Acts]]: the typology is interpretive.
@@ -165,7 +166,7 @@ All of this serves several books some day. **None of that is the goal now.** Mur
 | e | ***Exact Algebra*** | Textbooks to write | not started (spec exists) |
 | f | *Statistics for Everyone*; *Calculus for Everyone* (text) | Textbooks to write | not started |
 | g | ***A Discrete Bridge*** ch. 9–17 | [[SRC Constructible Trigonometry Textbook (md)]] outline | outline only |
-| h | Confession §§ after ε: *Logs and exponents, e; Infinity—the continuum; Geometry; Algebra; Trigonometry; Calculus; Abstract Algebra; Probability, Statistics* | Confession last 8 lines | outline only |
+| h | Confession §§ after ε: *Logs and exponents, e; Infinity—the continuum; Geometry; Algebra; Trigonometry; Calculus; Abstract Algebra; Probability, Statistics* | Confession last 8 lines | superseded — the Confession will not be finished (item 11); the vault's pages carry this content |
 | i | Precalc for Everyone: *Not Rational*; *Project: Are You For Reals?*; *Boolean Algebra*; *Abstract Algebra* | *Precalculus for Everyone* outline | empty |
 | j | ISS: exact $r_{\max}$; 17-gon angles; sin/cos transition; vectors; spherical/hyperbolic constructibility | article's own "further avenues" | open |
 
@@ -201,8 +202,9 @@ Wildberger's *quadrance/spread* and your *slope/length* are two exact reformulat
 ### 10. Literature check on the novelty claim — **cheap, important before publishing**
 me.md's AI analysis said it found no prior "creaturely realism" that grounds constructivism *theologically*. That claim was not backed by a search. **[AI]** Things to check: Poythress (*Redeeming Mathematics*, on your shelf), Kronecker ("God made the integers"), Weyl's *Das Kontinuum* (predicativism), Bishop's own remarks, Brouwer's idealism, the Christian philosophy-of-mathematics literature (Nickel's *Mathematics: Is God Silent?* is cited in your 2020 essay), and finitist Christian writers. If the niche is empty, *say so with citations*.
 
-### 11. Unify the Catechism and the Confession — **small**
-Catechism = Q&A for students; Confession = numbered statements for teachers. Finish both; decide whether the Confession's later sections (calculus onward) are replaced by this vault's content.
+### 11. Unify the Catechism and the Confession — **answered (Murphy, 2026-11-06): do not finish them**
+
+Both are early drafts from before the [[Number Hierarchy]] and may be wrong where they differ from the canonical pages; they are weights holding back new writing, not foundations to build on. They will not be unified or completed; the Confession's outline sections (logs and $e$; the continuum; geometry; algebra; trigonometry; calculus; abstract algebra; probability and statistics) are superseded by the vault's pages. **Remaining:** the absorption check, then deletion — under Pedagogy above.
 
 ### 13. Probability and statistics, finitely — **begun**
 Measure theory is rung 6 of the Change ladder and rejected-adjacent. **Begun:** [[Constructible Statistics]] (seven exact results), [[Statistics]], [[Probability]]. **[AI]** Finite probability + sampling distributions with explicit error bounds is exactly "certificate-explicit statistics"; the remaining work is on the Agenda, strand *Measurement*.

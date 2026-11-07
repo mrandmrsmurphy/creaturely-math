@@ -8,7 +8,7 @@ snapshot: 2026-10-07
 ---
 
 > [!info] Source snapshot
-> Murphy-authored; numbered-statement credo built up from counting to calculus. **Text recovered from Pages file: superscripts were flattened** (read "45" as 4^5, "41/2" as 4^(1/2), "251/2" as 25^(1/2), "i2" as i^2, "ε2" as ε^2, "2x-4y"). The last 8 lines are an outline of unwritten sections. Compare the PDF for original typography.
+> Murphy-authored; numbered-statement credo built up from counting to calculus. **Text recovered from Pages file: superscripts were flattened** (read "45" as 4^5, "41/2" as 4^(1/2), "251/2" as 25^(1/2), "i2" as i^2, "ε2" as ε^2, "2x-4y"). The last 8 lines are an outline of unwritten sections. Compare the PDF for original typography. Superseded: an early draft from before the [[Number Hierarchy]], and may be wrong where it differs from the canonical pages; slated for deletion after an absorption check (Murphy, [[Future Directions]] item 11).
 
 # Confession of Mathematics
 
