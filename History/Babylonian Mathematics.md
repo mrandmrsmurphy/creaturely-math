@@ -2,7 +2,7 @@
 title: Babylonian Mathematics
 type: history
 status: "canonical (draft; the history is from recollection and to be checked)"
-provenance: "murphy (the reading, the Babylonians as an engineering mathematics, one end of a spectrum; irregular reciprocals and the diagonal of the unit square treated alike; the rationals as the outermost entity to call numbers; the field matters; sevenths of a length versus of an angle) + ai-synthesis (the checks, the distinctions, the flagged problems)"
+provenance: "murphy (the reading, the Babylonians as an engineering mathematics, one end of a spectrum; irregular reciprocals and the diagonal of the unit square treated alike; the rationals as the outermost entity to call numbers; the field matters; sevenths of a length versus of an angle; the charitable keeping of the Rebellion listing — a far side of the pagan spectrum, not a driving over the cliff) + ai-synthesis (the checks, the distinctions, the flagged problems)"
 sources: "[[Sexagesimal]], [[Counting and Bases]], [[Historical Order]], [[Number Hierarchy]], [[Exact Until Output]], [[Theology of Number]]"
 updated: 2026-10-10
 ---
@@ -87,7 +87,7 @@ The butcher's case is the Babylonian stance in a shop: "perfectly" in the *lengt
 | **Modern** | What is it? | definition within a system | the completed reals |
 | **The vault** | What is my warrant, and for what precision? | certificate | [[Certificates]] |
 
-The vault wants the Babylonian honesty about precision and the Greek demand for proof, with no claim to a completed totality: closest to a **proof-bearing engineering**. A note on [[Theology of Number]]: its table lists "Many-ness wins in B.C. empiricism (Babylon, Egypt)" under *Rebellion*; this page treats the Babylonian stance as **one end of a legitimate spectrum**, not as a fall. Whether the table should be changed is Murphy's decision.
+The vault wants the Babylonian honesty about precision and the Greek demand for proof, with no claim to a completed totality: closest to a **proof-bearing engineering**. A note on [[Theology of Number]]: its table lists "Many-ness wins in B.C. empiricism (Babylon, Egypt)" under *Rebellion*. Murphy's decision: the listing stands, charitably — technically all paganism is rebellion, but Babylon was **a far side of the pagan spectrum, not a driving over the cliff**. The legitimate-spectrum reading of this page concerns the *practice* (honesty about precision); the Rebellion row concerns the *classification* (kinds collapsed, no exact form to round from).
 
 ## For teaching [AI]
 

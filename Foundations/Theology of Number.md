@@ -33,6 +33,8 @@ God is One (Dt 6:4) and Three (Mt 28:19). "We possess knowledge analogical to Go
 
 This **four-phase** frame is re-expressed as the five **postures** of [[Five Acts]] (Sapiential, Promethean, Unmasking, Repression, Chastened Doxology), ordered by logic and not by date. The Rebellion corresponds to the second to fourth postures. For the creaturely realist, the exposure of the overreaching programme is "confirmation, not catastrophe".
 
+A charity toward Babylon (Murphy): technically all pagan mathematics is rebellion, since it does not follow Christ, so Babylon stands in that row. But its many-ness is to be called **a far side of the pagan spectrum, not a driving over the cliff** — an honest engineering empiricism ([[Babylonian Mathematics]]), not the defiant overreach of the later rationalism.
+
 ## Numbers in Scripture
 
 - **John 6** (feeding of the five thousand): Philip answers with *forecasts* (cost); Andrew with an *inventory* (5 loaves, 2 fish); Jesus gives thanks; then the *leftovers are counted* (12 baskets). Numbers return "only with the meaning they are given by God and his word." Twelve is symbolic (Jordan). Further examples: triangular numbers in Jn 21:11; Acts 27:37. [[SRC What is Mathematics (2020 draft)]]
