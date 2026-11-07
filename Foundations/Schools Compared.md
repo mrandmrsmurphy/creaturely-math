@@ -3,7 +3,7 @@ title: Schools Compared
 type: concept
 status: canonical
 provenance: ai-synthesis of Murphy's positions (primer + me.md alignment); table at bottom is from Murphy's raw Mathematics.md
-sources: "[[SRC CCE Primer (2026-06)]], [[SRC me.md Math Section]], [[SRC Mathematics (raw, 2026-05)]]"
+sources: "Murphy's me.md math section (2026); his raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 
@@ -28,25 +28,26 @@ Platonism · nominalism · fictionalism · structuralism — see the table in [[
 
 ## Closest living allies (from me.md)
 
-- **Wildberger** — rejects ℝ, Rational Trigonometry, certificate-explicit geometry; "no theology, no metaphysics, just mathematical scruples." The closest ally in *working practice*. (A tier-3 trusted source in [[SRC me.md Math Section]].)
+- **Wildberger** — rejects ℝ, Rational Trigonometry, certificate-explicit geometry; "no theology, no metaphysics, just mathematical scruples." The closest ally in *working practice*. (A tier-3 trusted source in Murphy's me.md math section, 2026.)
 - **Bishop** (*Constructive Analysis*, 1967) — method; but pragmatic reasons, and still lives inside real analysis (accepting constructive reals). Murphy to read for method.
 - **Esenin-Volpin, Zeilberger** — ultrafinitism.
 - **Brouwer** — constructivist method, idealist metaphysics: parted ways.
 
 > The AI analysis in me.md concluded Murphy is a *"creaturely realist"* — realist ontology + constructivist epistemology, with the **theological** (not merely methodological) reason for the constructivism — and said it saw no prior formalization of this; treat that as an unverified literature claim. See [[Future Directions]] item 10 (literature check).
 
-## Classical vs modern (Murphy's table, abridged)
+## Classical vs modern (Murphy's table)
 
 | | **Classical (Murphy)** | **Modern** |
 |---|---|---|
 | A number | A thing with a nature, defined by how it can be exhibited or certified | A node in a structure |
-| Equality | Same certificate type, same value; different certificates = different kinds of objects | Same place in the structure |
+| $\frac12$ | A ratio of two discrete magnitudes; certificate is the pair $(1,2)$ | An equivalence class of pairs $(a,b)$ under $(a,b)\sim(c,d)$ iff $ad=bc$ |
 | $\sqrt[5]{2}$ | Approximatable by the Jiǔ Zhāng algorithm | The unique real root of $x^5-2$ |
+| Equality | Same certificate type, same value; different certificates = different kinds of objects | Same place in the structure |
+| Existence | Primary: to exist is to be constructible with a stated certificate | "Consistent with ZFC" |
 | $1-1+1-\cdots=\tfrac12$ | A *different kind of object* assigned by convention | A true statement under Cesàro; context disambiguates |
 | Continuum Hypothesis | A real question about the nature of infinity | A pseudo-question: pick your axiom |
 | Gödel | Confirmation formal systems are incomplete guides to truth | A boundary condition; we work inside anyway |
-| Existence | Primary: to exist is to be constructible with a stated certificate | "Consistent with ZFC" |
 | Teacher's job | Lead the student to apprehend the *nature* of the object | Train correct manipulation of the formal system |
+| Criterion of success | Understanding — *what kind of thing is this?* | Provability — *what follows from the axioms?* |
+| Metaphysical stance | Realist: mathematical objects exist and have natures we discover | Formalist / structuralist: objects are defined by their role in a system |
 | PhD's question | *What is the nature of the thing I am teaching?* | *What can I prove within the framework?* |
-
-(Full table: [[SRC Mathematics (raw, 2026-05)]].)

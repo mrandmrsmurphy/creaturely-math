@@ -3,7 +3,7 @@ title: SAS Trigonometry
 type: method
 status: canonical
 provenance: murphy (formulas and method); murphy+ai (derivations, half-wedge slope, examples)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-07
 ---
 

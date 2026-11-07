@@ -3,7 +3,7 @@ title: Reading List
 type: meta
 status: "living list (all bibliographic details are from memory and must be verified before citing)"
 provenance: "murphy (the request, and the authors he named: Kline, Bell, Lockhart; plus his 2020 bibliography) + ai-synthesis (the rest: selection, grouping, priority and the reason each book is here)"
-sources: "[[Future Directions]], [[SRC Christian Mathematics (c2020)]], [[Christians and the Reals]], [[Theological Grounds]]"
+sources: "[[Future Directions]], Murphy's c2020 Christian Mathematics essay, [[Christians and the Reals]], [[Theological Grounds]]"
 updated: 2026-10-09
 ---
 
@@ -14,7 +14,7 @@ Books to have read before publishing this program. **Every title, publisher and 
 - **★** read before publishing (the claim it bears on will be attacked or compared against it);
 - **◆** should read;
 - **○** reference or source to consult;
-- **[2020]** already in Murphy's 2020 bibliography ([[SRC Christian Mathematics (c2020)]]);
+- **[2020]** already in Murphy's 2020 bibliography (his c2020 Christian Mathematics essay);
 - the vault page(s) the book bears on.
 
 The purposes are three: **know the prior art** (the novelty claim of [[Future Directions]] item 10 cannot be made without it), **know the opposition** in its own words, and **have the primary sources** for the historical claims. Selection beyond Murphy's named authors is **[AI]**.

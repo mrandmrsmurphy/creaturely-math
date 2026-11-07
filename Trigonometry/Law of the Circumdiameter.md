@@ -3,7 +3,7 @@ title: Law of the Circumdiameter
 type: law
 status: canonical
 provenance: murphy+ai (statement and method Murphy's; proof text drafted by AI)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-07
 ---
 

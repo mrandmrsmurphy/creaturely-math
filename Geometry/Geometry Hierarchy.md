@@ -3,7 +3,7 @@ title: Geometry Hierarchy
 type: hierarchy
 status: canonical (thin — source is a 7-line list)
 provenance: murphy (list) + ai-synthesis (glosses)
-sources: [[SRC Mathematics (raw, 2026-05)]]
+sources: "Murphy's raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 

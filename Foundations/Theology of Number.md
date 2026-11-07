@@ -3,7 +3,7 @@ title: Theology of Number
 type: concept
 status: canonical (draft)
 provenance: murphy (2020 essay; the antimatter consideration and the two flagged difficulties) + ai-synthesis (merge with 2026 material)
-sources: "[[SRC Christian Mathematics (c2020)]], [[SRC What is Mathematics (2020 draft)]]"
+sources: "Murphy's c2020 Christian Mathematics essay; his 2020 What is Mathematics draft"
 updated: 2026-10-07
 ---
 
@@ -37,7 +37,7 @@ A charity toward Babylon (Murphy): technically all pagan mathematics is rebellio
 
 ## Numbers in Scripture
 
-- **John 6** (feeding of the five thousand): Philip answers with *forecasts* (cost); Andrew with an *inventory* (5 loaves, 2 fish); Jesus gives thanks; then the *leftovers are counted* (12 baskets). Numbers return "only with the meaning they are given by God and his word." Twelve is symbolic (Jordan). Further examples: triangular numbers in Jn 21:11; Acts 27:37. [[SRC What is Mathematics (2020 draft)]]
+- **John 6** (feeding of the five thousand): Philip answers with *forecasts* (cost); Andrew with an *inventory* (5 loaves, 2 fish); Jesus gives thanks; then the *leftovers are counted* (12 baskets). Numbers return "only with the meaning they are given by God and his word." Twelve is symbolic (Jordan). Further examples: triangular numbers in Jn 21:11; Acts 27:37. (Murphy's 2020 *What is Mathematics* draft.)
 - **Wisdom 11:20** — "measure, number, and weight." Augustine, *De lib. arb.* II.8 (the numbers by which we reckon are not our invention but divine illumination).
 - **Buried treasure** (Prov 25:2; Gen 2:10–14): "the world is basically one big Easter egg hunt"; some treasures are gold and bdellium, others the Pythagorean Theorem or Fermat's Last Theorem — "buried treasure between our ears."
 

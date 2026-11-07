@@ -3,7 +3,7 @@ title: Equal Signs
 type: concept
 status: "draft (synthesis — the mapping is a proposal Murphy has not yet ratified; the pi_n refinement is his)"
 provenance: "murphy (both source taxonomies; the pi_n convention) + ai-synthesis (the mapping; the sign-shift observation)"
-sources: "[[SRC Mathematics (raw, 2026-05)]], [[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's raw mathematics draft (2026-05); his Constructible Trigonometry textbook"
 updated: 2026-10-11
 ---
 

@@ -7,7 +7,7 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Who Murphy is](memory/user-murphy.md) — role, working style, what he values
 - [Record his positions faithfully](memory/feedback-faithful-recording.md) — corrections he has made; do not smooth or overclaim
 - [Sources citations are an AI artifact](memory/feedback-sources-citations.md) — saying he wrote it is enough; no file in Sources/ required
-- [Sources/ is being retired](memory/feedback-sources-as-weights.md) — drafts are weights, not authorities; delete each after an absorption check; prose attribution suffices
+- [Sources/ is retired and deleted](memory/feedback-sources-as-weights.md) — drafts were weights, not authorities; each absorbed before deletion; prose attribution suffices
 - [Vault scope](memory/feedback-vault-scope.md) — not a science vault; tie new material to the position
 - [Label unmade pedagogy as future work](memory/feedback-future-work-labels.md) — plans are not curricula
 - [Quadriga project](memory/project-quadriga.md) — source, status, flagged items
@@ -21,4 +21,4 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Where things live](memory/reference-locations.md) — paths, mounts, the vulnerable ~/.claude
 - [[AI] cleanup project](memory/project-ai-cleanup.md) — scope decisions, tier order, per-page progress
 - [Git and GitHub](memory/reference-git-github.md) — public repo creaturely-math; git dir outside Drive; Obsidian auto-pushes
-- Session handoffs: `AIOS/sessions/` (latest: `2026-11-01 Vault on GitHub.md`)
+- Session handoffs: `AIOS/sessions/` (latest: `2026-11-07 Sources retired, statistics, admissibility.md`)

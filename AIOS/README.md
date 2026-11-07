@@ -9,7 +9,7 @@
 3. **Save session handoffs** in `AIOS/sessions/` (`YYYY-MM-DD <topic>.md`): what was done, what is pending, what to read first. A session that is about to run out of context writes one. The change history of the *math pages* still lives only in `Log/log.md`.
 4. **Do not rely on `~/.claude`.** Its memory folder holds only a pointer to this one. Transcripts there (`~/.claude/projects/.../*.jsonl`) are also deletable; anything worth keeping from them is copied here.
 5. **Scratch work** (temporary scripts, intermediate output) may use the session scratchpad. It is disposable; never store the only copy of anything there.
-6. AIOS holds notes about *how to work with this vault and Murphy*. It does not duplicate vault content (pages, the log, `Sources/`), and it is not a math page: no provenance tags or `[[links]]` into the math are needed, and it is not linked from `Home`.
+6. AIOS holds notes about *how to work with this vault and Murphy*. It does not duplicate vault content (pages, the log), and it is not a math page: no provenance tags or `[[links]]` into the math are needed, and it is not linked from `Home`.
 
 ## The to-do list
 

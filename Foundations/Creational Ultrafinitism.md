@@ -5,7 +5,7 @@ aliases:
 type: concept
 status: canonical
 provenance: murphy (position; the physical-bound arithmetic and the bound's scope; absolute and relative feasibility) + ai-synthesis (rival critique)
-sources: "[[SRC me.md Math Section]]"
+sources: "Murphy's me.md math section (2026)"
 updated: 2026-11-07
 ---
 
@@ -13,7 +13,7 @@ updated: 2026-11-07
 
 *Earlier name: tempered ultrafinitism.* **Creational** because the bound on a "biggest number" is the bound of the creation we live in: no actualized infinity exists in it, and God alone is infinite and eternal, not bound by his creation (Ps 90:2; Ps 145:3). **Tempered** survives as a description of the *manner*: graduated skepticism, and no quarrel with infinity as a limit-concept ([[Theological Grounds]]).
 
-**How large mathematics is.** Murphy describes himself as "an ultra-finitist … by stalwart conviction" ([[SRC me.md Math Section]]). The version here, graduated rather than hard:
+**How large mathematics is.** Murphy describes himself as "a strict algorithmic constructivist and an ultra-finitist" (his me.md math section, 2026). The version here, graduated rather than hard:
 
 | | Verdict |
 |---|---|

@@ -3,7 +3,7 @@ title: Structure Hierarchies
 type: hierarchy
 status: canonical (thin; commentary added)
 provenance: murphy (the three lists) + ai-synthesis (AI glosses; tensions flagged by AI)
-sources: [[SRC Mathematics (raw, 2026-05)]]
+sources: "Murphy's raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 

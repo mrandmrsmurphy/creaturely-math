@@ -3,7 +3,7 @@ title: Discrete Calculus
 type: theory
 status: canonical (the two drafts merged; bridge thesis and step-size dial developed)
 provenance: murphy (the DC draft; the step-h scaling, the midpoint fact, the threshold rule, the role of E_h, the one-rule section and the arctan question, adopted 2026-11-04) + murphy+ai (the Algebra II / Precalculus supplement) + ai-synthesis (the merge)
-sources: "[[SRC Discrete Calculus - From the Line to the Circle (DC draft, 2026-09).tex]], [[SRC Discrete Calculus Draft (Algebra II-Precalc)]]"
+sources: "Murphy's Discrete Calculus drafts (the 2026-09 paper and the Algebra II–Precalculus supplement)"
 updated: 2026-11-04
 ---
 

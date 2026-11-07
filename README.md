@@ -10,7 +10,7 @@ Start with [`Meta/What this project is.md`](Meta/What%20this%20project%20is.md) 
 
 ## Layout
 
-`Foundations`, `Number`, `Geometry`, `Trigonometry`, `Change`, `Logic`, `Symmetry`, `Measurement`, `History`, `Pedagogy`: the mathematics. `Meta`: guidelines and the open-work Agenda. `Sources`: snapshots of source texts. `Log`: the change log. `AIOS`: working memory for AI-assisted sessions (not mathematics). `images`: figures.
+`Foundations`, `Number`, `Geometry`, `Trigonometry`, `Change`, `Logic`, `Symmetry`, `Measurement`, `History`, `Pedagogy`: the mathematics. `Meta`: guidelines and the open-work Agenda. `Log`: the change log. `AIOS`: working memory for AI-assisted sessions (not mathematics). `images`: figures.
 
 ## Licence
 

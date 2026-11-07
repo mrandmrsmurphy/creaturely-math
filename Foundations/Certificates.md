@@ -6,7 +6,7 @@ aliases:
 type: concept
 status: canonical
 provenance: "murphy (framework; the definition — a certificate is a procedure — and the four clauses of pixel equality, 2026-10-10) + ai-synthesis (classroom formulations; the table; the Borwein figure to verify)"
-sources: "[[SRC Mathematics (raw, 2026-05)]], [[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's raw mathematics draft (2026-05); his Constructible Trigonometry textbook"
 updated: 2026-10-11
 ---
 

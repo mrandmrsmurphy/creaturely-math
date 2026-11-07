@@ -3,7 +3,7 @@ title: Creaturely Realism
 type: concept
 status: canonical
 provenance: "murphy (position; the twoness point, the pi_n preference and the certificate-of-access sharpening) + ai-synthesis (survey of rivals)"
-sources: "[[SRC me.md Math Section]], [[SRC Christian Mathematics (c2020)]]"
+sources: "Murphy's me.md math section (2026); his c2020 Christian Mathematics essay"
 updated: 2026-10-11
 ---
 
@@ -53,7 +53,7 @@ The earliest statement in the corpus starts here: God is One and Three, a "numer
 
 ## God's conceptions and the word "number"
 
-[[SRC me.md Math Section]] says an object "exists only if it can be exhibited and certified." That is a claim about the word **number** in the *human* sense, not an anti-realist claim about what exists.
+Murphy's me.md math section (2026) says an object "exists only if it can be exhibited and certified." That is a claim about the word **number** in the *human* sense, not an anti-realist claim about what exists.
 
 - God could conceive of something like a Real number. Humans cannot.
 - While we are reasoning about **God's conceptions**, something like Cantor's diagonal argument makes some kind of sense ([[Infinity and Cantor]]).

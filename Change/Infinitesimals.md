@@ -3,7 +3,7 @@ title: Infinitesimals
 type: concept
 status: canonical
 provenance: murphy (position; 2020 essay, 2023 Confession, 2026 ladders and discussion) + ai-synthesis (SIA, dual numbers, Robinson notes)
-sources: "[[SRC Christian Mathematics (c2020)]], [[SRC Mathematics (raw, 2026-05)]]"
+sources: "Murphy's c2020 Christian Mathematics essay; his raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 

@@ -3,7 +3,7 @@ title: Law of Lengths
 type: law
 status: canonical
 provenance: murphy+ai (statement and use Murphy's; proof text drafted by AI)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-07
 ---
 

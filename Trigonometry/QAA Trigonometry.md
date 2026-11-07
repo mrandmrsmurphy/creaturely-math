@@ -3,7 +3,7 @@ title: QAA Trigonometry
 type: method
 status: canonical
 provenance: murphy (formulas and method); murphy+ai (derivations, signs for an obtuse wedge, examples)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-08
 ---
 

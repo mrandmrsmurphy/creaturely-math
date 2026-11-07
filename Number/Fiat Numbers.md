@@ -3,7 +3,7 @@ title: Fiat Numbers
 type: concept
 status: canonical
 provenance: murphy (the two-direction picture, "fiat numbers", "inbred"; the certificate-is-representation answer, adopted 2026-11-04); ai-synthesis (standard algebra; examples computed and checked exactly)
-sources: "[[SRC Mathematics (raw, 2026-05)]]"
+sources: "Murphy's raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 

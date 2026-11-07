@@ -3,7 +3,7 @@ title: Classroom Questions
 type: pedagogy
 status: canonical
 provenance: ai-synthesis (primer) + murphy (Catechism of Mathematics)
-sources: "[[SRC Catechism of Mathematics (2023)]]"
+sources: "Murphy's 2023 Catechism and the CCE primer talk"
 updated: 2026-10-07
 ---
 

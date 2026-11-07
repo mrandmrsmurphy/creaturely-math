@@ -52,6 +52,7 @@ updated: 2026-11-07
 | The public essay: adopted and written as a mini-PhD in four parts — assumptions; state of research; directions; future growth | [[Measure, Number, and Weight]] (the Legibility essay line) |
 | Feasibility is twofold: absolute (the creaturely horizon, independent of any machine) and relative (admissibility $T_C(x,\varepsilon)\le B$ against a stated budget); expression ≠ constructed object ≠ certified result; construction and certification costs are bounded separately | [[Computational Admissibility]], [[Creational Ultrafinitism]] (item 2's framing) |
 | Derivatives of $\exp$, $\ln$, $\sin$, $\cos$ with certificates: quadratic-remainder bounds ($C=e^{|x|}$, $2/x^2$, $\tfrac23$); the $E_h$ and $H_n$ comparisons; the rational rotation against the classical circle to $O(k/N^3)$ | [[Derivatives with Certificates]] |
+| `Sources/` retired: every source audited and absorbed; the Quadriga manuscripts live on as canonical pages; the folder deleted | [[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)]], [[Quadriga Scientiae (wiki elaborations)]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
@@ -108,7 +109,6 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 
 **Pedagogy** — all future pedagogical work, none taught as a year yet
 - Proof types by grade; a classroom set per Exercise; rubrics; a curriculum placement chart; a unit template; teacher-equipping sequence: the list is on [[Quadriga for Mathematics]] ("Future pedagogical work"). Open questions on [[Historical Order]], [[Quaestio]], [[Praxis]], [[Noesis]].
-- **small** Retire `Sources/` (Murphy's direction, 2026-11-07): the vault has advanced past the early drafts; each source is to be deleted once it passes an absorption check, and his manuscripts become canonical pages rather than files in `Sources/`. Done: the Quadriga compilation (split into [[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)|(Catholic)]] and [[Quadriga Scientiae (wiki elaborations)|(wiki elaborations)]]) and the CCE slide script (content absorbed; the performed text was not needed). Decided, pending the audit: the Catechism and Confession (item 11). Remaining: `SRC Mathematics (raw, 2026-05)`, `SRC Christian Mathematics (c2020)`, `SRC What is Mathematics (2020 draft)`, `SRC me.md Math Section` (prose attribution suffices for its two quotes), `SRC Constructible Trigonometry Textbook (md)` (the *Discrete Bridge* outline lives only there), the two Discrete Calculus drafts. Per file: audit what is uniquely held, absorb it or record the loss, delete, clean the links.
 - **small** Review the Catholic variant of the Quadriga ([[Quadriga Scientiae (Catholic)]]) against the Protestant text; possible Orthodox and humanist variants (variants are legitimate, Murphy — [[Quadriga for Mathematics]], Open 3).
 
 **History and verification** (**background**)
@@ -169,7 +169,7 @@ All of this serves several books some day. **None of that is the goal now.** Mur
 | d | **Infinity and Uncertainty** (Calculus with Stats) | Textbooks to write | file is empty |
 | e | ***Exact Algebra*** | Textbooks to write | not started (spec exists) |
 | f | *Statistics for Everyone*; *Calculus for Everyone* (text) | Textbooks to write | not started |
-| g | ***A Discrete Bridge*** ch. 9–17 | [[SRC Constructible Trigonometry Textbook (md)]] outline | outline only |
+| g | ***A Discrete Bridge*** ch. 9–17 | Murphy's CT textbook outline (the source retired; its substance is summarized on [[Constructible Trigonometry]]) | outline only |
 | h | Confession §§ after ε: *Logs and exponents, e; Infinity—the continuum; Geometry; Algebra; Trigonometry; Calculus; Abstract Algebra; Probability, Statistics* | Confession last 8 lines | superseded — the Confession will not be finished (item 11); the vault's pages carry this content |
 | i | Precalc for Everyone: *Not Rational*; *Project: Are You For Reals?*; *Boolean Algebra*; *Abstract Algebra* | *Precalculus for Everyone* outline | empty |
 | j | ISS: exact $r_{\max}$; 17-gon angles; sin/cos transition; vectors; spherical/hyperbolic constructibility | article's own "further avenues" | open |
@@ -208,7 +208,7 @@ me.md's AI analysis said it found no prior "creaturely realism" that grounds con
 
 ### 11. Unify the Catechism and the Confession — **answered (Murphy, 2026-11-06): do not finish them**
 
-Both are early drafts from before the [[Number Hierarchy]] and may be wrong where they differ from the canonical pages; they are weights holding back new writing, not foundations to build on. They will not be unified or completed; the Confession's outline sections (logs and $e$; the continuum; geometry; algebra; trigonometry; calculus; abstract algebra; probability and statistics) are superseded by the vault's pages. **Remaining:** the absorption check, then deletion — under Pedagogy above.
+Both are early drafts from before the [[Number Hierarchy]] and may be wrong where they differ from the canonical pages; they are weights holding back new writing, not foundations to build on. They will not be unified or completed; the Confession's outline sections (logs and $e$; the continuum; geometry; algebra; trigonometry; calculus; abstract algebra; probability and statistics) are superseded by the vault's pages. The absorption check passed and both snapshots are deleted (2026-11-07): the catechism's notable lines live on [[Classroom Questions]], the Confession's on [[Infinitesimals]], [[Equal Signs]], [[Counting and Bases]] and [[Infinity and Cantor]].
 
 ### 13. Probability and statistics, finitely — **begun**
 Measure theory is rung 6 of the Change ladder and rejected-adjacent. **Begun:** [[Constructible Statistics]] (seven exact results), [[Statistics]], [[Probability]]. **[AI]** Finite probability + sampling distributions with explicit error bounds is exactly "certificate-explicit statistics"; the remaining work is on the Agenda, strand *Measurement*.

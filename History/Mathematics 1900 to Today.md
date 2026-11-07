@@ -99,6 +99,8 @@ On the **atheists who still parrot the positivists**: I read "ANW" as Whitehead 
 
 [AI] So the page records the **foundational critique** (set theory is the wrong foundation for school mathematics) as Murphy's, with Kline, and as a **policy that was abandoned**; it records the claim that the New Math *damaged achievement* as **not established**, and the best study found points the other way (for Sweden, in the trials). The vault's own alternative stands without it: **counting first** ([[Tally Marks]]), **history before abstraction** ([[Historical Order]]), structure *instantiated* before it is named (the cardboard square).
 
+**Kline's three offices (Murphy, from the 2020 essay).** In *Why the Professor Can't Teach* Kline names three offices a healthy university needs: the **researcher**, who pushes the frontier; the **disseminator** or networker, who understands and connects; and the **educator**, who hands the ideas on. After the war the researcher was made the *summum bonum*: PhD programs produce only researchers, disseminators are all but eradicated, educators quit for want of power — and the misalignment reaches the schools, where mathematics sits stuck at the grammar stage on "a death march to calculus". The companion charge in *The Loss of Certainty*: research divorced from its source in real-world problems, mathematics cleft into pure and applied, the pure side writing what no one else reads. The vault's answer at the school level is [[Curriculum Plan]].
+
 ## 5. Timeline, 1900 to today (approximate)
 
 | Date | Event |

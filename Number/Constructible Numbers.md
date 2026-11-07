@@ -3,7 +3,7 @@ title: Constructible Numbers
 type: concept
 status: canonical
 provenance: murphy (Constructible Trigonometry, article) + ai-synthesis (cross-references)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]], [[SRC Mathematics (raw, 2026-05)]]"
+sources: "Murphy's Constructible Trigonometry textbook; his raw mathematics draft (2026-05)"
 updated: 2026-10-07
 ---
 

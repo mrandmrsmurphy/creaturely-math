@@ -3,7 +3,7 @@ title: Number Hierarchy
 type: hierarchy
 status: canonical
 provenance: "murphy (the hierarchy; the level-9 cost analysis for e, adopted 2026-11-04; the Posits recorded dialectically, adopted 2026-11-06) + ai-synthesis (the level-9 worked brackets; the negative-half details of level 12)"
-sources: [[SRC Mathematics (raw, 2026-05)]]
+sources: "Murphy's raw mathematics draft (2026-05)"
 updated: 2026-10-11
 ---
 

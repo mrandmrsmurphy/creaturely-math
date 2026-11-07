@@ -2,7 +2,7 @@
 
 This vault is Robert Marshall Murphy's mathematics: finite, creaturely, certificate-explicit. Read `Home.md`, then `Meta/Future Directions.md`, whose guidelines govern the whole vault, then `AIOS/MEMORY.md` (the AI's permanent memory).
 
-1. **Fix mistakes, don't preserve them.** If a file in `Sources/` or a canonical page contains a verified error or typo, correct it in place. Leave Murphy's wording, judgment calls and contested claims alone and flag them instead.
+1. **Fix mistakes, don't preserve them.** If a canonical page contains a verified error or typo, correct it in place. Leave Murphy's wording, judgment calls and contested claims alone and flag them instead.
 2. **No version history on pages.** Pages hold only the working math. Never write "corrected", "previously", "was wrong", or dates of changes on a page. Record every change in `Log/log.md` (newest first), and nowhere else.
 3. **No angle measure in `Trigonometry/`.** No degrees, radians, or $\theta$ except in a clearly labelled comparison with other frameworks ("other frameworks: $\tan\theta$"). Name wedges concretely: a right angle, a straight wedge, the interior wedge of an equilateral triangle / regular hexagon, and so on.
 4. **One canonical page per idea.** Before creating a page, search for an existing one; merge, don't duplicate.

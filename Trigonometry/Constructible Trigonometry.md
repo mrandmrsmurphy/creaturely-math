@@ -3,7 +3,7 @@ title: Constructible Trigonometry
 type: theory
 status: canonical (summary of an active book/article project)
 provenance: murphy (original mathematics); formulas spot-checked by AI
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-07
 ---
 
@@ -96,4 +96,4 @@ Each case gives the missing wedges, sides, area, inradius and circumradius (the 
 
 ## The book: *A Discrete Bridge: From Constructible to Transcendental Trigonometry*
 
-Six parts, 17 chapters + 6 appendices, structured as a **historical walk**: Exact Apparatus (𝕂, ℙ¹(𝕂), radicals, quadratics, the slope-length objects) → Babylonian threads (spherical: 360°, DMS; planar: seqt, Plimpton 322, YBC 7289) → Greek demonstration (Euclid without numbered angles; Menelaus, Ptolemy; "geometry proves, astronomy computes") → Indian algorithms (jyā; Bhāskara; **Madhava**: the series; π ∉ 𝕂; "the bridge, presented historically, not endorsed ontologically") → European analytic turn (Descartes, Viète, **Euler's Great Reveal**: "m was tangent all along, ℓ was secant all along") → Modern divergence (three geometries, Cauchy–Weierstrass, floating point vs. constructible). Full outline: [[SRC Constructible Trigonometry Textbook (md)]].
+Six parts, 17 chapters + 6 appendices, structured as a **historical walk**: Exact Apparatus (𝕂, ℙ¹(𝕂), radicals, quadratics, the slope-length objects) → Babylonian threads (spherical: 360°, DMS; planar: seqt, Plimpton 322, YBC 7289) → Greek demonstration (Euclid without numbered angles; Menelaus, Ptolemy; "geometry proves, astronomy computes") → Indian algorithms (jyā; Bhāskara; **Madhava**: the series; π ∉ 𝕂; "the bridge, presented historically, not endorsed ontologically") → European analytic turn (Descartes, Viète, **Euler's Great Reveal**: "m was tangent all along, ℓ was secant all along") → Modern divergence (three geometries, Cauchy–Weierstrass, floating point vs. constructible). The detailed outline was Murphy's 2026 textbook draft.

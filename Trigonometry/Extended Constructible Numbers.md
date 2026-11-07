@@ -3,7 +3,7 @@ title: Extended Constructible Numbers
 type: concept
 status: canonical
 provenance: murphy (definition); murphy+ai (teaching of addition, worked cases)
-sources: "[[SRC Constructible Trigonometry Textbook (md)]]"
+sources: "Murphy's Constructible Trigonometry textbook (2026)"
 updated: 2026-10-07
 ---
 
