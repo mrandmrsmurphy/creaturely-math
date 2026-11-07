@@ -10,6 +10,8 @@
 
 **`Change/Derivatives with Certificates.md` created** (the Change core item, first form): derivative certificate |f(x+h)−f(x)−f'(x)h| ≤ Ch²; proved for exp (C=e^|x|, E_h deficit ≤ xh/2·e^x + tail), ln (C=2/x², from the shape), sin/cos (C=2/3; on-series identities); the rational rotation vs the classical circle to 2k/(3N³). Calculus hp1 and MVT hp1 closed and renumbered; all cross-references updated.
 
+**`Geometry/Geometry Hierarchy.md` rewritten** (Murphy's 2026-11-07 outline, Agenda item 8 answered): branching structure not a ladder; perpendicularity does not select the geometry (parallel behavior does); congruence without numbers; Archimedean retained local-constructive, completeness rejected (replacements: constructive extension, locatedness, resolution); coordinates as representation; projective and transformation geometry as separate axes; finite combinatorial topology; Hilbert's segment calculus as the bridge project; the freshman center is congruence geometry. Open research: the page's seven items.
+
 **Sources/ deleted entirely.** The Quadriga compilation became three pages (`Pedagogy/Quadriga Scientiae (Protestant/Catholic/wiki elaborations)`); the CCE script deleted (content absorbed); the other eight audited, absorbed, deleted. Recorded losses (git history retains): Quadriga compilation Parts IV–V, the CT textbook's section-level outline detail. `sources:` lines now name Murphy's works in prose. AGENTS.md rule 1, README, Home, Reading List, AIOS protocol updated.
 
 ## Pending / watch
