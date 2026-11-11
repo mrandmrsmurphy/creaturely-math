@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Factorization Diagrams</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#3c3c3c;
+    --ink-dim:#8a8a8a;
+    --chrome:#f0f0f0;
+    --chrome-on:#4a4a4a;
+    --rule:#dcdcdc;
+    --link:#2b8ae0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101012;
+      --ink:#d8d8d8;
+      --ink-dim:#7a7a7a;
+      --chrome:#232326;
+      --chrome-on:#c8c8c8;
+      --rule:#2e2e32;
+      --link:#5aa9ec;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:400 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    overflow:hidden; -webkit-font-smoothing:antialiased;
+  }
+  #stage{position:fixed; inset:0; display:block; width:100%; height:100%}
+
+  /* ---- readout, top left ---- */
+  #readout{position:fixed; top:max(14px, env(safe-area-inset-top)); left:20px; z-index:2; user-select:none}
+  #n{
+    font:300 46px/1.05 inherit; letter-spacing:-0.01em; color:var(--ink);
+    background:none; border:0; padding:0 2px; margin:0 0 0 -2px;
+    width:4ch; border-radius:4px; outline:none; caret-color:var(--link);
+  }
+  #n:focus{background:var(--chrome)}
+  #factors{margin-top:2px; font-size:15px; color:var(--ink-dim); letter-spacing:.01em; min-height:1.5em}
+
+  /* ---- transport, bottom right ---- */
+  #transport{
+    position:fixed; z-index:2; display:flex; gap:8px;
+    right:max(18px, env(safe-area-inset-right));
+    bottom:max(18px, env(safe-area-inset-bottom));
+  }
+  #transport button{
+    width:46px; height:38px; border:0; border-radius:6px;
+    background:var(--chrome); color:var(--ink-dim);
+    display:grid; place-items:center; cursor:pointer; padding:0;
+    transition:background .12s ease, color .12s ease;
+  }
+  #transport button:hover{color:var(--ink)}
+  #transport button[aria-pressed="true"]{background:var(--chrome-on); color:var(--bg)}
+  #transport button:focus-visible, #about-toggle:focus-visible, #n:focus-visible{
+    outline:2px solid var(--link); outline-offset:2px;
+  }
+  #transport svg{width:18px; height:14px; fill:currentColor}
+
+  /* ---- about ---- */
+  #about-toggle{
+    position:fixed; z-index:3;
+    left:max(20px, env(safe-area-inset-left));
+    bottom:max(18px, env(safe-area-inset-bottom));
+    background:none; border:0; padding:0; cursor:pointer;
+    color:var(--link); font:600 15px/1 inherit;
+  }
+  #about{
+    position:fixed; z-index:4; left:20px; bottom:52px; width:min(430px, calc(100vw - 40px));
+    max-height:min(74vh, 620px); overflow:auto;
+    background:var(--bg); border:1px solid var(--rule); border-radius:10px;
+    padding:20px 22px 22px; box-shadow:0 10px 40px rgba(0,0,0,.16);
+    font-size:14px; line-height:1.62;
+  }
+  #about[hidden]{display:none}
+  #about h2{margin:0 0 10px; font:600 16px/1.3 inherit}
+  #about h3{margin:18px 0 6px; font:600 13px/1.3 inherit; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim)}
+  #about p{margin:0 0 10px}
+  #about ul{margin:0; padding-left:18px}
+  #about li{margin-bottom:4px}
+  #about kbd{
+    font:500 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    border:1px solid var(--rule); border-radius:4px; padding:2px 5px; color:var(--ink);
+  }
+  .opt{margin-top:16px; padding-top:14px; border-top:1px solid var(--rule); display:flex; align-items:center; gap:9px}
+  .opt label{cursor:pointer}
+  @media (max-width:520px){
+    #n{font-size:34px}
+    #transport button{width:40px; height:36px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    #transport button{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stage"></canvas>
+
+<div id="readout">
+  <input id="n" value="1" inputmode="numeric" autocomplete="off" spellcheck="false"
+         aria-label="Number shown — type a number and press Enter to jump to it">
+  <div id="factors">unit</div>
+</div>
+
+<div id="transport">
+  <button data-speed="-2" title="Rewind fast" aria-label="Rewind fast" aria-pressed="false">
+    <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M11 8 21 1.5v13zM1 8l10-6.5v13z"/></svg>
+  </button>
+  <button data-speed="-1" title="Rewind" aria-label="Rewind" aria-pressed="false">
+    <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M4 8 18 1v14z"/></svg>
+  </button>
+  <button data-speed="0" title="Pause" aria-label="Pause" aria-pressed="true">
+    <svg viewBox="0 0 24 16" aria-hidden="true"><rect x="7" y="2" width="10" height="12" rx="1"/></svg>
+  </button>
+  <button data-speed="1" title="Play" aria-label="Play" aria-pressed="false">
+    <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M20 8 6 15V1z"/></svg>
+  </button>
+  <button data-speed="2" title="Fast forward" aria-label="Fast forward" aria-pressed="false">
+    <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M13 8 3 14.5v-13zM23 8l-10 6.5v-13z"/></svg>
+  </button>
+</div>
+
+<button id="about-toggle" aria-expanded="false" aria-controls="about">About</button>
+
+<div id="about" hidden>
+  <h2>Every number, factored, exactly once</h2>
+  <p>Each figure has exactly <em>n</em> dots, and the way they are grouped is the prime
+     factorization of <em>n</em> — the only one it has.</p>
+  <p>Write <em>n</em> as a product of primes, largest first. The outermost layer is a ring of
+     <em>p</em> points, where <em>p</em> is the largest prime. At each point sits a complete copy
+     of the figure for <em>n</em>&nbsp;/&nbsp;<em>p</em>. Repeat until nothing is left to divide.
+     A prime has no inner structure, so it stays a bare ring: 11 is eleven dots on a hendecagon.
+     Composites nest: 10 is five pairs on a pentagon, and 12 is three copies of 4, each of them
+     a pair of pairs — a square.</p>
+  <p>Long groups are laid along the radius, so the five pairs of 10 point out of the pentagon
+     like petals. Round groups — squares, triangles, pentagons — are left upright, since turning
+     them would gain nothing. The caption reads outside in, matching the layers you see.</p>
+  <h3>Keys</h3>
+  <ul>
+    <li><kbd>Space</kbd> — play or pause</li>
+    <li><kbd>←</kbd> <kbd>→</kbd> — one step back or forward</li>
+    <li><kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd> — rewind or fast forward</li>
+    <li><kbd>G</kbd> — show the grouping circles</li>
+    <li><kbd>Home</kbd> — back to 1</li>
+  </ul>
+  <p style="margin-top:12px">Type a number in the corner and press <kbd>Enter</kbd> to jump there.
+     Large primes need large rings, so the dots shrink: legibility gives out somewhere in the
+     low hundreds, and a number like 9973 is a solid circle.</p>
+  <div class="opt">
+    <input type="checkbox" id="guides">
+    <label for="guides">Draw the grouping circles when paused</label>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+/* ══════════════════════════════════════════════════════════════════════
+   Layout: turn n into a set of dot positions, in units of one dot radius.
+   ══════════════════════════════════════════════════════════════════════ */
+
+var MINN = 1, MAXN = 100000;
+var GAP  = 0.38;              // clear space between dots, as a fraction of diameter
+var MIND = 2 * (1 + GAP);     // minimum centre-to-centre distance between any two dots
+var EXACT_LIMIT = 600;        // above this many child dots, use the cheap packing
+var ELONG = 1.25;             // how long a group must be before it is turned to lie radially
+
+function primeFactorsDesc(n){
+  var f = [], m = n, p;
+  for (p = 2; p * p <= m; p++) while (m % p === 0) { f.push(p); m /= p; }
+  if (m > 1) f.push(m);
+  f.sort(function(a, b){ return b - a; });
+  return f;
+}
+
+function boundRadius(pts){
+  var r = 0, i, d;
+  for (i = 0; i < pts.length; i++){
+    d = Math.sqrt(pts[i].x * pts[i].x + pts[i].y * pts[i].y);
+    if (d > r) r = d;
+  }
+  return r + 1;
+}
+
+/* Principal axis and elongation of a group. Anything with three-fold or higher
+   symmetry — a triangle, a square, a pentagon — comes out isotropic, so only
+   genuinely long shapes (a pair, and things built from pairs) get turned. */
+function principal(pts){
+  var n = pts.length, i, mx = 0, my = 0;
+  if (n < 2) return { elong: 1, ang: 0 };
+  for (i = 0; i < n; i++){ mx += pts[i].x; my += pts[i].y; }
+  mx /= n; my /= n;
+  var sxx = 0, syy = 0, sxy = 0, dx, dy;
+  for (i = 0; i < n; i++){
+    dx = pts[i].x - mx; dy = pts[i].y - my;
+    sxx += dx * dx; syy += dy * dy; sxy += dx * dy;
+  }
+  sxx = sxx / n + 0.25; syy = syy / n + 0.25; sxy /= n;   // 0.25 = a dot's own moment
+  var tr = sxx + syy;
+  var disc = Math.sqrt(Math.max(0, tr * tr / 4 - (sxx * syy - sxy * sxy)));
+  return {
+    elong: Math.sqrt((tr / 2 + disc) / Math.max(tr / 2 - disc, 1e-12)),
+    ang: 0.5 * Math.atan2(2 * sxy, sxx - syy)
+  };
+}
+
+function rotate(pts, a){
+  var c = Math.cos(a), s = Math.sin(a), out = [], i;
+  for (i = 0; i < pts.length; i++)
+    out.push({ x: pts[i].x * c - pts[i].y * s, y: pts[i].x * s + pts[i].y * c, r: pts[i].r });
+  return out;
+}
+
+/* Smallest separation T along u at which two groups clear each other entirely.
+   Taking the largest constraint rather than the first gap is what stops
+   neighbouring groups from meshing into each other's slack. */
+function needAlong(A, B, ux, uy){
+  var T = 0, i, j, dx, dy, a, b, q, v;
+  for (i = 0; i < A.length; i++) for (j = 0; j < B.length; j++){
+    dx = A[i].x - B[j].x; dy = A[i].y - B[j].y;
+    a = dx * ux + dy * uy;
+    if (MIND - a <= T) continue;                 // best possible here can't beat T
+    b = -dx * uy + dy * ux;
+    q = MIND * MIND - b * b;
+    if (q <= 0) continue;                        // already clear sideways
+    v = Math.sqrt(q) - a;
+    if (v > T) T = v;
+  }
+  return T;
+}
+
+/* Returns { pts, circles } in units where a dot has radius 1. */
+function buildLayout(n){
+  var factors = primeFactorsDesc(n);
+
+  function rec(idx){
+    if (idx >= factors.length) return { pts: [{ x: 0, y: 0 }], circles: [] };
+
+    var p = factors[idx], child = rec(idx + 1), i, j, a;
+    var dirs = [];
+    for (j = 0; j < p; j++){
+      a = -Math.PI / 2 + 2 * Math.PI * j / p;    // rings point up
+      dirs.push([Math.cos(a), Math.sin(a)]);
+    }
+
+    // Long groups lie radially. A 2-ring's radius is its own axis, so a long
+    // child inside a 2 turns across it instead — which is what makes 4 a square
+    // and 16 a four-by-four, with no rule about depth.
+    var pr = principal(child.pts), copies = [], rings = [], phi, target;
+    for (j = 0; j < p; j++){
+      phi = 0;
+      if (pr.elong > ELONG){
+        target = Math.atan2(dirs[j][1], dirs[j][0]) + (p === 2 ? Math.PI / 2 : 0);
+        phi = target - pr.ang;
+      }
+      copies.push(rotate(child.pts, phi));
+      rings.push(rotate(child.circles, phi));
+    }
+
+    var rc = boundRadius(child.pts), R = 0, span, vx, vy, len, T;
+    if (child.pts.length > EXACT_LIMIT){
+      R = (2 * rc + 2 * GAP) / (2 * Math.sin(Math.PI / p));
+    } else {
+      span = (p <= 8) ? p : 5;                   // distant vertices can't reach on a big ring
+      for (i = 0; i < p; i++) for (j = i + 1; j < Math.min(i + span, p); j++){
+        vx = dirs[i][0] - dirs[j][0];
+        vy = dirs[i][1] - dirs[j][1];
+        len = Math.sqrt(vx * vx + vy * vy);
+        T = needAlong(copies[i], copies[j], vx / len, vy / len);
+        if (T / len > R) R = T / len;
+      }
+    }
+
+    var pts = [], circles = [], show = child.pts.length > 1, cx, cy;
+    for (j = 0; j < p; j++){
+      cx = R * dirs[j][0]; cy = R * dirs[j][1];
+      for (i = 0; i < copies[j].length; i++)
+        pts.push({ x: cx + copies[j][i].x, y: cy + copies[j][i].y });
+      for (i = 0; i < rings[j].length; i++)
+        circles.push({ x: cx + rings[j][i].x, y: cy + rings[j][i].y, r: rings[j][i].r });
+      if (show) circles.push({ x: cx, y: cy, r: rc });
+    }
+    if (idx === 0) circles.push({ x: 0, y: 0, r: R + rc });
+    return { pts: pts, circles: circles };
+  }
+
+  return rec(0);
+}
+
+var layoutCache = {};
+function getLayout(n){
+  if (!layoutCache[n]){
+    if (Object.keys(layoutCache).length > 300) layoutCache = {};
+    layoutCache[n] = buildLayout(n);
+  }
+  return layoutCache[n];
+}
+
+function factorText(n){
+  if (n === 1) return 'unit';
+  var f = primeFactorsDesc(n);
+  if (f.length === 1) return 'prime';
+  return f.join('\u00d7');
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Canvas
+   ══════════════════════════════════════════════════════════════════════ */
+
+var cv = document.getElementById('stage');
+var ctx = cv.getContext('2d');
+var W = 0, H = 0;
+var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function resize(){
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = Math.round(W * dpr);
+  cv.height = Math.round(H * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+window.addEventListener('resize', resize);
+
+function maxDot(){ return Math.max(5, Math.min(52, Math.min(W, H) * 0.048)); }
+function margin(){ return Math.max(22, Math.min(W, H) * 0.075); }
+
+/* Scale and offset that fit a layout on screen. */
+function place(L){
+  var minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity, i, p;
+  for (i = 0; i < L.pts.length; i++){
+    p = L.pts[i];
+    if (p.x - 1 < minx) minx = p.x - 1;
+    if (p.x + 1 > maxx) maxx = p.x + 1;
+    if (p.y - 1 < miny) miny = p.y - 1;
+    if (p.y + 1 > maxy) maxy = p.y + 1;
+  }
+  var bw = Math.max(maxx - minx, 1e-6), bh = Math.max(maxy - miny, 1e-6), m = margin();
+  var s = Math.min((W - 2 * m) / bw, (H - 2 * m) / bh);
+  s = Math.min(s, maxDot());
+  s = Math.max(s, 0.3);
+  return { s: s, ox: W / 2 - (minx + maxx) / 2 * s, oy: H / 2 - (miny + maxy) / 2 * s };
+}
+
+var frameCache = {}, frameKey = '';
+function frameOf(n){
+  var key = W + 'x' + H;
+  if (key !== frameKey){ frameCache = {}; frameKey = key; }
+  if (!frameCache[n]){
+    var L = getLayout(n);
+    frameCache[n] = { L: L, P: place(L) };
+  }
+  return frameCache[n];
+}
+
+/* Each dot keeps its colour as the number changes, so you can follow one
+   through the rearrangement. Golden-angle hues keep neighbours distinct. */
+var colorCache = [];
+function colorFor(i){
+  if (!colorCache[i]){
+    var h = (i * 137.508) % 360;
+    var s = 58 + (i * 37) % 26;
+    var l = dark ? 46 + (i * 53) % 16 : 29 + (i * 53) % 16;
+    colorCache[i] = 'hsl(' + h.toFixed(1) + ',' + s + '%,' + l + '%)';
+  }
+  return colorCache[i];
+}
+
+function ease(u){ return u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Playback
+   ══════════════════════════════════════════════════════════════════════ */
+
+var cur = 1;
+var speed = 0;              // -2 -1 0 1 2
+var anim = null;            // { from, to, start, dur }
+var holdUntil = 0;
+var guidesOn = false, guideAlpha = 0;
+var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function durFor(){ var s = Math.abs(speed) || 1; return reduced ? 1 : (s === 2 ? 200 : 620); }
+function holdFor(){ var s = Math.abs(speed); return s === 2 ? 45 : (s === 1 ? 330 : 0); }
+
+function setSpeed(v){
+  speed = v;
+  var b = document.querySelectorAll('#transport button'), i;
+  for (i = 0; i < b.length; i++)
+    b[i].setAttribute('aria-pressed', String(Number(b[i].dataset.speed) === v));
+}
+
+function startAnim(to, now){
+  if (to < MINN || to > MAXN) return false;
+  anim = { from: cur, to: to, start: now, dur: durFor() };
+  setReadout(to);
+  return true;
+}
+
+function step(dir){
+  setSpeed(0);
+  if (!anim) startAnim(cur + dir, performance.now());
+}
+
+function jumpTo(n){
+  n = Math.max(MINN, Math.min(MAXN, Math.round(n)));
+  setSpeed(0); anim = null; cur = n; setReadout(n);
+}
+
+var elN = document.getElementById('n'), elF = document.getElementById('factors');
+function setReadout(n){
+  if (document.activeElement !== elN) elN.value = String(n);
+  elN.size = Math.max(2, String(n).length);
+  elF.textContent = factorText(n);
+}
+
+function tick(now){
+  if (anim){
+    if (now - anim.start >= anim.dur){
+      cur = anim.to; anim = null; holdUntil = now + holdFor();
+    }
+  }
+  if (!anim && speed !== 0 && now >= holdUntil){
+    if (!startAnim(cur + (speed > 0 ? 1 : -1), now)) setSpeed(0);
+  }
+  var want = (guidesOn && !anim && speed === 0) ? 1 : 0;
+  guideAlpha += (want - guideAlpha) * 0.16;
+  draw(now);
+  requestAnimationFrame(tick);
+}
+
+function draw(now){
+  ctx.clearRect(0, 0, W, H);
+
+  var A, B, u;
+  if (anim){
+    A = frameOf(anim.from); B = frameOf(anim.to);
+    u = ease(Math.min(1, (now - anim.start) / anim.dur));
+  } else {
+    A = B = frameOf(cur); u = 0;
+  }
+
+  if (guideAlpha > 0.01){
+    var F = frameOf(cur), C = F.L.circles, i;
+    ctx.save();
+    ctx.globalAlpha = guideAlpha * 0.22;
+    ctx.strokeStyle = dark ? '#ffffff' : '#000000';
+    ctx.lineWidth = Math.max(0.6, F.P.s * 0.05);
+    for (i = 0; i < C.length; i++){
+      ctx.beginPath();
+      ctx.arc(C[i].x * F.P.s + F.P.ox, C[i].y * F.P.s + F.P.oy, C[i].r * F.P.s, 0, 6.2832);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  var nA = A.L.pts.length, nB = B.L.pts.length, count = Math.max(nA, nB), k;
+  for (k = 0; k < count; k++){
+    var inA = k < nA, inB = k < nB;
+    // A dot that is only in one state still travels with the crowd: it uses its
+    // own position, mapped through the other state's scale and offset.
+    var pa = inA ? A.L.pts[k] : B.L.pts[k];
+    var pb = inB ? B.L.pts[k] : A.L.pts[k];
+    var ax = pa.x * A.P.s + A.P.ox, ay = pa.y * A.P.s + A.P.oy;
+    var bx = pb.x * B.P.s + B.P.ox, by = pb.y * B.P.s + B.P.oy;
+    var x = ax + (bx - ax) * u, y = ay + (by - ay) * u;
+    var r = A.P.s + (B.P.s - A.P.s) * u;
+    var alpha = 1, g;
+
+    if (!inA){ g = Math.max(0, (u - 0.3) / 0.7); r *= g; alpha = g; }        // born
+    else if (!inB){ g = 1 - Math.min(1, u / 0.7); r *= g; alpha = g; }       // retired
+    if (r < 0.15 || alpha < 0.01) continue;
+
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = colorFor(k);
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, 6.2832);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Controls
+   ══════════════════════════════════════════════════════════════════════ */
+
+document.getElementById('transport').addEventListener('click', function(e){
+  var b = e.target.closest('button');
+  if (b) { setSpeed(Number(b.dataset.speed)); elN.blur(); }
+});
+
+elN.addEventListener('keydown', function(e){
+  if (e.key === 'Enter'){ e.preventDefault(); jumpTo(parseInt(elN.value, 10) || 1); elN.blur(); }
+  if (e.key === 'Escape'){ setReadout(cur); elN.blur(); }
+  e.stopPropagation();
+});
+elN.addEventListener('blur', function(){ setReadout(anim ? anim.to : cur); });
+elN.addEventListener('focus', function(){ setSpeed(0); elN.select(); });
+
+var aboutBox = document.getElementById('about'), aboutBtn = document.getElementById('about-toggle');
+function toggleAbout(open){
+  if (open === undefined) open = aboutBox.hidden;
+  aboutBox.hidden = !open;
+  aboutBtn.setAttribute('aria-expanded', String(open));
+}
+aboutBtn.addEventListener('click', function(){ toggleAbout(); });
+document.addEventListener('click', function(e){
+  if (!aboutBox.hidden && !aboutBox.contains(e.target) && e.target !== aboutBtn) toggleAbout(false);
+});
+
+var guideBox = document.getElementById('guides');
+guideBox.addEventListener('change', function(){ guidesOn = guideBox.checked; });
+
+document.addEventListener('keydown', function(e){
+  if (e.target === elN) return;
+  if (e.key === ' '){ e.preventDefault(); setSpeed(speed === 0 ? 1 : 0); }
+  else if (e.key === 'ArrowRight'){ e.preventDefault(); e.shiftKey ? setSpeed(2) : step(1); }
+  else if (e.key === 'ArrowLeft'){ e.preventDefault(); e.shiftKey ? setSpeed(-2) : step(-1); }
+  else if (e.key === 'Home'){ e.preventDefault(); jumpTo(1); }
+  else if (e.key === 'g' || e.key === 'G'){ guidesOn = !guidesOn; guideBox.checked = guidesOn; }
+  else if (e.key === 'Escape'){ toggleAbout(false); }
+});
+
+resize();
+setReadout(cur);
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>

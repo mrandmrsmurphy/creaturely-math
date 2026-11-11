@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ζ(½ + it): the race up the critical line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F5; --panel:#E2E7EE; --ink:#1A2433; --muted:#5B6A7E;
+  --grid:rgba(30,60,90,.10); --grid-strong:rgba(30,60,90,.22); --axis:rgba(20,30,45,.75);
+  --polar:rgba(30,60,90,.09);
+  --c0:#0E7C6B; --c1:#B37800;
+  --lane:#D5DCE6; --lane-line:rgba(26,36,51,.25);
+  --pop:#C2410C; --focus:#2563EB;
+  --serif:"STIX Two Text","STIX Two Math","Cambria Math",Cambria,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A0F1A; --panel:#121A29; --ink:#E8EDF5; --muted:#8C9AB0;
+    --grid:rgba(120,190,230,.10); --grid-strong:rgba(120,200,235,.30); --axis:rgba(235,240,248,.85);
+    --polar:rgba(200,215,235,.08);
+    --c0:#45D3B4; --c1:#F2E14C;
+    --lane:#1A2438; --lane-line:rgba(232,237,245,.22);
+    --pop:#FFB347; --focus:#7DB4FF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A0F1A; --panel:#121A29; --ink:#E8EDF5; --muted:#8C9AB0;
+  --grid:rgba(120,190,230,.10); --grid-strong:rgba(120,200,235,.30); --axis:rgba(235,240,248,.85);
+  --polar:rgba(200,215,235,.08);
+  --c0:#45D3B4; --c1:#F2E14C;
+  --lane:#1A2438; --lane-line:rgba(232,237,245,.22);
+  --pop:#FFB347; --focus:#7DB4FF;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;height:100%;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45}
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:14px clamp(12px,2.4vw,28px)}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px}
+h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.2vw,46px);line-height:1;letter-spacing:-.01em}
+h1 .s{font-style:italic}
+h1 small{display:block;font-family:var(--sans);font-size:14px;color:var(--muted);letter-spacing:0;margin-top:6px}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+button{font:inherit;font-weight:500;color:var(--ink);background:var(--panel);border:1px solid var(--lane-line);border-radius:999px;padding:7px 16px;cursor:pointer}
+button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);min-width:84px}
+button:hover{filter:brightness(1.08)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+label.speed{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+input[type=range]{accent-color:var(--c0);width:110px}
+.stage{min-height:0;min-width:0;display:grid;grid-template-columns:clamp(92px,13vw,150px) minmax(0,1fr);gap:10px}
+.track-wrap,.plane-wrap{position:relative;min-height:0;border-radius:14px;overflow:hidden;background:var(--panel)}
+.plane-wrap{border-radius:6px}
+canvas{display:block;width:100%;height:100%}
+#track{cursor:ns-resize;touch-action:none}
+.cap{position:absolute;left:10px;top:8px;font-size:12px;color:var(--muted);pointer-events:none}
+.plane-wrap .cap{left:auto;right:12px}
+footer{min-width:0;display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;font-family:var(--serif);font-size:17px;font-variant-numeric:tabular-nums}
+footer .k{color:var(--muted);font-family:var(--sans);font-size:13px;margin-right:6px}
+.transport{display:flex;gap:4px}
+.transport button{padding:7px 12px}
+button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.goto{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:14px}
+.goto input{font:inherit;font-family:var(--serif);width:84px;padding:5px 8px;border-radius:8px;border:1px solid var(--lane-line);background:var(--panel);color:var(--ink)}
+@media (max-width:640px){
+  .stage{grid-template-columns:78px minmax(0,1fr)}
+  input[type=range]{width:80px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1><span>ζ(½ + <span class="s">it</span>)</span><small>A runner climbs the critical line. Each time ζ hits zero, the curve passes through the origin.</small></h1>
+    <div class="controls">
+      <div class="transport" role="group" aria-label="Playback">
+        <button id="prev" title="Previous zero (←)">⏮ Zero</button>
+        <button id="rew" aria-pressed="false" title="Play backward">◀◀ Rewind</button>
+        <button id="play" class="primary" title="Play or pause (space)">Play</button>
+        <button id="next" title="Next zero (→)">Zero ⏭</button>
+      </div>
+      <label class="speed">Speed <input id="speed" type="range" min="0.5" max="30" step="0.5" value="3" aria-label="Speed in units of t per second"></label>
+      <label class="speed">Trail <input id="trail" type="range" min="2" max="40" step="1" value="10" aria-label="How much of the past curve stays visible, in units of t"></label>
+      <form class="goto" id="gotoForm" onsubmit="return false"><label for="goto">Go to t</label><input id="goto" type="number" min="0" max="10000" step="any" placeholder="1000"><button id="go">Go</button></form>
+      <button id="sound" aria-pressed="false">Sound off</button>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div class="track-wrap"><canvas id="track" aria-label="Track: the input s = ½ + it climbing the critical line. Drag to scrub."></canvas></div>
+    <div class="plane-wrap"><canvas id="plane" aria-label="Output: ζ(s) traced in the complex plane"></canvas><div class="cap">scroll to zoom, double-click to reset</div></div>
+  </div>
+
+  <footer>
+    <span><span class="k">input</span><span id="sOut">s = ½ + 0.000i</span></span>
+    <span><span class="k">output</span><span id="zOut">ζ(s) = −1.4604</span></span>
+    <span><span class="k">|ζ(s)|</span><span id="mOut">1.4604</span></span>
+    <span><span class="k">zeros passed</span><span id="nOut">0</span></span>
+    <span id="live" class="k" aria-live="polite"></span>
+  </footer>
+</div>
+
+<script>
+(() => {
+"use strict";
+const T_MAX = 10000, DT = 0.005, CH = 1, SPC = Math.round(CH / DT); // samples per chunk
+const TWO_PI = 2 * Math.PI;
+
+// ---------- ζ on the critical line ----------
+// t < 250: Borwein's alternating series for η, converted to ζ.
+// t ≥ 250: Riemann–Siegel formula (main sum + C0 + C1 corrections), ζ = e^{-iθ} Z.
+const LN = new Float64Array(260); for (let k = 0; k < 260; k++) LN[k] = Math.log(k + 1);
+const dCache = new Map();
+function borweinD(n){
+  let d = dCache.get(n); if (d) return d;
+  d = new Float64Array(n + 1); let term = 1 / n, sum = term; d[0] = n * sum;
+  for (let i = 1; i <= n; i++){ term *= (n + i - 1) * (n - i + 1) * 4 / ((2*i - 1) * (2*i)); sum += term; d[i] = n * sum; }
+  dCache.set(n, d); return d;
+}
+function zetaBorwein(t){
+  const n = Math.ceil(0.9 * t) + 22, d = borweinD(n), dn = d[n];
+  let re = 0, im = 0;
+  for (let k = 0; k < n; k++){
+    const w = (k & 1 ? -1 : 1) * (d[k] - dn) / dn, m = Math.exp(-.5 * LN[k]), a = -t * LN[k];
+    re += w * m * Math.cos(a); im += w * m * Math.sin(a);
+  }
+  re = -re; im = -im;
+  const m2 = Math.SQRT2, a2 = -t * Math.LN2;
+  const dr = 1 - m2 * Math.cos(a2), di = -m2 * Math.sin(a2), den = dr*dr + di*di;
+  return [(re*dr + im*di) / den, (im*dr - re*di) / den];
+}
+const theta = t => t/2*Math.log(t/TWO_PI) - t/2 - Math.PI/8 + 1/(48*t) + 7/(5760*t*t*t);
+function C0(p){ let c = Math.cos(TWO_PI*p); if (Math.abs(c) < 1e-9){ p += 1e-7; c = Math.cos(TWO_PI*p); } return Math.cos(TWO_PI*(p*p - p - 1/16)) / c; }
+function Zrs(t){
+  const a = Math.sqrt(t / TWO_PI), N = Math.floor(a), p = a - N, th = theta(t);
+  let s = 0; for (let n = 1; n <= N; n++) s += Math.cos(th - t*Math.log(n)) / Math.sqrt(n);
+  const h = 2e-3, d3 = (C0(p+2*h) - 2*C0(p+h) + 2*C0(p-h) - C0(p-2*h)) / (2*h*h*h);
+  return 2*s + ((N - 1) % 2 ? -1 : 1) * Math.pow(a, -0.5) * (C0(p) - d3 / (96*Math.PI*Math.PI) / a);
+}
+const RS_FROM = 250;
+function zeta(t){
+  if (t < RS_FROM) return zetaBorwein(t);
+  const z = Zrs(t), th = theta(t); return [z*Math.cos(th), -z*Math.sin(th)];
+}
+function Zfun(t){
+  if (t >= RS_FROM) return Zrs(t);
+  const [r, i] = zetaBorwein(t), th = theta(t); return r*Math.cos(th) - i*Math.sin(th);
+}
+
+// ---------- Sample cache (1-unit chunks, computed on demand) ----------
+const chunks = new Map();
+function chunk(c){
+  let ch = chunks.get(c);
+  if (!ch){
+    const x = new Float64Array(SPC + 1), y = new Float64Array(SPC + 1);
+    for (let j = 0; j <= SPC; j++){ const [a, b] = zeta(c*CH + j*DT); x[j] = a; y[j] = b; }
+    ch = { x, y }; chunks.set(c, ch);
+    if (chunks.size > 160){ const cur = Math.floor(t / CH); for (const k of chunks.keys()) if (Math.abs(k - cur) > 60) chunks.delete(k); }
+  }
+  return ch;
+}
+function sampleIdx(j){ const c = Math.floor(j / SPC), ch = chunk(c), r = j - c*SPC; return [ch.x[r], ch.y[r]]; }
+function sampleAt(tt){
+  const f = tt / DT, j = Math.floor(f), u = f - j;
+  const [x0, y0] = sampleIdx(j), [x1, y1] = sampleIdx(j + 1);
+  return [x0 + (x1-x0)*u, y0 + (y1-y0)*u];
+}
+
+// ---------- Zeros, scanned contiguously from t = 5 ----------
+const ZEROS = []; let scanned = 5, Zprev = Zfun(5);
+const ZSTEP = 0.01;
+function ensureZeros(upTo){
+  upTo = Math.min(T_MAX, upTo);
+  while (scanned < upTo){
+    const tn = scanned + ZSTEP, v = Zfun(tn);
+    if (Math.sign(v) !== Math.sign(Zprev) && v !== 0){
+      let a = scanned, b = tn, fa = Zprev;
+      for (let k = 0; k < 40; k++){ const m = (a+b)/2, fm = Zfun(m); if (Math.sign(fm) === Math.sign(fa)){ a = m; fa = fm; } else b = m; }
+      ZEROS.push((a+b)/2);
+    }
+    Zprev = v; scanned = tn;
+  }
+}
+function countBelow(x){ let lo = 0, hi = ZEROS.length; while (lo < hi){ const m = (lo+hi) >> 1; if (ZEROS[m] <= x) lo = m + 1; else hi = m; } return lo; }
+
+// ---------- State ----------
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let t = 0, dir = 0, speed = 3, trailLen = 10, soundOn = false, audio = null;
+let seek = null;            // {from, to, start, dur, k}
+let pops = [];
+let lastFrame = performance.now();
+let zoom = 1, view = null;  // view = {cx, cy, half} smoothed
+
+const $ = id => document.getElementById(id);
+const trackC = $("track"), planeC = $("plane");
+const tctx = trackC.getContext("2d"), pctx = planeC.getContext("2d");
+let C = {};
+function hexRgb(h){ h = h.replace("#",""); return [0,2,4].map(i => parseInt(h.slice(i,i+2),16)); }
+function readTheme(){
+  const cs = getComputedStyle(document.documentElement);
+  ["bg","panel","ink","muted","grid","grid-strong","axis","polar","c0","c1","lane","lane-line","pop"].forEach(k => C[k] = cs.getPropertyValue("--"+k).trim());
+  C.serif = cs.getPropertyValue("--serif").trim(); C.sans = cs.getPropertyValue("--sans").trim();
+  C.a = hexRgb(C.c0); C.b = hexRgb(C.c1); C.p = hexRgb(C.panel);
+}
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", readTheme);
+readTheme();
+// f: 0 = oldest visible, 1 = newest; old end also fades into the panel colour
+function trailColor(f){
+  const base = C.a.map((v,i) => v + (C.b[i]-v)*f);
+  const fade = Math.max(0, Math.min(1, f / 0.45));
+  return `rgb(${base.map((v,i) => Math.round(C.p[i] + (v - C.p[i])*fade)).join(",")})`;
+}
+const newest = () => `rgb(${C.b.join(",")})`;
+
+function fit(c, ctx){
+  const r = c.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+  if (c.width !== w || c.height !== h){ c.width = w; c.height = h; }
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  return [r.width, r.height];
+}
+const fmt = (v, d=4) => (v < 0 ? "−" : "") + Math.abs(v).toFixed(d);
+
+// ---------- Moving t (all paths go through here so pops fire both ways) ----------
+function moveTo(nt, popOK = true){
+  nt = Math.max(0, Math.min(T_MAX, nt));
+  ensureZeros(Math.max(nt, t) + 3);
+  const lo = Math.min(t, nt), hi = Math.max(t, nt);
+  if (popOK && hi - lo < 50){
+    for (let k = countBelow(lo); k < ZEROS.length && ZEROS[k] <= hi; k++){
+      const z = ZEROS[k];
+      if ((nt > t && z > t && z <= nt) || (nt < t && z < t && z >= nt)) pop(k);
+    }
+  }
+  t = nt;
+}
+function pop(k){
+  pops.push({ start: performance.now(), k, seed: Math.random()*1000 });
+  if (pops.length > 6) pops.shift();
+  if (soundOn) blip(k);
+  $("live").textContent = `zero ${k+1} at t ≈ ${ZEROS[k].toFixed(4)}`;
+}
+function blip(k){
+  try{
+    audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+    const o = audio.createOscillator(), g = audio.createGain(), now = audio.currentTime;
+    const f0 = 520 * Math.pow(2, (k % 8) / 12);
+    o.type = "sine"; o.frequency.setValueAtTime(f0*1.6, now); o.frequency.exponentialRampToValueAtTime(f0*0.7, now + 0.12);
+    g.gain.setValueAtTime(0.0001, now); g.gain.exponentialRampToValueAtTime(0.25, now + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+    o.connect(g).connect(audio.destination); o.start(now); o.stop(now + 0.2);
+  }catch(e){}
+}
+
+// ---------- Track ----------
+const PPU = 26;
+function drawTrack(){
+  const [w, h] = fit(trackC, tctx), ctx = tctx;
+  ctx.clearRect(0,0,w,h);
+  const runnerY = h * (dir < 0 ? 0.35 : 0.70);
+  const yOf = tt => runnerY - (tt - t) * PPU;
+  const laneL = w * 0.46, laneR = w - 10, laneW = laneR - laneL, cx = laneL + laneW/2;
+  ctx.fillStyle = C.lane; ctx.fillRect(laneL, 0, laneW, h);
+  ctx.strokeStyle = C["lane-line"]; ctx.lineWidth = 1;
+  ctx.setLineDash([6, 8]); ctx.lineDashOffset = -t * PPU;
+  ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, h); ctx.stroke(); ctx.setLineDash([]);
+  const tLo = Math.max(0, Math.floor(t - (h - runnerY)/PPU) - 1), tHi = Math.min(T_MAX, Math.ceil(t + runnerY/PPU) + 1);
+  ctx.textAlign = "right"; ctx.textBaseline = "middle";
+  for (let k = tLo; k <= tHi; k++){
+    const y = yOf(k), major = k % 5 === 0;
+    ctx.strokeStyle = major ? C.axis : C["lane-line"]; ctx.lineWidth = major ? 1.2 : 1;
+    ctx.beginPath(); ctx.moveTo(laneL - (major ? 10 : 5), y); ctx.lineTo(laneL, y); ctx.stroke();
+    if (major){ ctx.fillStyle = C.muted; ctx.font = `${k >= 1000 ? 11 : 13}px ${C.serif}`; ctx.fillText(k + "i", laneL - 13, y); }
+  }
+  if (yOf(0) < h + 4){ ctx.fillStyle = C.axis; ctx.fillRect(laneL, yOf(0) - 1.5, laneW, 3); }
+  // flags for zeros already reached
+  const kLo = countBelow(t - (h - runnerY)/PPU - 1), kHi = countBelow(t);
+  for (let k = kLo; k < kHi; k++){
+    const y = yOf(ZEROS[k]), sq = 5, cols = Math.ceil(laneW / sq);
+    for (let c = 0; c < cols; c++) for (let r = 0; r < 2; r++){
+      ctx.fillStyle = (c + r) % 2 ? C.ink : C.lane;
+      ctx.fillRect(laneL + c*sq, y - sq + r*sq, Math.min(sq, laneW - c*sq), sq);
+    }
+    ctx.font = `600 10px ${C.sans}`; ctx.textAlign = "right"; ctx.textBaseline = "bottom";
+    ctx.lineWidth = 3; ctx.strokeStyle = C.lane; ctx.strokeText(String(k+1), laneR - 3, y - sq - 1);
+    ctx.fillStyle = C.pop; ctx.fillText(String(k+1), laneR - 3, y - sq - 1);
+    ctx.textBaseline = "middle";
+  }
+  // runner
+  const sd = dir < 0 ? -1 : 1;
+  const grad = ctx.createLinearGradient(0, runnerY, 0, runnerY + 46*sd);
+  grad.addColorStop(0, newest()); grad.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = grad; ctx.fillRect(cx - 3, sd > 0 ? runnerY : runnerY - 46, 6, 46);
+  ctx.beginPath(); ctx.arc(cx, runnerY, 8, 0, Math.PI*2); ctx.fillStyle = newest(); ctx.fill();
+  ctx.lineWidth = 2; ctx.strokeStyle = C.bg; ctx.stroke();
+}
+
+// ---------- Plane ----------
+function niceStep(pxPerUnit){
+  for (const s of [0.1, 0.25, 0.5, 1, 2, 5, 10, 20]) if (s * pxPerUnit >= 34) return s;
+  return 50;
+}
+function drawPlane(now){
+  const [w, h] = fit(planeC, pctx), ctx = pctx;
+  ctx.clearRect(0,0,w,h);
+  const t0 = Math.max(0, t - trailLen), j0 = Math.floor(t0 / DT), jEnd = Math.floor(t / DT);
+  const [zx, zy] = sampleAt(t);
+
+  // auto-fit the visible trail (origin always included), smoothed
+  let minX = Math.min(0, zx), maxX = Math.max(0, zx), minY = Math.min(0, zy), maxY = Math.max(0, zy);
+  for (let j = j0; j <= jEnd; j += 4){ const [x, y] = sampleIdx(j); if (x < minX) minX = x; if (x > maxX) maxX = x; if (y < minY) minY = y; if (y > maxY) maxY = y; }
+  const pad = 1.15, aspect = w / h;
+  let half = Math.max((maxY - minY) / 2, (maxX - minX) / 2 / aspect, 1.6) * pad;
+  const target = { cx: (minX + maxX) / 2, cy: (minY + maxY) / 2, half };
+  if (!view) view = { ...target };
+  const k = reduceMotion ? 1 : 0.06;
+  view.cx += (target.cx - view.cx) * k; view.cy += (target.cy - view.cy) * k; view.half += (target.half - view.half) * k;
+
+  const sc = (h / 2) / view.half * zoom;
+  const ox = w/2 - view.cx*sc, oy = h/2 + view.cy*sc;
+  const X = x => ox + x*sc, Y = y => oy - y*sc;
+  const xMin = -ox/sc, xMax = (w - ox)/sc, yMin = (oy - h)/sc, yMax = oy/sc;
+  const step = niceStep(sc), major = step * (step < 1 ? 1/step : 2) ;
+  const isMajor = v => Math.abs(v/(step*2) - Math.round(v/(step*2))) < 1e-6;
+
+  // polar grid
+  ctx.strokeStyle = C.polar; ctx.lineWidth = 1;
+  const rMax = Math.hypot(Math.max(-xMin, xMax), Math.max(-yMin, yMax));
+  for (let r = step; r < rMax; r += step){ ctx.beginPath(); ctx.arc(ox, oy, r*sc, 0, Math.PI*2); ctx.stroke(); }
+  for (let a = 0; a < 12; a++){ const th = a*Math.PI/6; ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + Math.cos(th)*rMax*sc, oy - Math.sin(th)*rMax*sc); ctx.stroke(); }
+  // rectangular grid
+  for (let x = Math.ceil(xMin/step)*step; x <= xMax; x += step){
+    ctx.strokeStyle = isMajor(x) ? C["grid-strong"] : C.grid; ctx.beginPath(); ctx.moveTo(X(x), 0); ctx.lineTo(X(x), h); ctx.stroke();
+  }
+  for (let y = Math.ceil(yMin/step)*step; y <= yMax; y += step){
+    ctx.strokeStyle = isMajor(y) ? C["grid-strong"] : C.grid; ctx.beginPath(); ctx.moveTo(0, Y(y)); ctx.lineTo(w, Y(y)); ctx.stroke();
+  }
+  // axes + labels
+  ctx.strokeStyle = C.axis; ctx.lineWidth = 1.4;
+  ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(w, oy); ctx.moveTo(ox, 0); ctx.lineTo(ox, h); ctx.stroke();
+  ctx.fillStyle = C.muted; ctx.font = `13px ${C.serif}`;
+  const lab = v => { const r = Math.round(v*100)/100; return fmt(r, Number.isInteger(r) ? 0 : (Math.round(r*10) === r*10 ? 1 : 2)); };
+  const ly = Math.min(Math.max(oy + 5, 4), h - 18), lx = Math.min(Math.max(ox - 6, 30), w - 4);
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  for (let x = Math.ceil(xMin/(2*step))*2*step; x <= xMax; x += 2*step) if (Math.abs(x) > 1e-9) ctx.fillText(lab(x), X(x), ly);
+  ctx.textAlign = "right"; ctx.textBaseline = "middle";
+  for (let y = Math.ceil(yMin/(2*step))*2*step; y <= yMax; y += 2*step) if (Math.abs(y) > 1e-9){
+    const r = Math.round(y*100)/100; ctx.fillText((r === 1 ? "" : r === -1 ? "−" : lab(y)) + "i", lx, Y(y));
+  }
+
+  // trail: only the last `trailLen` units of t, fading at the old end
+  ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.lineWidth = 2.6;
+  const B = 6, span = Math.max(1, jEnd - j0);
+  for (let a = j0; a < jEnd; a += B){
+    const b = Math.min(jEnd, a + B);
+    ctx.strokeStyle = trailColor((a - j0) / span);
+    ctx.beginPath(); let [x, y] = sampleIdx(a); ctx.moveTo(X(x), Y(y));
+    for (let j = a + 1; j <= b; j++){ [x, y] = sampleIdx(j); ctx.lineTo(X(x), Y(y)); }
+    ctx.stroke();
+  }
+  if (t > 0){ const [x, y] = sampleIdx(jEnd); ctx.strokeStyle = newest(); ctx.beginPath(); ctx.moveTo(X(x), Y(y)); ctx.lineTo(X(zx), Y(zy)); ctx.stroke(); }
+
+  // vector from origin
+  ctx.setLineDash([4, 5]); ctx.strokeStyle = C.muted; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(X(zx), Y(zy)); ctx.stroke(); ctx.setLineDash([]);
+
+  // pops
+  pops = pops.filter(p => now - p.start < 1400);
+  const latest = pops[pops.length - 1];
+  for (const p of pops){
+    const age = (now - p.start) / 1000;
+    if (reduceMotion){
+      ctx.globalAlpha = Math.max(0, 1 - age/1.4);
+      ctx.beginPath(); ctx.arc(ox, oy, 22, 0, Math.PI*2); ctx.strokeStyle = C.pop; ctx.lineWidth = 3; ctx.stroke();
+    } else {
+      for (let r = 0; r < 2; r++){
+        const a = age - r*0.12; if (a < 0) continue;
+        const e = 1 - Math.pow(1 - Math.min(1, a/0.7), 3);
+        ctx.globalAlpha = Math.max(0, 1 - a/0.75);
+        ctx.beginPath(); ctx.arc(ox, oy, 6 + e*60, 0, Math.PI*2);
+        ctx.strokeStyle = C.pop; ctx.lineWidth = 3 - r*1.4; ctx.stroke();
+      }
+      for (let i = 0; i < 14; i++){
+        const th = i/14*Math.PI*2 + p.seed, e = 1 - Math.pow(1 - Math.min(1, age/0.6), 2);
+        const d = 10 + e * (38 + (i % 3)*12);
+        ctx.globalAlpha = Math.max(0, 1 - age/0.65);
+        ctx.beginPath(); ctx.arc(ox + Math.cos(th)*d, oy + Math.sin(th)*d, 2.6 - e*1.2, 0, Math.PI*2);
+        ctx.fillStyle = i % 2 ? C.pop : C.c1; ctx.fill();
+      }
+    }
+    if (p === latest){
+      ctx.globalAlpha = Math.max(0, Math.min(1, (1.4 - age) / 0.4));
+      ctx.font = `italic 600 17px ${C.serif}`; ctx.fillStyle = C.pop; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+      const lbl = `ζ = 0 at t ≈ ${ZEROS[p.k].toFixed(4)}`, yy = oy - 14 - age*10;
+      ctx.lineWidth = 5; ctx.strokeStyle = C.panel; ctx.strokeText(lbl, ox + 14, yy); ctx.fillText(lbl, ox + 14, yy);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  // current point
+  ctx.beginPath(); ctx.arc(X(zx), Y(zy), 9, 0, Math.PI*2); ctx.fillStyle = newest(); ctx.globalAlpha = 0.25; ctx.fill(); ctx.globalAlpha = 1;
+  ctx.beginPath(); ctx.arc(X(zx), Y(zy), 5, 0, Math.PI*2); ctx.fill();
+  ctx.lineWidth = 1.5; ctx.strokeStyle = C.bg; ctx.stroke();
+}
+
+function readouts(){
+  const [x, y] = sampleAt(t);
+  $("sOut").textContent = `s = ½ + ${t.toFixed(3)}i`;
+  $("zOut").textContent = `ζ(s) = ${fmt(x)} ${y < 0 ? "−" : "+"} ${Math.abs(y).toFixed(4)}i`;
+  $("mOut").textContent = Math.hypot(x, y).toFixed(4);
+  $("nOut").textContent = countBelow(t);
+}
+
+// ---------- Loop ----------
+function advance(dt){
+  // ease off near a zero (in the direction of travel) so the pop is easy to see
+  ensureZeros(t + 3);
+  let dist = Infinity;
+  if (dir > 0){ const k = countBelow(t); if (k < ZEROS.length) dist = ZEROS[k] - t; }
+  else { const k = countBelow(t - 1e-9) - 1; if (k >= 0) dist = t - ZEROS[k]; }
+  const ease = 0.3 + 0.7 * Math.min(1, dist / 0.8);
+  moveTo(t + dir * speed * ease * dt);
+  if ((dir > 0 && t >= T_MAX) || (dir < 0 && t <= 0)) setDir(0);
+}
+function frame(now){
+  const dt = Math.min(0.05, (now - lastFrame) / 1000); lastFrame = now;
+  if (seek){
+    const u = Math.min(1, (now - seek.start) / seek.dur), e = u < .5 ? 2*u*u : 1 - Math.pow(-2*u + 2, 2)/2;
+    moveTo(seek.from + (seek.to - seek.from) * e, Math.abs(seek.to - seek.from) < 50);
+    if (u >= 1) seek = null;
+  } else if (dir) advance(dt);
+  drawTrack(); drawPlane(now); readouts();
+  requestAnimationFrame(frame);
+}
+
+// ---------- Controls ----------
+function setDir(d){
+  dir = d;
+  $("play").textContent = d > 0 ? "Pause" : "Play";
+  $("rew").setAttribute("aria-pressed", d < 0);
+  $("rew").textContent = d < 0 ? "Pause" : "◀◀ Rewind";
+}
+function seekTo(target, instant){
+  setDir(0);
+  target = Math.max(0, Math.min(T_MAX, target));
+  if (instant || reduceMotion || Math.abs(target - t) > 50){
+    moveTo(target, false); view = null; pops = [];
+    return;
+  }
+  seek = { from: t, to: target, start: performance.now(), dur: Math.min(1100, 350 + Math.abs(target - t) * 60) };
+}
+$("play").onclick = () => { seek = null; if (t >= T_MAX) moveTo(0, false); setDir(dir > 0 ? 0 : 1); };
+$("rew").onclick = () => { seek = null; setDir(dir < 0 ? 0 : -1); };
+$("next").onclick = () => { ensureZeros(t + 5); const k = countBelow(t + 1e-6); if (k < ZEROS.length) seekTo(ZEROS[k]); };
+$("prev").onclick = () => { const k = countBelow(t - 1e-6) - 1; if (k >= 0) seekTo(ZEROS[k]); else seekTo(0); };
+$("speed").oninput = e => speed = +e.target.value;
+$("trail").oninput = e => trailLen = +e.target.value;
+$("go").onclick = () => { const v = parseFloat($("goto").value); if (isFinite(v)) seekTo(v); };
+$("sound").onclick = e => {
+  soundOn = !soundOn; e.target.setAttribute("aria-pressed", soundOn);
+  e.target.textContent = soundOn ? "Sound on" : "Sound off";
+  if (soundOn){ try{ audio = audio || new (window.AudioContext || window.webkitAudioContext)(); audio.resume(); }catch(_){} }
+};
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.code === "Space"){ e.preventDefault(); $("play").click(); }
+  else if (e.code === "ArrowRight"){ e.preventDefault(); $("next").click(); }
+  else if (e.code === "ArrowLeft"){ e.preventDefault(); $("prev").click(); }
+});
+// scrub on the track
+let drag = null;
+trackC.addEventListener("pointerdown", e => { seek = null; drag = { y: e.clientY, t0: t, d: dir }; setDir(0); trackC.setPointerCapture(e.pointerId); });
+trackC.addEventListener("pointermove", e => { if (drag) moveTo(drag.t0 + (e.clientY - drag.y) / PPU); });
+const endDrag = () => { if (drag){ const d = drag.d; drag = null; if (d) setDir(d); } };
+trackC.addEventListener("pointerup", endDrag); trackC.addEventListener("pointercancel", endDrag);
+trackC.addEventListener("wheel", e => { e.preventDefault(); seek = null; moveTo(t - e.deltaY / 60); }, { passive: false });
+planeC.addEventListener("wheel", e => { e.preventDefault(); zoom = Math.max(0.3, Math.min(10, zoom * Math.exp(-e.deltaY / 500))); }, { passive: false });
+planeC.addEventListener("dblclick", () => zoom = 1);
+
+requestAnimationFrame(n => { lastFrame = n; requestAnimationFrame(frame); });
+})();
+</script>
+</body>
+</html>

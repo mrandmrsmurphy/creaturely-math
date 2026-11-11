@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phinary Ledger — integers in base φ</title>
+<style>
+:root{
+  --void:#04090a;
+  --panel:#06110c;
+  --phos:#4dff9a;
+  --phos-mid:#2fbf74;
+  --phos-dim:#186b3f;
+  --phos-ghost:#0d3a23;
+  --alert:#ffc44d;
+  --rule:#0f2a1c;
+  --mono: ui-monospace, "SF Mono", "Menlo", "DejaVu Sans Mono", "Consolas", monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--void); color:var(--phos-mid);
+  font-family:var(--mono); font-size:14px; line-height:1.5;
+  overflow:hidden;
+}
+#crt{
+  position:fixed; inset:0; pointer-events:none; z-index:50;
+  background:repeating-linear-gradient(180deg, rgba(0,0,0,.22) 0 1px, rgba(0,0,0,0) 1px 3px);
+  mix-blend-mode:multiply;
+}
+#vignette{
+  position:fixed; inset:0; pointer-events:none; z-index:49;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%);
+}
+#shell{display:flex; flex-direction:column; height:100%; padding:14px 16px 12px; gap:12px}
+
+/* ── header ─────────────────────────────────────────── */
+header{display:flex; align-items:flex-end; gap:22px; flex-wrap:wrap; border-bottom:1px solid var(--rule); padding-bottom:10px}
+h1{
+  margin:0; font-size:15px; font-weight:500; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--phos); text-shadow:0 0 12px rgba(77,255,154,.45);
+}
+.sub{font-size:12px; color:var(--phos-dim); letter-spacing:.05em}
+.law{margin-left:auto; display:flex; align-items:center; gap:14px}
+.law .eq{color:var(--phos); font-size:15px; text-shadow:0 0 10px rgba(77,255,154,.4)}
+.law .dirs{display:flex; flex-direction:column; gap:1px; font-size:11px; letter-spacing:.06em}
+.dir{color:var(--phos-ghost); transition:color .12s, text-shadow .12s; white-space:nowrap}
+.dir.lit{color:var(--phos); text-shadow:0 0 10px rgba(77,255,154,.55)}
+
+/* ── panes ──────────────────────────────────────────── */
+#panes{display:flex; gap:12px; flex:1; min-height:0}
+.pane{
+  flex:1; min-width:0; display:flex; flex-direction:column;
+  background:var(--panel); border:1px solid var(--rule); border-radius:2px;
+}
+#left{flex:0 0 34%}
+.bar{
+  display:flex; align-items:center; gap:10px; padding:6px 10px;
+  border-bottom:1px solid var(--rule); font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--phos-dim);
+}
+.bar .count{margin-left:auto; letter-spacing:.05em; text-transform:none}
+.scroll{flex:1; overflow-y:auto; padding:8px 10px 14px; scrollbar-width:thin; scrollbar-color:var(--phos-ghost) transparent}
+.scroll::-webkit-scrollbar{width:8px}
+.scroll::-webkit-scrollbar-thumb{background:var(--phos-ghost)}
+
+/* ── shared number rendering (aligned on the radix point) ── */
+.num{display:flex; align-items:baseline; white-space:pre}
+.num .ip{flex:1 1 0; text-align:right}
+.num .fp{flex:1 1 0; text-align:left}
+.d0{color:var(--phos-ghost)}
+.d1{color:var(--phos)}
+.dx{color:var(--alert); text-shadow:0 0 9px rgba(255,196,77,.6)}
+.pt{color:var(--phos-dim)}
+.hot{background:rgba(77,255,154,.16); box-shadow:0 0 10px rgba(77,255,154,.25)}
+.doomed{background:rgba(255,196,77,.20); color:var(--alert)}
+
+/* ── left ledger ────────────────────────────────────── */
+.entry{display:flex; align-items:baseline; gap:8px; padding:1px 0}
+.entry .n{flex:0 0 auto; min-width:5ch; text-align:right; color:var(--phos-mid)}
+.entry .eqs{color:var(--phos-dim)}
+.entry .num{flex:1 1 auto}
+.entry .cost{flex:0 0 4ch; text-align:right; font-size:11px; color:var(--phos-ghost)}
+.entry.fresh{animation:land .5s ease-out}
+.entry:hover{background:rgba(77,255,154,.06); cursor:pointer}
+@keyframes land{from{background:rgba(77,255,154,.22)} to{background:transparent}}
+
+/* ── right derivation ───────────────────────────────── */
+.head{color:var(--phos-dim); margin-bottom:6px; letter-spacing:.06em}
+.line{display:flex; align-items:baseline; gap:10px; padding:1px 0}
+.line .mark{flex:0 0 2ch; color:var(--phos-ghost); text-align:right}
+.line .num{flex:0 1 auto; min-width:26ch}
+.line .why{flex:1 1 auto; color:var(--phos-dim); font-size:12.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.line.done .mark{color:var(--phos)}
+.line.done .why{color:var(--phos-mid)}
+.foot{
+  border-top:1px solid var(--rule); padding:6px 10px; font-size:12px;
+  color:var(--phos-dim); display:flex; gap:16px; flex-wrap:wrap;
+}
+.foot b{color:var(--phos); font-weight:500}
+
+/* ── controls ───────────────────────────────────────── */
+footer{display:flex; align-items:center; gap:10px; flex-wrap:wrap; border-top:1px solid var(--rule); padding-top:10px}
+button, select{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  background:transparent; color:var(--phos-mid); border:1px solid var(--phos-ghost);
+  padding:5px 11px; border-radius:2px; cursor:pointer; transition:.12s;
+}
+button:hover, select:hover{color:var(--phos); border-color:var(--phos-dim); background:rgba(77,255,154,.07)}
+button:focus-visible, select:focus-visible, .entry:focus-visible{outline:1px solid var(--phos); outline-offset:2px}
+button[disabled]{opacity:.35; cursor:default}
+footer .spacer{flex:1}
+footer .note{font-size:11.5px; color:var(--phos-ghost); letter-spacing:.04em}
+.banner{
+  padding:4px 10px; border-bottom:1px solid var(--rule); background:rgba(255,196,77,.07);
+  color:var(--alert); font-size:12px; display:none; align-items:center; gap:12px;
+}
+.banner.on{display:flex}
+.banner button{border-color:rgba(255,196,77,.35); color:var(--alert)}
+@media (max-width:820px){
+  #panes{flex-direction:column}
+  #left{flex:0 0 34%}
+  .law{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  #crt{display:none}
+  .entry.fresh{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="vignette"></div><div id="crt"></div>
+
+<div id="shell">
+  <header>
+    <div>
+      <h1>Phinary Ledger</h1>
+      <div class="sub">every integer, written in base φ, one lawful rewrite at a time</div>
+    </div>
+    <div class="law">
+      <span class="eq">φ² = φ + 1</span>
+      <div class="dirs">
+        <div class="dir" id="dirUp">merge&nbsp;&nbsp;011 → 100</div>
+        <div class="dir" id="dirDown">split&nbsp;&nbsp;100 → 011</div>
+      </div>
+    </div>
+  </header>
+
+  <div id="panes">
+    <section class="pane" id="left">
+      <div class="bar"><span>Ledger</span><span class="count" id="ledgerCount">1 settled</span></div>
+      <div class="scroll" id="ledger"></div>
+    </section>
+
+    <section class="pane" id="right">
+      <div class="bar"><span>Working</span><span class="count" id="workCount"></span></div>
+      <div class="banner" id="banner">
+        <span id="bannerText"></span>
+        <button id="resumeBtn">Return to the front</button>
+      </div>
+      <div class="scroll" id="work"></div>
+      <div class="foot">
+        <span>value in ℤ[φ]: <b id="inv">1 + 0φ</b></span>
+        <span>positions <b id="span">0 … 0</b></span>
+        <span id="legal">canonical</span>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <button id="playBtn">Pause</button>
+    <button id="stepBtn">Step</button>
+    <button id="skipBtn">Finish this one</button>
+    <select id="speed" aria-label="Speed">
+      <option value="1500">Slow</option>
+      <option value="820" selected>Reading pace</option>
+      <option value="360">Brisk</option>
+      <option value="0">No waiting</option>
+    </select>
+    <div class="spacer"></div>
+    <span class="note">click any ledger line to replay it</span>
+    <button id="texLedger">Copy ledger as LaTeX</button>
+    <button id="texDeriv">Copy derivation as LaTeX</button>
+  </footer>
+</div>
+
+<script>
+"use strict";
+/* ══════════════════════════════════════════════════════════════
+   THE ARITHMETIC
+   A number is a sparse map  position -> digit  (position k means φ^k).
+   One law, φ^k = φ^(k-1) + φ^(k-2), read in two directions:
+     split  : one unit at k  ->  units at k-1 and k-2
+     merge  : units at k and k-1 -> one unit at k+1
+   Policy: merge the highest available pair; only when no pair exists,
+   split one unit off the highest digit ≥ 2. Halt when every digit is
+   ≤ 1 and no two occupied positions are adjacent.
+   ══════════════════════════════════════════════════════════════ */
+
+const fibCache = new Map();
+function fib(n){                                   // extended to negative indices
+  if(fibCache.has(n)) return fibCache.get(n);
+  let r;
+  if(n >= 0){ let a=0,b=1; for(let i=0;i<n;i++){ [a,b]=[b,a+b]; } r=a; }
+  else { const m=-n; let a=0,b=1; for(let i=0;i<m;i++){ [a,b]=[b,a+b]; } r = (m%2===1) ? a : -a; }
+  fibCache.set(n,r); return r;
+}
+// exact value as (constant, coefficient of φ), since φ^k = F(k)φ + F(k-1)
+function valueOf(d){
+  let c=0,p=0;
+  for(const k in d){ const v=d[k]; if(v){ const i=+k; p += v*fib(i); c += v*fib(i-1); } }
+  return [c,p];
+}
+const occupied = d => Object.keys(d).map(Number).filter(k => d[k] > 0).sort((a,b)=>b-a);
+
+function isCanonical(d){
+  const ks = occupied(d);
+  for(const k of ks) if(d[k] > 1) return false;
+  for(let i=0;i<ks.length-1;i++) if(ks[i]-ks[i+1] === 1) return false;
+  return true;
+}
+const clone = d => { const o={}; for(const k in d) if(d[k]) o[k]=d[k]; return o; };
+const bump  = (d,k,n) => { d[k]=(d[k]||0)+n; if(!d[k]) delete d[k]; };
+
+// Full derivation of n from the canonical form of n-1.
+function derive(prev, n){
+  const d = clone(prev); bump(d,0,1);
+  const lines = [{ d: clone(d), kind:'seed', born:[0],
+                   why:`carry one more unit into φ⁰` }];
+  let guard = 0;
+  while(!isCanonical(d)){
+    if(++guard > 4000) break;                       // never reached in practice
+    const ks = occupied(d);
+    let k = ks.find(k => d[k] >= 1 && (d[k-1]||0) >= 1);
+    if(k !== undefined){                            // merge, highest first
+      const spent=[k,k-1];
+      bump(d,k,-1); bump(d,k-1,-1); bump(d,k+1,1);
+      lines.push({ d:clone(d), kind:'merge', spent, born:[k+1],
+                   why:`merge  φ${sup(k)} + φ${sup(k-1)} = φ${sup(k+1)}` });
+      continue;
+    }
+    k = ks.find(k => d[k] >= 2);                    // else split, highest first
+    if(k === undefined) break;
+    const spent=[k];
+    bump(d,k,-1); bump(d,k-1,1); bump(d,k-2,1);
+    lines.push({ d:clone(d), kind:'split', spent, born:[k-1,k-2],
+                 why:`split  φ${sup(k)} = φ${sup(k-1)} + φ${sup(k-2)}` });
+  }
+  return { n, lines, result: clone(d) };
+}
+const SUPS = {'-':'⁻','0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'};
+const sup = k => String(k).split('').map(c=>SUPS[c]).join('');
+
+/* ══════════════════════════════════════════════════════════════
+   RENDERING
+   ══════════════════════════════════════════════════════════════ */
+
+// digits from hi down to lo, with the radix point kept in its own column
+function renderNum(d, hi, lo, marks){
+  hi = Math.max(hi, 0); lo = Math.min(lo, 0);
+  const el = document.createElement('div'); el.className = 'num';
+  const ip = document.createElement('span'); ip.className = 'ip';
+  const fp = document.createElement('span'); fp.className = 'fp';
+  for(let k = hi; k >= lo; k--){
+    const v = d[k] || 0;
+    const s = document.createElement('span');
+    s.textContent = String(v);
+    s.className = v === 0 ? 'd0' : (v === 1 ? 'd1' : 'dx');
+    if(marks && marks.hot   && marks.hot.includes(k))   s.classList.add('hot');
+    if(marks && marks.doom  && marks.doom.includes(k))  s.classList.add('doomed');
+    (k >= 0 ? ip : fp).appendChild(s);
+    if(k === 0 && lo < 0){ const p=document.createElement('span'); p.className='pt'; p.textContent='.'; fp.appendChild(p); }
+  }
+  el.append(ip, fp); return el;
+}
+function textNum(d){
+  const ks = occupied(d); const hi = Math.max(0,...ks), lo = Math.min(0,...ks);
+  let s = '';
+  for(let k=hi;k>=lo;k--){ s += String(d[k]||0); if(k===0 && lo<0) s += '.'; }
+  return s;
+}
+const bounds = lines => {
+  let hi=0, lo=0;
+  for(const L of lines){ for(const k of occupied(L.d)){ hi=Math.max(hi,k); lo=Math.min(lo,k); } }
+  return [hi,lo];
+};
+
+/* ══════════════════════════════════════════════════════════════
+   THE RUN
+   ══════════════════════════════════════════════════════════════ */
+
+const $ = id => document.getElementById(id);
+const ledgerEl=$('ledger'), workEl=$('work');
+const MAX_DOM = 400;
+
+const state = {
+  prev: {0:1},            // canonical form of the last settled integer
+  n: 1,
+  entries: [{ n:1, s:'1', steps:0 }],
+  deriv: null, idx: 0, phase: 'settle',
+  playing: true, replaying: false, timer: null,
+};
+
+function pace(){ return +$('speed').value; }
+
+function addLedger(n, d, steps){
+  const s = textNum(d);
+  state.entries.push({ n, s, steps });
+  const row = document.createElement('div');
+  row.className = 'entry fresh'; row.tabIndex = 0;
+  row.dataset.n = n;
+  const nn = document.createElement('span'); nn.className='n'; nn.textContent = n;
+  const eq = document.createElement('span'); eq.className='eqs'; eq.textContent='=';
+  const ks = occupied(d);
+  const num = renderNum(d, Math.max(0,...ks), Math.min(0,...ks), null);
+  const c  = document.createElement('span'); c.className='cost';
+  c.textContent = steps === 0 ? '—' : String(steps);
+  c.title = steps === 0 ? 'settled on the carry alone' : steps + ' rewrites';
+  row.append(nn, eq, num, c);
+  ledgerEl.appendChild(row);
+  while(ledgerEl.children.length > MAX_DOM) ledgerEl.removeChild(ledgerEl.firstChild);
+  ledgerEl.scrollTop = ledgerEl.scrollHeight;
+  $('ledgerCount').textContent = n + ' settled';
+}
+
+function openWork(){
+  workEl.innerHTML = '';
+  const h = document.createElement('div'); h.className='head';
+  h.textContent = `${state.deriv.n}  ←  ${state.deriv.n - 1} + 1`;
+  workEl.appendChild(h);
+  $('workCount').textContent = '';
+}
+
+function paintFoot(d){
+  const [c,p] = valueOf(d);
+  $('inv').textContent = `${c} + ${p}φ`;
+  $('inv').style.color = (p === 0 && c === state.deriv.n) ? 'var(--phos)' : 'var(--alert)';
+  const ks = occupied(d);
+  $('span').textContent = `${Math.max(0,...ks)} … ${Math.min(0,...ks)}`;
+  const ok = isCanonical(d);
+  $('legal').textContent = ok ? 'canonical' : 'not yet canonical';
+  $('legal').style.color = ok ? 'var(--phos)' : 'var(--phos-dim)';
+}
+
+function lightLaw(kind){
+  const up=$('dirUp'), down=$('dirDown');
+  up.classList.toggle('lit', kind==='merge');
+  down.classList.toggle('lit', kind==='split');
+}
+
+// mark the digits that the *next* rule is about to consume, on the last line
+function markDoomed(){
+  const nxt = state.deriv.lines[state.idx];
+  if(!nxt || !nxt.spent) return false;
+  const last = workEl.lastElementChild;
+  if(!last || !last.classList.contains('line')) return false;
+  const prevLine = state.deriv.lines[state.idx-1];
+  const [hi,lo] = bounds(state.deriv.lines);
+  const num = last.querySelector('.num');
+  num.replaceWith(renderNum(prevLine.d, hi, lo, { doom: nxt.spent }));
+  lightLaw(nxt.kind);
+  return true;
+}
+
+function emitLine(){
+  const L = state.deriv.lines[state.idx];
+  const [hi,lo] = bounds(state.deriv.lines);
+  const last = workEl.lastElementChild;
+  if(last && last.classList.contains('line')){          // clear the doomed marks
+    const prevLine = state.deriv.lines[state.idx-1];
+    last.querySelector('.num').replaceWith(renderNum(prevLine.d, hi, lo, null));
+  }
+  const row = document.createElement('div'); row.className = 'line';
+  const mark = document.createElement('span'); mark.className='mark';
+  mark.textContent = state.idx === 0 ? '+1' : '=';
+  const why = document.createElement('span'); why.className='why'; why.textContent = L.why;
+  row.append(mark, renderNum(L.d, hi, lo, { hot: L.born }), why);
+  workEl.appendChild(row);
+  workEl.scrollTop = workEl.scrollHeight;
+  paintFoot(L.d);
+  lightLaw(L.kind);
+  state.idx++;
+  const rest = state.deriv.lines.length - 1;
+  $('workCount').textContent = `${state.idx-1} / ${rest} rewrites`;
+  if(state.idx >= state.deriv.lines.length){
+    row.classList.add('done'); mark.textContent = '✓';
+    why.textContent = 'canonical — no digit above 1, no two in a row';
+    return true;
+  }
+  return false;
+}
+
+function settle(){
+  const d = state.deriv.result;
+  addLedger(state.deriv.n, d, state.deriv.lines.length - 1);
+  state.prev = d; state.n = state.deriv.n;
+  state.deriv = null;
+  lightLaw(null);
+}
+
+function tick(){
+  if(state.replaying) return;
+  const t = pace();
+  if(!state.deriv){                       // begin the next integer
+    state.deriv = derive(state.prev, state.n + 1);
+    state.idx = 0; openWork();
+    schedule(t ? Math.round(t*0.5) : 0); return;
+  }
+  if(state.phase === 'doom' && t){
+    state.phase = 'emit';
+    if(markDoomed()){ schedule(Math.round(t*0.42)); return; }
+  }
+  state.phase = 'doom';
+  const finished = emitLine();
+  if(finished){ settle(); schedule(t ? Math.round(t*1.15) : 60); }
+  else schedule(t ? Math.round(t*0.58) : 0);
+}
+
+function schedule(ms){
+  clearTimeout(state.timer);
+  if(!state.playing) return;
+  state.timer = setTimeout(tick, Math.max(ms, 0));
+}
+
+/* ── controls ─────────────────────────────────────────── */
+$('playBtn').onclick = () => {
+  state.playing = !state.playing;
+  $('playBtn').textContent = state.playing ? 'Pause' : 'Resume';
+  if(state.playing){ leaveReplay(); schedule(0); } else clearTimeout(state.timer);
+};
+$('stepBtn').onclick = () => {
+  leaveReplay();
+  if(state.playing){ state.playing=false; $('playBtn').textContent='Resume'; clearTimeout(state.timer); }
+  if(!state.deriv){ state.deriv = derive(state.prev, state.n+1); state.idx=0; openWork(); }
+  if(emitLine()) settle();
+  state.phase = 'doom';
+};
+$('skipBtn').onclick = () => {
+  leaveReplay();
+  if(!state.deriv){ state.deriv = derive(state.prev, state.n+1); state.idx=0; openWork(); }
+  while(state.idx < state.deriv.lines.length) emitLine();
+  settle();
+  if(state.playing) schedule(pace() ? 600 : 60);
+};
+$('speed').onchange = () => { if(state.playing) schedule(0); };
+
+/* ── replay a settled integer ─────────────────────────── */
+function replay(n){
+  if(n < 2) return;
+  clearTimeout(state.timer);
+  state.replaying = true;
+  $('banner').classList.add('on');
+  $('bannerText').textContent = `replaying ${n} — the ledger is paused at ${state.n}`;
+  // recompute from 1 (cheap: a few thousand rewrites at most)
+  let d = {0:1};
+  for(let i=2;i<=n;i++){ const r = derive(d,i); d = r.result; if(i===n) showStatic(r); }
+}
+function showStatic(r){
+  const keep = state.deriv;
+  state.deriv = r; state.idx = 0; openWork();
+  while(state.idx < r.lines.length) emitLine();
+  state.deriv = keep || r;
+  if(keep) { state.idx = keep.lines.length; }
+}
+function leaveReplay(){
+  if(!state.replaying) return;
+  state.replaying = false;
+  $('banner').classList.remove('on');
+  state.deriv = null; state.idx = 0;
+  workEl.innerHTML = '';
+}
+$('resumeBtn').onclick = () => { leaveReplay(); if(state.playing) schedule(0); };
+ledgerEl.addEventListener('click', e => {
+  const row = e.target.closest('.entry'); if(row) replay(+row.dataset.n);
+});
+ledgerEl.addEventListener('keydown', e => {
+  if(e.key === 'Enter' || e.key === ' '){ const row = e.target.closest('.entry'); if(row){ e.preventDefault(); replay(+row.dataset.n); } }
+});
+
+/* ── LaTeX ────────────────────────────────────────────── */
+function copy(text, btn){
+  const done = () => { const t=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=t,1200); };
+  if(navigator.clipboard) navigator.clipboard.writeText(text).then(done, ()=>fallback(text,done));
+  else fallback(text, done);
+}
+function fallback(text, done){
+  const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta);
+  ta.select(); try{ document.execCommand('copy'); done(); } finally { ta.remove(); }
+}
+$('texLedger').onclick = e => {
+  let s = '% integers in base \\varphi (canonical: no digit > 1, no two adjacent 1s)\n';
+  s += '\\[\\begin{array}{r@{\\;=\\;}r@{}l}\n';
+  for(const en of state.entries){
+    const i = en.s.indexOf('.');
+    const ip = i < 0 ? en.s : en.s.slice(0,i);
+    const fp = i < 0 ? ''   : en.s.slice(i);
+    s += `${en.n}_{10} & \\texttt{${ip}} & \\texttt{${fp}}\\\\\n`;
+  }
+  s += '\\end{array}\\]\n';
+  copy(s, e.currentTarget);
+};
+$('texDeriv').onclick = e => {
+  const r = state.deriv;
+  if(!r){ copy('% nothing on the workbench yet\n', e.currentTarget); return; }
+  let s = `% ${r.n} in base \\varphi, by repeated use of \\varphi^{k}=\\varphi^{k-1}+\\varphi^{k-2}\n`;
+  s += '\\begin{align*}\n';
+  r.lines.forEach((L,i) => {
+    const tag = i === 0
+      ? `\\text{from }${r.n-1}\\text{, add }\\varphi^{0}`
+      : L.why.replace(/^(merge|split)\s+/,'\\text{$1}\\;\\;').replace(/φ/g,'\\varphi').replace(/([⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, m => '^{'+deSup(m)+'}');
+    s += `${i===0?'&':'=\\;&'} \\texttt{${textNum(L.d)}} && ${tag}\\\\\n`;
+  });
+  s += '\\end{align*}\n';
+  copy(s, e.currentTarget);
+};
+const DESUPS = {'⁻':'-','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
+const deSup = m => m.split('').map(c=>DESUPS[c]||c).join('');
+
+/* ── first light ──────────────────────────────────────── */
+(function boot(){
+  const row = document.createElement('div');
+  row.className='entry'; row.tabIndex=0; row.dataset.n=1;
+  row.innerHTML = '<span class="n">1</span><span class="eqs">=</span>';
+  row.appendChild(renderNum({0:1}, 0, 0, null));
+  const c=document.createElement('span'); c.className='cost'; c.textContent='—'; row.appendChild(c);
+  ledgerEl.appendChild(row);
+  const h=document.createElement('div'); h.className='head';
+  h.textContent = 'one unit, one position, nothing to repair';
+  workEl.appendChild(h);
+  schedule(1000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prime wheels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEFE9; --ink:#1E2836; --muted:#5F6976; --rule:#C6CCC3; --panel:#E2E6DE; --btn:#F7F8F4; --btn-on:#1E2836; --btn-on-ink:#F7F8F4;
+  --wheel-l:40%;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131A24; --ink:#E3E6EA; --muted:#97A1AE; --rule:#2C3646; --panel:#19212E; --btn:#222C3B; --btn-on:#E3E6EA; --btn-on-ink:#131A24;
+    --wheel-l:67%;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131A24; --ink:#E3E6EA; --muted:#97A1AE; --rule:#2C3646; --panel:#19212E; --btn:#222C3B; --btn-on:#E3E6EA; --btn-on-ink:#131A24;
+  --wheel-l:67%;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;height:100%;background:var(--bg);color:var(--ink);
+  font-family:Spectral, Georgia, "Times New Roman", serif;
+  display:flex;flex-direction:column;
+}
+header{
+  display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline;justify-content:space-between;
+  padding:1rem 1.25rem .5rem;
+}
+h1{margin:0;font-weight:400;font-style:italic;font-size:1.9rem;letter-spacing:.01em;line-height:1.1}
+.lede{margin:.3rem 0 0;max-width:60ch;color:var(--muted);font-size:1rem;line-height:1.5}
+.readout{text-align:right;min-width:14rem;flex:1 1 18rem;max-width:30rem}
+.n{font-size:2.6rem;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.status{margin-top:.3rem;font-size:1rem;line-height:1.45;color:var(--ink)}
+.count{color:var(--muted);font-size:.9rem;margin-top:.15rem}
+#stage{flex:1;position:relative;min-height:260px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.controls{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;
+  padding:.75rem 1.25rem;background:var(--panel);
+}
+.transport{display:flex;gap:.35rem;align-items:center}
+button{
+  font:inherit;color:var(--ink);background:var(--btn);border:1px solid var(--rule);
+  width:2.6rem;height:2.6rem;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
+}
+button.wide{width:auto;border-radius:1.3rem;padding:0 1rem}
+button.on{background:var(--btn-on);color:var(--btn-on-ink);border-color:var(--btn-on)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+button svg{width:1.1rem;height:1.1rem;fill:currentColor}
+#play{width:3.1rem;height:3.1rem}
+#play svg{width:1.35rem;height:1.35rem}
+.speed{min-width:3.2rem;font-variant-numeric:lining-nums tabular-nums;color:var(--muted)}
+.scrub{display:flex;align-items:center;gap:.6rem;flex:1 1 16rem}
+.scrub input{flex:1;accent-color:var(--ink)}
+.opts{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;font-size:.95rem}
+.opts label{display:flex;align-items:center;gap:.35rem;cursor:pointer}
+.opts input[type=checkbox]{accent-color:var(--ink);width:1rem;height:1rem}
+.zoom{display:flex;align-items:center;gap:.4rem}
+.zoom input{width:7rem;accent-color:var(--ink)}
+@media (max-width:640px){
+  h1{font-size:1.5rem}
+  .readout{text-align:left}
+  .n{font-size:2rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Prime wheels</h1>
+    <p class="lede">Each prime <i>p</i> rolls a wheel of circumference <i>p</i> along the number line. Its dot touches down at every multiple of <i>p</i>. Where the edge reaches a number no dot has touched, that number is prime, and a new wheel is born.</p>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div class="n" id="nval">1</div>
+    <div class="status" id="status">Press play. The edge rolls toward 2.</div>
+    <div class="count" id="count">Primes so far: 0</div>
+  </div>
+</header>
+
+<div id="stage"><canvas id="cv" aria-label="Wheels of prime circumference rolling along the number line"></canvas></div>
+
+<div class="controls">
+  <div class="transport">
+    <button id="stepBack" title="Step back one number" aria-label="Step back one number">
+      <svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+    </button>
+    <button id="rew" title="Rewind (press again to go faster)" aria-label="Rewind">
+      <svg viewBox="0 0 24 24"><path d="M11 5v14L2 12zM22 5v14l-9-7z"/></svg>
+    </button>
+    <button id="play" title="Play or pause (space)" aria-label="Play">
+      <svg viewBox="0 0 24 24" id="playIcon"><path d="M7 4v16l13-8z"/></svg>
+    </button>
+    <button id="ff" title="Fast forward (press again to go faster)" aria-label="Fast forward">
+      <svg viewBox="0 0 24 24"><path d="M2 5v14l9-7zM13 5v14l9-7z"/></svg>
+    </button>
+    <button id="stepFwd" title="Step forward one number" aria-label="Step forward one number">
+      <svg viewBox="0 0 24 24"><path d="M4 5v14l11-7zM16 5h2v14h-2z"/></svg>
+    </button>
+    <span class="speed" id="speed">paused</span>
+  </div>
+  <div class="scrub">
+    <label for="scrubber" style="color:var(--muted)">Jump</label>
+    <input type="range" id="scrubber" min="1" max="1000" step="1" value="1">
+  </div>
+  <div class="opts">
+    <label><input type="checkbox" id="hide2" checked> Skip multiples of 2</label>
+    <label><input type="checkbox" id="hide3"> Skip multiples of 3</label>
+    <label><input type="checkbox" id="trails" checked> Trails</label>
+    <label><input type="checkbox" id="squares" checked> Mark <i>p</i>²</label>
+    <label><input type="checkbox" id="pausePrime"> Pause at primes</label>
+    <span class="zoom"><label for="zoom">Zoom</label><input type="range" id="zoom" min="8" max="70" step="1" value="34"></span>
+  </div>
+</div>
+
+<script>
+(() => {
+  const MAX = 1000;
+  const TAU = Math.PI * 2;
+  const EPS = 1e-9;
+
+  // Smallest prime factor table
+  const spf = new Int32Array(MAX + 1);
+  for (let i = 2; i <= MAX; i++) if (!spf[i]) for (let j = i; j <= MAX; j += i) if (!spf[j]) spf[j] = i;
+  const isPrime = m => m >= 2 && m <= MAX && spf[m] === m;
+  const primes = [];
+  for (let i = 2; i <= MAX; i++) if (isPrime(i)) primes.push(i);
+  const pIndex = new Map(primes.map((p, i) => [p, i]));
+
+  function distinctFactors(m) {
+    const out = [];
+    while (m > 1) { const p = spf[m]; out.push(p); while (m % p === 0) m /= p; }
+    return out;
+  }
+  const SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  const sup = k => String(k).split("").map(d => SUP[+d]).join("");
+  function factorString(m) {
+    const parts = [];
+    while (m > 1) {
+      const p = spf[m]; let e = 0;
+      while (m % p === 0) { m /= p; e++; }
+      parts.push(e > 1 ? p + sup(e) : String(p));
+    }
+    return parts.join("·");
+  }
+  const joinList = a => a.length <= 1 ? a.join("") : a.length === 2 ? a.join(" and ") : a.slice(0, -1).join(", ") + ", and " + a[a.length - 1];
+
+  // Elements
+  const cv = document.getElementById("cv");
+  const ctx = cv.getContext("2d");
+  const $ = id => document.getElementById(id);
+  const nval = $("nval"), statusEl = $("status"), countEl = $("count"), speedEl = $("speed");
+  const scrubber = $("scrubber"), zoomEl = $("zoom");
+  scrubber.max = MAX;
+
+  // Theme colours read from CSS
+  let theme = {};
+  function readTheme() {
+    const cs = getComputedStyle(document.documentElement);
+    theme = {
+      ink: cs.getPropertyValue("--ink").trim(),
+      muted: cs.getPropertyValue("--muted").trim(),
+      rule: cs.getPropertyValue("--rule").trim(),
+      L: cs.getPropertyValue("--wheel-l").trim() || "40%"
+    };
+    dirty = true;
+  }
+  const hueOf = p => (pIndex.get(p) * 137.508 + 205) % 360;
+  const col = (p, a = 1) => `hsla(${hueOf(p).toFixed(1)},60%,${theme.L},${a})`;
+
+  // State
+  let t = 1;               // continuous position of the leading edge
+  let dir = 0;             // -1 rewind, 0 paused, +1 forward
+  let speedIdx = 0;
+  const SPEEDS = [1, 2, 4, 8, 16, 32];
+  let scale = 34;
+  let dirty = true;
+  let lastShown = null;
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function fitDefaultZoom() {
+    const w = cv.clientWidth || 800;
+    scale = Math.max(14, Math.min(40, Math.round(w / 28)));
+    zoomEl.value = scale;
+  }
+
+  let dpr = 1;
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(cv.clientWidth * dpr);
+    cv.height = Math.round(cv.clientHeight * dpr);
+    dirty = true;
+  }
+
+  // Transport
+  function setDir(d, idx) {
+    dir = d; speedIdx = idx;
+    const playing = dir !== 0;
+    $("play").setAttribute("aria-label", playing ? "Pause" : "Play");
+    $("playIcon").innerHTML = playing
+      ? '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>'
+      : '<path d="M7 4v16l13-8z"/>';
+    $("rew").classList.toggle("on", dir === -1);
+    $("ff").classList.toggle("on", dir === 1 && speedIdx > 0);
+    speedEl.textContent = dir === 0 ? "paused" : (dir === -1 ? "−" : "") + SPEEDS[speedIdx] + "×";
+    dirty = true;
+  }
+  function togglePlay() {
+    if (dir !== 0) setDir(0, 0);
+    else { if (t >= MAX - EPS) t = 1; setDir(1, 0); }
+  }
+  $("play").onclick = togglePlay;
+  $("ff").onclick = () => {
+    if (t >= MAX - EPS) return;
+    if (dir !== 1) setDir(1, 1); else setDir(1, Math.min(SPEEDS.length - 1, speedIdx + 1));
+  };
+  $("rew").onclick = () => {
+    if (t <= 1 + EPS) return;
+    if (dir !== -1) setDir(-1, 0); else setDir(-1, Math.min(SPEEDS.length - 1, speedIdx + 1));
+  };
+  // Which wheels and numbers are hidden to reduce clutter.
+  // Primes 2 and 3 themselves always stay visible; only their wheels and multiples are hidden.
+  const wheelHidden = p => (p === 2 && $("hide2").checked) || (p === 3 && $("hide3").checked);
+  const numberHidden = m => !isPrime(m) &&
+    (($("hide2").checked && m % 2 === 0) || ($("hide3").checked && m % 3 === 0));
+
+  // Most distinct prime factors of any visible composite up to MAX
+  // (4 with all numbers shown, e.g. 210 = 2·3·5·7; 3 with evens hidden, e.g. 105 = 3·5·7).
+  let stackCache = null;
+  function maxStack() {
+    const key = $("hide2").checked + "|" + $("hide3").checked;
+    if (stackCache && stackCache.key === key) return stackCache.v;
+    let v = 1;
+    for (let m = 2; m <= MAX; m++) if (!numberHidden(m)) v = Math.max(v, distinctFactors(m).length);
+    stackCache = { key, v };
+    return v;
+  }
+
+  function stepTo(target) { setDir(0, 0); t = Math.max(1, Math.min(MAX, target)); dirty = true; }
+  $("stepFwd").onclick = () => {
+    let m = Math.floor(t + EPS) + 1;
+    while (m < MAX && numberHidden(m)) m++;
+    stepTo(m);
+  };
+  $("stepBack").onclick = () => {
+    let m = Math.ceil(t - EPS) - 1;
+    while (m > 2 && numberHidden(m)) m--;
+    stepTo(m);
+  };
+  scrubber.addEventListener("input", () => stepTo(+scrubber.value));
+  zoomEl.addEventListener("input", () => { scale = +zoomEl.value; dirty = true; });
+  ["trails", "squares", "hide2", "hide3"].forEach(id => $(id).addEventListener("change", () => dirty = true));
+
+  document.addEventListener("keydown", e => {
+    if (e.target.tagName === "INPUT" && e.target.type === "range") return;
+    if (e.code === "Space") { e.preventDefault(); togglePlay(); }
+    else if (e.code === "ArrowRight") { e.preventDefault(); $("stepFwd").click(); }
+    else if (e.code === "ArrowLeft") { e.preventDefault(); $("stepBack").click(); }
+  });
+
+  // Geometry: wheel p has radius R = p/2π, centre at (t, R).
+  // Its dot was at the bottom at t = p; angle θ = (t − p)/R.
+  // Dot position: (t − R sin θ, R − R cos θ) — a cycloid touching down at multiples of p.
+  function dotAt(p, tau) {
+    const R = p / TAU, th = (tau - p) / R;
+    return [tau - R * Math.sin(th), R - R * Math.cos(th)];
+  }
+
+  function draw() {
+    const W = cv.clientWidth, H = cv.clientHeight;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const s = scale;
+    const X0 = W * (W < 640 ? 0.62 : 0.7);
+    // Put the line near the bottom, leaving just enough room for the labels
+    // and the tallest column of stamps among the numbers currently shown.
+    const dotR = Math.max(2.5, Math.min(5.5, s * 0.15));
+    const Y0 = H - (30 + maxStack() * (dotR * 2 + 3) + 8);
+    const sx = x => X0 + (x - t) * s;
+    const sy = y => Y0 - y * s;
+    const xL = t - X0 / s, xR = t + (W - X0) / s, vw = xR - xL;
+
+    // Wheels currently alive
+    let k = 0; while (k < primes.length && primes[k] <= t + EPS) k++;
+    const live = primes.slice(0, k);
+
+    // Trails (cycloids)
+    if ($("trails").checked) {
+      ctx.lineWidth = 1.4;
+      ctx.lineJoin = "round";
+      for (const p of live) {
+        if (wheelHidden(p)) continue;
+        const R = p / TAU;
+        const a0 = Math.max(p, xL - Math.min(R, vw));
+        if (a0 >= t) continue;
+        const step = Math.min(0.5, Math.max(0.06, p / 60));
+        ctx.beginPath();
+        let first = true;
+        // walk arch by arch so every touchdown is sampled exactly
+        let arch = Math.floor((a0 - p) / p);
+        for (;;) {
+          const A = p + arch * p, B = A + p;
+          const a = Math.max(A, a0), b = Math.min(B, t);
+          if (a >= t) break;
+          const nSeg = Math.max(1, Math.ceil((b - a) / step));
+          for (let i = 0; i <= nSeg; i++) {
+            const tau = a + (b - a) * i / nSeg;
+            const [x, y] = dotAt(p, tau);
+            if (first) { ctx.moveTo(sx(x), sy(y)); first = false; } else ctx.lineTo(sx(x), sy(y));
+          }
+          if (B >= t) break;
+          arch++;
+        }
+        ctx.strokeStyle = col(p, 0.5);
+        ctx.stroke();
+      }
+    }
+
+    // Wheels, largest first so small ones sit on top
+    for (let i = live.length - 1; i >= 0; i--) {
+      const p = live[i];
+      if (wheelHidden(p)) continue;
+      const R = p / TAU;
+      const fade = reduceMotion ? 1 : Math.min(1, (t - p) / 0.6 + 0.15);
+      const cx = sx(t), cy = sy(R);
+      ctx.beginPath();
+      ctx.arc(cx, cy, R * s, 0, TAU);
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = col(p, 0.3 * fade);
+      ctx.stroke();
+      const [dx, dy] = dotAt(p, t);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy); ctx.lineTo(sx(dx), sy(dy));
+      ctx.strokeStyle = col(p, 0.35 * fade);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(sx(dx), sy(dy), Math.max(3.5, Math.min(6, s * 0.14)), 0, TAU);
+      ctx.fillStyle = col(p, fade);
+      ctx.fill();
+    }
+
+    // Number line
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = theme.ink;
+    ctx.beginPath();
+    ctx.moveTo(Math.max(0, sx(1.5)), Y0); ctx.lineTo(W, Y0);
+    ctx.stroke();
+
+    const labelEvery = s >= 26 ? 1 : s >= 14 ? 5 : 10;
+    const fontPx = s >= 26 ? 13 : 12;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+
+    const mStart = Math.max(2, Math.ceil(xL)), mEnd = Math.min(MAX, Math.floor(xR));
+    for (let m = mStart; m <= mEnd; m++) {
+      if (numberHidden(m)) continue;
+      const X = sx(m);
+      const reached = m <= t + EPS;
+      const prime = isPrime(m);
+
+      // tick
+      ctx.beginPath();
+      ctx.moveTo(X, Y0); ctx.lineTo(X, Y0 + (m % 10 === 0 ? 7 : 4));
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = reached ? theme.ink : theme.rule;
+      ctx.stroke();
+
+      // label
+      const showLabel = m % labelEvery === 0 || (prime && reached && s >= 12);
+      if (showLabel) {
+        if (reached && prime) {
+          ctx.font = `600 ${fontPx}px Spectral, Georgia, serif`;
+          ctx.fillStyle = col(m, 1);
+        } else {
+          ctx.font = `400 ${fontPx}px Spectral, Georgia, serif`;
+          ctx.fillStyle = reached ? theme.muted : theme.rule;
+        }
+        ctx.fillText(String(m), X, Y0 + 9);
+      }
+
+      if (!reached) continue;
+
+      if (prime) {
+        // the prime itself: open ring where its wheel was born
+        ctx.beginPath();
+        ctx.arc(X, Y0, dotR + 1.5, 0, TAU);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = col(m, 1);
+        ctx.stroke();
+      } else {
+        // stamps: one dot per distinct prime factor
+        const fs = distinctFactors(m);
+        fs.forEach((p, j) => {
+          const Y = Y0 + 30 + j * (dotR * 2 + 3);
+          ctx.beginPath();
+          ctx.arc(X, Y, dotR, 0, TAU);
+          ctx.fillStyle = col(p, 1);
+          ctx.fill();
+          if ($("squares").checked && p * p === m) {
+            ctx.beginPath();
+            ctx.arc(X, Y, dotR + 3.5, 0, TAU);
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = col(p, 1);
+            ctx.stroke();
+          }
+        });
+      }
+    }
+
+    // Birth flash for a newborn prime
+    if (!reduceMotion) {
+      for (let i = live.length - 1; i >= 0 && t - live[i] < 1; i--) {
+        const p = live[i], age = t - p;
+        if (wheelHidden(p)) continue;
+        ctx.beginPath();
+        ctx.arc(sx(p), Y0, 6 + age * 26, 0, TAU);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = col(p, 1 - age);
+        ctx.stroke();
+      }
+    }
+
+  }
+
+  function updateReadout() {
+    const m = Math.floor(t + EPS);
+    if (m === lastShown) return;
+    lastShown = m;
+    nval.textContent = m;
+    scrubber.value = m;
+    let count = 0; while (count < primes.length && primes[count] <= m) count++;
+    countEl.textContent = "Primes so far: " + count;
+    if (m < 2) {
+      statusEl.textContent = "Press play. The edge rolls toward 2.";
+    } else if (isPrime(m)) {
+      statusEl.textContent = `${m} is prime. No dot touched down, so a wheel of circumference ${m} is born.`;
+    } else {
+      const fs = distinctFactors(m);
+      const sq = fs.find(p => p * p === m);
+      let msg = `${m} = ${factorString(m)}. Stamped by the ${joinList(fs.map(String))} wheel${fs.length > 1 ? "s" : ""}.`;
+      if (sq) msg += ` The first fresh mark of wheel ${sq}.`;
+      statusEl.textContent = msg;
+    }
+  }
+
+  // Animation loop
+  let last = performance.now();
+  function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    if (dir !== 0) {
+      const prev = t;
+      let next = t + dir * SPEEDS[speedIdx] * dt;
+      if (dir > 0 && $("pausePrime").checked) {
+        const a = Math.floor(prev + EPS), b = Math.floor(next + EPS);
+        for (let m = a + 1; m <= b; m++) {
+          if (isPrime(m)) { next = m; setDir(0, 0); break; }
+        }
+      }
+      if (next >= MAX) { next = MAX; setDir(0, 0); }
+      if (next <= 1) { next = 1; setDir(0, 0); }
+      t = next;
+      dirty = true;
+    }
+    if (dirty) { draw(); updateReadout(); dirty = false; }
+    requestAnimationFrame(loop);
+  }
+
+  const mq = matchMedia("(prefers-color-scheme: dark)");
+  if (mq.addEventListener) mq.addEventListener("change", readTheme);
+  new MutationObserver(readTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  window.addEventListener("resize", resize);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => dirty = true);
+
+  readTheme();
+  resize();
+  fitDefaultZoom();
+  setDir(0, 0);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
