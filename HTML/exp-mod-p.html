@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exponential functions mod p</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2F5F8;
+  --ink: #1A2233;
+  --muted: #5B6577;
+  --line: #C9D3DD;
+  --cell: #FFFFFF;
+  --zero: #E2E8F1;
+  --fill: #2F4FA2;
+  --fill-ink: #FFFFFF;
+  --track: #CBD5E1;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151C; --ink: #E6EAF0; --muted: #98A2B3; --line: #2C3544;
+    --cell: #181E28; --zero: #202838; --fill: #7E9BEA; --fill-ink: #0E1320; --track: #364152;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11151C; --ink: #E6EAF0; --muted: #98A2B3; --line: #2C3544;
+  --cell: #181E28; --zero: #202838; --fill: #7E9BEA; --fill-ink: #0E1320; --track: #364152;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.45;
+}
+main { max-width: 680px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+main.wide { max-width: 980px; }
+main.wide .controls, main.wide .facts { max-width: 680px; }
+
+.ob {
+  text-decoration: overline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.1em;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+h1 sup { font-size: 0.55em; font-style: italic; }
+h1 .mod { color: var(--muted); font-size: 0.6em; white-space: nowrap; }
+.facts { color: var(--muted); font-size: 1.1rem; margin: 0 0 1.75rem; min-height: 1.6em; }
+.facts strong { color: var(--ink); font-weight: 600; }
+
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; margin-bottom: 2rem; }
+@media (max-width: 480px) { .controls { grid-template-columns: 1fr; } }
+.control label { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.15rem; margin-bottom: 0.4rem; }
+.control output { font-size: 1.5rem; font-weight: 600; }
+.control .ticks { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.95rem; margin-top: 0.2rem; }
+
+input[type="range"] { width: 100%; accent-color: var(--fill); height: 1.6rem; margin: 0; }
+input[type="range"]:focus-visible { outline: 2px solid var(--fill); outline-offset: 4px; border-radius: 4px; }
+
+.graph-wrap { display: flex; gap: 0.5rem; align-items: stretch; }
+.yname { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; color: var(--muted); font-style: italic; font-size: 1.2rem; }
+.graph {
+  flex: 1;
+  display: grid;
+  gap: 0;
+  font-size: var(--fs, 1rem);
+}
+.ylab, .xlab { display: flex; align-items: center; justify-content: center; color: var(--ink); }
+.ylab { justify-content: flex-end; padding-right: 0.45em; }
+.xlab { padding-top: 0.3em; }
+.cell {
+  aspect-ratio: 1;
+  background: var(--cell);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+}
+.cell.z { background: var(--zero); }
+.cell.top { border-top: 1px solid var(--line); }
+.cell.left { border-left: 1px solid var(--line); }
+.cell.on {
+  background: var(--fill);
+  color: var(--fill-ink);
+  font-weight: 600;
+}
+.xname { text-align: center; color: var(--muted); font-style: italic; font-size: 1.2rem; margin-top: 0.2rem; }
+
+.table-wrap { overflow-x: auto; margin-top: 2rem; }
+table { border-collapse: collapse; font-size: 1.15rem; }
+th, td { padding: 0.3rem 0.65rem; text-align: center; border-bottom: 1px solid var(--line); }
+th { font-style: italic; font-weight: 400; color: var(--muted); text-align: left; padding-left: 0; }
+.note { color: var(--muted); font-size: 1rem; margin-top: 1rem; max-width: 60ch; }
+
+@media print {
+  .controls { display: none; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1 id="eq"></h1>
+  <p class="facts" id="facts"></p>
+
+  <div class="controls">
+    <div class="control">
+      <label for="pSlider"><span>Prime modulus</span><output id="pOut"></output></label>
+      <input type="range" id="pSlider" min="0" max="17" step="1" value="2">
+      <div class="ticks"><span>2</span><span>61</span></div>
+    </div>
+    <div class="control">
+      <label for="bSlider"><span>Base</span><output id="bOut"></output></label>
+      <input type="range" id="bSlider" min="0" max="3" step="1" value="3">
+      <div class="ticks"><span id="bMin"></span><span id="bMax"></span></div>
+    </div>
+  </div>
+
+  <div class="graph-wrap">
+    <div class="yname">y</div>
+    <div class="graph" id="graph" role="img"></div>
+  </div>
+  <div class="xname">x</div>
+
+  <div class="table-wrap"><table id="tbl"></table></div>
+</main>
+
+<script>
+const PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61];
+let p = 5, b = 2;
+
+const pSlider = document.getElementById('pSlider');
+const bSlider = document.getElementById('bSlider');
+
+function bal(n) {
+  const r = ((n % p) + p) % p;
+  return r > p / 2 ? r - p : r;
+}
+function fmt(n) {
+  return n < 0 ? '<span class="ob">' + (-n) + '</span>' : String(n);
+}
+function plain(n) { return n < 0 ? '−' + (-n) : String(n); }
+function residues() {
+  const s = [];
+  for (let i = 0; i < p; i++) s.push(bal(i));
+  return s.sort((a, c) => a - c);
+}
+function bases() { return residues().filter(v => v !== 0); }
+function powmod(base, x) {
+  let r = bal(1);
+  for (let i = 0; i < x; i++) r = bal(r * base);
+  return r;
+}
+function order(base) {
+  let r = bal(base);
+  for (let k = 1; k <= p; k++) {
+    if (r === bal(1)) return k;
+    r = bal(r * base);
+  }
+  return null;
+}
+
+function syncBaseSlider(keep) {
+  const bs = bases();
+  let idx = bs.indexOf(keep);
+  if (idx === -1) {
+    // clamp to nearest value with the same sign
+    idx = keep > 0 ? bs.length - 1 : 0;
+  }
+  bSlider.max = bs.length - 1;
+  bSlider.value = idx;
+  b = bs[idx];
+  document.getElementById('bMin').innerHTML = fmt(bs[0]);
+  document.getElementById('bMax').innerHTML = fmt(bs[bs.length - 1]);
+}
+
+function render() {
+  const bHTML = b < 0 ? '(' + fmt(b) + ')' : fmt(b);
+  document.getElementById('eq').innerHTML =
+    'y = ' + bHTML + '<sup>x</sup> <span class="mod">(mod ' + p + ')</span>';
+  document.getElementById('pOut').textContent = p;
+  document.getElementById('bOut').innerHTML = fmt(b);
+
+  const ord = order(b);
+  let facts = 'Order of ' + fmt(b) + ': <strong>' + ord + '</strong>';
+  if (p > 2 && ord === p - 1) facts += ', so ' + fmt(b) + ' is a primitive root mod ' + p;
+  document.getElementById('facts').innerHTML = facts;
+
+  const ys = residues().slice().reverse();
+  const yVals = [];
+  for (let x = 0; x < p; x++) yVals.push(powmod(b, x));
+
+  const g = document.getElementById('graph');
+  g.style.gridTemplateColumns = 'auto repeat(' + p + ', minmax(0, 1fr))';
+  const fs = p <= 7 ? 1.25 : p <= 13 ? 1 : p <= 19 ? 0.8 : p <= 23 ? 0.68 : p <= 31 ? 0.58 : p <= 43 ? 0.5 : 0.44;
+  document.querySelector('main').classList.toggle('wide', p > 31);
+  g.style.setProperty('--fs', fs + 'rem');
+  const showVals = p <= 13;
+
+  let html = '';
+  ys.forEach((y, row) => {
+    html += '<div class="ylab">' + fmt(y) + '</div>';
+    for (let x = 0; x < p; x++) {
+      const on = yVals[x] === y;
+      const cls = ['cell'];
+      if (y === 0) cls.push('z');
+      if (row === 0) cls.push('top');
+      if (x === 0) cls.push('left');
+      if (on) cls.push('on');
+      html += '<div class="' + cls.join(' ') + '">' + (on && showVals ? fmt(y) : '') + '</div>';
+    }
+  });
+  html += '<div></div>';
+  for (let x = 0; x < p; x++) html += '<div class="xlab">' + x + '</div>';
+  g.innerHTML = html;
+  g.setAttribute('aria-label',
+    'Graph of y = ' + plain(b) + ' to the x, mod ' + p + '. Points: ' +
+    yVals.map((v, x) => '(' + x + ', ' + plain(v) + ')').join(', '));
+
+  let t = '<tr><th>x</th>';
+  for (let x = 0; x < p; x++) t += '<td>' + x + '</td>';
+  t += '</tr><tr><th>y</th>';
+  yVals.forEach(v => t += '<td>' + fmt(v) + '</td>');
+  t += '</tr>';
+  document.getElementById('tbl').innerHTML = t;
+}
+
+pSlider.addEventListener('input', () => {
+  p = PRIMES[+pSlider.value];
+  syncBaseSlider(b);
+  render();
+});
+bSlider.addEventListener('input', () => {
+  b = bases()[+bSlider.value];
+  render();
+});
+
+pSlider.value = PRIMES.indexOf(p);
+syncBaseSlider(b);
+render();
+</script>
+</body>
+</html>
