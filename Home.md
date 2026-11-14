@@ -21,7 +21,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 **Foundations** — [[Creaturely Realism]] · [[Certificates]] · [[Creational Ultrafinitism]] · [[Computational Admissibility]] · [[Infinity and Cantor]] · [[Diagonal Argument]] · [[Exhibiting a Real]] · [[Schools Compared]] · [[Three Tiers]] · [[First Principles of Thought]] · [[Theology of Number]] · [[Theological Grounds]] · [[Christians and the Reals]] · [[Four Kinds of Truth]] · [[Quadriga and the Position]]
 
-**Number** — [[Number Hierarchy]] (14 levels) · [[Equal Signs]] · [[Constructible Numbers]] · [[Counting and Bases]] · [[Tally Marks]] · [[Numbers, Lengths and Pixels]] · [[Function Hierarchy]] · [[Exact Until Output]] · [[Fundamental Theorem of Arithmetic]] · [[Chinese Remainder Theorem]] · [[Fermat's Little Theorem]] · [[Euler's Theorem]] · [[Wilson's Theorem]] · [[Fundamental Theorem of Algebra]] · [[Binary]] · [[Balanced Ternary]] · [[Modular Arithmetic]] · [[GF(3)]] · [[GF(5)]] · [[GF(7)]] · [[GF(11)]] · [[Sexagesimal]] · [[Fiat Numbers]]
+**Number** — [[Number Hierarchy]] (14 levels) · [[Equal Signs]] · [[Constructible Numbers]] · [[Counting and Bases]] · [[Tally Marks]] · [[Numbers, Lengths and Pixels]] · [[Function Hierarchy]] · [[Exact Until Output]] · [[Metallic Means]] · [[Fundamental Theorem of Arithmetic]] · [[Chinese Remainder Theorem]] · [[Fermat's Little Theorem]] · [[Euler's Theorem]] · [[Wilson's Theorem]] · [[Fundamental Theorem of Algebra]] · [[Binary]] · [[Balanced Ternary]] · [[Modular Arithmetic]] · [[GF(3)]] · [[GF(5)]] · [[GF(7)]] · [[GF(11)]] · [[Sexagesimal]] · [[Fiat Numbers]]
 
 **Geometry** — [[Geometry Hierarchy]] · [[SSS Congruence]] · [[SAS Congruence]] · [[ASA Congruence]] · [[AAS Congruence]]
 

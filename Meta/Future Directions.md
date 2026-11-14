@@ -2,7 +2,7 @@
 title: Future Directions
 type: meta
 status: living — the vault's to-do list and its guidelines
-updated: 2026-11-07
+updated: 2026-11-13
 ---
 
 # Future Directions
@@ -54,6 +54,7 @@ updated: 2026-11-07
 | Derivatives of $\exp$, $\ln$, $\sin$, $\cos$ with certificates: quadratic-remainder bounds ($C=e^{|x|}$, $2/x^2$, $\tfrac23$); the $E_h$ and $H_n$ comparisons; the rational rotation against the classical circle to $O(k/N^3)$ | [[Derivatives with Certificates]] |
 | `Sources/` retired: every source audited and absorbed; the Quadriga manuscripts live on as canonical pages; the folder deleted | [[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)]], [[Quadriga Scientiae (wiki elaborations)]] |
 | Geometry: a branching structure, not a ladder; perpendicularity does not select the geometry (parallel behavior does); Archimedean retained local-constructive, completeness rejected (replacements: constructive extension, locatedness, resolution); congruence geometry is the freshman center; the segment calculus is the bridge project to arithmetic | [[Geometry Hierarchy]] (item 8) |
+| The metallic means $\sigma_n$ ($x^2=nx+1$): exact pairs, the $n$-Fibonacci powers, odd powers metallic, the convergent bracket certificate (Pell for silver), the rectangle, $\sigma_n=m+\ell$ as a slope | [[Metallic Means]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 

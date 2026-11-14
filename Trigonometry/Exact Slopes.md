@@ -52,4 +52,4 @@ Every wedge between an eighth and a quarter of a turn has a slope that is the **
 
 - The twenty wedges are the fifteen multiples of $\tfrac1{120}$ of a turn up to an eighth (the $3^\circ$ steps), plus five halved wedges: $\tfrac1{48},\ \tfrac1{32},\ \tfrac1{16},\ \tfrac3{32},\ \tfrac5{48}$.
 - Forms for $3^\circ$, $21^\circ$, $33^\circ$ and $33.75^\circ$ are given only as nests. Each also has a closed form with radicals, but it is long.
-- The slope $\sqrt2-1$ of a sixteenth of a turn is the reciprocal of the silver ratio $1+\sqrt2$, and $2-\sqrt3$ for a twenty-fourth is the reciprocal of $2+\sqrt3$.
+- The slope $\sqrt2-1$ of a sixteenth of a turn is the reciprocal of the silver ratio $1+\sqrt2$ ([[Metallic Means]]), and $2-\sqrt3$ for a twenty-fourth is the reciprocal of $2+\sqrt3$.
