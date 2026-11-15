@@ -3,7 +3,7 @@ title: Group Theory
 type: hub
 status: canonical (draft)
 provenance: "ai-synthesis (the hub and its reading order, built from the group pages; the banner is the vault's three-part position applied to groups, and is the AI's wording, not Murphy's); the pages it links carry their own provenance"
-sources: "[[Groups]], [[Cyclic Groups]], [[Groups of Small Order]], [[Simple Groups]], [[Monster Group]]"
+sources: "[[Groups]], [[Cyclic Groups]], [[Groups of Small Order]], [[Simple Groups]], [[Sporadic Groups]], [[Monster Group]]"
 updated: 2026-11-14
 ---
 
@@ -20,7 +20,8 @@ updated: 2026-11-14
 3. **[[Cyclic Groups]]** — $C_1$ through $C_8$: tables, generators (the units mod $n$), subgroups (one per divisor), $C_6\cong C_2\times C_3$.
 4. **[[Groups of Small Order]]** — all $59$ groups of order $1$ to $23$: isomorphism and the invariants that tell groups apart, direct and semidirect products, automorphisms, the arguments that show each list is complete.
 5. **[[Simple Groups]]** — normal subgroups and quotients in general; simple groups as the atoms; composition series; $A_4$ against $A_5$; the classification.
-6. **[[Monster Group]]** — the largest sporadic simple group, its order, moonshine, and what a finite object that cannot be listed means for the position.
+6. **[[Sporadic Groups]]** — the twenty-six groups that belong to no family: names, orders (checked), the Happy Family and the pariahs, and where tables stop being possible.
+7. **[[Monster Group]]** — the largest sporadic simple group, its order, moonshine, and what a finite object that cannot be listed means for the position.
 
 ## Conventions on these pages
 

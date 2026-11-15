@@ -81,12 +81,9 @@ Every finite group is therefore built from simple groups, and the simple groups 
 3. a group **of Lie type**, which comes in several infinite families built from matrices over finite fields (for example the group of $2\times2$ matrices of determinant $1$ over $\mathrm{GF}(p)$, modulo $\pm1$; the finite fields are [[GF(5)]], [[GF(7)]] and the like);
 4. one of **26 sporadic groups**, which belong to no family.
 
-The sporadic groups range from $M_{11}$, of order $7920=2^4\cdot3^2\cdot5\cdot11$, to the Monster of [[Monster Group]], of order about $8\times10^{53}$. $M_{24}$ has order $244823040=2^{10}\cdot3^3\cdot5\cdot7\cdot11\cdot23$ (products computed).
+The sporadic groups range from $M_{11}$, of order $7920$, to the Monster ([[Monster Group]]), of order about $8\times10^{53}$.
 
-**The sporadic groups** (names recalled; the count of $26$ is standard):
-
-- Twenty of them occur as pieces (sub-quotients) of the Monster. Conway's name for these is **the Happy Family**: the five Mathieu groups $M_{11},M_{12},M_{22},M_{23},M_{24}$; the Leech-lattice groups $Co_1,Co_2,Co_3,HS,McL,Suz,J_2$; the three Fischer groups $Fi_{22},Fi_{23},Fi_{24}'$; $He$; $HN$, $Th$, the Baby Monster $B$, and the Monster $M$.
-- Six do not: the **pariahs** $J_1,J_3,J_4,O'N,Ru,Ly$.
+The twenty-six sporadic groups, with their names and orders, the Happy Family and the pariahs, are on [[Sporadic Groups]].
 
 ## How the position reads this
 

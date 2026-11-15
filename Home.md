@@ -31,7 +31,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 **Logic** — [[Boolean Algebra]] · [[Three-Valued Logic]]
 
-**Symmetry** — [[Group Theory]] (hub) · [[Groups]] · [[Cyclic Groups]] · [[Groups of Small Order]] · [[Simple Groups]] · [[Monster Group]] · [[Symmetries of the Equilateral Triangle]] · [[Symmetries of the Square]]
+**Symmetry** — [[Group Theory]] (hub) · [[Groups]] · [[Cyclic Groups]] · [[Groups of Small Order]] · [[Simple Groups]] · [[Sporadic Groups]] · [[Monster Group]] · [[Symmetries of the Equilateral Triangle]] · [[Symmetries of the Square]]
 
 **History** — [[Corrective Narrative]] · [[Five Acts]] · [[Babylonian Mathematics]] · [[Greek Mathematics]] · [[Mathematics 500 to 1500]] · [[The Road to Calculus]] · [[Mathematics 1730 to 1900]] · [[Mathematics 1900 to Today]]
 

@@ -58,6 +58,7 @@ updated: 2026-11-13
 | The cyclic groups $C_1$ through $C_8$: tables, generators (units mod $n$), subgroups (one per divisor), $C_6\cong C_2\times C_3$ but $C_4\not\cong C_2\times C_2$, $C_n\subset D_n$ | [[Cyclic Groups]] |
 | The groups of order 1–23 (59 in all): invariants and the squares test, the Sudoku, prime-order, $2p$ and order-15 arguments, the fundamental theorem, semidirect products and automorphisms, $A_4$, $Q_{12}$, $F_{20}$, $F_{21}$, $D_3\times C_2\cong D_6$; orders 9, 12, 16, 18, 20, 21 proved complete by machine | [[Groups of Small Order]] |
 | Group theory has a strand hub; normal subgroups, quotients, simple groups, composition series, $A_4$ against $A_5$, the classification (cited); the Monster group: its order, moonshine, and the size of a finite object that cannot be listed | [[Group Theory]], [[Simple Groups]], [[Monster Group]] |
+| The twenty-six sporadic groups: names, orders (all checked), the Happy Family and the pariahs, Mathieu multiple transitivity worked, subgroup indices, the table-size ladder | [[Sporadic Groups]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
@@ -114,7 +115,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 
 **Symmetry**
 - **medium** [[Monster Group]]: the status of an object that is finite and determinate but cannot be listed or tabulated, and which of its claims (order, simplicity, the moonshine identities, the classification) the vault takes as certified — flagged to Murphy on the page; ties into item 2 (the threshold) and the Finite Certification Theorems. A worked small moonshine (Mathieu $M_{24}$) at feasible scale is the natural example.
-- **small** [[Simple Groups]]: the classification is cited, not proved; a table of the sporadic groups with orders; composition series of more small groups; the maximal subgroups and conjugacy classes of the Monster.
+- **small** [[Simple Groups]] / [[Sporadic Groups]]: the classification is cited, not proved; the groups of Lie type (the families the sporadics are exceptions to) are not documented; a page per sporadic family with its construction; composition series of more small groups; the maximal subgroups and conjugacy classes of the sporadic groups and the Monster.
 - **next** [[Groups of Small Order]]: order $24$ (fifteen groups) when TheGrayCuber's next video is transcribed; the Sylow theorems and Schur–Zassenhaus are cited, not proved.
 - **small** Full Cayley tables for $C_2\times C_4$, $C_2^3$, $Q_8$; the dihedral family $D_n$ in general; normal subgroups and quotients as a general theory; the finite fields' additive groups as elementary abelian groups.
 

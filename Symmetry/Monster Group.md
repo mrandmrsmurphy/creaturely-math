@@ -18,6 +18,7 @@ The **Monster** $\mathbb M$ (the Fischer–Griess Monster, also called the Frien
 $\mathbb M$ is a **simple group**: its only normal subgroups are $\{e\}$ and itself, so it cannot be broken into smaller pieces by ignoring a normal subgroup. By the classification ([[Simple Groups]]) it is one of the $26$ sporadic groups, the ones that belong to no infinite family.
 
 - Its existence was predicted by Fischer and Griess around 1973 (*recalled*), and it was constructed by Griess, as the group of symmetries of a commutative but non-associative algebra of dimension $196884$ (the **Griess algebra**), in 1980, published 1982 (*recalled*).
+- Its **uniqueness** (a simple group with the right local structure is isomorphic to it) was proved by Griess, Meierfrankenfeld and Segev in 1989 (*Annals of Mathematics* 130; the proof is cited by the Encyclopedia of Mathematics as completing the classification's treatment of the Monster). The other twenty-five sporadic groups are on [[Sporadic Groups]].
 - It has $194$ conjugacy classes and therefore $194$ irreducible complex representations (*recalled*).
 - The smallest faithful representation over the complex numbers has dimension **$196883$** (*recalled*). This is the number the moonshine is about.
 
