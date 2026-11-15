@@ -21,4 +21,5 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Where things live](memory/reference-locations.md) — paths, mounts, the vulnerable ~/.claude
 - [[AI] cleanup project](memory/project-ai-cleanup.md) — scope decisions, tier order, per-page progress
 - [Git and GitHub](memory/reference-git-github.md) — public repo creaturely-math; git dir outside Drive; Obsidian auto-pushes
+- [Group theory project](memory/project-small-groups.md) — hub, small groups 1–23 (TheGrayCuber series), simple groups, Monster; flagged questions for Murphy
 - Session handoffs: `AIOS/sessions/` (latest: `2026-11-07 Sources retired, statistics, admissibility.md`)

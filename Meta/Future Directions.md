@@ -55,6 +55,9 @@ updated: 2026-11-13
 | `Sources/` retired: every source audited and absorbed; the Quadriga manuscripts live on as canonical pages; the folder deleted | [[Quadriga Scientiae (Protestant)]], [[Quadriga Scientiae (Catholic)]], [[Quadriga Scientiae (wiki elaborations)]] |
 | Geometry: a branching structure, not a ladder; perpendicularity does not select the geometry (parallel behavior does); Archimedean retained local-constructive, completeness rejected (replacements: constructive extension, locatedness, resolution); congruence geometry is the freshman center; the segment calculus is the bridge project to arithmetic | [[Geometry Hierarchy]] (item 8) |
 | The metallic means $\sigma_n$ ($x^2=nx+1$): exact pairs, the $n$-Fibonacci powers, odd powers metallic, the convergent bracket certificate (Pell for silver), the rectangle, $\sigma_n=m+\ell$ as a slope | [[Metallic Means]] |
+| The cyclic groups $C_1$ through $C_8$: tables, generators (units mod $n$), subgroups (one per divisor), $C_6\cong C_2\times C_3$ but $C_4\not\cong C_2\times C_2$, $C_n\subset D_n$ | [[Cyclic Groups]] |
+| The groups of order 1–23 (59 in all): invariants and the squares test, the Sudoku, prime-order, $2p$ and order-15 arguments, the fundamental theorem, semidirect products and automorphisms, $A_4$, $Q_{12}$, $F_{20}$, $F_{21}$, $D_3\times C_2\cong D_6$; orders 9, 12, 16, 18, 20, 21 proved complete by machine | [[Groups of Small Order]] |
+| Group theory has a strand hub; normal subgroups, quotients, simple groups, composition series, $A_4$ against $A_5$, the classification (cited); the Monster group: its order, moonshine, and the size of a finite object that cannot be listed | [[Group Theory]], [[Simple Groups]], [[Monster Group]] |
 
 ### A. Murphy decides (nothing below can be settled without him)
 
@@ -108,6 +111,12 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **next** [[Constructible Statistics]]: the constitution and the six branches are set (Murphy); his order — branches I–III (descriptive, quadrance, combinatorial probability) made completely rigorous first, then inference, with the Pascal distributions as the bridge to modeling. Then: the minimal theorems with proofs; the descriptive vocabulary defined in one place (weighted mean, mode, range, quartiles and interquartile range are absent; frequency, relative frequency and the median are only implicit); the Gaussian as a named approximation of the Pascal distributions with explicit error; intervals for measured data.
 - **medium** [[Probability]]: conditional probability and independence on huge spaces; a density as an approximation to a finite table, with error. [[Statistics]]: continuous distributions; "as $n\to\infty$" replaced by finite bounds.
 - **background** Randomness (deferred on both pages).
+
+**Symmetry**
+- **medium** [[Monster Group]]: the status of an object that is finite and determinate but cannot be listed or tabulated, and which of its claims (order, simplicity, the moonshine identities, the classification) the vault takes as certified — flagged to Murphy on the page; ties into item 2 (the threshold) and the Finite Certification Theorems. A worked small moonshine (Mathieu $M_{24}$) at feasible scale is the natural example.
+- **small** [[Simple Groups]]: the classification is cited, not proved; a table of the sporadic groups with orders; composition series of more small groups; the maximal subgroups and conjugacy classes of the Monster.
+- **next** [[Groups of Small Order]]: order $24$ (fifteen groups) when TheGrayCuber's next video is transcribed; the Sylow theorems and Schur–Zassenhaus are cited, not proved.
+- **small** Full Cayley tables for $C_2\times C_4$, $C_2^3$, $Q_8$; the dihedral family $D_n$ in general; normal subgroups and quotients as a general theory; the finite fields' additive groups as elementary abelian groups.
 
 **Pedagogy** — all future pedagogical work, none taught as a year yet
 - Proof types by grade; a classroom set per Exercise; rubrics; a curriculum placement chart; a unit template; teacher-equipping sequence: the list is on [[Quadriga for Mathematics]] ("Future pedagogical work"). Open questions on [[Historical Order]], [[Quaestio]], [[Praxis]], [[Noesis]].

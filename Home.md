@@ -31,7 +31,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 **Logic** — [[Boolean Algebra]] · [[Three-Valued Logic]]
 
-**Symmetry** — [[Groups]] · [[Symmetries of the Equilateral Triangle]] · [[Symmetries of the Square]]
+**Symmetry** — [[Group Theory]] (hub) · [[Groups]] · [[Cyclic Groups]] · [[Groups of Small Order]] · [[Simple Groups]] · [[Monster Group]] · [[Symmetries of the Equilateral Triangle]] · [[Symmetries of the Square]]
 
 **History** — [[Corrective Narrative]] · [[Five Acts]] · [[Babylonian Mathematics]] · [[Greek Mathematics]] · [[Mathematics 500 to 1500]] · [[The Road to Calculus]] · [[Mathematics 1730 to 1900]] · [[Mathematics 1900 to Today]]
 
@@ -47,7 +47,7 @@ This vault gathers what is written about that position, removes the redundancy, 
 | Number hierarchy | Complete as a table, with the names (Numbers, Lengths, Pixels); a certificate is defined as a procedure ([[Certificates]]) |
 | Constructible trigonometry | **Original results; 15 triangle cases plus ISS, QCS and the area, inradius and circumradius cases documented; exact slopes, nested radicals, protractor, identities** |
 | Discrete calculus | **Consolidated; bridge thesis, step-size dial, one rule for line and circle; Part II thin** |
-| Finite objects | Prime fields GF(3), GF(5), GF(7), GF(11); groups; symmetries of the triangle and the square |
+| Finite objects | Prime fields GF(3), GF(5), GF(7), GF(11); group theory ([[Group Theory]]): all 59 groups of order 1–23, simple groups, the Monster; symmetries of the triangle and the square |
 | Calculus under the position | **First-order calculus written** ([[Calculus]]); the fundamental, intermediate value, extreme value, mean value and Bolzano–Weierstrass theorems each worked through, with approximate forms and costs; exp, log, trig, higher order open; applied analysis begun ([[Fourier Analysis]]) |
 | Theorems under the position | **Arithmetic and number theory adopted whole** (fundamental theorem of arithmetic, Chinese remainder, Fermat, Euler, Wilson); fundamental theorem of algebra and the completeness theorems rejected as stated, with budget forms; Cantor's diagonal read as a procedural negative |
 | Quadriga (pedagogy) | **Documented from Murphy's manuscripts**: the four arts, the Twelve Exercises, the Latin pairs, the twelve edges, the four kinds of truth, with mathematical illustrations; tied to the position in [[Quadriga and the Position]]; proof types by grade, rubrics and units are future pedagogical work |
