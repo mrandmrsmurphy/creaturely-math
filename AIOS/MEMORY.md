@@ -5,7 +5,7 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 **To-do list: the Agenda in `Meta/Future Directions.md`.** "What needs doing / what is open / where are we?" is answered from the Agenda, not rebuilt from the pages. Keep it current with every change.
 
 - [Who Murphy is](memory/user-murphy.md) — role, working style, what he values
-- [Record his positions faithfully](memory/feedback-faithful-recording.md) — corrections he has made; do not smooth or overclaim
+- [Record his positions faithfully](memory/feedback-faithful-recording.md) — use Murphy’s Christian foundations and finite warrants; record his positions in his terms
 - [Sources citations are an AI artifact](memory/feedback-sources-citations.md) — saying he wrote it is enough; no file in Sources/ required
 - [Sources/ is retired and deleted](memory/feedback-sources-as-weights.md) — drafts were weights, not authorities; each absorbed before deletion; prose attribution suffices
 - [Vault scope](memory/feedback-vault-scope.md) — not a science vault; tie new material to the position
@@ -23,4 +23,5 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [[AI] cleanup project](memory/project-ai-cleanup.md) — scope decisions, tier order, per-page progress
 - [Git and GitHub](memory/reference-git-github.md) — public repo creaturely-math; git dir outside Drive; Obsidian auto-pushes
 - [Group theory project](memory/project-small-groups.md) — hub, small groups 1–23 (TheGrayCuber series), simple groups, Monster; flagged questions for Murphy
+- [Historical dates use BC and AD](memory/feedback-bc-ad.md) — Murphy’s standing rule for writing and discussion
 - Session handoffs: `AIOS/sessions/` (latest: `2026-11-14 Group theory, small groups, Monster.md`)

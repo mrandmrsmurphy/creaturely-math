@@ -9,19 +9,19 @@ updated: 2026-10-10
 
 # Greek Mathematics
 
-The third stage of [[Historical Order]], after [[Tally Marks]] and [[Babylonian Mathematics]]. **Dates: about 600 BCE to 500 CE**, from Thales to Boethius; the next stage is [[Mathematics 500 to 1500]]. All historical attributions and dates here are from recollection and **to be checked**.
+The third stage of [[Historical Order]], after [[Tally Marks]] and [[Babylonian Mathematics]]. **Dates: about 600 BC to AD 500**, from Thales to Boethius; the next stage is [[Mathematics 500 to 1500]]. All historical attributions and dates here are from recollection and **to be checked**.
 
-## Dates (about 600 BCE to 500 CE; all approximate)
+## Dates (about 600 BC to AD 500; all approximate)
 
 | Period | People and works |
 |---|---|
-| **c. 600–400 BCE** | Thales (c. 624–546); Pythagoras (c. 570–495) and the brotherhood; Parmenides and Zeno (c. 490–430); Hippocrates of Chios, lunes (c. 430); Philolaus |
-| **c. 400–300 BCE** | Plato (c. 428–348; Academy c. 387); Theaetetus; **Eudoxus** (c. 408–355; proportion, exhaustion); Aristotle (384–322; potential infinity); **Euclid** (c. 300; *Elements*) |
-| **c. 300–150 BCE** | **Archimedes** (c. 287–212; *Method*, *Sand Reckoner*); Eratosthenes (c. 276–194; sieve, the earth's size); **Apollonius** (c. 262–190; *Conics*); Hipparchus (c. 190–120; trigonometry, Babylonian records) |
-| **c. 50 BCE–200 CE** | Heron of Alexandria (c. 10–70 CE; practical geometry, root method); Nicomachus (c. 100 CE; *Introduction to Arithmetic*); Theon of Smyrna; Ptolemy (c. 100–170; *Almagest*) |
-| **c. 200–500 CE** | Diophantus (dated c. 200–290; *Arithmetica*); Pappus (c. 320; *Collection*); Theon of Alexandria and Hypatia (c. 355–415); Proclus (412–485; commentary on Euclid I); Eutocius (c. 500; commentaries on Archimedes) |
+| **c. 600–400 BC** | Thales (c. 624–546); Pythagoras (c. 570–495) and the brotherhood; Parmenides and Zeno (c. 490–430); Hippocrates of Chios, lunes (c. 430); Philolaus |
+| **c. 400–300 BC** | Plato (c. 428–348; Academy c. 387); Theaetetus; **Eudoxus** (c. 408–355; proportion, exhaustion); Aristotle (384–322; potential infinity); **Euclid** (c. 300; *Elements*) |
+| **c. 300–150 BC** | **Archimedes** (c. 287–212; *Method*, *Sand Reckoner*); Eratosthenes (c. 276–194; sieve, the earth's size); **Apollonius** (c. 262–190; *Conics*); Hipparchus (c. 190–120; trigonometry, Babylonian records) |
+| **c. 50 BC–AD 200** | Heron of Alexandria (c. AD 10–70; practical geometry, root method); Nicomachus (c. AD 100; *Introduction to Arithmetic*); Theon of Smyrna; Ptolemy (c. 100–170; *Almagest*) |
+| **c. AD 200–500** | Diophantus (dated c. 200–290; *Arithmetica*); Pappus (c. 320; *Collection*); Theon of Alexandria and Hypatia (c. 355–415); Proclus (412–485; commentary on Euclid I); Eutocius (c. 500; commentaries on Archimedes) |
 
-Boethius (c. 480–524) stands at the boundary and begins the next stage. The Hellenistic centre was Alexandria from about 300 BCE, not Athens, and the Greek mathematical world after about 150 BCE overlapped Babylonian astronomy and the Roman state.
+Boethius (c. 480–524) stands at the boundary and begins the next stage. The Hellenistic centre was Alexandria from about 300 BC, not Athens, and the Greek mathematical world after about 150 BC overlapped Babylonian astronomy and the Roman state.
 
 ## The spine
 

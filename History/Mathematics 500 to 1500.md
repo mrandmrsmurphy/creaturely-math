@@ -9,7 +9,7 @@ updated: 2026-10-10
 
 # Mathematics 500 to 1500
 
-The fourth stage of [[Historical Order]], after [[Greek Mathematics]] (about 600 BCE to 500 CE). Murphy's frame is deliberately a **grab-bag**: from **Boethius** (c. 480–524) to **1500**, with Chinese, Indian, Persian, Arabic, Roman and early European mathematicians perpetuating and advancing the earlier ideas. There is no single centre; the work moved between civilizations and across languages. All dates and attributions are approximate recollections **to be checked**.
+The fourth stage of [[Historical Order]], after [[Greek Mathematics]] (about 600 BC to AD 500). Murphy's frame is deliberately a **grab-bag**: from **Boethius** (c. 480–524) to **1500**, with Chinese, Indian, Persian, Arabic, Roman and early European mathematicians perpetuating and advancing the earlier ideas. There is no single centre; the work moved between civilizations and across languages. All dates and attributions are approximate recollections **to be checked**.
 
 ## The one seismic shift: algebra slowly replaces geometry (Murphy)
 
@@ -41,7 +41,7 @@ The nested radicals **denest exactly**: $10+\sqrt{108}=10+6\sqrt3=(1+\sqrt3)^3$ 
 The most consequential change of the period for ordinary people is **written place-value notation with a zero**, not any theorem.
 
 - **Before:** place value existed in **Babylon** (base 60, with a gap and later a placeholder; [[Sexagesimal]]) and in the **Chinese counting rods**, a decimal positional system with an empty place for zero, used on the counting board. *But* the **written** Chinese numerals (for example 三百二十一, "three hundred two ten one") stayed *multiplicative-additive*, not positional; a written circle for zero appears only late (about the 13th century; possibly influenced by India; to check). Murphy's point: **the Chinese never adopted the Hindu-Arabic written place-value numerals** in their own tradition; that adoption came only in recent centuries. The refinement is that they *computed* positionally on the rods.
-- **India:** a decimal place-value numeral with a **zero as a number** (Brahmagupta, 628: rules for adding, subtracting and multiplying with zero), with earlier uses of a dot or circle as placeholder (the Bakhshali manuscript, dated by recent work to roughly the 3rd to 4th century CE; the dating is disputed; to check).
+- **India:** a decimal place-value numeral with a **zero as a number** (Brahmagupta, 628: rules for adding, subtracting and multiplying with zero), with earlier uses of a dot or circle as placeholder (the Bakhshali manuscript, dated by recent work to roughly the 3rd to 4th century AD; the dating is disputed; to check).
 - **The Arabic-language world:** al-Khwarizmi's book on the Hindu numerals (c. 825) carried the system west; its Latin translation gave us *algorithm* (his name). The Arabic *sifr* ("empty") became *cipher* and *zero*.
 - **Europe:** Gerbert's abacus (c. 1000), then **Fibonacci's *Liber abaci*** (1202) taught the nine Indian figures and the sign $0$ to merchants. The **abacists** (calculating on a counting board with counters) and the **algorists** (writing figures) competed for generations; city rules restricted the new numerals in bankers' accounts (Florence, 1299; recollection, to check), partly from fear that $0$ could be altered into $6$ or $9$. The standard Roman numerals lingered in accounts and inscriptions.
 - **Decimal fractions** came last: al-Kashi (c. 1424), then Stevin's *De Thiende* (1585), in the next stage ([[The Road to Calculus]]).
@@ -52,7 +52,7 @@ The most consequential change of the period for ordinary people is **written pla
 
 ### Rome and the Latin West
 
-- **Rome.** Roman mathematics was practical: surveying (the *agrimensores* and the *groma*), engineering and architecture (Vitruvius, Frontinus on aqueducts), the calendar (the Julian reform of 46 BCE, planned by the Alexandrian Sosigenes), law and accounting. Fractions were reckoned in **twelfths** (the *as* divided into twelve *unciae*, whence *ounce* and *inch*), a base with six divisors, as the Babylonians chose a base with twelve ([[Sexagesimal]]). Roman numerals are poor for calculation; the abacus did the work.
+- **Rome.** Roman mathematics was practical: surveying (the *agrimensores* and the *groma*), engineering and architecture (Vitruvius, Frontinus on aqueducts), the calendar (the Julian reform of 46 BC, planned by the Alexandrian Sosigenes), law and accounting. Fractions were reckoned in **twelfths** (the *as* divided into twelve *unciae*, whence *ounce* and *inch*), a base with six divisors, as the Babylonians chose a base with twelve ([[Sexagesimal]]). Roman numerals are poor for calculation; the abacus did the work.
 - **Cicero's remark** (*Tusculan Disputations* I; recollection, to check) is the classic statement of the Roman attitude: among the Greeks nothing was more honoured than geometry, whereas *we* have limited the art to the usefulness of measuring and calculating.
 - **Boethius** (c. 480–524), *De institutione arithmetica* and *De musica*, passed Nicomachus's number tradition to the Latin world and gave the name **quadrivium** (arithmetic, geometry, music, astronomy). Cassiodorus and Isidore of Seville (c. 560, c. 600) transmitted the encyclopaedic tradition.
 - **Bede** (c. 673–735), *De temporum ratione*: the reckoning of **Easter** (the *computus*), with a chapter on counting on the fingers. See below.
@@ -72,7 +72,7 @@ The most consequential change of the period for ordinary people is **written pla
 
 ### China
 
-- **The Nine Chapters on the Mathematical Art** (*Jiuzhang suanshu*, compiled c. 100 BCE–100 CE): a manual for officials (fields, grain, taxes, canals, wages) with an algorithm for **digit-by-digit root extraction**, which gives the vault's Level 7 ([[Number Hierarchy]], the "Jiǔ Zhāng" numbers). Counting **rods** gave a decimal place-value system on the counting board early (the written numerals stayed non-positional; see above).
+- **The Nine Chapters on the Mathematical Art** (*Jiuzhang suanshu*, compiled c. 100 BC–AD 100): a manual for officials (fields, grain, taxes, canals, wages) with an algorithm for **digit-by-digit root extraction**, which gives the vault's Level 7 ([[Number Hierarchy]], the "Jiǔ Zhāng" numbers). Counting **rods** gave a decimal place-value system on the counting board early (the written numerals stayed non-positional; see above).
 - **Liu Hui** (3rd century), a commentary; π from a polygon doubled to 192 sides (about 3.1416); **Zu Chongzhi** (429–500), $\tfrac{355}{113}$, correct to $2.7\times10^{-7}$ (checked: $3.1415929$).
 - **Sunzi Suanjing** (c. 3rd–5th century): the remainder problem of [[Chinese Remainder Theorem]]; **Qin Jiushao** (1247), a general method for simultaneous congruences and a Horner-type method for polynomial roots; **Yang Hui** (1261) and **Zhu Shijie** (1303, the *Precious Mirror of the Four Elements*) on the arithmetic triangle and equations in several unknowns.
 

@@ -36,7 +36,7 @@ In the usual course, arithmetic is followed in middle school by **symbolic algeb
 | Calculus | Archimedes' exhaustion; Newton and Leibniz, 17th century; **finite differences** (Newton, 1687 and 1711; Taylor 1715) | |
 | Limits ($\varepsilon$–$\delta$) | Cauchy 1821; Weierstrass, mid 19th century | |
 
-**The history, stage by stage:** [[Tally Marks]] (prehistory); [[Babylonian Mathematics]] (c. 2000 BCE and after); [[Greek Mathematics]] (c. 600 BCE to c. 500 CE); [[Mathematics 500 to 1500]] (Latin, Indian, Chinese, Persian and Arabic, and early European, with algebra slowly replacing geometry); [[The Road to Calculus]] (c. 1500 to c. 1730); [[Mathematics 1730 to 1900]] (rigour, the reals, Cantor, the multiple geometries); [[Mathematics 1900 to Today]] (the foundations debate, Gödel, the New Math, proof assistants and AI).
+**The history, stage by stage:** [[Tally Marks]] (prehistory); [[Babylonian Mathematics]] (c. 2000 BC and after); [[Greek Mathematics]] (c. 600 BC to c. AD 500); [[Mathematics 500 to 1500]] (Latin, Indian, Chinese, Persian and Arabic, and early European, with algebra slowly replacing geometry); [[The Road to Calculus]] (c. 1500 to c. 1730); [[Mathematics 1730 to 1900]] (rigour, the reals, Cantor, the multiple geometries); [[Mathematics 1900 to Today]] (the foundations debate, Gödel, the New Math, proof assistants and AI).
 
 So the sequence from the arithmetic years is: **geometry, proportion and number theory, then rhetorical algebra, then syncopated, then symbolic (about 1600), then calculus (infinitesimals and differences), then limits (19th century).** The standard course is closer to: arithmetic, symbolic algebra, geometry, trigonometry, then calculus *opening with limits*, the newest layer first.
 

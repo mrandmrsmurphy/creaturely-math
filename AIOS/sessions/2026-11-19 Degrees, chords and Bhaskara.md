@@ -12,3 +12,11 @@ Murphy supplied a trial degree-input tangent formula. Checked its initial slope,
 A possible exponent slip is x³ for x². The squared variant gives tangent 1 exactly at 45 degrees and the correct sign and approximate leading coefficient at the positive pole. Presented as a conjecture about the intended expression.
 
 Murphy confirmed the squared numerator and supplied a higher-degree tangent rule. Compared the two rules numerically and checked the new pole coefficient with exact rational arithmetic. No canonical edit requested in this turn.
+
+Murphy supplied a tangent variant with an extra quadratic denominator factor. Checked its positivity on the first quadrant, its asymptotic coefficient, and sampled relative error. No canonical edit requested.
+
+Wrote both slope approximations on the canonical degrees page at Murphy’s request. Verified whole-quadrant relative-error bounds by rational Bernstein subdivision after factoring out the endpoint zeros. Updated the Agenda and log.
+
+Murphy set BC and AD as the standing date convention. Recorded it in AGENTS.md and AIOS memory and standardized historical era labels in the vault.
+
+Murphy asked for standing guidance against importing classical real-analysis assumptions or sidelining the vault’s Christian premises. Added the operational rule in AGENTS.md and updated the faithful-recording memory and its index.

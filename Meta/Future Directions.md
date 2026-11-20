@@ -40,7 +40,7 @@ updated: 2026-11-13
 | An answer is read by parts, each labelled with its level and certificate (no new name needed for Si, Li, arctan) | [[Function Hierarchy#Reading an answer by parts]] |
 | Sine and cosine are levels 10–11; the vault's replacement is a discrete rational orbit (exact, levels 1–4, no angle) | [[Rational Rotation]] |
 | Quadriga documented | [[Quadriga for Mathematics]] |
-| Degree notation, its sexagesimal history, and the choice among Bhāskara, Murphy, and six Taylor terms by certified Pixel width and computation cost | [[Degrees, Minutes, and Seconds]] |
+| Degree notation, its sexagesimal history, certified sine comparisons, and Murphy’s naive and exacting slope approximations from degrees | [[Degrees, Minutes, and Seconds]] |
 | Names for the tick functions: $\operatorname{dsin}_N$, $\operatorname{dcos}_N$ | [[Rational Rotation]] |
 | The front door: the whole position in one reading, with what is not being claimed; README and Home point to it | [[What this project is]] (Legibility lines 1–2, adopted by Murphy 2026-11-04) |
 | The zeta continuation is the *one* extension that stays differentiable (in the complex sense) on the connected plane, apart from the pole at $s=1$; uniqueness is the claim | [[Function Hierarchy]] (level 14) |
