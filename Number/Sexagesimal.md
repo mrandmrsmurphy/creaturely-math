@@ -15,6 +15,8 @@ The Babylonian number system: a **positional system in base 60**. It descends fr
 
 *Note:* The historical statements below are standard but have not been checked against sources here. The tables were computed and verified exactly.
 
+For the angular convention and certified height calculations, see [[Degrees, Minutes, and Seconds]].
+
 ## Writing numbers
 
 **Digits.** Each place holds a number from $0$ to $59$, written in cuneiform by two wedge signs used additively: a vertical wedge for $1$ (repeated up to nine times) and a corner wedge for $10$ (repeated up to five times). So $47$ is four corner wedges and seven vertical wedges.

@@ -11,6 +11,7 @@ Read this at the start of each session. Protocol: `AIOS/README.md`. Files are in
 - [Vault scope](memory/feedback-vault-scope.md) — not a science vault; tie new material to the position
 - [Label unmade pedagogy as future work](memory/feedback-future-work-labels.md) — plans are not curricula
 - [Quadriga project](memory/project-quadriga.md) — source, status, flagged items
+- [Why the Quadriga supersedes the Quadrivium](memory/project-quadriga-supersession.md) — Murphy’s disagreement with Phillip Johnson, the role of praxis and measurement, and the intended audience
 - [Vault state and pending decisions](memory/project-vault-state.md) — what is open for Murphy to decide
 - [Numbers, Lengths, Pixels](memory/project-numbers-lengths-pixels.md) — Murphy's answer to Future Directions #1, now in the vault; sort final (Posits 12-14, level 8 a Pixel); pixel doctrine to develop
 - [Function hierarchy](memory/project-function-hierarchy.md) — number levels applied to functions; rated on exact inputs; two axes

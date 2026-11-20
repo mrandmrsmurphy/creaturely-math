@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arithmetic Drill Practice Generator</title>
+<style>
+  * { box-sizing: border-box; }
+  :root { font-family: Arial, Helvetica, sans-serif; color: #17212b; background: #edf1f5; }
+  body { margin: 0; }
+  .settings { max-width: 1050px; margin: 18px auto; background: white; border: 1px solid #d5dde5; border-radius: 10px; padding: 18px 22px; }
+  h1 { font-size: 23px; margin: 0 0 8px; }
+  .settings p { margin: 0 0 12px; font-size: 14px; color: #536273; }
+  .controls { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 25px; }
+  fieldset { border: 0; margin: 0; padding: 0; display: flex; gap: 10px 18px; flex-wrap: wrap; }
+  legend { font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+  label { cursor: pointer; font-size: 14px; }
+  input[type=checkbox] { width: 17px; height: 17px; vertical-align: -3px; margin-right: 5px; }
+  select { font: inherit; border: 1px solid #9eacbd; padding: 7px; border-radius: 5px; }
+  button { cursor: pointer; border: 0; border-radius: 6px; padding: 11px 17px; font: bold 14px Arial,sans-serif; background: #155c96; color: white; }
+  button.alt { background: #e4edf6; color: #174469; }
+  button:hover { filter: brightness(.95); }
+  .notice { color: #a01818; min-height: 18px; font-size: 13px; margin-top: 8px; }
+  .help { max-width: 1050px; margin: -5px auto 13px; padding: 0 10px; font-size: 13px; color: #526273; }
+  .paper { width: 8.5in; height: 11in; margin: 0 auto 18px; background: white; padding: .42in .4in .38in; box-shadow: 0 4px 18px #14283b25; display: flex; flex-direction: column; overflow: hidden; }
+  .paper-header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 2px solid #17212b; padding-bottom: 8px; }
+  .paper-header h2 { margin: 0; font-size: 20px; }
+  .paper-header .meta { font-size: 11px; color: #4b5662; }
+  .name-line { margin: 17px 0 13px; display: flex; justify-content: space-between; font-size: 13px; }
+  .blank { display: inline-block; border-bottom: 1px solid #666; width: 2.6in; height: 16px; vertical-align: bottom; }
+  .blank.short { width: 1.15in; }
+  .worksheet-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: repeat(10, minmax(0, 1fr)); flex: 1; min-height: 0; border-left: 1px solid #d3d9df; border-top: 1px solid #d3d9df; }
+  .cell { position: relative; min-width: 0; min-height: 0; border-right: 1px solid #d3d9df; border-bottom: 1px solid #d3d9df; display: flex; justify-content: center; align-items: center; }
+  .arithmetic { font-family: Georgia, 'Times New Roman', serif; width: 55px; max-width: 96%; font-size: 17px; font-variant-numeric: tabular-nums; }
+  .operand { text-align: right; padding-right: 2px; height: 20px; line-height: 20px; }
+  .bottom { display: flex; align-items: baseline; border-bottom: 1.5px solid black; height: 22px; line-height: 21px; }
+  .sign { width: 16px; text-align: left; }
+  .number { flex: 1; text-align: right; padding-right: 2px; }
+  .answer { height: 22px; text-align: right; padding-right: 2px; font-weight: bold; line-height: 22px; }
+  .power { text-align: right; padding-right: 5px; height: 29px; line-height: 24px; border-bottom: 1.5px solid black; }
+  .power sup { font-size: 11px; }
+  .sheet-footer { display: flex; justify-content: space-between; margin-top: 9px; font-size: 10px; color: #5b6470; }
+  @page { size: letter portrait; margin: 0; }
+  @media print {
+    html,body { background: white !important; margin: 0 !important; padding: 0 !important; width: 8.5in; }
+    .settings,.help { display: none !important; }
+    .paper { width: 8.5in !important; height: 11in !important; margin: 0 !important; box-shadow: none !important; padding: .42in .4in .38in !important; break-inside: avoid; page-break-inside: avoid; }
+    .paper:first-child { break-after: page; page-break-after: always; }
+    .paper:last-child { break-after: auto; page-break-after: auto; }
+  }
+  @media screen and (max-width: 830px) { .settings { margin: 10px; } .help { margin: 0 10px 12px; } .paper-wrap { overflow-x: auto; } .paper { margin-left: auto; margin-right: auto; } }
+</style>
+</head>
+<body>
+<div class="settings">
+  <h1>Arithmetic Drill Practice Generator</h1>
+  <p>Random 10 × 10 worksheet with a matching answer key on the next portrait page. Runs completely offline.</p>
+  <form id="settings-form">
+    <div class="controls">
+      <fieldset>
+        <legend>Choose operations (one or more)</legend>
+        <label><input type="checkbox" name="operation" value="add" checked>Addition</label>
+        <label><input type="checkbox" name="operation" value="sub" checked>Subtraction</label>
+        <label><input type="checkbox" name="operation" value="mul" checked>Multiplication</label>
+        <label><input type="checkbox" name="operation" value="div" checked>Division</label>
+        <label><input type="checkbox" name="operation" value="square">Squares</label>
+        <label><input type="checkbox" name="operation" value="cube">Cubes</label>
+      </fieldset>
+      <label>Maximum value <select id="cap"><option value="100">100</option><option value="144">144</option><option value="225">225</option></select></label>
+      <button type="submit">Go — Generate</button>
+      <button type="button" id="print" class="alt">Print / Save PDF</button>
+    </div>
+    <div id="notice" class="notice" role="alert"></div>
+  </form>
+</div>
+<div class="help">Cap limits operands and answers for basic arithmetic and squares; cubes use bases 0–10. Problems favor nontrivial numbers; most additions require carrying and most subtractions require borrowing. Division is exact, and subtraction is nonnegative.</div>
+<main class="paper-wrap">
+  <section class="paper" aria-label="Arithmetic worksheet">
+    <header class="paper-header"><h2>Arithmetic Drill</h2><span id="worksheet-meta" class="meta"></span></header>
+    <div class="name-line"><div>Name: <span class="blank"></span></div><div>Date: <span class="blank short"></span></div></div>
+    <div id="problems" class="worksheet-grid"></div>
+    <footer class="sheet-footer"><span>100 problems</span><span id="worksheet-id"></span></footer>
+  </section>
+  <section class="paper" aria-label="Answer key">
+    <header class="paper-header"><h2>Answer Key</h2><span id="key-meta" class="meta"></span></header>
+    <div class="name-line"><div>Worksheet: <span id="key-id"></span></div><div>Score: <span class="blank short"></span></div></div>
+    <div id="solutions" class="worksheet-grid"></div>
+    <footer class="sheet-footer"><span>Corresponding answers in the same positions</span><span>100 problems</span></footer>
+  </section>
+</main>
+<script>
+(function () {
+  'use strict';
+  const byId = (id) => document.getElementById(id);
+  const rand = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+  const shuffle = (items) => {
+    for (let i=items.length-1; i>0; i--) { const j=rand(0,i); [items[i],items[j]]=[items[j],items[i]]; }
+    return items;
+  };
+  const element = (tag, cls, text) => {
+    const e = document.createElement(tag);
+    if (cls) e.className=cls;
+    if (text !== undefined) e.textContent=String(text);
+    return e;
+  };
+  // Generate genuinely variable facts while deliberately avoiding a flood of 0s and 1s.
+  // Carrying and borrowing are favored (not required) for pedagogical usefulness.
+  const carrying = (a,b) => (a % 10) + (b % 10) >= 10 ||
+    (Math.floor(a / 10) % 10) + (Math.floor(b / 10) % 10) >= 10;
+  const borrowing = (a,b) => (a % 10) < (b % 10) ||
+    (Math.floor(a / 10) % 10) < (Math.floor(b / 10) % 10);
+  function choosePair(make, condition, prefer = .8) {
+    const want = Math.random() < prefer;
+    for (let attempt=0; attempt<300; attempt++) {
+      const pair=make();
+      if (!condition || condition(pair[0],pair[1]) === want) return pair;
+    }
+    // Safely fall back if a requested difficulty bucket is unavailable.
+    return make();
+  }
+  function problemFor(mode, cap) {
+    let a,b,value;
+    switch (mode) {
+      case 'add': {
+        [a,b]=choosePair(() => {
+          const x=rand(2,cap-2);
+          return [x,rand(2,cap-x)];
+        },carrying,.8);
+        value=a+b;
+        break;
+      }
+      case 'sub': {
+        [a,b]=choosePair(() => {
+          const x=rand(12,cap);
+          return [x,rand(2,x-2)];
+        },borrowing,.8);
+        value=a-b;
+        break;
+      }
+      case 'mul': {
+        // Both factors >= 2. Sample one factor from a manageable range,
+        // then choose the other under the selected cap.
+        a=rand(2,Math.floor(cap/2));
+        b=rand(2,Math.floor(cap/a));
+        value=a*b;
+        break;
+      }
+      case 'div': {
+        // Work backwards from factors to guarantee integral answers.
+        b=rand(2,Math.floor(cap/2));
+        value=rand(2,Math.floor(cap/b));
+        a=b*value;
+        break;
+      }
+      case 'square': {
+        // 0 and 1 remain possible, but far less frequent.
+        a=Math.random()<.06 ? rand(0,1) : rand(2,Math.floor(Math.sqrt(cap)));
+        value=a*a;
+        break;
+      }
+      case 'cube': {
+        a=Math.random()<.06 ? rand(0,1) : rand(2,10);
+        value=a*a*a;
+        break;
+      }
+      default: throw Error('Unknown operation');
+    }
+    return {mode,a,b,value};
+  }
+  function renderCell(p,showAnswer) {
+    const cell=element('div','cell');
+    const box=element('div','arithmetic');
+    if (p.mode === 'square' || p.mode === 'cube') {
+      const power=element('div','power');
+      power.append(document.createTextNode(String(p.a)), element('sup','',p.mode==='square'?'2':'3'));
+      box.append(power);
+    } else {
+      // Every binary operation shares exactly the same stacked layout.
+      // For division, the top operand is the dividend and the lower
+      // operand is the divisor, with ÷ at the left.
+      box.append(element('div','operand',p.a));
+      const bottom=element('div','bottom');
+      const symbols={add:'+',sub:'−',mul:'×',div:'÷'};
+      bottom.append(element('span','sign',symbols[p.mode]),element('span','number',p.b));
+      box.append(bottom);
+    }
+    box.append(element('div','answer',showAnswer?p.value:''));
+    cell.append(box);
+    return cell;
+  }
+  function generate() {
+    const selected=Array.from(document.querySelectorAll('input[name="operation"]:checked'), e=>e.value);
+    if (!selected.length) { byId('notice').textContent='Select at least one operation.'; return; }
+    byId('notice').textContent='';
+    const cap=Number(byId('cap').value);
+    // As evenly distributed as possible across selected operations, then randomized.
+    const plan=shuffle(Array.from({length:100},(_,i)=>selected[i%selected.length]));
+    const problems=plan.map(mode=>problemFor(mode,cap));
+    const qs=document.createDocumentFragment(), answers=document.createDocumentFragment();
+    for (const p of problems) { qs.append(renderCell(p,false)); answers.append(renderCell(p,true)); }
+    byId('problems').replaceChildren(qs);
+    byId('solutions').replaceChildren(answers);
+    const reference=String(Date.now()).slice(-7);
+    const desc='Cap '+cap+' · '+selected.length+' operation'+(selected.length===1?'':'s');
+    byId('worksheet-meta').textContent=desc;
+    byId('key-meta').textContent=desc;
+    byId('worksheet-id').textContent='ID '+reference;
+    byId('key-id').textContent=reference;
+  }
+  byId('settings-form').addEventListener('submit', (event)=>{event.preventDefault();generate();});
+  byId('print').addEventListener('click', ()=>window.print());
+  generate();
+})();
+</script>
+</body>
+</html>

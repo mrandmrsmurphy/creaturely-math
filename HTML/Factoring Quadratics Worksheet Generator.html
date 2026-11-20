@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Factoring Quadratics Worksheet Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e4e8ee; --panel:#f8fafc; --text:#1c2431; --muted:#5d6878; --line:#cdd4de;
+  --accent:#1f4fa3; --accent-ink:#ffffff; --focus:#1f4fa3; --hover:#eef2f8;
+  --paper:#ffffff; --ink:#000000; --ink-soft:#4a4a4a; --rule:#9a9a9a; --shadow:0 1px 2px rgba(20,30,50,.12), 0 8px 24px rgba(20,30,50,.10);
+  --ui:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif:"STIX Two Text", "STIX Two", "Cambria Math", Cambria, Georgia, "Times New Roman", serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151a22; --panel:#1d2430; --text:#e6ebf2; --muted:#9aa6b6; --line:#323c4b;
+    --accent:#7fa6ec; --accent-ink:#0f1520; --focus:#9dbcf3; --hover:#252e3c;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151a22; --panel:#1d2430; --text:#e6ebf2; --muted:#9aa6b6; --line:#323c4b;
+  --accent:#7fa6ec; --accent-ink:#0f1520; --focus:#9dbcf3; --hover:#252e3c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--ui);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+.app{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100%}
+.controls{
+  background:var(--panel);border-right:1px solid var(--line);
+  padding:28px 24px 32px;position:sticky;top:env(safe-area-inset-top,0px);
+  align-self:start;max-height:100vh;overflow-y:auto;
+}
+.controls h1{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+.controls .sub{color:var(--muted);margin:0 0 22px;font-size:14px}
+.field{display:block;margin-bottom:18px}
+.field span{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+input[type=text],input[type=number]{
+  width:100%;font:inherit;color:var(--text);background:var(--bg);
+  border:1px solid var(--line);border-radius:6px;padding:8px 10px;
+}
+fieldset{border:0;margin:0 0 18px;padding:0}
+legend{font-size:13px;font-weight:600;margin-bottom:6px;padding:0}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:6px 8px;margin:0 -8px;border-radius:6px;cursor:pointer}
+.chk:hover{background:var(--hover)}
+.chk input{margin:3px 0 0;width:16px;height:16px;accent-color:var(--accent);flex:none}
+.chk i{font-family:var(--serif);font-size:16px}
+.ver{display:flex;gap:8px;align-items:flex-end;margin:4px 0 14px}
+.ver .field{margin:0;flex:1}
+button{
+  font:inherit;font-weight:600;border-radius:6px;padding:9px 14px;cursor:pointer;
+  border:1px solid var(--line);background:var(--bg);color:var(--text);
+}
+button:hover{border-color:var(--accent)}
+button.primary{width:100%;background:var(--accent);border-color:var(--accent);color:var(--accent-ink);padding:11px 14px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.hint{color:var(--muted);font-size:13px;margin:12px 0 0}
+
+.sheet-wrap{padding:32px 24px 64px;overflow-x:auto}
+#sheet{display:flex;flex-direction:column;align-items:center;gap:28px;min-width:min-content}
+
+/* ---------- Paper (stays white: it is a print preview) ---------- */
+.page{
+  width:8.5in;min-height:11in;padding:.5in;background:var(--paper);color:var(--ink);
+  box-shadow:var(--shadow);font-family:var(--serif);position:relative;
+}
+.ws-top{display:flex;gap:28px;font-size:12pt;margin-bottom:.22in}
+.ws-top .blk{display:flex;align-items:flex-end;gap:6px}
+.ws-top .blank{display:inline-block;border-bottom:1px solid var(--ink);height:1.1em}
+.ws-top .w-lg{width:2.9in}.ws-top .w-md{width:1.3in}.ws-top .w-sm{width:.6in}
+.ws-title{font-size:20pt;font-weight:600;margin:0 0 .05in;line-height:1.15}
+.ws-dir{font-size:12pt;margin:0 0 .18in;color:var(--ink)}
+.cont{font-size:11pt;color:var(--ink-soft);margin-bottom:.2in;font-style:italic}
+.probs{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1.62in;column-gap:.4in;border-top:1px solid var(--rule)}
+.prob{padding-top:.12in;font-size:13pt;display:flex;gap:.12in;align-items:baseline}
+.num{font-weight:600;min-width:.32in}
+.expr{white-space:nowrap}
+.expr i,.a i,.q i{font-style:italic}
+sup{font-size:.68em;line-height:0;vertical-align:.55em}
+.foot{position:absolute;right:.5in;bottom:.32in;font-size:9pt;color:var(--ink-soft);font-family:var(--serif)}
+
+.key-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:.08in;margin-bottom:.15in}
+.key-head h2{margin:0;font-size:18pt;font-weight:600}
+.key-head span{font-size:11pt;color:var(--ink-soft)}
+.answers{display:grid;grid-template-columns:1fr 1fr;column-gap:.4in;row-gap:.16in}
+.ans{display:flex;gap:.1in;font-size:12pt;break-inside:avoid}
+.ans .q{margin-bottom:2px}
+.ans .a{padding-left:.15in}
+.ans .final{font-weight:600}
+.note{font-weight:400;font-style:italic;font-size:10.5pt;color:var(--ink-soft)}
+
+@media (max-width: 900px){
+  .app{grid-template-columns:1fr}
+  .controls{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}
+  .sheet-wrap{padding:20px 12px 48px}
+}
+
+@page{size:letter;margin:.5in}
+@media print{
+  :root{padding:0}
+  body{background:#fff}
+  body::before{display:none}
+  .controls{display:none}
+  .app{display:block}
+  .sheet-wrap{padding:0;overflow:visible}
+  #sheet{display:block}
+  .page{width:auto;min-height:0;height:10in;padding:0;margin:0;box-shadow:none;break-after:page}
+  .page.key{height:auto}
+  .page:last-child{break-after:auto}
+  .foot{right:0;bottom:0}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="controls" aria-label="Worksheet settings">
+    <h1>Factoring worksheet</h1>
+    <p class="sub">Pick what to include. The answer key prints on its own page after the problems.</p>
+
+    <label class="field"><span>Title</span><input type="text" id="title" value="Factoring Quadratics"></label>
+
+    <fieldset>
+      <legend>Problem types</legend>
+      <label class="chk"><input type="checkbox" id="prime">Unfactorable (prime) quadratics</label>
+      <label class="chk"><input type="checkbox" id="dos">Difference of squares</label>
+      <label class="chk"><input type="checkbox" id="pst">Perfect square trinomials</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Coefficients</legend>
+      <label class="chk"><input type="checkbox" id="aNot1">Leading coefficient <i>a</i> ≠ 1</label>
+      <label class="chk"><input type="checkbox" id="gcf">Constant to factor out first</label>
+      <label class="chk"><input type="checkbox" id="xfac">Factor of <i>x</i> to factor out first</label>
+      <label class="chk"><input type="checkbox" id="bigC">Allow <i>c</i> &gt; 100</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Quadratic form</legend>
+      <label class="chk"><input type="checkbox" id="x4">Degree 4 (in <i>x</i><sup>2</sup>)</label>
+      <label class="chk"><input type="checkbox" id="x6">Degree 6 (in <i>x</i><sup>3</sup>)</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Length</legend>
+      <label class="chk"><input type="checkbox" id="twenty">20 problems instead of 10</label>
+    </fieldset>
+
+    <div class="ver">
+      <label class="field"><span>Version</span><input type="number" id="seed" min="1" max="99999"></label>
+      <button type="button" id="newBtn">New problems</button>
+    </div>
+    <button type="button" class="primary" id="printBtn">Print worksheet</button>
+    <p class="hint">The same version number with the same settings always gives the same worksheet. If the Print button does nothing, use Ctrl+P or ⌘P.</p>
+  </aside>
+
+  <main class="sheet-wrap">
+    <div id="sheet"></div>
+  </main>
+</div>
+
+<script>
+/* ================= math core ================= */
+const MINUS = '\u2212';
+let rand = Math.random;
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const ri=(lo,hi)=>lo+Math.floor(rand()*(hi-lo+1));
+const pick=arr=>arr[Math.floor(rand()*arr.length)];
+const chance=p=>rand()<p;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b];}return a;}
+const isSq=n=>n>=0&&Math.round(Math.sqrt(n))**2===n;
+function icbrt(n){const r=Math.round(Math.cbrt(n));return r**3===n?r:null;}
+function nz(max){let q;do{q=ri(-max,max);}while(q===0);return q;}
+function mul(a,b){const r=new Array(a.length+b.length-1).fill(0);a.forEach((x,i)=>b.forEach((y,j)=>{r[i+j]+=x*y;}));return r;}
+/* p x^k + q as coefficient array (index = power) */
+function lin(pq,k){const a=new Array(k+1).fill(0);a[0]=pq[1];a[k]=pq[0];return a;}
+
+function xPow(e){if(e===0)return'';if(e===1)return'<i>x</i>';return`<i>x</i><sup>${e}</sup>`;}
+function polyHTML(c){
+  let out='',first=true;
+  for(let e=c.length-1;e>=0;e--){
+    const v=c[e]; if(!v) continue;
+    const abs=Math.abs(v), term=((abs===1&&e>0)?'':String(abs))+xPow(e);
+    if(first){out+=(v<0?MINUS:'')+term;first=false;}
+    else out+=(v<0?` ${MINUS} `:' + ')+term;
+  }
+  return out||'0';
+}
+
+/* ---------- pieces for each problem type ---------- */
+function pickP(useA,o){
+  if(!useA) return [1,1];
+  for(;;){const a=ri(1,6),b=ri(1,6),pr=a*b;if(pr>1&&pr<=(o.bigC?24:12))return[a,b];}
+}
+function pickQ(k,qMax){
+  if(k===2&&chance(.5)) return pick([-1,-4,-9,-16,-25,1,4,9]);
+  if(k===3&&chance(.6)) return pick([-1,1,-8,8,-27,27,-64]);
+  return nz(qMax);
+}
+function genPair(k,useA,o,qMax){
+  const [p1,p2]=pickP(useA,o), q1=pickQ(k,qMax), q2=pickQ(k,qMax);
+  if(gcd(p1,q1)!==1||gcd(p2,q2)!==1) return null;           // no hidden GCF
+  if(p1===p2&&Math.abs(q1)===Math.abs(q2)) return null;       // keep squares/DOS out of the general pool
+  return [[p1,q1],[p2,q2]];
+}
+function dosPair(k,useA,o){
+  const p=useA?pick([2,3,4,5]):1;
+  let q;
+  if(k===2&&chance(.5)) q=pick([1,4,9]);
+  else if(k===3&&chance(.6)) q=pick([1,8]);
+  else q=ri(1,o.bigC?20:10);
+  if(gcd(p,q)!==1) return null;
+  return [[p,-q],[p,q]];
+}
+function pstPair(k,useA,o){
+  const p=useA?pick([2,3,4,5]):1;
+  let q;
+  if(k===2&&chance(.5)) q=pick([-1,-4,-9,1,2,3]);
+  else if(k===3&&chance(.5)) q=pick([-1,1,-8,8,-2]);
+  else q=ri(1,o.bigC?15:10)*(chance(.5)?-1:1);
+  if(gcd(p,q)!==1) return null;
+  return [[p,q],[p,q]];
+}
+function primeTri(useA,o){
+  const a=useA?ri(2,6):1, b=ri(-12,12), c=nz(o.bigC?150:40);
+  if(isSq(b*b-4*a*c)) return null;
+  if(gcd(gcd(a,b),c)!==1) return null;
+  return [c,b,a];
+}
+
+/* factor p x^k + q completely over the integers (gcd(p,q)=1) */
+function fullFactor(p,q,k){
+  if(k===1) return [[q,p]];
+  if(k===2){
+    if(q<0&&isSq(p)&&isSq(-q)){const s=Math.round(Math.sqrt(p)),t=Math.round(Math.sqrt(-q));return[[-t,s],[t,s]];}
+    return [[q,0,p]];
+  }
+  const cp=icbrt(p), r=icbrt(q);
+  if(cp!==null&&r!==null) return [[r,cp],[r*r,-cp*r,cp*cp]];  // sum/difference of cubes
+  return [[q,0,0,p]];
+}
+
+function makeProblem(s,o,used){
+  const qMax=o.bigC?25:12, cLim=o.bigC?1500:100, coefLim=o.bigC?5000:400;
+  for(let t=0;t<800;t++){
+    const g=s.useG?pick([2,2,3,3,4,5,6,8])*(chance(.25)?-1:1):1;
+    const m=s.useX?(chance(.75)?1:2):0;
+    const k=s.type==='prime'?1:s.k;
+    let base,pairs=null;
+    if(s.type==='prime'){base=primeTri(s.useA,o);if(!base)continue;}
+    else{
+      pairs=s.type==='dos'?dosPair(k,s.useA,o):s.type==='pst'?pstPair(k,s.useA,o):genPair(k,s.useA,o,qMax);
+      if(!pairs) continue;
+      base=mul(lin(pairs[0],k),lin(pairs[1],k));
+    }
+    const scaled=base.map(v=>v*g);
+    if(Math.abs(scaled[0])>cLim) continue;
+    if(scaled.some(v=>Math.abs(v)>coefLim)) continue;
+    const poly=new Array(m).fill(0).concat(scaled);
+    const key=poly.join(',');
+    if(used.has(key)) continue;
+    const diff=(k-1)*3+(s.useA?2:0)+(s.useG?1:0)+(s.useX?1:0)+rand()*0.9;
+    return {...s,k,g,m,pairs,base,poly,key,diff};
+  }
+  return null;
+}
+
+function spread(N,flag){const a=Array.from({length:N},(_,i)=>flag&&i<Math.ceil(N/2));return shuffle(a);}
+function generate(o){
+  const N=o.twenty?20:10;
+  const nPrime=o.prime?(N===10?2:3):0;
+  const pool=['gen','gen'];if(o.dos)pool.push('dos');if(o.pst)pool.push('pst');
+  let types=[];while(types.length<N-nPrime)types.push(...shuffle(pool.slice()));
+  types=types.slice(0,N-nPrime);for(let i=0;i<nPrime;i++)types.push('prime');shuffle(types);
+  const degs=[1];if(o.x4)degs.push(2);if(o.x6)degs.push(3);
+  let dl=[];while(dl.length<N)dl.push(...shuffle(degs.slice()));dl=shuffle(dl.slice(0,N));
+  const A=spread(N,o.aNot1),G=spread(N,o.gcf),X=spread(N,o.xfac);
+  const used=new Set(),out=[];
+  for(let i=0;i<N;i++){
+    const spec={type:types[i],k:dl[i],useA:A[i],useG:G[i],useX:X[i]};
+    let p=makeProblem(spec,o,used);
+    if(!p) p=makeProblem({...spec,type:'gen'},o,used);
+    if(!p) p=makeProblem({type:'gen',k:1,useA:true,useG:false,useX:false},{...o,bigC:true},used);
+    if(p){used.add(p.key);out.push(p);}
+  }
+  out.sort((a,b)=>a.diff-b.diff);
+  return out;
+}
+
+/* ---------- answers ---------- */
+function prefixHTML(g,m){let s='';if(g===-1)s=MINUS;else if(g<0)s=MINUS+(-g);else if(g!==1)s=String(g);return s+xPow(m);}
+function grouped(list){
+  const map=new Map();
+  for(const f of list){const key=f.join(',');if(map.has(key))map.get(key).n++;else map.set(key,{f,n:1});}
+  return [...map.values()].sort((u,v)=>(u.f.length-v.f.length)||(u.f[0]-v.f[0]));
+}
+function groupHTML(list){return grouped(list).map(({f,n})=>`(${polyHTML(f)})`+(n>1?`<sup>${n}</sup>`:'')).join('');}
+function answer(p){
+  const pre=prefixHTML(p.g,p.m);
+  if(p.type==='prime') return {prime:true,final:pre?pre+'('+polyHTML(p.base)+')':null,factors:[p.base]};
+  const [a,b]=p.pairs;
+  const pf=[fullFactor(a[0],a[1],p.k),fullFactor(b[0],b[1],p.k)];
+  const further=pf[0].length>1||pf[1].length>1;
+  return {
+    step:further?pre+groupHTML([lin(a,p.k),lin(b,p.k)]):null,
+    final:pre+groupHTML(pf.flat()),
+    factors:pf.flat()
+  };
+}
+
+/* ================= page ================= */
+const IDS=['prime','dos','pst','aNot1','gcf','xfac','bigC','x4','x6','twenty'];
+const STORE='factoring-ws-settings-v1';
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function readOpts(){
+  const o={};IDS.forEach(id=>o[id]=document.getElementById(id).checked);
+  o.title=document.getElementById('title').value.trim()||'Factoring Quadratics';
+  let s=parseInt(document.getElementById('seed').value,10);
+  if(!Number.isFinite(s)||s<1){s=newSeed();document.getElementById('seed').value=s;}
+  o.seed=s;return o;
+}
+function newSeed(){return 1000+Math.floor(Math.random()*9000);}
+function save(o){try{localStorage.setItem(STORE,JSON.stringify(o));}catch(e){}}
+function load(){
+  let o=null;try{o=JSON.parse(localStorage.getItem(STORE)||'null');}catch(e){o=null;}
+  if(o&&typeof o==='object'){
+    IDS.forEach(id=>{if(typeof o[id]==='boolean')document.getElementById(id).checked=o[id];});
+    if(typeof o.title==='string')document.getElementById('title').value=o.title;
+    if(Number.isFinite(o.seed))document.getElementById('seed').value=o.seed;
+  }
+  if(!document.getElementById('seed').value)document.getElementById('seed').value=newSeed();
+}
+
+function render(){
+  const o=readOpts();save(o);
+  rand=mulberry32(o.seed*7919+IDS.reduce((h,id,i)=>h+(o[id]?1<<i:0),0));
+  const probs=generate(o);
+  const per=10,pages=Math.ceil(probs.length/per);
+  const dir='Factor each polynomial completely.'+(o.prime?' If a polynomial cannot be factored, write \u201cprime.\u201d':'');
+  let html='';
+  for(let pi=0;pi<pages;pi++){
+    const chunk=probs.slice(pi*per,(pi+1)*per);
+    html+='<section class="page">';
+    if(pi===0){
+      html+=`<div class="ws-top"><span class="blk">Name <span class="blank w-lg"></span></span><span class="blk">Date <span class="blank w-md"></span></span><span class="blk">Period <span class="blank w-sm"></span></span></div>
+      <h2 class="ws-title">${esc(o.title)}</h2><p class="ws-dir">${dir}</p>`;
+    } else html+=`<div class="cont">${esc(o.title)}, continued</div>`;
+    html+='<div class="probs">'+chunk.map((p,i)=>`<div class="prob"><span class="num">${pi*per+i+1}.</span><span class="expr">${polyHTML(p.poly)}</span></div>`).join('')+'</div>';
+    html+=`<div class="foot">Version ${o.seed}${pages>1?`, page ${pi+1} of ${pages}`:''}</div></section>`;
+  }
+  html+=`<section class="page key"><div class="key-head"><h2>Answer key</h2><span>${esc(o.title)}, version ${o.seed}</span></div><div class="answers">`;
+  probs.forEach((p,i)=>{
+    const a=answer(p);
+    let body=`<div class="q">${polyHTML(p.poly)}</div>`;
+    if(a.prime){
+      body+=a.final?`<div class="a final">= ${a.final} <span class="note">(trinomial is prime)</span></div>`:`<div class="a final">prime</div>`;
+    }else{
+      if(a.step) body+=`<div class="a">= ${a.step}</div>`;
+      body+=`<div class="a final">= ${a.final}</div>`;
+    }
+    html+=`<div class="ans"><span class="num">${i+1}.</span><div>${body}</div></div>`;
+  });
+  html+='</div></section>';
+  document.getElementById('sheet').innerHTML=html;
+}
+
+if(typeof document!=='undefined'){
+  load();
+  IDS.forEach(id=>document.getElementById(id).addEventListener('change',render));
+  document.getElementById('title').addEventListener('input',render);
+  document.getElementById('seed').addEventListener('change',render);
+  document.getElementById('newBtn').addEventListener('click',()=>{document.getElementById('seed').value=newSeed();render();});
+  document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  render();
+}
+</script>
+</body>
+</html>

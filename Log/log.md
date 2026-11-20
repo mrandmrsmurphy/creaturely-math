@@ -2,6 +2,20 @@
 
 Changes to the vault, newest first. History lives here and nowhere else — math pages hold only the working math.
 
+## 2026-11-19
+
+- Made the Taylor comparison operational with a finite rational radian bracket and separate conversion, truncation, and evaluation allowances. Used the right angle to distinguish a radian specification from exhibited digits.
+
+- Wrote [[Degrees, Minutes, and Seconds]] from Murphy’s discussion, with sourced historical examples, the one-degree construction obstruction, and certified error bounds for Bhāskara’s rule, Murphy’s improvement, and six Taylor terms. Linked from [[Sexagesimal]] and recorded in the Agenda’s Settled table.
+
+## 2026-11-17
+
+- Indexed the Factoring Quadratics Worksheet Generator under Practice and teaching in the HTML hub.
+
+- Recorded Murphy’s reading of the Scientific Revolution as “pro praxis” and “not anti God” in `History/Corrective Narrative.md`, with its bearing on the Quadriga’s supersession of the Quadrivium. Linked it from the history of calculus and the Quadriga hub and added it to Settled.
+
+- Added `HTML/HTML Tools and Visualizations.md` as the Obsidian hub for the nine standalone browser pages. Linked it from `Home.md` and recorded it in the Agenda’s Settled table.
+
 ## 2026-11-14
 
 - **Sporadic Groups page (Murphy pasted the Encyclopedia of Mathematics article "Sporadic simple group"):** new page `Symmetry/Sporadic Groups`. The list of all 26 with names, alternative notations ($F_1$, $F_2$, $HJM$, …) and prime-factored orders kept from the article; **every order recomputed and every one agrees with the decimal value I recalled independently** (so no exponent slip in the pasted table); the primes (eighteen occur; $37,43,67$ only in $J_4$ and $Ly$; $41,59,71$ only in the Monster); the Mathieu multiple-transitivity counts worked ($11\cdot10\cdot9\cdot8$, $12\cdots8$ sharp, $48$ for $M_{22},M_{23},M_{24}$); nine subgroup indices checked from the orders; the Happy Family (20, three generations) and the six pariahs, with the divisibility observation (all 20 orders divide $|M|$; the pariahs $J_1,J_3,O'N,Ru$ also divide it, only $J_4$ and $Ly$ fail); the Cayley-table size of each group (the table of $M_{11}$ about 125 MB, $M_{12}$ about 27 GB, $M_{24}$ about 240 PB) with an **[AI]** note that the vault has not set the threshold. Provenance `third-party`, source named in prose and in `sources:`. The Encyclopedia's note that the Monster's uniqueness proof (Griess–Meierfrankenfeld–Segev 1989) postdates Gorenstein's account added to `Monster Group`. `Simple Groups` now points here instead of carrying its own sporadic list (one canonical page per idea). Linked from `Home` and the `Group Theory` hub; Settled gains a row.

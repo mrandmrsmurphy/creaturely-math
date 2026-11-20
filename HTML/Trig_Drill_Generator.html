@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trigonometric Exact-Value Drill Generator</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17212b;background:#f0f2f5}
+*{box-sizing:border-box}body{margin:0}.controls{max-width:960px;margin:18px auto;padding:19px 22px;background:white;border:1px solid #d5dbe2;border-radius:12px;box-shadow:0 2px 9px #192b4012}.controls h1{font-size:21px;margin:0 0 6px}.subtitle{color:#586574;font-size:13px;margin:0 0 17px}.settings{display:flex;flex-wrap:wrap;align-items:start;gap:16px 32px}.setting{display:flex;flex-direction:column;gap:8px}.setting strong{font-size:13px}.choices{display:flex;flex-wrap:wrap;gap:10px 16px}.choices label{font-size:14px;display:flex;align-items:center;gap:6px;cursor:pointer}.choices input{accent-color:#174d83;width:16px;height:16px}.actions{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}button{background:#174d83;color:white;border:0;border-radius:7px;padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer}button.secondary{background:#e7edf5;color:#173754}.hint{font-size:12px;color:#697586}.page{width:8.5in;height:11in;margin:18px auto;padding:.45in .48in .48in;background:white;box-shadow:0 3px 15px #14253b25;display:flex;flex-direction:column;overflow:hidden}.page-header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #273747;padding-bottom:.11in}.page-header h2{margin:0;font:700 18pt Georgia,serif}.page-header span{font-size:10pt;color:#576779}.meta{display:flex;justify-content:space-between;font-size:10pt;margin:.17in 0 .12in}.instructions{font:10.5pt Georgia,serif;margin:0 0 .12in}.worksheet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));flex:1;border-top:1px solid #dae0e5;border-left:1px solid #dae0e5}.problem{position:relative;min-width:0;border-right:1px solid #dae0e5;border-bottom:1px solid #dae0e5;padding:.16in .09in;display:flex;flex-direction:column;gap:.22in}.n{position:absolute;top:.09in;left:.09in;color:#607181;font:9pt system-ui,sans-serif}.expression{font:17pt Georgia,"Times New Roman",serif;align-self:center;margin-top:.17in;text-align:center;white-space:nowrap}.answer{font:14pt Georgia,"Times New Roman",serif;text-align:center;margin:auto 0;line-height:1.25;overflow-wrap:anywhere}.answer .undef{font-size:12pt}.foot{padding-top:.12in;display:flex;justify-content:space-between;color:#637283;font-size:9pt}.print-only{display:none}@page{size:letter portrait;margin:0}
+@media print{html,body{margin:0;padding:0;background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}.controls{display:none}.page{width:8.5in;height:11in;max-height:11in;margin:0;padding:.45in .48in .48in;box-shadow:none;border:none;break-after:page;page-break-after:always}.page:last-child{break-after:auto;page-break-after:auto}.print-only{display:inline}}
+@media screen and (max-width:870px){.page{transform-origin:top center;max-width:calc(100vw - 20px);width:calc(100vw - 20px);height:auto;min-height:0;aspect-ratio:8.5 / 11;padding:5%}.worksheet-grid{min-height:0}.expression{font-size:clamp(11px,2.4vw,23px)}.answer{font-size:clamp(10px,1.9vw,19px)}.problem{padding:7px 3px}.n{top:3px;left:4px;font-size:8px}.page-header h2{font-size:clamp(13px,3vw,23px)}.instructions{font-size:clamp(9px,1.5vw,13px)}}
+</style>
+</head>
+<body>
+<div class="controls">
+<h1>Trigonometric Exact-Value Drill Generator</h1>
+<p class="subtitle">20 randomized problems • 4 columns × 5 rows • matching answer key on page 2 • portrait printing</p>
+<div class="settings">
+ <div class="setting"><strong>Functions</strong><div class="choices"><label><input type="checkbox" checked disabled> sin and cos (always included)</label><label><input id="tan" type="checkbox"> Include tan</label><label><input id="reciprocal" type="checkbox"> Include cot, sec, csc</label></div></div>
+ <div class="setting"><strong>Angle notation</strong><div class="choices"><label><input type="radio" name="angles" value="degrees" checked> Degrees only</label><label><input type="radio" name="angles" value="mixed"> Degrees and radians</label><label><input type="radio" name="angles" value="radians"> Radians only (no degrees)</label></div></div>
+ <div class="setting"><strong>Angle set</strong><div class="choices"><label><input id="extra" type="checkbox"> Include additional 15° multiples</label></div></div>
+</div>
+<div class="actions"><button type="button" id="generate">Go — new worksheet</button><button type="button" class="secondary" id="print">Print / Save PDF</button><span class="hint">Print at 100% scale, Letter paper, portrait; disable browser headers and footers.</span></div>
+</div>
+<main id="pages"></main>
+<script>
+(()=>{'use strict';
+const standard=[0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330];
+const extra=[15,75,105,165,195,255,285,345];
+// First-quadrant exact values, with independent reciprocal-ratio formulas.
+const positive={
+ 0:{sin:'0',cos:'1',tan:'0',cot:null,sec:'1',csc:null},
+ 15:{sin:'(√6 − √2)/4',cos:'(√6 + √2)/4',tan:'2 − √3',cot:'2 + √3',sec:'√6 − √2',csc:'√6 + √2'},
+ 30:{sin:'1/2',cos:'√3/2',tan:'√3/3',cot:'√3',sec:'2√3/3',csc:'2'},
+ 45:{sin:'√2/2',cos:'√2/2',tan:'1',cot:'1',sec:'√2',csc:'√2'},
+ 60:{sin:'√3/2',cos:'1/2',tan:'√3',cot:'√3/3',sec:'2',csc:'2√3/3'},
+ 75:{sin:'(√6 + √2)/4',cos:'(√6 − √2)/4',tan:'2 + √3',cot:'2 − √3',sec:'√6 + √2',csc:'√6 − √2'},
+ 90:{sin:'1',cos:'0',tan:null,cot:'0',sec:null,csc:'1'}
+};
+function exact(fn,deg){
+ const a=deg%360,ref=a<=90?a:a<=180?180-a:a<=270?a-180:360-a;
+ let value=positive[ref][fn];if(value===null)return 'undefined';
+ let neg=fn==='sin'||fn==='csc'?(a>180&&a<360):fn==='cos'||fn==='sec'?(a>90&&a<270):((a>90&&a<180)||(a>270&&a<360));
+ if(!neg||value==='0')return value;
+ return value.startsWith('(')?'−'+value:'−'+value;
+}
+function rad(deg){if(deg===0)return '0'; const gcd=(a,b)=>b?gcd(b,a%b):a;let n=deg,d=180,g=gcd(n,d);n/=g;d/=g;
+ const pi=n===1?'π':n+'π';return d===1?pi:pi+'/'+d;
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function generate(){
+ const funcs=['sin','cos'];if(document.getElementById('tan').checked)funcs.push('tan');if(document.getElementById('reciprocal').checked)funcs.push('cot','sec','csc');
+ const angles=standard.concat(document.getElementById('extra').checked?extra:[]);
+ const mode=document.querySelector('input[name="angles"]:checked').value;
+ const allocations=Array.from({length:20},(_,i)=>funcs[i%funcs.length]);shuffle(allocations);
+ const pairs=new Set(),problems=[];
+ for(const fn of allocations){
+  let choices=angles.filter(deg=>!pairs.has(fn+':'+deg));
+  // Prefer covering different angles, but permit repeats across functions.
+  const counts=new Map();for(const x of problems)counts.set(x.deg,(counts.get(x.deg)||0)+1);
+  const least=Math.min(...choices.map(x=>counts.get(x)||0));
+  choices=choices.filter(x=>(counts.get(x)||0)===least);
+  const deg=choices[Math.floor(Math.random()*choices.length)];pairs.add(fn+':'+deg);problems.push({fn,deg,notation:mode==='mixed'?(Math.random()<.5?'degrees':'radians'):mode});
+ }
+ // Ensure mixed worksheets actually contain both notations.
+ if(mode==='mixed'){problems[0].notation='degrees';problems[1].notation='radians'}
+ const pages=document.getElementById('pages');pages.replaceChildren();
+ for(const isKey of [false,true]){
+  const page=document.createElement('section');page.className='page';
+  const header=document.createElement('div');header.className='page-header';
+  const title=document.createElement('h2');title.textContent=isKey?'Trigonometric Drill — Answer Key':'Trigonometric Drill';
+  const tag=document.createElement('span');tag.textContent=isKey?'ANSWER KEY':'20 PROBLEMS';header.append(title,tag);
+  const meta=document.createElement('div');meta.className='meta';meta.innerHTML='<span>Name: __________________________________</span><span>Date: __________________</span>';
+  const ins=document.createElement('p');ins.className='instructions';ins.textContent=isKey?'Exact values. “Undefined” means the ratio does not exist.':'Find each exact value. Do not use decimal approximations.';
+  const grid=document.createElement('div');grid.className='worksheet-grid';
+  problems.forEach((p,i)=>{
+   const tile=document.createElement('div');tile.className='problem';
+   const number=document.createElement('span');number.className='n';number.textContent=(i+1)+'.';
+   const expr=document.createElement('div');expr.className='expression';expr.textContent=p.fn+'('+ (p.notation==='degrees'?p.deg+'°':rad(p.deg)) +')';
+   tile.append(number,expr);
+   if(isKey){const answer=document.createElement('div');answer.className='answer';const v=exact(p.fn,p.deg);answer.textContent=v;if(v==='undefined')answer.className+=' undef';tile.append(answer)}
+   grid.append(tile);
+  });
+  const foot=document.createElement('div');foot.className='foot';const a=document.createElement('span');a.textContent='Exact-value trigonometry';const b=document.createElement('span');b.textContent=isKey?'Page 2 of 2':'Page 1 of 2';foot.append(a,b);
+  page.append(header,meta,ins,grid,foot);pages.append(page);
+ }
+}
+document.getElementById('generate').addEventListener('click',generate);
+document.getElementById('print').addEventListener('click',()=>window.print());
+generate();
+})();
+</script>
+</body>
+</html>

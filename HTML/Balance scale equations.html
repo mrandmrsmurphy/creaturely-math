@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Balance scale equations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+
+  /* graph paper by day */
+  --bg:#e6edf0;
+  --grid:#d3dee4;
+  --text:#17262b;
+  --muted:#4d6068;
+  --err:#a3121f;
+  --focus:#1c5fd6;
+  --string:#7a5916;
+
+  /* the same in both themes: brass, ivory pans and keys, black and red pieces */
+  --brass:#b98a2e;
+  --brass-dk:#7a5916;
+  --brass-lt:#ecd078;
+  --pan:#fdfdf8;
+  --key:#fdfdf8;
+  --key-text:#151515;
+  --tok:#151515;
+  --neg:#c8202f;
+
+  --font:"STIX Two Text","Cambria","Georgia",serif;
+}
+/* chalkboard by night */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1d2f28; --grid:#273c33; --text:#eef3ea; --muted:#a8b9ad;
+    --err:#ffa3a3; --focus:#9cc2ff; --string:#d9b95e;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1d2f28; --grid:#273c33; --text:#eef3ea; --muted:#a8b9ad;
+  --err:#ffa3a3; --focus:#9cc2ff; --string:#d9b95e;
+}
+
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  height:100%;margin:0;
+  font-family:var(--font);font-size:1.0625rem;line-height:1.4;color:var(--text);
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.app{min-height:100%;display:flex;flex-direction:column}
+
+/* ---------- top: the equation ---------- */
+.top{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.5rem;
+  padding:.8rem clamp(.75rem,2vw,1.5rem) .35rem;
+}
+.eqform{display:flex;gap:.5rem;flex:1 1 20rem;max-width:34rem}
+.eqform input{
+  flex:1 1 auto;min-width:0;
+  font:inherit;font-size:1.4rem;line-height:1.2;
+  padding:.45rem .8rem;
+  color:var(--key-text);background:var(--key);
+  border:2px solid var(--brass-dk);border-radius:.55rem;
+}
+.eqform input::placeholder{color:#7b7b74}
+button{
+  font:inherit;font-weight:600;cursor:pointer;
+  padding:.5rem 1rem;border-radius:.55rem;
+  color:var(--key-text);background:var(--key);
+  border:2px solid var(--brass-dk);
+}
+button:disabled{opacity:.42;cursor:default}
+button:not(:disabled):active{transform:translateY(1px)}
+.primary{background:var(--brass-lt);font-size:1.15rem;padding-inline:1.3rem}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;
+  list-style:none;margin:0;padding:.3rem .8rem;
+  color:var(--key-text);background:var(--pan);
+  border:1.5px solid var(--brass);border-radius:.55rem;
+}
+.legend li{display:flex;align-items:center;gap:.3rem;font-size:1.1rem}
+.ico{width:1.25em;height:1.25em;flex:none}
+.ico .body{fill:var(--tok)}
+.ico.neg .body{fill:var(--neg)}
+.ico .mark{fill:#fff}
+
+.msg{
+  margin:0;padding:0 clamp(.75rem,2vw,1.5rem);
+  min-height:1.5rem;color:var(--err);font-weight:600;
+}
+
+/* ---------- middle: the scale ---------- */
+.stage{position:relative;flex:1 1 320px;min-height:320px}
+.stage svg{position:absolute;inset:0;width:100%;height:100%;display:block;font-family:var(--font)}
+.brassfill{fill:url(#brassV);stroke:var(--brass-dk);stroke-width:1.5}
+.pillar{fill:url(#brassH);stroke:var(--brass-dk);stroke-width:1.5}
+.knob{fill:var(--brass);stroke:var(--brass-dk);stroke-width:1.5}
+.pin{fill:var(--brass-dk)}
+.string{stroke:var(--string);stroke-width:1.5}
+.pan{fill:var(--pan);stroke:var(--brass);stroke-width:3;stroke-linejoin:round}
+.medal{fill:var(--pan);stroke:var(--brass);stroke-width:3}
+.eqs{fill:var(--tok);font-weight:600}
+.lbl{
+  fill:var(--text);font-weight:600;
+  paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round;
+}
+.tok{
+  transition:transform .4s cubic-bezier(.2,.85,.3,1.1),opacity .26s ease-out;
+  will-change:transform,opacity;
+}
+.tok .body{fill:var(--tok)}
+.tok.neg .body{fill:var(--neg)}
+.tok .shine{fill:#fff;opacity:.2}
+.tok .mark{fill:#fff}
+.box{transition:transform .4s cubic-bezier(.2,.85,.3,1.1),opacity .3s ease-out;will-change:transform,opacity}
+.box .frame{fill:#f3e6bf;stroke:var(--brass-dk);stroke-width:2}
+.box.negbox .frame{fill:#fbe2e4;stroke:var(--neg)}
+.box .tab{fill:var(--neg)}
+.box .tabmark{fill:#fff}
+.ico .bframe{fill:#f3e6bf;stroke:var(--brass-dk);stroke-width:.08}
+.ico .bframe.negf{fill:#fbe2e4;stroke:var(--neg)}
+.ico .tab{fill:var(--neg)}
+
+/* ---------- bottom: the moves ---------- */
+.controls{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;
+  padding:.4rem clamp(.75rem,2vw,1.5rem) .9rem;
+}
+.each{margin:0;color:var(--muted);font-style:italic}
+.ops{display:flex;flex-wrap:wrap;gap:.5rem}
+.op{display:inline-flex;align-items:center;justify-content:center;gap:.4rem}
+.solvebox{display:flex;align-items:center;gap:1rem;margin-left:.75rem}
+.answer{font-size:1.6rem;font-weight:600;line-height:1.1;display:inline-flex;align-items:center;gap:.35em;flex-wrap:wrap}
+.frac{display:inline-flex;flex-direction:column;align-items:center;font-size:.8em;line-height:1.05}
+.frac span:first-child{border-bottom:2px solid currentColor;padding:0 .2em}
+.frac span:last-child{padding:0 .2em}
+
+@media (max-width:640px){
+  .each{flex-basis:100%}
+  .ops{display:grid;grid-template-columns:1fr 1fr;flex:1 1 100%}
+  .solvebox{margin-left:0;flex:1 1 100%}
+  .eqform input{font-size:1.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .tok,.box{transition:none}
+}
+.eqform input[aria-invalid="true"]{border-color:var(--err)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <form class="eqform" id="eqform" novalidate>
+      <label class="sr" for="eq">Equation</label>
+      <input id="eq" type="text" value="3x+1=2x+4" placeholder="2(x − 3) = 3(x + 1)" aria-describedby="msg"
+             autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+      <button class="primary" type="submit">Render</button>
+    </form>
+
+    <ul class="legend" aria-label="What the pieces mean">
+      <li><svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><path class="body" d="M0,-.47 C.03,-.3 .1,-.22 .24,-.1 C.4,.04 .47,.2 .44,.33 C.42,.41 .36,.44 .28,.44 L-.28,.44 C-.36,.44 -.42,.41 -.44,.33 C-.47,.2 -.4,.04 -.24,-.1 C-.1,-.22 -.03,-.3 0,-.47 Z"/></svg><i>x</i></li>
+      <li><svg class="ico neg" viewBox="-.5 -.5 1 1" aria-hidden="true"><path class="body" d="M0,-.47 C.03,-.3 .1,-.22 .24,-.1 C.4,.04 .47,.2 .44,.33 C.42,.41 .36,.44 .28,.44 L-.28,.44 C-.36,.44 -.42,.41 -.44,.33 C-.47,.2 -.4,.04 -.24,-.1 C-.1,-.22 -.03,-.3 0,-.47 Z"/><rect class="mark" x="-.15" y=".17" width=".3" height=".07" rx=".035"/></svg><span>−<i>x</i></span></li>
+      <li><svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><circle class="body" r=".34"/></svg>1</li>
+      <li><svg class="ico neg" viewBox="-.5 -.5 1 1" aria-hidden="true"><circle class="body" r=".34"/><rect class="mark" x="-.15" y="-.035" width=".3" height=".07" rx=".035"/></svg>−1</li>
+      <li><svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><rect class="bframe" x="-.42" y="-.36" width=".84" height=".72" rx=".1"/></svg><span>(&#8202;)</span></li>
+      <li><svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><rect class="bframe negf" x="-.42" y="-.3" width=".84" height=".7" rx=".1"/><rect class="tab" x="-.34" y="-.46" width=".36" height=".28" rx=".07"/><rect class="mark" x="-.25" y="-.34" width=".18" height=".05" fill="#fff"/></svg><span>−(&#8202;)</span></li>
+    </ul>
+  </header>
+  <p class="msg" id="msg" role="alert"></p>
+
+  <main class="stage" id="stage">
+    <svg id="svg" role="img" aria-label="A balance scale. Type an equation and press Render.">
+      <defs>
+        <linearGradient id="brassV" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color:var(--brass-lt)"/>
+          <stop offset="1" style="stop-color:var(--brass)"/>
+        </linearGradient>
+        <linearGradient id="brassH" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" style="stop-color:var(--brass)"/>
+          <stop offset=".45" style="stop-color:var(--brass-lt)"/>
+          <stop offset="1" style="stop-color:var(--brass)"/>
+        </linearGradient>
+      </defs>
+      <g id="scale"></g>
+      <g id="boxes"></g>
+      <g id="tokens"></g>
+    </svg>
+  </main>
+
+  <footer class="controls">
+    <p class="each" id="eachlbl">To each side:</p>
+    <div class="ops" role="group" aria-labelledby="eachlbl">
+      <button class="op" data-kind="x" data-dir="1" disabled>
+        <svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><path class="body" d="M0,-.47 C.03,-.3 .1,-.22 .24,-.1 C.4,.04 .47,.2 .44,.33 C.42,.41 .36,.44 .28,.44 L-.28,.44 C-.36,.44 -.42,.41 -.44,.33 C-.47,.2 -.4,.04 -.24,-.1 C-.1,-.22 -.03,-.3 0,-.47 Z"/></svg>
+        <span>Add <i>x</i></span></button>
+      <button class="op" data-kind="x" data-dir="-1" disabled>
+        <svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><path class="body" d="M0,-.47 C.03,-.3 .1,-.22 .24,-.1 C.4,.04 .47,.2 .44,.33 C.42,.41 .36,.44 .28,.44 L-.28,.44 C-.36,.44 -.42,.41 -.44,.33 C-.47,.2 -.4,.04 -.24,-.1 C-.1,-.22 -.03,-.3 0,-.47 Z"/></svg>
+        <span>Take away <i>x</i></span></button>
+      <button class="op" data-kind="u" data-dir="1" disabled>
+        <svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><circle class="body" r=".34"/></svg>
+        <span>Add 1</span></button>
+      <button class="op" data-kind="u" data-dir="-1" disabled>
+        <svg class="ico" viewBox="-.5 -.5 1 1" aria-hidden="true"><circle class="body" r=".34"/></svg>
+        <span>Take away 1</span></button>
+    </div>
+    <div class="solvebox">
+      <button class="primary" id="distribute" disabled>Distribute</button>
+      <button class="primary" id="solve" disabled>Solve</button>
+      <output class="answer" id="answer" aria-live="polite"></output>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var KISS = 'M0,-.47 C.03,-.3 .1,-.22 .24,-.1 C.4,.04 .47,.2 .44,.33 C.42,.41 .36,.44 .28,.44 ' +
+             'L-.28,.44 C-.36,.44 -.42,.41 -.44,.33 C-.47,.2 -.4,.04 -.24,-.1 C-.1,-.22 -.03,-.3 0,-.47 Z';
+  var LOOSE_MAX = 30;   // loose pieces of one kind in a typed equation
+  var MULT_MAX = 10;    // number in front of parentheses
+  var INNER_MAX = 10;   // pieces of one kind inside parentheses
+  var BOX_MAX = 12;     // boxes on one side
+  var PILE_MAX = 40;    // pieces of one kind on a side once everything is multiplied out
+  var HARD_MAX = 60;    // ceiling the buttons can reach
+
+  var $ = function (id) { return document.getElementById(id); };
+  var stage = $('stage'), svg = $('svg'), scaleG = $('scale'), boxLayer = $('boxes'), layer = $('tokens');
+  var input = $('eq'), msg = $('msg'), answer = $('answer');
+  var solveBtn = $('solve'), distBtn = $('distribute');
+  var opBtns = Array.prototype.slice.call(document.querySelectorAll('.op'));
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Each side is  (boxes) + a·x + b,  where each box group is k(ax + b)
+  var state = { L: { a: 0, b: 0, boxes: [] }, R: { a: 0, b: 0, boxes: [] }, active: false };
+  var groups = { La: [], Lb: [], Ra: [], Rb: [] };   // loose pieces on the pans
+  var tiles = { L: [], R: [] };                       // drawn boxes and the pieces inside them
+  var geo = null, busy = false, gen = 0, expanded = null, relayout = null;
+
+  /* ---------- small helpers ---------- */
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function mk(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+  function setA(el, attrs) { for (var k in attrs) el.setAttribute(k, attrs[k]); }
+  function num(n) { return n < 0 ? '\u2212' + (-n) : String(n); }
+  function gcd(p, q) { p = Math.abs(p); q = Math.abs(q); while (q) { var t = p % q; p = q; q = t; } return p || 1; }
+  function flush(el) { return window.getComputedStyle(el).opacity; }
+  function sgn(v) { return v < 0 ? -1 : 1; }
+  function put(el, x, y, s, o) {
+    el.style.transform = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px) scale(' + s.toFixed(3) + ')';
+    el.style.opacity = o;
+  }
+  function later(ms, fn) {
+    var g = gen;
+    if (reduced.matches) ms = 0;
+    setTimeout(function () { if (g === gen) fn(); }, ms);
+  }
+
+  /* ---------- reading the equation ---------- */
+  var WHOLE = 'Each piece on the scale is one whole x or one whole 1.';
+  function wholeNumberProblem(text) {
+    if (/[.,]/.test(text)) return 'Whole numbers only, so no decimal points. ' + WHOLE;
+    if (/[\/\u00f7\u00bd\u00bc\u00be\u2150-\u215e]/.test(text)) return 'Whole numbers only, so no fractions. ' + WHOLE;
+    return '';
+  }
+
+  function parseLinear(s) {
+    if (!/^[+-]?(\d*x|\d+)([+-](\d*x|\d+))*$/.test(s)) return null;
+    var a = 0, b = 0, m, re = /([+-]?)(?:(\d*)x|(\d+))/g;
+    while ((m = re.exec(s)) !== null) {
+      if (m[0] === '') { re.lastIndex++; continue; }
+      var sign = m[1] === '-' ? -1 : 1;
+      if (m[2] !== undefined) a += sign * (m[2] === '' ? 1 : parseInt(m[2], 10));
+      else b += sign * parseInt(m[3], 10);
+    }
+    return { a: a, b: b };
+  }
+
+  function parseSide(s, name) {
+    var bad = { error: 'Can\u2019t read the ' + name + ' side. Use whole numbers, x and parentheses, like 2(x \u2212 3) + 1.' };
+    if (!s) return { error: 'The ' + name + ' side is empty. Put something on both sides of the = sign.' };
+    var depth = 0;
+    for (var i = 0; i < s.length; i++) {
+      if (s[i] === '(') { if (++depth > 1) return { error: 'One layer of parentheses at a time, please: no parentheses inside parentheses.' }; }
+      else if (s[i] === ')') { if (--depth < 0) return { error: 'A ) on the ' + name + ' side has no ( to match it.' }; }
+    }
+    if (depth) return { error: 'A ( on the ' + name + ' side is never closed with a ).' };
+
+    var boxes = [], rest = '', last = 0, m, re = /([+-]?)(\d*)\(([^()]*)\)/g;
+    while ((m = re.exec(s)) !== null) {
+      var prev = s.slice(0, m.index), next = s.charAt(re.lastIndex);
+      if (!m[1] && m.index > 0) {
+        if (prev.slice(-1) === 'x') return { error: 'x times parentheses would make x\u00b2, which the scale can\u2019t hold. Put a whole number in front, like 2(x \u2212 3).' };
+        return { error: 'Put a + or \u2212 between the parentheses, and one whole number in front, like 2(x \u2212 3) + 3(x + 1).' };
+      }
+      if (next && next !== '+' && next !== '-') return { error: 'Put the number in front of the parentheses, like 2(x \u2212 3), not after.' };
+      var k = (m[2] === '' ? 1 : parseInt(m[2], 10)) * (m[1] === '-' ? -1 : 1);
+      if (k === 0) return { error: 'A 0 in front of parentheses makes the whole group disappear. Leave that group out.' };
+      if (!m[3]) return { error: 'Put something inside the parentheses, like (x \u2212 3).' };
+      var inner = parseLinear(m[3]);
+      if (!inner) return { error: 'Can\u2019t read what\u2019s inside (' + m[3] + '). Use whole numbers and x, like (x \u2212 3).' };
+      if (Math.abs(k) > MULT_MAX) return { error: 'Keep the number in front of parentheses at ' + MULT_MAX + ' or less.' };
+      if (Math.abs(inner.a) > INNER_MAX || Math.abs(inner.b) > INNER_MAX)
+        return { error: 'Keep the numbers inside parentheses at ' + INNER_MAX + ' or less.' };
+      boxes.push({ k: k, a: inner.a, b: inner.b });
+      rest += s.slice(last, m.index);
+      last = re.lastIndex;
+    }
+    rest += s.slice(last);
+    if (/[()]/.test(rest)) return bad;
+    var lin = rest ? parseLinear(rest) : { a: 0, b: 0 };
+    if (!lin) return bad;
+    return { a: lin.a, b: lin.b, boxes: boxes };
+  }
+
+  function pile(S, kind) {
+    var n = Math.abs(kind === 'x' ? S.a : S.b);
+    S.boxes.forEach(function (g) { n += Math.abs(g.k * (kind === 'x' ? g.a : g.b)); });
+    return n;
+  }
+
+  function parseEquation(text) {
+    var whole = wholeNumberProblem(text);
+    if (whole) return { error: whole };
+    var s = text.replace(/\s+/g, '').replace(/[\u2212\u2013\u2014]/g, '-').replace(/[*\u00b7\u00d7]/g, '').toLowerCase();
+    if (/[^0-9x+\-=()]/.test(s)) return { error: 'Use only whole numbers, x, +, \u2212, parentheses and one = sign.' };
+    var parts = s.split('=');
+    if (parts.length !== 2) return { error: 'An equation needs exactly one = sign, like 2(x \u2212 3) = 3(x + 1).' };
+    var L = parseSide(parts[0], 'left'); if (L.error) return L;
+    var R = parseSide(parts[1], 'right'); if (R.error) return R;
+    var sides = [L, R];
+    for (var i = 0; i < 2; i++) {
+      var S = sides[i];
+      if (Math.abs(S.a) > LOOSE_MAX || Math.abs(S.b) > LOOSE_MAX)
+        return { error: 'Keep every count at ' + LOOSE_MAX + ' or less so the pieces fit in the pans.' };
+      var nb = S.boxes.reduce(function (t, g) { return t + Math.abs(g.k); }, 0);
+      if (nb > BOX_MAX) return { error: 'That makes ' + nb + ' boxes on one side. Keep it to ' + BOX_MAX + ' or fewer so they fit.' };
+      if (pile(S, 'x') > PILE_MAX || pile(S, 'u') > PILE_MAX)
+        return { error: 'Once it\u2019s distributed, that\u2019s more pieces than a pan can hold. Try smaller numbers.' };
+    }
+    return { L: L, R: R };
+  }
+
+  /* ---------- drawing the scale ---------- */
+  function drawScale() {
+    var W = stage.clientWidth, H = stage.clientHeight;
+    if (W < 50 || H < 50) return;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+    var pad = clamp(W * 0.02, 8, 28);
+    var gap = clamp(W * 0.075, 58, 104);
+    var panW = (W - 2 * pad - gap) / 2;
+    var beamY = 40;
+    var hang = clamp(H * 0.14, 50, 120);
+    var rimY = beamY + hang;
+    var baseH = clamp(H * 0.055, 22, 40);
+    var panBot = H - baseH - 12;
+    var mid = W / 2;
+    var r = Math.min(panW, panBot - rimY) * 0.2;
+    var fs = clamp(panW * 0.085, 15, 34);
+    var bw = clamp(W * 0.26, 130, 340);
+    var my = (rimY + panBot) / 2, mr = clamp(gap * 0.36, 20, 34);
+
+    var sides = [
+      { id: 'L', x0: pad, x1: pad + panW },
+      { id: 'R', x0: W - pad - panW, x1: W - pad }
+    ];
+    var cxL = pad + panW / 2, cxR = W - pad - panW / 2;
+
+    var h = '';
+    h += '<path class="brassfill" d="M' + (mid - bw / 2) + ' ' + (H - 4) +
+         ' Q' + (mid - bw / 2) + ' ' + (H - baseH) + ' ' + (mid - bw * 0.3) + ' ' + (H - baseH) +
+         ' L' + (mid + bw * 0.3) + ' ' + (H - baseH) +
+         ' Q' + (mid + bw / 2) + ' ' + (H - baseH) + ' ' + (mid + bw / 2) + ' ' + (H - 4) + ' Z"/>';
+    h += '<path class="pillar" d="M' + (mid - 5) + ' ' + (beamY - 6) + ' L' + (mid + 5) + ' ' + (beamY - 6) +
+         ' L' + (mid + 9) + ' ' + (H - baseH + 2) + ' L' + (mid - 9) + ' ' + (H - baseH + 2) + ' Z"/>';
+    h += '<rect class="brassfill" x="' + (mid - 15) + '" y="' + (H - baseH - 5) + '" width="30" height="10" rx="5"/>';
+    h += '<path class="brassfill" d="M' + cxL + ' ' + beamY + ' Q' + mid + ' ' + (beamY - 30) + ' ' + cxR + ' ' + beamY +
+         ' L' + cxR + ' ' + (beamY + 5) + ' Q' + mid + ' ' + (beamY - 10) + ' ' + cxL + ' ' + (beamY + 5) + ' Z"/>';
+    h += '<circle class="knob" cx="' + mid + '" cy="' + (beamY - 9) + '" r="9"/>';
+    h += '<circle class="pin" cx="' + mid + '" cy="' + (beamY - 9) + '" r="3"/>';
+
+    sides.forEach(function (s) {
+      var cx = (s.x0 + s.x1) / 2, bx0 = s.x0 + 5, bx1 = s.x1 - 5;
+      h += '<line class="string" x1="' + cx + '" y1="' + (beamY + 4) + '" x2="' + (s.x0 + 8) + '" y2="' + (rimY - 3) + '"/>';
+      h += '<line class="string" x1="' + cx + '" y1="' + (beamY + 4) + '" x2="' + (s.x1 - 8) + '" y2="' + (rimY - 3) + '"/>';
+      h += '<circle class="knob" cx="' + cx + '" cy="' + (beamY + 2) + '" r="5"/>';
+      h += '<path class="pan" d="M' + bx0 + ' ' + rimY + ' L' + bx0 + ' ' + (panBot - r) +
+           ' Q' + bx0 + ' ' + panBot + ' ' + (bx0 + r) + ' ' + panBot +
+           ' L' + (bx1 - r) + ' ' + panBot +
+           ' Q' + bx1 + ' ' + panBot + ' ' + bx1 + ' ' + (panBot - r) +
+           ' L' + bx1 + ' ' + rimY + ' Z"/>';
+      h += '<rect class="brassfill" x="' + s.x0 + '" y="' + (rimY - 5) + '" width="' + panW + '" height="10" rx="5"/>';
+      h += '<text class="lbl" id="lbl' + s.id + '" x="' + cx + '" y="' + (rimY - 14) + '" text-anchor="middle" font-size="' + fs + '"></text>';
+    });
+
+    h += '<circle class="medal" cx="' + mid + '" cy="' + my + '" r="' + mr + '"/>';
+    h += '<text class="eqs" x="' + mid + '" y="' + my + '" text-anchor="middle" dominant-baseline="central" font-size="' + (mr * 1.35) + '">=</text>';
+    scaleG.innerHTML = h;
+
+    var inset = Math.max(8, r * 0.3);
+    function region(s) {
+      return { x: s.x0 + 5 + inset, y: rimY + 12, w: panW - 10 - 2 * inset, h: panBot - rimY - 12 - inset };
+    }
+    geo = { L: region(sides[0]), R: region(sides[1]) };
+    labels();
+  }
+
+  /* ---------- the pieces ---------- */
+  function makeToken(kind, sign) {
+    var g = mk('g', { 'class': 'tok ' + (sign < 0 ? 'neg' : 'pos') });
+    if (kind === 'x') {
+      g.appendChild(mk('path', { 'class': 'body', d: KISS }));
+      g.appendChild(mk('ellipse', { 'class': 'shine', cx: -0.13, cy: 0, rx: 0.04, ry: 0.1, transform: 'rotate(35 -0.13 0)' }));
+      if (sign < 0) g.appendChild(mk('rect', { 'class': 'mark', x: -0.15, y: 0.17, width: 0.3, height: 0.07, rx: 0.035 }));
+    } else {
+      g.appendChild(mk('circle', { 'class': 'body', r: 0.34 }));
+      g.appendChild(mk('ellipse', { 'class': 'shine', cx: -0.14, cy: -0.14, rx: 0.05, ry: 0.1, transform: 'rotate(45 -0.14 -0.14)' }));
+      if (sign < 0) g.appendChild(mk('rect', { 'class': 'mark', x: -0.15, y: -0.035, width: 0.3, height: 0.07, rx: 0.035 }));
+    }
+    return { el: g, kind: kind, sign: sign, x: 0, y: 0, s: 1, fresh: true };
+  }
+
+  function makeBox(neg) {
+    var g = mk('g', { 'class': 'box' + (neg ? ' negbox' : '') });
+    var parts = { el: g, frame: mk('rect', { 'class': 'frame' }), neg: neg, xs: [], us: [], fresh: true };
+    g.appendChild(parts.frame);
+    if (neg) {
+      parts.tab = mk('rect', { 'class': 'tab' });
+      parts.tabmark = mk('rect', { 'class': 'tabmark' });
+      g.appendChild(parts.tab);
+      g.appendChild(parts.tabmark);
+    }
+    return parts;
+  }
+
+  // one piece meets its opposite and both vanish
+  function annihilate(p, n) {
+    if (reduced.matches) { p.el.remove(); n.el.remove(); return; }
+    p.el.style.transitionDelay = ''; n.el.style.transitionDelay = '';
+    var gx = p.x + p.s * 0.12, gy = p.y - p.s * 0.12;
+    put(n.el, gx, gy, p.s, 1);
+    setTimeout(function () { put(n.el, gx, gy, 0.001, 0); put(p.el, p.x, p.y, 0.001, 0); }, 420);
+    setTimeout(function () { n.el.remove(); p.el.remove(); }, 860);
+  }
+
+  // how a loose piece leaves: 'take' lifts it off, 'cancel' pairs it with a new opposite, 'fade' clears it
+  function kill(t, how) {
+    var el = t.el;
+    if (reduced.matches || t.fresh) { el.remove(); return; }
+    el.style.transitionDelay = '';
+    if (how === 'take') {
+      put(el, t.x, t.y - t.s, t.s * 0.7, 0);
+      setTimeout(function () { el.remove(); }, 450);
+    } else if (how === 'cancel') {
+      var o = makeToken(t.kind, -t.sign);
+      layer.appendChild(o.el);
+      o.el.style.transition = 'none';
+      put(o.el, t.x + t.s * 0.1, t.y - t.s * 1.1, t.s * 0.8, 0);
+      flush(o.el);
+      o.el.style.transition = '';
+      annihilate(t, o);
+    } else {
+      put(el, t.x, t.y, t.s * 0.4, 0);
+      setTimeout(function () { el.remove(); }, 380);
+    }
+  }
+
+  function reconcile(key, kind, v, info) {
+    var list = groups[key], n = Math.abs(v), sign = sgn(v);
+    var mine = info && info.kind === kind;
+    if (list.length && n > 0 && list[0].sign !== sign) {
+      while (list.length) kill(list.pop(), 'fade');
+    }
+    while (list.length > n) kill(list.pop(), mine ? (info.dir > 0 ? 'cancel' : 'take') : 'fade');
+    while (list.length < n) {
+      var t = makeToken(kind, sign);
+      layer.appendChild(t.el);
+      list.push(t);
+    }
+  }
+
+  function buildTiles(side) {
+    tiles[side] = [];
+    state[side].boxes.forEach(function (g) {
+      for (var i = 0; i < Math.abs(g.k); i++) {
+        var box = makeBox(g.k < 0);
+        boxLayer.appendChild(box.el);
+        for (var j = 0; j < Math.abs(g.a); j++) { var tx = makeToken('x', sgn(g.a)); box.xs.push(tx); layer.appendChild(tx.el); }
+        for (var j2 = 0; j2 < Math.abs(g.b); j2++) { var tu = makeToken('u', sgn(g.b)); box.us.push(tu); layer.appendChild(tu.el); }
+        tiles[side].push(box);
+      }
+    });
+  }
+
+  /* ---------- fitting everything into a pan ---------- */
+  function tryPlan(s, R, nx, nu, tl, force) {
+    var si = s * 0.56, pad = si * 0.38, g = s * 0.28;
+    var dims = tl.map(function (t) {
+      var ax = t.xs.length, au = t.us.length;
+      var c = clamp(Math.max(ax, au), 1, 5);
+      var rx = Math.ceil(ax / c), ru = Math.ceil(au / c);
+      return { c: c, rx: rx, ru: ru, w: c * si + 2 * pad, h: Math.max(1, rx + ru) * si + 2 * pad };
+    });
+    var rows = [], cur = null;
+    for (var i = 0; i < dims.length; i++) {
+      var d = dims[i];
+      if (d.w > R.w && !force) return null;
+      if (!cur || cur.w + g + d.w > R.w) { cur = { items: [], w: -g, h: 0 }; rows.push(cur); }
+      cur.items.push(i); cur.w += g + d.w; cur.h = Math.max(cur.h, d.h);
+    }
+    var tilesH = rows.reduce(function (t, r) { return t + r.h; }, 0) + Math.max(0, rows.length - 1) * g;
+    var cols = Math.max(1, Math.floor(R.w / s));
+    var lrx = Math.ceil(nx / cols), lru = Math.ceil(nu / cols);
+    var gl = (nx && nu) ? s * 0.25 : 0;
+    var looseH = (lrx + lru) * s + gl;
+    var mid = (tl.length && (nx || nu)) ? s * 0.45 : 0;
+    var lift = tl.some(function (t) { return t.neg; }) ? si * 0.36 : 0;   // room for the red tabs
+    var total = lift + tilesH + mid + looseH;
+    if (total > R.h && !force) return null;
+    return { s: s, si: si, pad: pad, g: g, lift: lift, dims: dims, rows: rows, tilesH: tilesH, mid: mid, lrx: lrx, lru: lru, gl: gl, total: total };
+  }
+  function plan(R, nx, nu, tl) {
+    var cap = Math.min(110, R.w / 2.1, R.h / 2.1);
+    for (var s = cap; s >= 4; s -= 0.5) { var p = tryPlan(s, R, nx, nu, tl, false); if (p) return p; }
+    return tryPlan(4, R, nx, nu, tl, true);
+  }
+
+  function layoutSide(R, xs, us, tl, stagger) {
+    var p = plan(R, xs.length, us.length, tl);
+    var cx = R.x + R.w / 2, top = R.y + (R.h - p.total) / 2, n = 0;
+
+    function place(t, x, y, s) {
+      if (t.fresh) {
+        if (!reduced.matches) {
+          t.el.style.transition = 'none';
+          put(t.el, x, y - s * 1.1, s * 0.7, 0);
+          flush(t.el);
+          t.el.style.transition = '';
+          if (stagger) {
+            t.el.style.transitionDelay = Math.min(n * 24, 500) + 'ms';
+            (function (el) { setTimeout(function () { el.style.transitionDelay = ''; }, 1100); })(t.el);
+          }
+        }
+        t.fresh = false;
+      }
+      n++;
+      t.x = x; t.y = y; t.s = s;
+      put(t.el, x, y, s, 1);
+    }
+    function rowsOf(list, r, y0, step, x0, width, perRow) {
+      if (!list.length) return;
+      var per = perRow || Math.ceil(list.length / r);
+      list.forEach(function (t, i) {
+        var row = Math.floor(i / per), col = i % per;
+        var cnt = Math.min(per, list.length - row * per);
+        place(t, x0 + width / 2 + (col - (cnt - 1) / 2) * step, y0 + (row + 0.5) * step, step * 0.92);
+      });
+    }
+
+    // boxes first, the way the equation is read
+    var y = top + p.lift;
+    p.rows.forEach(function (row) {
+      var x = cx - row.w / 2;
+      row.items.forEach(function (i) {
+        var b = tl[i], d = p.dims[i], si = p.si;
+        setA(b.frame, { width: d.w, height: d.h, rx: si * 0.28 });
+        if (b.neg) {
+          setA(b.tab, { x: si * 0.2, y: -si * 0.32, width: si * 0.72, height: si * 0.5, rx: si * 0.14 });
+          setA(b.tabmark, { x: si * 0.38, y: -si * 0.105, width: si * 0.36, height: si * 0.07 });
+        }
+        b.el.style.transform = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px)';
+        if (b.fresh && !reduced.matches) {
+          b.el.style.transition = 'none'; b.el.style.opacity = 0; flush(b.el); b.el.style.transition = '';
+        }
+        b.fresh = false;
+        b.el.style.opacity = 1;
+        b.x = x; b.y = y; b.w = d.w; b.h = d.h;
+        rowsOf(b.xs, d.rx, y + p.pad, si, x, d.w, d.c);
+        rowsOf(b.us, d.ru, y + p.pad + d.rx * si, si, x, d.w, d.c);
+        x += d.w + p.g;
+      });
+      y += row.h + p.g;
+    });
+
+    var ly = top + p.lift + p.tilesH + p.mid;
+    rowsOf(xs, p.lrx, ly, p.s, R.x, R.w);
+    rowsOf(us, p.lru, ly + p.lrx * p.s + p.gl, p.s, R.x, R.w);
+  }
+
+  function layout(stagger) {
+    if (!geo) return;
+    layoutSide(geo.L, groups.La, groups.Lb, tiles.L, stagger);
+    layoutSide(geo.R, groups.Ra, groups.Rb, tiles.R, stagger);
+  }
+
+  /* ---------- words on the page ---------- */
+  function fmt(terms) {
+    var out = [];
+    if (!terms.length) return [{ t: '0' }];
+    terms.forEach(function (tm, i) {
+      var neg = tm.c < 0, abs = Math.abs(tm.c);
+      if (i === 0) { if (neg) out.push({ t: '\u2212' }); }
+      else out.push({ t: neg ? '\u00a0\u2212\u00a0' : '\u00a0+\u00a0' });
+      if (tm.kind === 'x') { if (abs !== 1) out.push({ t: String(abs) }); out.push({ t: 'x', it: true }); }
+      else if (tm.kind === 'u') out.push({ t: String(abs) });
+      else {
+        if (abs !== 1) out.push({ t: String(abs) });
+        out.push({ t: '(' });
+        out = out.concat(fmt(linTerms(tm.a, tm.b)));
+        out.push({ t: ')' });
+      }
+    });
+    return out;
+  }
+  function linTerms(a, b) {
+    var t = [];
+    if (a) t.push({ c: a, kind: 'x' });
+    if (b) t.push({ c: b, kind: 'u' });
+    return t;
+  }
+  function sideTerms(S) {
+    return S.boxes.map(function (g) { return { c: g.k, kind: 'g', a: g.a, b: g.b }; }).concat(linTerms(S.a, S.b));
+  }
+  function plain(parts) { return parts.map(function (p) { return p.t; }).join('').replace(/\u00a0/g, ' '); }
+
+  function labels() {
+    ['L', 'R'].forEach(function (side) {
+      var el = $('lbl' + side);
+      if (!el) return;
+      el.textContent = '';
+      if (!state.active) return;
+      var terms = expanded ? expanded[side] : sideTerms(state[side]);
+      fmt(terms).forEach(function (p) {
+        var ts = mk('tspan', p.it ? { 'font-style': 'italic' } : {});
+        ts.textContent = p.t;
+        el.appendChild(ts);
+      });
+    });
+    svg.setAttribute('aria-label', state.active
+      ? 'A balance scale showing ' + plain(fmt(sideTerms(state.L))) + ' on the left and ' + plain(fmt(sideTerms(state.R))) + ' on the right.'
+      : 'A balance scale. Type an equation and press Render.');
+  }
+
+  function hasBoxes() { return state.L.boxes.length > 0 || state.R.boxes.length > 0; }
+
+  function canSolve() {
+    if (!state.active || hasBoxes()) return false;
+    var a = state.L.a, b = state.L.b, c = state.R.a, d = state.R.b;
+    if (a === 0 && c === 0) return true;
+    if (b === 0 && c === 0 && a !== 0) return true;
+    if (a === 0 && d === 0 && c !== 0) return true;
+    return false;
+  }
+
+  function buttons() {
+    opBtns.forEach(function (btn) {
+      var dir = +btn.dataset.dir, kind = btn.dataset.kind, ok = state.active && !busy;
+      ['L', 'R'].forEach(function (side) {
+        var S = state[side], key = kind === 'x' ? 'a' : 'b';
+        var after = { a: S.a, b: S.b, boxes: S.boxes };
+        after[key] += dir;
+        if (pile(after, kind) > HARD_MAX) ok = false;
+      });
+      btn.disabled = !ok;
+    });
+    distBtn.disabled = busy || !state.active || !hasBoxes();
+    solveBtn.disabled = busy || !canSolve();
+  }
+
+  function sync(info) {
+    reconcile('La', 'x', state.L.a, info);
+    reconcile('Lb', 'u', state.L.b, info);
+    reconcile('Ra', 'x', state.R.a, info);
+    reconcile('Rb', 'u', state.R.b, info);
+    layout(!info);
+    labels();
+    buttons();
+  }
+
+  /* ---------- distributing ---------- */
+  function swapSign(t) {
+    var n = makeToken(t.kind, -t.sign);
+    n.fresh = false; n.x = t.x; n.y = t.y; n.s = t.s;
+    layer.appendChild(n.el);
+    n.el.style.transition = 'none';
+    put(n.el, t.x, t.y, t.s, 1);
+    flush(n.el);
+    n.el.style.transition = '';
+    t.el.remove();
+    return n;
+  }
+
+  function distribute() {
+    if (busy || !hasBoxes()) return;
+    busy = true;
+    answer.textContent = '';
+    var piles = {};
+    expanded = {};
+
+    ['L', 'R'].forEach(function (side) {
+      var S = state[side], xs = groups[side + 'a'].slice(), us = groups[side + 'b'].slice();
+      tiles[side].forEach(function (box) {
+        box.xs.forEach(function (t) { xs.push(box.neg ? swapSign(t) : t); });
+        box.us.forEach(function (t) { us.push(box.neg ? swapSign(t) : t); });
+        box.el.style.opacity = 0;
+        (function (el) { setTimeout(function () { el.remove(); }, reduced.matches ? 0 : 400); })(box.el);
+      });
+      tiles[side] = [];
+      var bySign = function (p, q) { return q.sign - p.sign; };
+      xs.sort(bySign); us.sort(bySign);
+      piles[side] = { xs: xs, us: us };
+
+      // the label shows every multiplied-out term before anything combines
+      var terms = [];
+      S.boxes.forEach(function (g) { terms = terms.concat(linTerms(g.k * g.a, g.k * g.b)); });
+      expanded[side] = terms.concat(linTerms(S.a, S.b));
+      S.a += S.boxes.reduce(function (t, g) { return t + g.k * g.a; }, 0);
+      S.b += S.boxes.reduce(function (t, g) { return t + g.k * g.b; }, 0);
+      S.boxes = [];
+    });
+
+    relayout = function () {
+      layoutSide(geo.L, piles.L.xs, piles.L.us, [], false);
+      layoutSide(geo.R, piles.R.xs, piles.R.us, [], false);
+    };
+    relayout();
+    labels();
+    buttons();
+
+    // then opposite pairs cancel and whatever's left settles
+    later(1000, function () {
+      ['L', 'R'].forEach(function (side) {
+        [['xs', 'a'], ['us', 'b']].forEach(function (pair) {
+          var list = piles[side][pair[0]];
+          var pos = list.filter(function (t) { return t.sign > 0; });
+          var neg = list.filter(function (t) { return t.sign < 0; });
+          while (pos.length && neg.length) annihilate(pos.pop(), neg.pop());
+          groups[side + pair[1]] = pos.length ? pos : neg;
+        });
+      });
+      later(900, function () {
+        expanded = null;
+        relayout = null;
+        busy = false;
+        layout(false);
+        labels();
+        buttons();
+      });
+    });
+  }
+
+  /* ---------- the answer ---------- */
+  function frac(p, q) {
+    return '<span class="frac" role="img" aria-label="' + num(p) + ' over ' + q + '"><span>' + num(p) + '</span><span>' + q + '</span></span>';
+  }
+  function solve() {
+    if (!canSolve()) return;
+    var a = state.L.a, b = state.L.b, c = state.R.a, d = state.R.b, n, den;
+    if (a === 0 && c === 0) {
+      answer.innerHTML = b === d
+        ? num(b) + ' = ' + num(d) + ' is always true, so every number works.'
+        : num(b) + ' = ' + num(d) + ' is never true, so there is no solution.';
+      return;
+    }
+    if (c === 0) { n = d; den = a; } else { n = b; den = c; }
+    var X = '<i>x</i> = ';
+    if (den === 1) { answer.innerHTML = X + num(n); return; }
+    var g = gcd(n, den), p = n / g, q = den / g;
+    if (q < 0) { p = -p; q = -q; }
+    answer.innerHTML = X + num(n) + ' \u00f7 ' + (den < 0 ? '(' + num(den) + ')' : den) + ' = ' + (q === 1 ? num(p) : frac(p, q));
+  }
+
+  /* ---------- wiring ---------- */
+  function clearPans() {
+    [layer, boxLayer].forEach(function (lay) {
+      Array.prototype.slice.call(lay.children).forEach(function (el) {
+        if (reduced.matches) { el.remove(); return; }
+        el.style.transitionDelay = '';
+        el.style.opacity = 0;
+        setTimeout(function () { el.remove(); }, 400);
+      });
+    });
+    groups = { La: [], Lb: [], Ra: [], Rb: [] };
+    tiles = { L: [], R: [] };
+  }
+
+  // the whole-number rule is checked while typing, and again on Render
+  input.addEventListener('input', function () {
+    var problem = wholeNumberProblem(input.value);
+    input.setAttribute('aria-invalid', problem ? 'true' : 'false');
+    msg.textContent = problem;
+  });
+
+  $('eqform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var parsed = parseEquation(input.value);
+    if (parsed.error) {
+      msg.textContent = parsed.error;
+      input.setAttribute('aria-invalid', 'true');
+      return;
+    }
+    msg.textContent = '';
+    input.setAttribute('aria-invalid', 'false');
+    answer.textContent = '';
+    gen++; busy = false; expanded = null; relayout = null;
+    clearPans();
+    state.L = parsed.L; state.R = parsed.R; state.active = true;
+    buildTiles('L'); buildTiles('R');
+    sync(null);
+  });
+
+  opBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!state.active || busy) return;
+      var dir = +btn.dataset.dir, kind = btn.dataset.kind, key = kind === 'x' ? 'a' : 'b';
+      state.L[key] += dir; state.R[key] += dir;
+      answer.textContent = '';
+      sync({ kind: kind, dir: dir });
+    });
+  });
+
+  distBtn.addEventListener('click', distribute);
+  solveBtn.addEventListener('click', solve);
+
+  function redraw() { drawScale(); if (relayout) relayout(); else layout(false); }
+  if ('ResizeObserver' in window) new ResizeObserver(redraw).observe(stage);
+  else window.addEventListener('resize', redraw);
+  redraw();
+})();
+</script>
+</body>
+</html>

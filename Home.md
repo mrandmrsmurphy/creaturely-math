@@ -17,6 +17,8 @@ This vault gathers what is written about that position, removes the redundancy, 
 
 ## Map
 
+**Browser tools** — [[HTML Tools and Visualizations]]
+
 **Meta** — [[What this project is]] · [[Measure, Number, and Weight]] · [[Future Directions]] · [[Reading List]] · [[Timeline of the Position]] · [[Glossary]] · [[Structure Hierarchies]]
 
 **Foundations** — [[Creaturely Realism]] · [[Certificates]] · [[Creational Ultrafinitism]] · [[Computational Admissibility]] · [[Infinity and Cantor]] · [[Diagonal Argument]] · [[Exhibiting a Real]] · [[Schools Compared]] · [[Three Tiers]] · [[First Principles of Thought]] · [[Theology of Number]] · [[Theological Grounds]] · [[Christians and the Reals]] · [[Four Kinds of Truth]] · [[Quadriga and the Position]]

@@ -117,6 +117,7 @@ The framework is warranted by eight marks (the draft for Catholic readers re-gro
 - **Proof forms:** [[Proof Types]] (the eleven forms, each tagged with its art and Noesis exercise, with the vault's certificate audit).
 - **How to sequence:** [[Historical Order]], [[Curriculum Plan]], [[Tally Marks]] (the earliest Praxis).
 - **The history, read by the arts:** the Babylonians as *Praxis*-rich and *Apodeixis*-light, the Greeks' proof as doxology, Cardano's "it works" as the first *Superstitio* ([[Corrective Narrative]], [[Babylonian Mathematics]], [[Greek Mathematics]]).
+- **Why the Quadriga supersedes the Quadrivium:** Murphy’s reading of [[Corrective Narrative#The Scientific Revolution and the dignity of praxis|the Scientific Revolution and the dignity of praxis]].
 - **The philosophy:** [[Quadriga and the Position]]; [[Certificates]]; [[Number in Natural Philosophy]]; [[Scale and Bands]] (where the Quadriga's own companion, the Scale framework for the sciences, is stated).
 
 ## Future pedagogical work
