@@ -22,3 +22,5 @@ Murphy set BC and AD as the standing date convention. Recorded it in AGENTS.md a
 Murphy asked for standing guidance against importing classical real-analysis assumptions or sidelining the vault’s Christian premises. Added the operational rule in AGENTS.md and updated the faithful-recording memory and its index.
 
 Recorded Murphy’s new thesis on pure and applied mathematics in the existing history treatment, linked it from Measure, Number, and Weight, checked the scope of Wildberger and Rubine’s paper, and updated the Agenda and log.
+
+Session close. Start with Home.md, Meta/Future Directions.md, and AIOS/MEMORY.md. The degrees page contains the DMS history and certified comparisons for sine and slope. The pure/applied thesis is recorded in History/Mathematics 500 to 1500.md and linked from the public essay. The Agenda flags the historical causal link for verification. In discussion, the assistant distinguished that causal claim from the methodological one and observed that exact arithmetic and certified approximation can occur in the same calculation. Murphy did not adopt those comments as changes to his thesis.
