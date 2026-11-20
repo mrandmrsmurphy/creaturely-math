@@ -42,6 +42,8 @@ updated: 2026-11-07
 
 **Pedagogy.** A teaching framework for all of it: the Quadriga — question, sight, practice, demonstration ([[Quadriga for Mathematics]]) — and a curriculum in historical order ([[Historical Order]]), in which arithmetic is a skill that can be drilled and timed, while mathematics proper is an art and a science that cannot. For the majority of students, whose last mathematics is statistics, the end track is the constructible statistics above.
 
+Murphy’s [[Mathematics 500 to 1500#The pure and applied distinction is misplaced|thesis on pure and applied mathematics]] gives these distinctions their disciplinary consequence. The work turns on what can be exhibited exactly, what can be certified to a stated width, and what it costs to produce and check the result.
+
 ## 4. Areas for future growth
 
 The honest list is the Agenda itself ([[Future Directions]]), kept current as the vault changes. The core open problems, as of this writing:

@@ -4,6 +4,8 @@ Changes to the vault, newest first. History lives here and nowhere else — math
 
 ## 2026-11-19
 
+- Recorded Murphy’s thesis on the pure/applied division, the sine example, and the computational demands of exact and approximate results. Linked the thesis from the public essay and updated the Agenda.
+
 - Made Murphy’s Christian foundations and the distinction between specification, exhibition, and a certified approximation explicit in the standing vault instructions and faithful-recording memory.
 
 - Recorded Murphy’s standing BC and AD convention in AGENTS.md and AIOS memory and standardized existing historical era labels in the vault.

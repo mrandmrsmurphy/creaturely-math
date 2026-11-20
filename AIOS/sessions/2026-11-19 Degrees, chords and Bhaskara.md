@@ -20,3 +20,5 @@ Wrote both slope approximations on the canonical degrees page at Murphy’s requ
 Murphy set BC and AD as the standing date convention. Recorded it in AGENTS.md and AIOS memory and standardized historical era labels in the vault.
 
 Murphy asked for standing guidance against importing classical real-analysis assumptions or sidelining the vault’s Christian premises. Added the operational rule in AGENTS.md and updated the faithful-recording memory and its index.
+
+Recorded Murphy’s new thesis on pure and applied mathematics in the existing history treatment, linked it from Measure, Number, and Weight, checked the scope of Wildberger and Rubine’s paper, and updated the Agenda and log.

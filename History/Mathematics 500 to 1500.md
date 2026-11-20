@@ -121,6 +121,22 @@ The Greek proof-first tradition ([[Greek Mathematics]]) is the **exception**, an
 
 **A position that fits** [AI]: the vault does not reject proof (it is a certificate, [[Certificates]]); it **refuses to rank proof above practice**, and counts the engineering mathematics of Babylon, Rome, India, China and the Islamic world as mathematics in full.
 
+## The pure and applied distinction is misplaced
+
+*Murphy’s thesis.*
+
+The modern division of mathematics into pure and applied is entirely misplaced. Archimedes moves among geometry, mechanics, and measurement. Newton moves among geometry, motion, and astronomy. The people we take as exemplary mathematicians worked across what we now call mathematics and science. Murphy’s historical claim is that the completed Real number system made the later bifurcation intellectually plausible. Once the discipline could treat the Reals as a finished domain, it could put questions about what a creature can calculate, exhibit, or measure on the applied side.
+
+The irony is visible in the request to exhibit $\sin(1)$, with $1$ in radians. A researcher can hand over six nonzero Taylor terms and say “good enough.” The rational sum furnished is
+
+$$1-\frac1{3!}+\frac1{5!}-\frac1{7!}+\frac1{9!}-\frac1{11!}.$$
+
+The alternating-series bound puts the height within $1/13!$ of that sum. “Good enough” depends on the width the work calls for. The researcher has chosen a representation and a stopping point, and used a finite error warrant. **Pure applied!** The truncated series is practical mathematics, and its warrant is part of the result. See [[Degrees, Minutes, and Seconds]] for the comparison among actual height computations.
+
+The distinction with mathematical weight is between exact and approximate results. An exact count, a constructed length, and a certified Pixel each have their own warrant. The humility required is to say which kind of thing we have in hand. Much of mathematics needs to submit its claims to questions from computer science. Is the procedure computable? Is it feasible within the available time and space? What does it cost to produce the answer, and what does it cost to check its certificate? A formal expression, a feasible calculation, and a verified output are separate achievements. See [[Numbers, Lengths and Pixels]] and [[Computational Admissibility]].
+
+Murphy expects that such honest bookkeeping will lead to an explosion of growth in mathematics. Wildberger and Rubine give an example. Their hyper-Catalan coefficients are exact combinatorial counts, and the formal series gives a uniform expression for polynomial equations, including degrees above four. When used to exhibit a root to a finite resolution, the calculation belongs to the mathematics of Pixels. The formal identity supplies a way to generate approximations. A convergence bound or an independent root enclosure supplies the warrant for the displayed root. That distinction opens up concrete research on evaluation, stopping rules, and cost. [Wildberger and Rubine, *A Hyper-Catalan Series Solution to Polynomial Equations, and the Geode*](https://doi.org/10.1080/00029890.2025.2460966) · [[Fundamental Theorem of Algebra]]
+
 ## Cusa and the vault [AI]
 
 Nicholas of Cusa's circle and polygon is a clean medieval statement of *potential* against *actual* infinity: the perimeter of the inscribed $n$-gon, $n\sin\tfrac\pi n$, **approaches** $\pi$ but never equals it ($6\to3.0000$, $12\to3.1058$, $96\to3.14103$, $1000\to3.14159$; computed) while the circle is the *limit that is not reached*. His conclusion is epistemic humility before the infinite God, which is the posture of [[Christians and the Reals]] and [[Creational Ultrafinitism]]. He is worth reading as a **theologian-mathematician of the right temper**.

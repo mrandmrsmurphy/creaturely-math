@@ -24,6 +24,7 @@ updated: 2026-11-13
 | What | Where |
 |---|---|
 | Murphy reads the Scientific Revolution as affirming praxis and takes that lesson as part of the case for the Quadriga | [[Corrective Narrative#The Scientific Revolution and the dignity of praxis]] |
+| Murphy rejects the modern pure/applied division and puts exactness, approximation, feasibility, and certification at the centre | [[Mathematics 500 to 1500#The pure and applied distinction is misplaced]] |
 | Standalone HTML tools and visualizations indexed in the HTML folder and linked from Home | [[HTML Tools and Visualizations]] |
 | Split the word "number": Numbers 1–4, Lengths 5–6, Pixels 7–11, Posits 12–14; level 8 is a Pixel | [[Numbers, Lengths and Pixels]], [[Number Hierarchy]] (item 1) |
 | A certificate is a procedure; the four clauses of pixel equality | [[Certificates]] (item 3) |
@@ -127,6 +128,7 @@ Tags: **core** (unlocks the most) · **next** (ready to do) · **medium** · **s
 - **small** Review the Catholic variant of the Quadriga ([[Quadriga Scientiae (Catholic)]]) against the Protestant text; possible Orthodox and humanist variants (variants are legitimate, Murphy — [[Quadriga for Mathematics]], Open 3).
 
 **History and verification** (**background**)
+- **[AI]** Test the historical link Murphy proposes between the completed Reals and the professional pure/applied division. [[Mathematics 500 to 1500#The pure and applied distinction is misplaced]]
 - Quotations, attributions and dates are recollections on [[Mathematics 1730 to 1900]], [[Greek Mathematics]], [[Babylonian Mathematics]], [[The Road to Calculus]], [[Mathematics 500 to 1500]], [[Mathematics 1900 to Today]]; each page's hard problems list what to check. [[Five Acts]]: the typology is interpretive.
 
 ### C. Suggested next jobs **[AI]**
